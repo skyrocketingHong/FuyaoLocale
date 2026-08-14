@@ -1,0 +1,20 @@
+Fuyao Locale
+Copyright (C) 2026 skyrocketingHong
+
+Fuyao Locale is licensed as a whole under the GNU Affero General Public
+License, version 3 only (AGPL-3.0-only). See LICENSE.
+
+This project is a substantial rewrite based on concepts and functionality
+from Language Selector:
+  https://github.com/VegaBobo/Language-Selector
+
+Language Selector was distributed under the Apache License, Version 2.0.
+The upstream license is retained at LICENSES/Apache-2.0.txt. Copyright,
+license, and attribution notices applicable to upstream-derived portions
+remain in effect. Refer to the upstream repository and its Git history for
+the original contributors and complete provenance.
+
+Fuyao Locale changes include the new product identity and package namespace,
+Kotlin and Jetpack Compose architecture, Material 3 interface, application
+and locale list pipelines, batch locale workflows, saved configurations,
+adaptive layouts, localization, and build and signing setup.

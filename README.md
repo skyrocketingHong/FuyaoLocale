@@ -1,56 +1,216 @@
-### Language Selector
+<p align="center">
+  English | <a href="README_ZH.md">简体中文</a>
+</p>
 
-Language Selector allows users to set individual app languages. It tries to replicates the behavior of the "App languages" feature introduced in Android 13.
+<h1 align="center">Fuyao Locale</h1>
 
-To use this app:
-- MUST be on Android 13 or higher, there is no compatiblity with older Android versions.
-- MUST have Shizuku.
+<p align="center">
+  A Material 3 companion for viewing, managing, and preserving Android per-app locales
+</p>
 
-You can get this app at Releases section.
+<p align="center">
+  <img src="https://img.shields.io/badge/Android-13%2B-3DDC84?logo=android&amp;logoColor=white" alt="Android 13 or later">
+  <img src="https://img.shields.io/badge/version-27.0-4F6B00" alt="Version 27.0">
+  <img src="https://img.shields.io/badge/Kotlin-2.4.10-7F52FF?logo=kotlin&amp;logoColor=white" alt="Kotlin 2.4.10">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-AGPL--3.0--only-blue" alt="AGPL-3.0-only license"></a>
+</p>
 
-<div>
-<img src="https://raw.githubusercontent.com/VegaBobo/Language-Selector/main/other/preview_1.jpg" alt="preview" width="200"/>
-<img src="https://raw.githubusercontent.com/VegaBobo/Language-Selector/main/other/preview_2.jpg" alt="preview" width="200"/>
-</div>
+Fuyao Locale provides a focused interface for Android's per-app language capability on Android 13 and later. It is intended for devices whose firmware does not expose a suitable application-language manager, while also providing batch operations and reusable locale configurations that the system interface normally lacks.
 
-### Features
+The app does not translate other applications. It asks Android to apply a locale that the selected application already supports.
 
-- Set individual app languages
-- Allows selecting language from any app **
-- Quick change languages with QSTile
+Current release: **27.0** · Build **1A569** · Application ID **`ing.fuyaoskyrocket.applocale`**
 
-** Language Selector DOES NOT translate apps, it just specify a locale that will be used by application, if the desired language is supported by the app, it should be displayed as expected.
+## Project lineage
 
-** Please note that changing locale for unsupported applications and system apps may cause unexpected behavior and is NOT RECOMMENDED.
+Fuyao Locale is a substantial Kotlin and Jetpack Compose rewrite based on the concepts and functionality of [VegaBobo/Language-Selector](https://github.com/VegaBobo/Language-Selector). It preserves the original project's purpose—managing Android per-app locales through a privileged service—while replacing the product identity, architecture, interface, list pipeline, and configuration workflow.
 
-#### Language availability
+The original project remains credited in the app and this repository. Fuyao Locale is licensed as a whole under the [GNU Affero General Public License v3 only](LICENSE) (`AGPL-3.0-only`). Portions derived from Language Selector retain their Apache-2.0 notices; the upstream license is preserved at [LICENSES/Apache-2.0.txt](LICENSES/Apache-2.0.txt), with project lineage documented in [NOTICE](NOTICE).
 
-This app parses Locale (java.util.Locale) from Locale.getAvailableLocales(), consequently, numerous locales are present in the app, the language list is huge, if someone want to improve that, feel free to send a PR, because this way is pretty slow and languages aren't filtered accurately.
+## Features
 
-###  Usage
+### Application locale management
 
-Before using this app, you MUST install and start Shizuku, the way this app works makes Shizuku MANDATORY, after that, you should follow this steps:
+- View installed user and system applications with their application name, package name, modification state, and effective locale.
+- Resolve **System default** to the device's actual current locale instead of displaying an unspecified state.
+- Set a locale for one application or restore it to the system default.
+- Long-press applications to enter multi-selection mode, select all visible results, and apply one locale to the batch.
+- Open, force-stop, or open the system settings page for an application from its detail screen.
+- Refresh only affected rows after locale changes so the home list stays current.
 
-1. Install "Language Selector" (check Releases)
-2. Open, grant Shizuku permissions and tap on "Proceed"
-3. Choose a app you want to select it's language.
-4. Select any language from list
-5. That is it?
+### Search, filtering, and ordering
 
-#### Pinning languages
+- Search directly inside the primary application list by application name or package name.
+- Filter the list to applications with a non-default locale.
+- Show or hide system applications; system applications are shown by default.
+- Sort by application name, package name, locale, modification state, or application type, in ascending or descending order.
+- Pull to refresh the installed-application and locale snapshot.
 
-You can pin languages by long-pressing on desired language, pinned languages will appear at the top of the list and will also be available in the QS tile.
+### Language directory
 
-#### Quick tile
+- Build the locale directory at runtime from Android's `Locale.getAvailableLocales()` data.
+- Group locales by language and expose language, script, region, and script-region BCP 47 variants such as `zh`, `zh-CN`, `zh-Hans`, and `zh-Hans-CN` when supported by the system data.
+- Display names in both the current Fuyao Locale interface language and each language's autonym.
+- In the default order, keep the target app's effective language first and sort the remaining language groups by their names in the current Fuyao Locale interface language. System-default apps use the device's effective system locale.
+- Sort language groups by recommended order, interface-language name, autonym, language tag, or variant count. Sort locale variants and search results by recommended order, interface-language name, autonym, language tag, or tag specificity; both levels support ascending and descending order.
+- Show regional flags through the system emoji renderer, with complete two- or three-letter language/script markers as the fallback.
+- Search the locale directory, pin frequently used locales, and cycle pinned locales from the Quick Settings tile.
+- Keep the directory, search results, and opened variant group on independent scroll states; changing a sort order returns only the active list to its start.
 
-You can quick change current running app language by adding a QS tile, available tile languages are the pinned ones, if no pinned language is set, then tile will be marked as Unavailable, changing system apps language from QS is also not supported.
+The available locale catalog follows the Android runtime on the device. A future system update can therefore add or adjust locale data without requiring a bundled language database update in Fuyao Locale.
 
-### Background
+### Saved configurations
 
-I've made this app because MIUI doesn't seem to have app languages in Android 13 (at least on my device, running global MIUI 14/Android 13), by not having the feature, i mean, there is no option inside Settings app to change app languages individually, but since it is as Android 13 build,  there is a high change that locale service is still present, if so, we can use LocaleManager to do per-app basis locale operations.
+- Save the current set of applications with non-default locales as a reusable configuration.
+- Compare a configuration with the device before applying it. The difference view distinguishes changed locales, missing applications, and current modifications outside the saved configuration.
+- Apply, refresh, or delete a saved configuration.
+- Import and export the app's portable JSON configuration format through Android's standard system file picker.
+- Long-press a saved configuration to export it with the standard `CreateDocument` flow.
+- Use a dedicated detail route on compact screens and a list-detail layout on expanded screens.
 
-Locale manager can be acessible via ADB, using "cmd locale" command, since adb has the ability to change other app languages, i've decided to make my own "front-end" for managing application locales, so i can set languages and use this feature, even if there is no UI for app languages in stock Settings app yet.
+### Material 3 and adaptive behavior
 
-Since ADB is required to manage other application languages, this app uses Shizuku to interact with LocaleManager APIs at privileged level, that's why Shizuku is mandatory to use this app.
+- Native Material 3 screens, components, color roles, typography, and dynamic light/dark presentation.
+- Home, Configurations, and About destinations using bottom navigation on compact screens and a navigation rail on wider windows.
+- List-detail layouts for expanded windows, with width constraints for readable content.
+- Text-only page titles with navigation and contextual actions kept in their semantic top-app-bar slots.
+- A single keyed lazy list for application details and locale rows, with shared alignment tokens and automatic marquee behavior for overflowing labels.
+- Edge-to-edge drawing for gesture navigation, including HyperOS devices.
+- Predictive back handling for navigation, search, multi-selection, sheets, nested language groups, and wide-screen detail state.
+- Interface language selection for English, Simplified Chinese, Japanese, and Brazilian Portuguese.
 
-If your device is running Android 13 or higher, and your ROM doesn't include any option related to the app languages, this app may be useful.
+## Requirements
+
+- Android 13 (API 33) or later.
+- [Shizuku](https://shizuku.rikka.app/) installed, running, and authorized for Fuyao Locale. Shizuku is the currently supported user-facing privilege path.
+- A target application that actually supports the locale you choose.
+
+Changing a system application or selecting a locale unsupported by the target application may cause unexpected behavior. Fuyao Locale intentionally keeps system applications available, but shows a confirmation before batch operations that include them.
+
+## Usage
+
+1. Install and start Shizuku.
+2. Open Fuyao Locale and explicitly request Shizuku permission.
+3. Search, filter, or sort the application list to locate a target.
+4. Tap one application, then search or sort the language directory and choose a locale. Long-press applications on Home to apply one locale to a batch.
+5. Open **Configurations** to save the current modified-app snapshot, import a JSON configuration, inspect differences, or apply a saved configuration.
+6. Pin common locales in the language picker if you want to cycle them through the Quick Settings tile.
+
+Permission prompts are only launched from an explicit user action. Rotation and Fuyao Locale's own interface-language changes reuse the process cache and privileged connection instead of requesting permission or rescanning all applications again.
+
+## Configuration file format
+
+Imports and exports use the same portable JSON array. `localeTag` is a BCP 47 language tag, `createdAt` is a Unix timestamp in milliseconds, and matching configuration IDs replace older local copies when imported.
+
+~~~json
+[
+  {
+    "id": "example-configuration-id",
+    "createdAt": 1786608000000,
+    "entries": [
+      {
+        "packageName": "com.example.app",
+        "label": "Example App",
+        "localeTag": "zh-CN"
+      }
+    ]
+  }
+]
+~~~
+
+Each imported configuration must have a non-empty `id`, a positive `createdAt`, and at least one valid entry. Duplicate package entries within one configuration are collapsed by package name.
+
+## Build and install
+
+Use JDK 21 and an Android SDK containing Platform 37.
+
+~~~bash
+./gradlew :app:assembleRelease
+~~~
+
+The Release APK is written to:
+
+~~~text
+app/build/outputs/apk/release/app-release.apk
+~~~
+
+Install it on a connected device with:
+
+~~~bash
+adb install -r app/build/outputs/apk/release/app-release.apk
+~~~
+
+### Signing and build variants
+
+Copy `signing.properties.example` to the ignored project-root file `signing.properties`, then provide your own `storeFile`, `storePassword`, `keyAlias`, and `keyPassword`. When all four values are present, the canonical Release build uses that private key. Otherwise, it falls back to the local debug key only to keep local installation available; do not distribute that fallback artifact.
+
+| Variant | Application ID | App label | Task | Intended use |
+| :--- | :--- | :--- | :--- | :--- |
+| Release | `ing.fuyaoskyrocket.applocale` | Fuyao Locale | `:app:installRelease` | Canonical installable and publishable build when privately signed |
+| Release Unsigned | `ing.fuyaoskyrocket.applocale.unsigned` | Fuyao Locale Release Unsigned | `:app:assembleReleaseUnsigned` | Inspectable unsigned release output |
+| Debug | `ing.fuyaoskyrocket.applocale.debug` | Fuyao Locale Debug | `:app:installDebug` | Development installation |
+| Debug Unsigned | `ing.fuyaoskyrocket.applocale.debug.unsigned` | Fuyao Locale Debug Unsigned | `:app:assembleDebugUnsigned` | Inspectable unsigned development output |
+
+Unsigned APKs cannot be installed directly.
+
+## Technology
+
+| Area | Main technologies |
+| :--- | :---------------- |
+| Language and build | Kotlin 2.4.10, Java 21, AGP 9.2.1, KSP |
+| UI | Jetpack Compose, Material 3, Material 3 Adaptive, edge-to-edge system bars |
+| State and navigation | ViewModel, Kotlin Flow, Navigation Compose, predictive back |
+| Dependency injection | Hilt |
+| Privileged bridge | Shizuku user service, AIDL, hidden API stubs |
+| Local persistence | SharedPreferences-backed pinned locales and saved JSON configurations |
+
+## Architecture and performance
+
+~~~text
+PackageManager / Android locale services
+                  │
+                  ▼
+ PackageDataSource + PrivilegedLocaleDataSource
+                  │
+                  ▼
+ Repositories + focused application/configuration use cases
+                  │
+                  ▼
+       Hilt ViewModels + immutable UI state
+                  │
+                  ▼
+       Reusable Compose Material 3 components
+~~~
+
+The rewrite keeps privileged Binder operations outside composables. Installed applications are published before locale metadata, locale tags are fetched in one batch Binder call, and the completed snapshot is cached across Activity recreation. Search, filtering, and stable sorting run before keyed `LazyColumn` items are composed. Locale ordering is centralized in the shared picker and uses a locale-aware `Collator` for the current Fuyao Locale interface language. Application icons use a bounded memory cache, while locale changes update only affected rows.
+
+## Project layout
+
+~~~text
+app/
+├── src/main/aidl/           Privileged service contract
+├── src/main/java/.../
+│   ├── data/                Local stores, system data sources, repositories, use cases
+│   ├── model/               Immutable application, locale, query, and configuration models
+│   ├── service/             Privileged service bridge and AIDL implementation
+│   └── ui/                  Material 3 screens, reusable components, and design tokens
+└── src/main/res/            Localized strings, launcher assets, XML theme, and metadata
+hidden_api/                  Compile-only Android hidden API stubs
+gradle/                      Version catalog and Gradle Wrapper configuration
+signing.properties.example   Private-signing configuration template
+README.md                    English documentation
+README_ZH.md                 Simplified Chinese documentation
+CHANGELOG.md                 English release history
+CHANGELOG_ZH.md              Simplified Chinese release history
+LICENSE                      GNU AGPL v3 license text
+LICENSES/Apache-2.0.txt      Retained upstream Apache-2.0 license
+NOTICE                       Project lineage and modification notice
+~~~
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for the release-level differences from the original Language Selector baseline.
+
+## License
+
+Fuyao Locale is licensed under the [GNU Affero General Public License v3 only](LICENSE) (`AGPL-3.0-only`). Code derived from Language Selector remains subject to its retained Apache-2.0 notices; see [LICENSES/Apache-2.0.txt](LICENSES/Apache-2.0.txt) and [NOTICE](NOTICE).

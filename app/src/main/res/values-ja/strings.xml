@@ -1,31 +1,158 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">Language Selector</string>
     <string name="app_language">アプリの言語</string>
+    <string name="choose_app_language">アプリの表示言語を選択</string>
+    <string name="follow_system_language">システム設定に従う</string>
     <string name="system_default">システムのデフォルト</string>
-    <string name="user_languages">ユーザー言語:</string>
-    <string name="pinned">ピン留め:</string>
-    <string name="region">地域:</string>
-    <string name="all_languages">すべての言語:</string>
-    <string name="show_only_user_apps">ユーザーアプリのみを表示</string>
+    <string name="system_default_with_locale">システムのデフォルト · %1$s</string>
+    <string name="user_languages">ユーザーの言語</string>
+    <string name="pinned">ピン留め</string>
+    <string name="region">地域</string>
+    <string name="all_languages">すべての言語</string>
     <string name="show_system_apps">システムアプリを表示</string>
     <string name="settings">設定</string>
     <string name="open">開く</string>
-    <string name="close">閉じる</string>
-    <string name="permissions_required">必要な許可</string>
-    <string name="shizuku_required">このアプリにはShizukuが必要です。Shizukuをインストールしてから起動し、Shizukuにこのアプリへのアクセス許可を与えた後、次に進んでください。</string>
+    <string name="close">強制停止</string>
+    <string name="permissions_required">権限が必要です</string>
+    <string name="shizuku_required">Shizuku を起動してから権限をリクエストしてください。認証画面が表示されない場合は、Shizuku の「許可済みアプリ」から Fuyao Locale を許可してください。</string>
+    <string name="request_shizuku_permission">権限をリクエスト</string>
+    <string name="open_shizuku">Shizuku を開く</string>
     <string name="proceed">続行</string>
     <string name="pinned_ok">%1$s をピン留めしました</string>
     <string name="unpinned">%1$s のピン留めを解除しました</string>
-    <string name="about">About</string>
-    <string name="deps_libs">依存関係およびライブラリ:</string>
-    <string name="version">Version %1$s (%2$s)</string>
-    <string name="app">アプリケーション</string>
+    <string name="pin">ピン留め</string>
+    <string name="unpin">ピン留めを解除</string>
+    <string name="clear">クリア</string>
+    <string name="home">ホーム</string>
+    <string name="configurations">構成</string>
+    <string name="navigation_configurations">保存済み</string>
+    <string name="about">アプリについて</string>
+    <string name="deps_libs">依存関係とライブラリ</string>
+    <string name="version">バージョン %1$s（%2$s）</string>
+    <string name="app">アプリ</string>
     <string name="ghrepo">GitHub リポジトリ</string>
     <string name="view_source">ソースコードを表示</string>
+    <string name="project_repository">GitHub の Fuyao Locale</string>
+    <string name="original_project">元のプロジェクト</string>
+    <string name="original_project_summary">VegaBobo による Language Selector</string>
+    <string name="about_overview">概要</string>
+    <string name="about_summary">Fuyao Locale は、適切なシステム画面がない場合にアプリごとの言語を確認・管理できる Material 3 ツールです。</string>
+    <string name="about_features">主な機能</string>
+    <string name="about_feature_per_app">アプリごとの言語設定</string>
+    <string name="about_feature_per_app_summary">現在の言語を確認し、対応言語を設定するか、システムのデフォルトに戻せます。</string>
+    <string name="about_feature_batch">言語の一括設定</string>
+    <string name="about_feature_batch_summary">アプリを長押しして複数選択し、同じ言語をまとめて適用できます。</string>
+    <string name="about_feature_filters">検索とフィルター</string>
+    <string name="about_feature_filters_summary">アプリの検索、変更済み項目の絞り込み、並べ替え、システムアプリの表示切り替えに対応します。</string>
+    <string name="about_feature_quick_settings">クイック設定タイル</string>
+    <string name="about_feature_quick_settings_summary">よく使う言語をピン留めし、クイック設定タイルから順に切り替えられます。</string>
+    <string name="about_feature_adaptive">Material 3 とアダプティブレイアウト</string>
+    <string name="about_feature_adaptive_summary">ネイティブ Material 3 UI、スマートフォンの下部ナビゲーション、大画面のリストと詳細表示、エッジツーエッジ表示に対応します。</string>
+    <string name="about_requirements">動作要件</string>
+    <string name="about_requirement_android">Android 13（API 33）以降。</string>
+    <string name="about_requirement_shizuku">Shizuku をインストールして起動し、Fuyao Locale を許可する必要があります。</string>
+    <string name="about_usage_notes">使用上の注意</string>
+    <string name="about_usage_note">Fuyao Locale はアプリを翻訳しません。対象アプリがすでに対応している言語を適用するよう Android に要求します。システムアプリや未対応言語では想定外の動作が起こる場合があります。</string>
+    <string name="about_credits_license">クレジットとライセンス</string>
+    <string name="about_open_source">オープンソース</string>
+    <string name="about_credits">Fuyao Locale は、VegaBobo の Language Selector の考え方と機能を基に大幅に書き直したプロジェクトです。</string>
+    <string name="about_license">Fuyao Locale は GNU AGPL v3 only（AGPL-3.0-only）で提供されます。Language Selector に由来する部分には Apache License 2.0 の表示と帰属が引き続き適用されます。</string>
     <string name="loading">読み込み中…</string>
     <string name="unavailable">利用できません</string>
     <string name="warning">警告</string>
-    <string name="warning_system_apps">システムアプリから言語を選択することは推奨されていません。続行しますか？</string>
+    <string name="warning_system_apps">システムアプリの言語変更は推奨されません。続行しますか？</string>
     <string name="cancel">キャンセル</string>
+    <string name="search">アプリを検索</string>
+    <string name="search_languages">言語を検索</string>
+    <string name="language_search_results">検索結果</string>
+    <string name="no_language_results">一致する言語がありません</string>
+    <string name="locale_variant_count">%1$d 個の言語・地域バリエーション</string>
+    <string name="sort_recommended">おすすめ</string>
+    <string name="sort_by_interface_language_name">表示言語での名称</string>
+    <string name="sort_by_native_language_name">現地語名</string>
+    <string name="sort_by_language_tag">言語タグ</string>
+    <string name="sort_by_variant_count">バリエーション数</string>
+    <string name="sort_by_locale_specificity">ロケールタグの詳細度</string>
+
+    <!-- App list -->
+    <string name="system_app">システムアプリ</string>
+    <string name="user_app">ユーザーアプリ</string>
+    <string name="modified">変更済み</string>
+    <string name="not_modified">未変更</string>
+    <string name="modified_count">変更済み（%1$d）</string>
+    <string name="more">その他</string>
+    <string name="back">戻る</string>
+    <string name="no_results">アプリが見つかりません</string>
+    <string name="no_results_description">検索内容またはフィルターを調整してください。</string>
+    <string name="clear_filters">フィルターをクリア</string>
+    <string name="sort_by_app_name">アプリ名</string>
+    <string name="sort_by_package_name">パッケージ名</string>
+    <string name="sort_by_language">言語</string>
+    <string name="sort_by_modified">変更状態</string>
+    <string name="sort_by_app_type">アプリの種類</string>
+    <string name="toggle_sort_direction">並び順を反転</string>
+
+    <!-- Selection mode -->
+    <string name="exit_selection">選択を終了</string>
+    <string name="selected_count">%1$d 件選択中</string>
+    <string name="select_all">すべて選択</string>
+    <string name="clear_selection">選択をクリア</string>
+    <string name="set_language">言語を設定</string>
+    <string name="set_language_for_n">%1$d 個のアプリに言語を設定</string>
+    <string name="batch_success">%1$d 個のアプリの言語を設定しました</string>
+    <string name="batch_partial">成功：%1$d、失敗：%2$d</string>
+    <string name="select_language">言語を選択</string>
+
+    <!-- Large screen -->
+    <string name="select_an_app">アプリを選択</string>
+    <string name="select_an_app_description">言語を設定するアプリを選択してください。</string>
+
+    <!-- App detail -->
+    <string name="current_language">現在の言語</string>
+    <string name="reset_to_system_default">システムのデフォルトに戻す</string>
+    <string name="app_language_section">アプリの言語</string>
+
+    <!-- Saved configurations -->
+    <string name="save_current_changes">現在の変更を保存</string>
+    <string name="save_current_changes_description">現在カスタム言語を使用しているすべてのアプリを保存します。後で保存済みの構成を開き、差分を確認して適用できます。</string>
+    <string name="import_configuration">構成をインポート</string>
+    <string name="import_configuration_description">ローカルストレージから Fuyao Locale の JSON 構成をインポートします。</string>
+    <string name="saved_configurations">保存済みの構成</string>
+    <string name="saved_configuration">保存済みの構成</string>
+    <string name="configuration_saved_at">保存日時：%1$s</string>
+    <string name="configuration_app_count">%1$d 個のアプリ</string>
+    <string name="delete_configuration">構成を削除</string>
+    <string name="no_saved_configurations">保存済みの構成はありません</string>
+    <string name="no_saved_configurations_description">現在変更されているアプリを保存すると、後で差分を確認して同じ設定を復元できます。</string>
+    <string name="no_modified_apps_to_save">保存できる変更済みアプリはありません。</string>
+    <string name="configuration_saved">%1$d 個のアプリを含む構成を保存しました</string>
+    <string name="configuration_imported">%1$d 件の構成をインポートしました</string>
+    <string name="configuration_imported_with_replacements">%1$d 件の構成をインポートし、一致するローカル構成 %2$d 件を置き換えました</string>
+    <string name="configuration_import_invalid">このファイルは有効な Fuyao Locale 構成ではありません。</string>
+    <string name="configuration_applied">%1$d 個のアプリに構成を適用しました</string>
+    <string name="configuration_apply_partial">%1$d 個のアプリに適用し、%2$d 個は失敗しました</string>
+    <string name="configuration_deleted">構成を削除しました</string>
+    <string name="configuration_exported">構成をエクスポートしました</string>
+    <string name="configuration_export_failed">構成をエクスポートできませんでした。</string>
+    <string name="configuration_operation_failed">構成の操作を完了できませんでした。</string>
+    <string name="configuration_details">構成の詳細</string>
+    <string name="configuration_differences">差分（%1$d）</string>
+    <string name="configuration_difference_description">この構成を適用する前に、現在の端末と異なる項目を確認してください。</string>
+    <string name="configuration_no_differences">差分はありません</string>
+    <string name="configuration_no_differences_description">この構成は現在の端末と一致しています。</string>
+    <string name="apply_configuration">構成を適用</string>
+    <string name="refresh">更新</string>
+    <string name="difference_needs_apply">更新予定</string>
+    <string name="difference_missing_app">未インストール</string>
+    <string name="difference_current_only">この構成に含まれていません</string>
+    <string name="difference_current_short">現在</string>
+    <string name="difference_saved_short">適用後</string>
+    <string name="difference_current">現在：%1$s</string>
+    <string name="difference_saved">保存済み：%1$s</string>
+    <string name="no_configuration_selected">構成を選択</string>
+    <string name="no_configuration_selected_description">保存済みの構成を選択して差分を確認してください。</string>
+
+    <!-- Privileged service state -->
+    <string name="connecting_to_shizuku">Shizuku に接続中</string>
+    <string name="connecting_to_shizuku_description">権限は許可済みです。特権サービスの再接続を待っています。</string>
 </resources>

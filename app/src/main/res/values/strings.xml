@@ -1,32 +1,164 @@
 <resources>
-    <string name="app_name" translatable="false">Language Selector</string>
+    <string name="app_name" translatable="false">Fuyao Locale</string>
     <string name="app_language">App language</string>
+    <string name="choose_app_language">Choose app language</string>
+    <string name="follow_system_language">Follow system</string>
+    <!-- Language autonyms stay identical in every app language. -->
+    <string name="language_simplified_chinese" translatable="false">简体中文</string>
+    <string name="language_english" translatable="false">English</string>
+    <string name="language_japanese" translatable="false">日本語</string>
+    <string name="language_portuguese_brazil" translatable="false">Português (Brasil)</string>
     <string name="system_default">System default</string>
-    <string name="user_languages">User languages:</string>
-    <string name="pinned">Pinned:</string>
-    <string name="region">Region:</string>
-    <string name="all_languages">All languages:</string>
-    <string name="show_only_user_apps">Show only user apps</string>
+    <string name="system_default_with_locale">System default · %1$s</string>
+    <string name="user_languages">User languages</string>
+    <string name="pinned">Pinned</string>
+    <string name="region">Region</string>
+    <string name="all_languages">All languages</string>
     <string name="show_system_apps">Show system apps</string>
     <string name="settings">Settings</string>
     <string name="open">Open</string>
-    <string name="close">Close</string>
+    <string name="close">Force stop</string>
     <string name="permissions_required">Permissions required</string>
-    <string name="shizuku_required">This app requires Shizuku, please install and start Shizuku, after granting Shizuku permissions to this app, you can proceed.</string>
+    <string name="shizuku_required">Start Shizuku, then request permission. If the authorization prompt does not appear, open Shizuku and grant Fuyao Locale from Authorized apps.</string>
+    <string name="request_shizuku_permission">Request permission</string>
+    <string name="open_shizuku">Open Shizuku</string>
     <string name="proceed">Proceed</string>
     <string name="pinned_ok">%1$s pinned</string>
     <string name="unpinned">%1$s unpinned</string>
+    <string name="pin">Pin</string>
+    <string name="unpin">Unpin</string>
+    <string name="clear">Clear</string>
+    <string name="home">Home</string>
+    <string name="configurations">Configurations</string>
+    <string name="navigation_configurations">Saved</string>
     <string name="about">About</string>
-    <string name="deps_libs">Dependencies and libraries:</string>
+    <string name="deps_libs">Dependencies and libraries</string>
     <string name="version">version %1$s (%2$s)</string>
     <string name="app">Application</string>
     <string name="ghrepo">GitHub repo</string>
     <string name="view_source">View source code</string>
+    <string name="project_repository">Fuyao Locale on GitHub</string>
+    <string name="project_repository_summary" translatable="false">skyrocketingHong/FuyaoLocale</string>
+    <string name="original_project">Original project</string>
+    <string name="original_project_summary">Language Selector by VegaBobo</string>
+    <string name="about_overview">Overview</string>
+    <string name="about_summary">Fuyao Locale is a Material 3 tool for viewing and managing per-app locales when a suitable system interface is unavailable.</string>
+    <string name="about_features">Highlights</string>
+    <string name="about_feature_per_app">Per-app locale controls</string>
+    <string name="about_feature_per_app_summary">View the current locale, set a supported locale, or reset it to the system default.</string>
+    <string name="about_feature_batch">Batch language setting</string>
+    <string name="about_feature_batch_summary">Long-press apps to enter selection mode, then apply one locale to multiple apps.</string>
+    <string name="about_feature_filters">Search and filters</string>
+    <string name="about_feature_filters_summary">Search apps, show only modified entries, choose a sort order, and show or hide system apps.</string>
+    <string name="about_feature_quick_settings">Quick Settings tile</string>
+    <string name="about_feature_quick_settings_summary">Pin frequently used locales and cycle them from the system Quick Settings tile.</string>
+    <string name="about_feature_adaptive">Material 3 and adaptive layout</string>
+    <string name="about_feature_adaptive_summary">Native Material 3 UI with phone bottom navigation, large-screen list-detail layout, and edge-to-edge system bars.</string>
+    <string name="about_requirements">Requirements</string>
+    <string name="about_requirement_android">Android 13 (API 33) or later.</string>
+    <string name="about_requirement_shizuku">Shizuku must be installed, running, and authorized for Fuyao Locale.</string>
+    <string name="about_usage_notes">Usage notes</string>
+    <string name="about_usage_note">Fuyao Locale does not translate apps. It asks Android to apply a locale already supported by the selected app. System apps and unsupported locales may behave unexpectedly.</string>
+    <string name="about_credits_license">Credits and license</string>
+    <string name="about_open_source">Open source</string>
+    <string name="about_credits">Fuyao Locale is a substantial rewrite built from concepts and functionality of Language Selector by VegaBobo.</string>
+    <string name="about_license">Fuyao Locale is licensed under GNU AGPL v3 only (AGPL-3.0-only). Portions derived from Language Selector retain their Apache License 2.0 notices.</string>
     <string name="loading">Loading…</string>
     <string name="unavailable">Unavailable</string>
     <string name="warning">Warning</string>
     <string name="warning_system_apps">Selecting language from system apps is not recommended, are you sure?</string>
     <string name="cancel">Cancel</string>
-
     <string name="search">Search apps</string>
+    <string name="search_languages">Search languages</string>
+    <string name="language_search_results">Search results</string>
+    <string name="no_language_results">No matching languages</string>
+    <string name="locale_variant_count">%1$d locale variants</string>
+    <string name="sort_recommended">Recommended</string>
+    <string name="sort_by_interface_language_name">Name in interface language</string>
+    <string name="sort_by_native_language_name">Native name</string>
+    <string name="sort_by_language_tag">Language tag</string>
+    <string name="sort_by_variant_count">Variant count</string>
+    <string name="sort_by_locale_specificity">Locale specificity</string>
+
+    <!-- App list -->
+    <string name="system_app">System App</string>
+    <string name="user_app">User App</string>
+    <string name="modified">Modified</string>
+    <string name="not_modified">Not modified</string>
+    <string name="modified_count">Modified (%1$d)</string>
+    <string name="more">More</string>
+    <string name="back">Back</string>
+    <string name="no_results">No apps found</string>
+    <string name="no_results_description">Try adjusting your search or filters.</string>
+    <string name="clear_filters">Clear filters</string>
+    <string name="sort_by_app_name">App name</string>
+    <string name="sort_by_package_name">Package name</string>
+    <string name="sort_by_language">Language</string>
+    <string name="sort_by_modified">Modified status</string>
+    <string name="sort_by_app_type">App type</string>
+    <string name="toggle_sort_direction">Reverse sort order</string>
+
+    <!-- Selection mode -->
+    <string name="exit_selection">Exit selection</string>
+    <string name="selected_count">%1$d selected</string>
+    <string name="select_all">Select all</string>
+    <string name="clear_selection">Clear selection</string>
+    <string name="set_language">Set language</string>
+    <string name="set_language_for_n">Set language for %1$d apps</string>
+    <string name="batch_success">Successfully set language for %1$d apps</string>
+    <string name="batch_partial">Success: %1$d, Failed: %2$d</string>
+    <string name="select_language">Select language</string>
+
+    <!-- Large screen -->
+    <string name="select_an_app">Select an app</string>
+    <string name="select_an_app_description">Choose an app to set its language.</string>
+
+    <!-- App detail -->
+    <string name="current_language">Current language</string>
+    <string name="reset_to_system_default">Reset to system default</string>
+    <string name="app_language_section">App language</string>
+
+    <!-- Saved configurations -->
+    <string name="save_current_changes">Save current changes</string>
+    <string name="save_current_changes_description">Save every app that currently uses a custom language. Open a saved configuration later to review differences and apply it.</string>
+    <string name="import_configuration">Import configuration</string>
+    <string name="import_configuration_description">Import a Fuyao Locale JSON configuration from local storage.</string>
+    <string name="saved_configurations">Saved configurations</string>
+    <string name="saved_configuration">Saved configuration</string>
+    <string name="configuration_saved_at">Saved %1$s</string>
+    <string name="configuration_app_count">%1$d apps</string>
+    <string name="delete_configuration">Delete configuration</string>
+    <string name="no_saved_configurations">No saved configurations</string>
+    <string name="no_saved_configurations_description">Save the current modified apps here, then review and restore the same set when needed.</string>
+    <string name="no_modified_apps_to_save">There are no modified apps to save.</string>
+    <string name="configuration_saved">Saved configuration with %1$d apps</string>
+    <string name="configuration_imported">Imported %1$d configuration(s)</string>
+    <string name="configuration_imported_with_replacements">Imported %1$d configuration(s); replaced %2$d matching local configuration(s)</string>
+    <string name="configuration_import_invalid">This file is not a valid Fuyao Locale configuration.</string>
+    <string name="configuration_applied">Applied configuration to %1$d apps</string>
+    <string name="configuration_apply_partial">Applied to %1$d apps; %2$d failed</string>
+    <string name="configuration_deleted">Configuration deleted</string>
+    <string name="configuration_exported">Configuration exported</string>
+    <string name="configuration_export_failed">Couldn’t export the configuration.</string>
+    <string name="configuration_operation_failed">Couldn’t complete the configuration operation.</string>
+    <string name="configuration_details">Configuration details</string>
+    <string name="configuration_differences">Differences (%1$d)</string>
+    <string name="configuration_difference_description">Review the entries that differ from the current device before applying this configuration.</string>
+    <string name="configuration_no_differences">No differences</string>
+    <string name="configuration_no_differences_description">This configuration already matches the current device.</string>
+    <string name="apply_configuration">Apply configuration</string>
+    <string name="refresh">Refresh</string>
+    <string name="difference_needs_apply">Will update</string>
+    <string name="difference_missing_app">Not installed</string>
+    <string name="difference_current_only">Not in this configuration</string>
+    <string name="difference_current_short">Current</string>
+    <string name="difference_saved_short">Target</string>
+    <string name="difference_current">Current: %1$s</string>
+    <string name="difference_saved">Saved: %1$s</string>
+    <string name="no_configuration_selected">Select a configuration</string>
+    <string name="no_configuration_selected_description">Choose a saved configuration to review its differences.</string>
+
+    <!-- Privileged service state -->
+    <string name="connecting_to_shizuku">Connecting to Shizuku</string>
+    <string name="connecting_to_shizuku_description">Permission is already granted. Waiting for the privileged service to reconnect.</string>
 </resources>

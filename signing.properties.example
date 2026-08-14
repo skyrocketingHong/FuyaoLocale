@@ -1,0 +1,7 @@
+# Copy this file to signing.properties to sign the normal release variant privately.
+# signing.properties and all local keystores are ignored by Git.
+# Relative storeFile paths are resolved from the project root.
+storeFile=/absolute/path/to/fuyao-locale-release.jks
+storePassword=replace-with-store-password
+keyAlias=replace-with-key-alias
+keyPassword=replace-with-key-password

@@ -1,16 +1,36 @@
+# IDE and local build state
 *.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
+/.gradle/
+/.idea/
+/.kotlin/
 .DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
-local.properties
-.idea/
+/gradle/gradle-daemon-jvm.properties
+
+# Android SDK and local signing credentials
+/local.properties
+/signing.properties
+/keystore.properties
+/key.properties
+*.jks
+*.keystore
+*.p12
+*.pfx
+*.pem
+*.der
+.env
+.env.*
+
+# Generated artifacts
+/build/
+/app/build/
+/hidden_api/build/
+/captures/
+/.externalNativeBuild/
+/.cxx/
+*.apk
+*.aab
+*.apks
+
+# User-exported locale configurations may reveal installed applications.
+/configurations/*.fuyao-locale.json
+!/configurations/*.example.fuyao-locale.json

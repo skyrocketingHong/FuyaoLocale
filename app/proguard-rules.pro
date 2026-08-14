@@ -1,4 +1,15 @@
 -dontobfuscate
+
+# Shizuku starts this service by the class name carried in UserServiceArgs.
+# It is not declared in the manifest, so R8 cannot infer the reflective entry point.
+-keep class ing.fuyaoskyrocket.applocale.service.UserService {
+    <init>();
+    *;
+}
+
+# Keep the AIDL contract used across the Shizuku user-service Binder boundary.
+-keep class ing.fuyaoskyrocket.applocale.IUserService { *; }
+-keep class ing.fuyaoskyrocket.applocale.IUserService$* { *; }
 # Add project specific ProGuard rules here.
 # You can control the set of applied configuration files using the
 # proguardFiles setting in build.gradle.

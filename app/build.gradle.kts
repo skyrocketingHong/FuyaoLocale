@@ -1,32 +1,58 @@
+import java.util.Properties
+
 plugins {
-    alias(libs.plugins.com.android.application)
-    alias(libs.plugins.org.jetbrains.kotlin.android)
-    alias(libs.plugins.com.google.dagger.hilt)
-    alias(libs.plugins.com.mikepenz.aboutlibraries)
+    alias(libs.plugins.agp.application)
     alias(libs.plugins.compose.compiler)
-    alias(libs.plugins.com.google.devtools.ksp)
+    alias(libs.plugins.hilt)
+    alias(libs.plugins.ksp)
 }
 
+private val signingProperties = Properties()
+private val signingPropertiesFile = rootProject.file("signing.properties")
+private val hasPrivateSigningProperties = signingPropertiesFile.isFile && runCatching {
+    signingPropertiesFile.inputStream().use(signingProperties::load)
+    listOf("storeFile", "storePassword", "keyAlias", "keyPassword")
+        .all { signingProperties.getProperty(it)?.isNotBlank() == true }
+}.getOrDefault(false)
+
 android {
-    namespace = "vegabobo.languageselector"
-    compileSdk = 35
+    namespace = "ing.fuyaoskyrocket.applocale"
+    compileSdk = 37
 
     defaultConfig {
-        applicationId = "vegabobo.languageselector"
+        applicationId = "ing.fuyaoskyrocket.applocale"
         minSdk = 33
-        targetSdk = 35
-        versionCode = 5
-        versionName = "1.04"
+        targetSdk = 37
+        versionCode = 1
+        versionName = "27.0"
+        buildConfigField("String", "BUILD_NUMBER", "\"1A569\"")
+        manifestPlaceholders["appLabel"] = "Fuyao Locale"
+    }
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary = true
+    val releaseSigningConfig = if (hasPrivateSigningProperties) {
+        signingConfigs.create("privateRelease") {
+            storeFile = rootProject.file(signingProperties.getProperty("storeFile"))
+            storePassword = signingProperties.getProperty("storePassword")
+            keyAlias = signingProperties.getProperty("keyAlias")
+            keyPassword = signingProperties.getProperty("keyPassword")
         }
+    } else {
+        // Match Fuyao Color: keep Release locally installable until the private
+        // signing properties are present, then prefer the private key automatically.
+        signingConfigs.getByName("debug")
     }
 
     buildTypes {
-        release {
+        getByName("debug") {
+            applicationIdSuffix = ".debug"
+            versionNameSuffix = "-debug"
             signingConfig = signingConfigs.getByName("debug")
+            manifestPlaceholders["appLabel"] = "Fuyao Locale Debug"
+        }
+
+        getByName("release") {
+            // Preserve the publication id and name.
+            signingConfig = releaseSigningConfig
             isMinifyEnabled = true
             isShrinkResources = true
             proguardFiles(
@@ -34,13 +60,26 @@ android {
                 "proguard-rules.pro"
             )
         }
+
+        create("debugUnsigned") {
+            isDebuggable = true
+            signingConfig = null
+            applicationIdSuffix = ".debug.unsigned"
+            versionNameSuffix = "-debug-unsigned"
+            manifestPlaceholders["appLabel"] = "Fuyao Locale Debug Unsigned"
+        }
+
+        create("releaseUnsigned") {
+            initWith(getByName("release"))
+            signingConfig = null
+            applicationIdSuffix = ".unsigned"
+            versionNameSuffix = "-unsigned"
+            manifestPlaceholders["appLabel"] = "Fuyao Locale Release Unsigned"
+        }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_21
         targetCompatibility = JavaVersion.VERSION_21
-    }
-    kotlinOptions {
-        jvmTarget = "21"
     }
     buildFeatures {
         buildConfig = true
@@ -54,44 +93,39 @@ android {
     }
 }
 
-aboutLibraries {
-    excludeFields = arrayOf("generated")
-}
-
 dependencies {
     debugImplementation(libs.ui.tooling)
-    debugImplementation(libs.ui.test.manifest)
 
     implementation(libs.libsu.core)
     implementation(libs.libsu.service)
 
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)
+    implementation(libs.lifecycle.runtime.compose)
     implementation(libs.activity.compose)
     implementation(platform(libs.compose.bom))
     implementation(libs.ui)
     implementation(libs.ui.graphics)
     implementation(libs.ui.tooling.preview)
-    implementation(libs.material)
     implementation(libs.material3)
+    implementation(libs.material.icons.extended)
 
-    implementation(libs.androidx.hilt.navigation.compose)
-    implementation(libs.androidx.navigation.compose)
-    implementation(libs.androidx.material.icons.extended)
-    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    // Material 3 Adaptive window information
+    implementation(libs.adaptive)
+
+    // Material Components (XML theme parent)
+    implementation(libs.material)
+
+    implementation(libs.navigation.compose)
+    implementation(libs.hilt.navigation.compose)
 
     implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)
-
-    implementation(libs.aboutlibraries.core)
 
     implementation(libs.shizuku.api)
     implementation(libs.shizuku.provider)
 
     implementation(libs.hiddenapibypass)
-
-    implementation(libs.androidx.room.runtime)
-    ksp(libs.androidx.room.compiler)
 
     compileOnly(project(":hidden_api"))
 }
