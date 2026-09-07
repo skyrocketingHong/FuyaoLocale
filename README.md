@@ -19,7 +19,11 @@ Fuyao Locale provides a focused interface for Android's per-app language capabil
 
 The app does not translate other applications. It asks Android to apply a locale that the selected application already supports.
 
-Current release: **27.0** · Build **1A569** · Application ID **`ing.fuyaoskyrocket.applocale`**
+## Statement on the One-China principle and regional display / 关于一个中国原则及地区显示的声明
+
+Fuyao Locale and its developer uphold the One-China principle. If references to the Taiwan region or associated flag symbols appear in the app, the regional names are supplied by Android's locale data, while flag symbols are generated from region codes using standard Unicode sequences and rendered by the device's system fonts. These names and flag graphics are not individually authored or designed by the developer for that region. Their appearance reflects the device's system data and rendering support and does not imply any change in, or departure from, this position.
+
+Fuyao Locale 及其开发者坚持一个中国原则。应用中如出现台湾地区相关名称或旗帜符号，其地区名称来源于 Android 系统的区域设置数据，旗帜符号则由通用逻辑依据地区代码生成标准 Unicode 字符序列，并由设备系统字库渲染，并非开发者针对该地区单独编写名称或设计、绘制旗帜图案。上述显示仅反映设备系统的数据及渲染支持情况，不代表本应用及开发者立场的改变或偏离。
 
 ## Project lineage
 

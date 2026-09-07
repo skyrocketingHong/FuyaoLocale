@@ -4,6 +4,37 @@ English | [简体中文](./CHANGELOG_ZH.md)
 
 Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 27.1 (2026-09-07)
+
+### Added
+
+- Added a System languages destination for viewing, adding, removing, reordering, and saving the device's global language list. Changes remain local to the editor until saved, and at least one language must remain.
+- Added a native miuix interface alongside Material You, with separate theme backends and shared semantic colors, typography, and components.
+- Added independent options for blurred top/bottom bars and a floating Liquid Glass bottom navigation bar.
+- Added double-tap-to-top for the four bottom navigation tabs, including the glass bar, plus keyboard and accessibility equivalents. Scrolling does not refresh data or clear page state.
+- Added per-application language changes from configuration details. A successful change automatically saves a new configuration while preserving the original; saving can be retried separately if the language changed but persistence failed.
+- Added explicit System default targets to configurations, distinct from applications that a configuration does not manage. Version 2 JSON import/export preserves this distinction and accepts valid older configurations.
+- Added focused JVM tests for tab double-tap detection, configuration comparison and copying, JSON compatibility, and configuration-edit failure recovery.
+
+### Changed
+
+- Consolidated the language directory across application details, batch operations, system-language editing, and configuration editing, with independent scroll state and predictive back transitions for nested language groups.
+- Moved application actions and language search to the detail toolbar; the app icon and name appear in the title as the identity header scrolls out of view.
+- Reworked application and language sort controls into a single row of chips that cycle through ascending, descending, and inactive states.
+- Unified continuous-list alignment across compact and expanded layouts. Language and configuration selection backgrounds extend into the outer margin while foreground content retains its existing alignment.
+- Replaced nested configuration-detail cards with compact summary actions and continuous application rows, including applications outside the saved configuration.
+- Reorganized About into identity and introduction, app language, theme, core features, the regional-display statement, this project, and combined credits and references. The app-language sheet now uses the shared locale badges and choice rows.
+- Added the One-China principle and regional-display statement to About and the bilingual READMEs.
+- Replaced the fixed build identifier with an invocation-based `1B` sequence shared by all variants. Android version codes combine the marketing-version base with a sequence padded to at least three digits; unsigned variants retain their matching build-type fallbacks.
+
+### Fixed
+
+- Seeded the locale directory with the device's configured system languages so exact tags omitted from its runtime catalog can remain selectable.
+- Removed duplicated horizontal sheet insets and corrected language-row spacing between selection backgrounds, badges, and trailing controls.
+- Changed bottom-dock dismissal to slide downward and retain its glass backdrop until the exit finishes, avoiding a switch to the standard bar during dismissal.
+- Prevented outgoing language-group content from accepting stale pointer, keyboard, or accessibility actions during transitions.
+- Separated configuration application failures, uncertain results, and save failures, with pending-operation recovery and fixed-ID saves to avoid duplicate application or duplicate configurations on retry.
+
 ## 27.0 (2026-08-14)
 
 Fuyao Locale is a substantial rewrite of the original Language Selector 1.04 baseline, preserving Android per-app locale management while rebuilding the product, architecture, and interface around current Android and Material 3 capabilities.
