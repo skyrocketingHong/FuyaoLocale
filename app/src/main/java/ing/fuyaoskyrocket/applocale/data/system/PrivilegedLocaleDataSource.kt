@@ -27,6 +27,10 @@ class PrivilegedLocaleDataSource @Inject constructor(
     suspend fun getSystemLocales(): LocaleList =
         service().systemLocales
 
+    suspend fun setSystemLocales(locales: LocaleList) {
+        service().setSystemLocales(locales)
+    }
+
     /**
      * Batch: returns the language tag for each package (empty = system default).
      * Single Binder round-trip.

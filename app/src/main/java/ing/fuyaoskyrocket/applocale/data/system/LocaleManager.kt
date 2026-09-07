@@ -22,17 +22,26 @@ class LocaleManager @Inject constructor(
     private val application: Application,
 ) {
 
-    private val localeVariants: List<Locale> by lazy { buildLocaleVariants() }
+    private val runtimeLocaleVariants: List<Locale> by lazy { buildLocaleVariants() }
     private var cachedDisplayLocaleTag: String? = null
+    private var cachedSystemLocaleTags: List<String> = emptyList()
     private var cachedLocaleGroups: List<LocaleGroup> = emptyList()
 
     @Synchronized
-    fun getLocaleGroups(): List<LocaleGroup> {
+    fun getLocaleGroups(systemLocales: List<Locale> = emptyList()): List<LocaleGroup> {
         val displayLocale = currentDisplayLocale()
         val displayLocaleTag = displayLocale.toLanguageTag()
-        if (displayLocaleTag != cachedDisplayLocaleTag) {
-            cachedLocaleGroups = buildLocaleGroups(displayLocale)
+        val systemLocaleTags = systemLocales.map(Locale::toLanguageTag)
+        if (
+            displayLocaleTag != cachedDisplayLocaleTag ||
+            systemLocaleTags != cachedSystemLocaleTags
+        ) {
+            cachedLocaleGroups = buildLocaleGroups(
+                displayLocale = displayLocale,
+                systemLocales = systemLocales,
+            )
             cachedDisplayLocaleTag = displayLocaleTag
+            cachedSystemLocaleTags = systemLocaleTags
         }
         return cachedLocaleGroups
     }
@@ -59,8 +68,11 @@ class LocaleManager @Inject constructor(
         return localesByTag.values.toList()
     }
 
-    private fun buildLocaleGroups(displayLocale: Locale): List<LocaleGroup> =
-        localeVariants
+    private fun buildLocaleGroups(
+        displayLocale: Locale,
+        systemLocales: List<Locale>,
+    ): List<LocaleGroup> =
+        prioritizedLocaleVariants(systemLocales)
             .groupBy { it.language.lowercase(Locale.ROOT) }
             .map { (languageId, locales) ->
                 val options = locales
@@ -81,6 +93,19 @@ class LocaleManager @Inject constructor(
                 )
             }
             .sortedBy { it.language.lowercase(Locale.ROOT) }
+
+    /**
+     * System Settings can expose a supported locale that [Locale.getAvailableLocales] omits
+     * (for example `zh-CN` on some HyperOS builds). Seed the shared directory with the ordered
+     * system list before the runtime locale inventory so those exact tags remain selectable.
+     */
+    private fun prioritizedLocaleVariants(systemLocales: List<Locale>): List<Locale> {
+        val localesByTag = linkedMapOf<String, Locale>()
+        (systemLocales.asSequence() + runtimeLocaleVariants.asSequence())
+            .flatMap { locale -> locale.expandedVariants() }
+            .forEach { locale -> localesByTag.putIfAbsent(locale.toLanguageTag(), locale) }
+        return localesByTag.values.toList()
+    }
 
     /**
      * Android's locale directory often exposes only the maximized script form of a locale,

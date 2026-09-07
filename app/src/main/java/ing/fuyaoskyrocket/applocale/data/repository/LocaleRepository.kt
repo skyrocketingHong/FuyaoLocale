@@ -19,8 +19,15 @@ class LocaleRepository @Inject constructor(
     private val appRepository: AppRepository,
 ) {
     /** Full directory of all available locales, grouped by language. */
-    suspend fun getAllLocaleGroups(): List<LocaleGroup> = withContext(Dispatchers.Default) {
-        localeManager.getLocaleGroups()
+    suspend fun getAllLocaleGroups(): List<LocaleGroup> {
+        val systemLocales = withContext(Dispatchers.IO) {
+            localeDataSource.getSystemLocales()
+        }
+        return withContext(Dispatchers.Default) {
+            localeManager.getLocaleGroups(
+                systemLocales = (0 until systemLocales.size()).map(systemLocales::get),
+            )
+        }
     }
 
     fun currentDisplayLocaleTag(): String = localeManager.currentDisplayLocaleTag()
@@ -36,6 +43,15 @@ class LocaleRepository @Inject constructor(
             (0 until systemLocales.size()).map { i ->
                 localeManager.toOption(systemLocales[i])
             }
+        }
+
+    /** Writes the non-empty, user-ordered global locale list through the privileged service. */
+    suspend fun setSystemLocaleOptions(locales: List<LocaleOption>) =
+        withContext(Dispatchers.IO) {
+            require(locales.isNotEmpty()) { "System locale list must not be empty" }
+            localeDataSource.setSystemLocales(
+                android.os.LocaleList(*locales.map { Locale.forLanguageTag(it.languageTag) }.toTypedArray()),
+            )
         }
 
     /** Persisted pinned locales (tags only, display names generated at runtime). */

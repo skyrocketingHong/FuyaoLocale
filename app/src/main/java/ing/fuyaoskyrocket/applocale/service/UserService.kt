@@ -65,8 +65,35 @@ class UserService : IUserService.Stub() {
     }
 
     override fun getSystemLocales(): LocaleList {
-        requiresLocaleManager()
-        return LOCALE_MANAGER!!.systemLocales
+        requiresActivityManager()
+        return ACTIVITY_MANAGER!!.configuration.locales
+    }
+
+    /**
+     * Persists the user-ordered device locale list through ActivityManager, which is the same
+     * system configuration path used by Android's locale settings. The service runs with the
+     * already-authorized Shizuku or root identity, so no app-process permission grant is needed.
+     */
+    override fun setSystemLocales(locales: LocaleList?) {
+        require(locales != null && !locales.isEmpty) { "System locale list must not be empty" }
+        requiresActivityManager()
+        val configuration = ACTIVITY_MANAGER!!.configuration
+        configuration.setLocales(locales)
+        runCatching {
+            configuration.javaClass.getField("userSetLocale").setBoolean(configuration, true)
+        }.onFailure { error ->
+            Log.w(BuildConfig.APPLICATION_ID, "Unable to mark the locale as user-selected", error)
+        }
+
+        try {
+            ACTIVITY_MANAGER!!.updatePersistentConfigurationWithAttribution(
+                configuration,
+                BuildConfig.APPLICATION_ID,
+                null,
+            )
+        } catch (_: NoSuchMethodError) {
+            ACTIVITY_MANAGER!!.updatePersistentConfiguration(configuration)
+        }
     }
 
     /**
