@@ -8,12 +8,18 @@ navigation-compose = "2.9.8"
 hilt = "2.60.1"
 hilt-navigation-compose = "1.3.0"
 core-ktx = "1.16.0"
-activity-compose = "1.11.0"
+activity-compose = "1.13.0"
 material = "1.13.0"
 material3-adaptive = "1.2.0"
 shizuku = "13.1.5"
 libsu = "6.0.0"
 hiddenapibypass = "4.3"
+miuix = "0.9.3"
+
+# Unit tests (round-8 039)
+junit = "4.13.2"
+kotlinx-coroutines = "1.10.2"
+json = "20240303"
 
 [libraries]
 # Compose (versions managed by BOM)
@@ -53,6 +59,17 @@ libsu-service = { group = "com.github.topjohnwu.libsu", name = "service", versio
 
 # HiddenApiBypass
 hiddenapibypass = { group = "org.lsposed.hiddenapibypass", name = "hiddenapibypass", version.ref = "hiddenapibypass" }
+
+# Miuix colour system (github.com/compose-miuix-ui/miuix)
+miuix-ui = { group = "top.yukonga.miuix.kmp", name = "miuix-ui-android", version.ref = "miuix" }
+miuix-blur = { group = "top.yukonga.miuix.kmp", name = "miuix-blur-android", version.ref = "miuix" }
+miuix-shader = { group = "top.yukonga.miuix.kmp", name = "miuix-shader-android", version.ref = "miuix" }
+miuix-icons = { group = "top.yukonga.miuix.kmp", name = "miuix-icons-android", version.ref = "miuix" }
+
+# Unit tests (round-8 039)
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "kotlinx-coroutines" }
+json = { group = "org.json", name = "json", version.ref = "json" }
 
 [plugins]
 agp-application = { id = "com.android.application", version.ref = "agp" }

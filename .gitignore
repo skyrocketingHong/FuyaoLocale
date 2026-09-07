@@ -3,6 +3,7 @@
 /.gradle/
 /.idea/
 /.kotlin/
+/.build-counter
 .DS_Store
 /gradle/gradle-daemon-jvm.properties
 
