@@ -6,7 +6,7 @@ import ing.fuyaoskyrocket.applocale.model.LocaleOption
 /**
  * Immutable state for the unified language picker.
  * Used by both [ing.fuyaoskyrocket.applocale.ui.appinfo.AppInfoViewModel] and
- * [BatchLanguagePickerViewModel].
+ * [LocalePickerViewModel].
  *
  * [selectedGroupId] is the BCP-47 base-language ID of the drilled-into group,
  * or `null` when showing the top-level group list.
@@ -55,10 +55,10 @@ sealed interface LocalePickerAction {
     data class QueryChanged(val query: String) : LocalePickerAction
     data class GroupOpened(val groupId: String) : LocalePickerAction
     data object BackToGroups : LocalePickerAction
-    data class GroupSortChanged(val option: LanguageGroupSortOption) : LocalePickerAction
-    data object ToggleGroupSortDirection : LocalePickerAction
-    data class VariantSortChanged(val option: LocaleVariantSortOption) : LocalePickerAction
-    data object ToggleVariantSortDirection : LocalePickerAction
+
+    /** Tri-state sort cycling from the single-row chips (round-5 019-A2). */
+    data class CycleGroupSort(val option: LanguageGroupSortOption) : LocalePickerAction
+    data class CycleVariantSort(val option: LocaleVariantSortOption) : LocalePickerAction
     data class LocaleSelected(val option: LocaleOption) : LocalePickerAction
     data class PinClicked(val option: LocaleOption) : LocalePickerAction
     data class UnpinClicked(val option: LocaleOption) : LocalePickerAction

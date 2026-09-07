@@ -1,123 +1,91 @@
 package ing.fuyaoskyrocket.applocale.ui.components
 
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.ArrowDownward
 import androidx.compose.material.icons.outlined.ArrowUpward
-import androidx.compose.material.icons.outlined.Check
-import androidx.compose.material.icons.automirrored.outlined.Sort
-import androidx.compose.material3.AssistChip
-import androidx.compose.material3.DropdownMenu
-import androidx.compose.material3.DropdownMenuItem
-import androidx.compose.material3.FilterChip
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.Text
-import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.compose.runtime.setValue
-import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.stateDescription
 import androidx.compose.ui.unit.Dp
 import ing.fuyaoskyrocket.applocale.R
 import ing.fuyaoskyrocket.applocale.model.AppListSortOption
 import ing.fuyaoskyrocket.applocale.ui.designsystem.AppSpacing
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppFilterChip
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppIconButton
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppSymbol
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppSymbolVector
 
 /**
- * Shared controls for all installed-app lists. They keep filter and sort state
- * separate from list rendering so the same query model can be reused elsewhere.
+ * Shared controls for all installed-app lists. Every sort option is a chip in one
+ * horizontally scrolling row (no dropdown menu). Tapping a chip cycles its sort state:
+ * unselected → ascending → descending → cancelled; the active direction rides in front
+ * of the chip's label as an arrow, so there is no separate direction button. The chips
+ * come from the theme-aware wrappers so every style renders its native control.
  */
 @Composable
 fun AppFilterBar(
     modifiedOnly: Boolean,
     modifiedCount: Int,
-    sortOption: AppListSortOption,
+    sortOption: AppListSortOption?,
     sortAscending: Boolean,
     onToggleModifiedOnly: () -> Unit,
-    onSelectSortOption: (AppListSortOption) -> Unit,
-    onToggleSortDirection: () -> Unit,
+    onCycleSortOption: (AppListSortOption) -> Unit,
     modifier: Modifier = Modifier,
     horizontalPadding: Dp = AppSpacing.screenCompact,
 ) {
-    var showSortMenu by rememberSaveable { mutableStateOf(false) }
-
     LazyRow(
         modifier = modifier,
-        contentPadding = PaddingValues(
-            horizontal = horizontalPadding,
-            vertical = AppSpacing.xs,
-        ),
+        contentPadding = PaddingValues(horizontal = horizontalPadding),
         horizontalArrangement = Arrangement.spacedBy(AppSpacing.sm),
+        verticalAlignment = Alignment.CenterVertically,
     ) {
         item(key = "modified_filter") {
-            FilterChip(
+            AppFilterChip(
                 selected = modifiedOnly,
                 onClick = onToggleModifiedOnly,
-                label = { Text(stringResource(R.string.modified_count, modifiedCount)) },
-                leadingIcon = if (modifiedOnly) {
-                    {
-                        Icon(
-                            imageVector = Icons.Outlined.Check,
-                            contentDescription = null,
-                        )
+                label = stringResource(R.string.modified_count, modifiedCount),
+                leadingIcon = if (modifiedOnly) AppSymbolVector(AppSymbol.Check) else null,
+            )
+        }
+        items(
+            count = AppListSortOption.entries.size,
+            key = { index -> AppListSortOption.entries[index] },
+        ) { index ->
+            val option = AppListSortOption.entries[index]
+            val selected = option == sortOption
+            // Announce the tri-state cycle's current direction; the selected flag
+            // alone cannot tell ascending from descending.
+            val directionDescription = when {
+                !selected -> stringResource(R.string.sort_direction_none)
+                sortAscending -> stringResource(R.string.sort_direction_ascending)
+                else -> stringResource(R.string.sort_direction_descending)
+            }
+            // miuix has no single-direction arrow glyphs; the sort direction
+            // vectors stay project assets drawn by the chip's backend icon
+            // control (asset exception, see the 012 execution record).
+            AppFilterChip(
+                selected = selected,
+                onClick = { onCycleSortOption(option) },
+                label = stringResource(option.labelRes()),
+                leadingIcon = if (selected) {
+                    if (sortAscending) {
+                        Icons.Outlined.ArrowUpward
+                    } else {
+                        Icons.Outlined.ArrowDownward
                     }
                 } else {
                     null
                 },
+                modifier = Modifier.semantics {
+                    stateDescription = directionDescription
+                },
             )
-        }
-        item(key = "sort_menu") {
-            Box {
-                AssistChip(
-                    onClick = { showSortMenu = true },
-                    label = { Text(stringResource(sortOption.labelRes())) },
-                    leadingIcon = {
-                        Icon(
-                            imageVector = Icons.AutoMirrored.Outlined.Sort,
-                            contentDescription = null,
-                        )
-                    },
-                )
-                DropdownMenu(
-                    expanded = showSortMenu,
-                    onDismissRequest = { showSortMenu = false },
-                ) {
-                    AppListSortOption.entries.forEach { option ->
-                        DropdownMenuItem(
-                            text = { Text(stringResource(option.labelRes())) },
-                            onClick = {
-                                onSelectSortOption(option)
-                                showSortMenu = false
-                            },
-                            trailingIcon = {
-                                if (option == sortOption) {
-                                    Icon(
-                                        imageVector = Icons.Outlined.Check,
-                                        contentDescription = null,
-                                    )
-                                }
-                            },
-                        )
-                    }
-                }
-            }
-        }
-        item(key = "sort_direction") {
-            IconButton(onClick = onToggleSortDirection) {
-                Icon(
-                    imageVector = if (sortAscending) {
-                        Icons.Outlined.ArrowUpward
-                    } else {
-                        Icons.Outlined.ArrowDownward
-                    },
-                    contentDescription = stringResource(R.string.toggle_sort_direction),
-                )
-            }
         }
     }
 }

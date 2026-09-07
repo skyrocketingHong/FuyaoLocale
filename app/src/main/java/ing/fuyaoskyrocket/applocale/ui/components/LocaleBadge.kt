@@ -2,9 +2,7 @@ package ing.fuyaoskyrocket.applocale.ui.components
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.size
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -12,7 +10,12 @@ import androidx.compose.ui.text.EmojiSupportMatch
 import androidx.compose.ui.text.PlatformTextStyle
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import ing.fuyaoskyrocket.applocale.ui.designsystem.AppLayout
+import ing.fuyaoskyrocket.applocale.ui.designsystem.AppUiTheme
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppSurface
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppText
 import java.util.Locale
 
 /**
@@ -28,14 +31,16 @@ fun LocaleBadge(
     modifier: Modifier = Modifier,
 ) {
     val marker = localeMarker(languageTag, preferRegion)
-    Surface(
+    // QuietBadge role (020): the flag/letter backing is a non-interactive info
+    // surface, never a selection-coloured one.
+    AppSurface(
         modifier = modifier.size(AppLayout.localeBadgeSize),
-        shape = MaterialTheme.shapes.medium,
-        color = MaterialTheme.colorScheme.secondaryContainer,
-        contentColor = MaterialTheme.colorScheme.onSecondaryContainer,
+        shape = RoundedCornerShape(8.dp),
+        color = AppUiTheme.palette.quietContainer,
+        contentColor = AppUiTheme.palette.quietContent,
     ) {
         Box(contentAlignment = Alignment.Center) {
-            Text(
+            AppText(
                 text = marker.text,
                 style = marker.textStyle().let { style ->
                     if (marker.isFlag) {
@@ -61,11 +66,14 @@ private data class LocaleMarker(
 )
 
 @Composable
-private fun LocaleMarker.textStyle(): TextStyle = when {
-    isFlag -> MaterialTheme.typography.titleLarge
-    text.length <= 2 -> MaterialTheme.typography.labelLarge
-    text.length == 3 -> MaterialTheme.typography.labelMedium
-    else -> MaterialTheme.typography.labelSmall
+private fun LocaleMarker.textStyle(): TextStyle {
+    val textStyles = AppUiTheme.textStyles
+    return when {
+        isFlag -> textStyles.pageTitle
+        text.length <= 2 -> textStyles.label.copy(fontSize = 14.sp)
+        text.length == 3 -> textStyles.label
+        else -> textStyles.label.copy(fontSize = 11.sp)
+    }
 }
 
 private fun localeMarker(languageTag: String, preferRegion: Boolean): LocaleMarker {

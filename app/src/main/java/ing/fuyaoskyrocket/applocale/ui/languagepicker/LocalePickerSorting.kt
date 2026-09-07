@@ -7,8 +7,7 @@ import java.util.Locale
 
 internal fun LocalePickerUiState.sortedLanguageGroups(
     systemLocaleTag: String,
-): List<LocaleGroup> {
-    val collator = displayCollator(displayLocaleTag.ifBlank { systemLocaleTag })
+): List<LocaleGroup> {    val collator = displayCollator(displayLocaleTag.ifBlank { systemLocaleTag })
     val localizedName = comparatorBy(collator, LocaleGroup::localizedLanguage, LocaleGroup::id)
     val baseComparator = when (groupSortOption) {
         LanguageGroupSortOption.Recommended,
@@ -96,4 +95,32 @@ private fun <T> prioritize(
         else -> 1
     }
     if (priority != 0) priority else comparator.compare(left, right)
+}
+
+/**
+ * The shared tri-state sort cycle (round-5 019-A2): tapping an unselected
+ * option selects it ascending; tapping it again flips to descending; a third
+ * tap returns to the Recommended baseline with all chips unselected. One
+ * atomic transition per event — never a sort change plus an async direction
+ * flip. Both picker ViewModels run their levels through these functions so
+ * the two surfaces can never diverge.
+ */
+internal fun cycledLanguageGroupSort(
+    currentOption: LanguageGroupSortOption,
+    currentAscending: Boolean,
+    tapped: LanguageGroupSortOption,
+): Pair<LanguageGroupSortOption, Boolean> = when {
+    tapped != currentOption -> tapped to true
+    currentAscending -> tapped to false
+    else -> LanguageGroupSortOption.Recommended to true
+}
+
+internal fun cycledLocaleVariantSort(
+    currentOption: LocaleVariantSortOption,
+    currentAscending: Boolean,
+    tapped: LocaleVariantSortOption,
+): Pair<LocaleVariantSortOption, Boolean> = when {
+    tapped != currentOption -> tapped to true
+    currentAscending -> tapped to false
+    else -> LocaleVariantSortOption.Recommended to true
 }

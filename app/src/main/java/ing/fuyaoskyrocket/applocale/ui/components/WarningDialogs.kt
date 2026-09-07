@@ -10,15 +10,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.widthIn
-import androidx.compose.material3.AlertDialog
-import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.FilledTonalButton
-import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -26,6 +17,14 @@ import androidx.compose.ui.res.stringResource
 import ing.fuyaoskyrocket.applocale.R
 import ing.fuyaoskyrocket.applocale.ui.designsystem.AppLayout
 import ing.fuyaoskyrocket.applocale.ui.designsystem.AppSpacing
+import ing.fuyaoskyrocket.applocale.ui.designsystem.AppUiTheme
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppAlertDialog
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppButton
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppCard
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppCircularProgressIndicator
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppIcon
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppText
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppTextButton
 
 @Composable
 fun ShizukuRequiredWarning(
@@ -37,44 +36,46 @@ fun ShizukuRequiredWarning(
         modifier = modifier.fillMaxSize(),
         contentAlignment = Alignment.Center,
     ) {
-        Card(
+        AppCard(
             modifier = Modifier
                 .padding(AppSpacing.xl)
                 .widthIn(max = AppLayout.warningMaxWidth)
                 .fillMaxWidth(),
-            colors = CardDefaults.cardColors(
-                containerColor = MaterialTheme.colorScheme.surfaceContainerHigh,
-            ),
+            containerColor = AppUiTheme.palette.secondarySurface,
         ) {
             Column(
                 modifier = Modifier.padding(AppSpacing.lg),
                 verticalArrangement = Arrangement.spacedBy(AppSpacing.md),
             ) {
-                Icon(
+                // No miuix warning glyph; the project vector is drawn by the
+                // backend icon control (asset exception).
+                AppIcon(
                     imageVector = Icons.Outlined.WarningAmber,
                     contentDescription = null,
-                    tint = MaterialTheme.colorScheme.primary,
+                    tint = AppUiTheme.palette.accent,
                 )
-                Text(
+                AppText(
                     text = stringResource(R.string.permissions_required),
-                    style = MaterialTheme.typography.titleLarge,
+                    style = AppUiTheme.textStyles.pageTitle,
                 )
-                Text(
+                AppText(
                     text = stringResource(R.string.shizuku_required),
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    style = AppUiTheme.textStyles.body,
+                    color = AppUiTheme.palette.muted,
                 )
                 FlowRow(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.spacedBy(AppSpacing.sm),
                     verticalArrangement = Arrangement.spacedBy(AppSpacing.xs),
                 ) {
-                    TextButton(onClick = onOpenShizuku) {
-                        Text(stringResource(R.string.open_shizuku))
-                    }
-                    FilledTonalButton(onClick = onRequestPermission) {
-                        Text(stringResource(R.string.request_shizuku_permission))
-                    }
+                    AppTextButton(
+                        text = stringResource(R.string.open_shizuku),
+                        onClick = onOpenShizuku,
+                    )
+                    AppButton(
+                        text = stringResource(R.string.request_shizuku_permission),
+                        onClick = onRequestPermission,
+                    )
                 }
             }
         }
@@ -99,47 +100,44 @@ fun ShizukuConnectingState(
             verticalArrangement = Arrangement.spacedBy(AppSpacing.sm),
             modifier = Modifier.padding(AppSpacing.xl),
         ) {
-            CircularProgressIndicator()
-            Text(
+            AppCircularProgressIndicator()
+            AppText(
                 text = stringResource(R.string.connecting_to_shizuku),
-                style = MaterialTheme.typography.titleMedium,
+                style = AppUiTheme.textStyles.itemTitle,
             )
-            Text(
+            AppText(
                 text = stringResource(R.string.connecting_to_shizuku_description),
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                style = AppUiTheme.textStyles.body,
+                color = AppUiTheme.palette.muted,
             )
-            TextButton(onClick = onOpenShizuku) {
-                Text(stringResource(R.string.open_shizuku))
-            }
+            AppTextButton(
+                text = stringResource(R.string.open_shizuku),
+                onClick = onOpenShizuku,
+            )
         }
     }
 }
 
+/**
+ * System-app confirmation for batch changes. Stays in composition while hidden;
+ * [onDismissFinished] runs once after the window has actually closed, letting the
+ * caller hand over to the next overlay without two windows overlapping.
+ */
 @Composable
 fun SystemDialogWarn(
+    visible: Boolean,
     onClickContinue: () -> Unit,
     onClickCancel: () -> Unit,
+    onDismissFinished: () -> Unit = {},
 ) {
-    AlertDialog(
-        icon = {
-            Icon(
-                imageVector = Icons.Outlined.WarningAmber,
-                contentDescription = null,
-            )
-        },
-        text = { Text(stringResource(R.string.warning_system_apps)) },
-        title = { Text(stringResource(R.string.warning)) },
-        onDismissRequest = { onClickCancel() },
-        confirmButton = {
-            TextButton(onClick = { onClickContinue() }) {
-                Text(stringResource(R.string.proceed))
-            }
-        },
-        dismissButton = {
-            TextButton(onClick = { onClickCancel() }) {
-                Text(stringResource(R.string.cancel))
-            }
-        },
+    AppAlertDialog(
+        visible = visible,
+        title = stringResource(R.string.warning),
+        message = stringResource(R.string.warning_system_apps),
+        confirmText = stringResource(R.string.proceed),
+        onConfirm = onClickContinue,
+        dismissText = stringResource(R.string.cancel),
+        onDismiss = onClickCancel,
+        onDismissFinished = onDismissFinished,
     )
 }

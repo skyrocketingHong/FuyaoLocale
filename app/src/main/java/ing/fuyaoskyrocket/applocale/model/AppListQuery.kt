@@ -11,7 +11,8 @@ data class AppListQuery(
     val query: String = "",
     val modifiedOnly: Boolean = false,
     val showSystemApps: Boolean = true,
-    val sortOption: AppListSortOption = AppListSortOption.AppName,
+    /** Null means no explicit ordering — the list keeps its natural repository order. */
+    val sortOption: AppListSortOption? = AppListSortOption.AppName,
     val sortAscending: Boolean = true,
 )
 
@@ -37,6 +38,7 @@ fun List<AppModel>.applyQuery(query: AppListQuery): List<AppModel> {
     val byName = compareBy<AppModel> { it.label.lowercase(Locale.ROOT) }
         .thenBy { it.packageName.lowercase(Locale.ROOT) }
     val comparator = when (query.sortOption) {
+        null -> null
         AppListSortOption.AppName -> byName
         AppListSortOption.PackageName -> compareBy<AppModel> {
             it.packageName.lowercase(Locale.ROOT)
@@ -48,6 +50,7 @@ fun List<AppModel>.applyQuery(query: AppListQuery): List<AppModel> {
         AppListSortOption.AppType -> compareBy<AppModel> { it.isSystemApp }.then(byName)
     }
 
+    if (comparator == null) return filtered.toList()
     return filtered.sortedWith(
         if (query.sortAscending) comparator else comparator.reversed(),
     ).toList()

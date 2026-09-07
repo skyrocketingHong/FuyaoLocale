@@ -5,8 +5,6 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Apps
-import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -18,6 +16,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.unit.dp
 import ing.fuyaoskyrocket.applocale.data.system.AppIconLoader
+import ing.fuyaoskyrocket.applocale.ui.designsystem.AppUiTheme
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppIcon as AppVectorIcon
 
 /**
  * Async app icon loader — caches converted [ImageBitmap].
@@ -41,11 +41,13 @@ fun AppIcon(
             contentDescription = null,
         )
     } else {
+        // No miuix glyph for the generic app-grid metaphor; the project vector
+        // is drawn by the backend icon control (asset exception, see 012 record).
         Box(modifier = modifier, contentAlignment = Alignment.Center) {
-            Icon(
+            AppVectorIcon(
                 imageVector = Icons.Outlined.Apps,
                 contentDescription = null,
-                tint = MaterialTheme.colorScheme.onSurfaceVariant,
+                tint = AppUiTheme.palette.muted,
                 modifier = Modifier.size(placeholderSize),
             )
         }

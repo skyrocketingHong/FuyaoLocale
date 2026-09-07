@@ -8,70 +8,72 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.outlined.ArrowBack
-import androidx.compose.material.icons.automirrored.outlined.ArrowForward
-import androidx.compose.material.icons.outlined.ErrorOutline
-import androidx.compose.material.icons.outlined.Info
-import androidx.compose.material.icons.outlined.Refresh
-import androidx.compose.material.icons.outlined.Sync
-import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.FilledTonalButton
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.ListItem
-import androidx.compose.material3.ListItemDefaults
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedButton
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.SnackbarHost
-import androidx.compose.material3.SnackbarHostState
-import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextOverflow
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import ing.fuyaoskyrocket.applocale.R
+import ing.fuyaoskyrocket.applocale.data.system.AppIconLoader
+import ing.fuyaoskyrocket.applocale.model.ConfigurationAppProjection
+import ing.fuyaoskyrocket.applocale.model.ConfigurationAppSection
 import ing.fuyaoskyrocket.applocale.model.SavedLocaleConfiguration
-import ing.fuyaoskyrocket.applocale.model.SavedLocaleConfigurationComparison
-import ing.fuyaoskyrocket.applocale.model.SavedLocaleDifference
-import ing.fuyaoskyrocket.applocale.model.SavedLocaleDifferenceKind
-import ing.fuyaoskyrocket.applocale.ui.components.AppTopAppBarTitle
 import ing.fuyaoskyrocket.applocale.ui.components.rememberSystemLocaleTag
+import ing.fuyaoskyrocket.applocale.ui.designsystem.AppLayout
 import ing.fuyaoskyrocket.applocale.ui.designsystem.AppSpacing
+import ing.fuyaoskyrocket.applocale.ui.designsystem.AppUiTheme
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppCircularProgressIndicator
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppFilterChip
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppFilledTonalButton
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppIcon
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppIconButton
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppScaffold
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppSearchField
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppSettingsRow
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppSnackbarHost
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppSymbol
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppSymbolVector
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppText
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppTextButton
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppTopAppBar
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.rememberAppSnackbarHostState
+import ing.fuyaoskyrocket.applocale.ui.designsystem.listBottomReserve
+import ing.fuyaoskyrocket.applocale.ui.designsystem.listTopReserve
 import ing.fuyaoskyrocket.applocale.ui.designsystem.readableContentWidth
 import java.text.DateFormat
 import java.util.Date
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ConfigurationDetailScreen(
     configurationId: String,
     navigateBack: () -> Unit,
+    onConfigurationReplaced: (newConfigurationId: String, anchorPackage: String) -> Unit,
+    anchorPackage: String?,
+    onAnchorConsumed: () -> Unit,
     viewModel: ConfigurationsViewModel = hiltViewModel(),
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     val context = LocalContext.current
-    val snackbarHostState = remember { SnackbarHostState() }
+    val snackbarHostState = rememberAppSnackbarHostState()
+    // The single-app chooser session (round-8 038); the sheet stays in
+    // composition so its exit animation survives a selection.
+    var editingPackage by remember { mutableStateOf<String?>(null) }
 
     LaunchedEffect(configurationId) {
         viewModel.selectConfiguration(configurationId)
@@ -79,53 +81,127 @@ fun ConfigurationDetailScreen(
     LaunchedEffect(Unit) {
         viewModel.events.collect { event ->
             snackbarHostState.showSnackbar(context.configurationEventMessage(event))
+            // The derived configuration replaces THIS route in place — no
+            // "new detail → old detail" chain. Only a completion for the
+            // configuration this page still shows navigates; a user who left
+            // never gets pulled back.
+            if (event is ConfigurationsEvent.EditCompleted &&
+                event.newConfigurationId != null &&
+                event.sourceConfigurationId == configurationId
+            ) {
+                onConfigurationReplaced(event.newConfigurationId, event.packageName)
+            }
         }
     }
 
-    Scaffold(
+    AppScaffold(
         topBar = {
-            TopAppBar(
-                title = {
-                    AppTopAppBarTitle(title = stringResource(R.string.configuration_details))
-                },
+            AppTopAppBar(
+                title = stringResource(R.string.configuration_details),
                 navigationIcon = {
-                    IconButton(onClick = navigateBack) {
-                        Icon(
-                            imageVector = Icons.AutoMirrored.Outlined.ArrowBack,
+                    AppIconButton(onClick = navigateBack) {
+                        AppIcon(
+                            imageVector = AppSymbolVector(AppSymbol.Back),
                             contentDescription = stringResource(R.string.back),
+                        )
+                    }
+                },
+                // Round-8 037: the refresh action moved to the phone top bar —
+                // the same callback the wide tool row uses, never a second path.
+                actions = {
+                    AppIconButton(
+                        onClick = viewModel::refreshSelectedComparison,
+                        enabled = !uiState.isComparing && uiState.applyingConfigurationId == null,
+                    ) {
+                        AppIcon(
+                            imageVector = AppSymbolVector(AppSymbol.Refresh),
+                            contentDescription = stringResource(R.string.refresh),
                         )
                     }
                 },
             )
         },
-        snackbarHost = { SnackbarHost(snackbarHostState) },
+        snackbarHost = { AppSnackbarHost(snackbarHostState) },
         contentWindowInsets = WindowInsets(0, 0, 0, 0),
-        containerColor = MaterialTheme.colorScheme.surface,
+        containerColor = AppUiTheme.palette.background,
     ) { innerPadding ->
         val configuration = uiState.configurations.firstOrNull { it.id == configurationId }
         SavedConfigurationDetailContent(
             configuration = configuration,
-            comparison = uiState.comparison?.takeIf { it.configuration.id == configurationId },
+            detailRows = uiState.detailRows
+                ?.takeIf { uiState.selectedConfigurationId == configurationId },
             isComparing = uiState.isComparing,
             isApplying = uiState.applyingConfigurationId == configurationId,
+            iconLoader = viewModel.appIconLoader,
             onApply = { viewModel.apply(configurationId) },
             onRefresh = viewModel::refreshSelectedComparison,
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(innerPadding),
+            // Editing opens the shared single-app chooser; rows stand down
+            // while any command runs or a pending record is unresolved.
+            onEditApp = if (uiState.isEditBusy) null else ({ packageName ->
+                editingPackage = packageName
+            }),
+            editingPackageName = uiState.editingPackageName,
+            editBusy = uiState.isEditBusy,
+            showRefreshAction = false,
+            anchorPackage = anchorPackage,
+            onAnchorConsumed = onAnchorConsumed,
+            contentPadding = innerPadding,
+            modifier = Modifier.fillMaxSize(),
         )
     }
+
+    ConfigurationLanguageSheet(
+        visible = editingPackage != null,
+        packageName = editingPackage,
+        // The explicit configured target wins; otherwise the app's real
+        // current language seeds the check.
+        selectedLanguageTag = uiState.detailRows
+            ?.firstOrNull { it.packageName == editingPackage }
+            ?.let { row -> row.savedLocaleTag ?: row.currentLocaleTag },
+        onDismiss = { editingPackage = null },
+        onLocaleSelected = { tag ->
+            val packageName = editingPackage
+            if (packageName != null) {
+                editingPackage = null
+                viewModel.submitEdit(
+                    sourceConfigurationId = configurationId,
+                    packageName = packageName,
+                    targetLocaleTag = tag,
+                )
+            }
+        },
+    )
 }
 
-/** Reused by the compact detail route and the expanded configuration master-detail layout. */
+/** The detail's tri-state filter chips (round-8 037). */
+internal enum class ConfigurationDetailFilter { All, Differences }
+
+/**
+ * Reused by the compact detail route and the expanded configuration master-detail
+ * layout (round-8 037): a compact header meta block with one primary action, a
+ * single-row filter chip bar, then CONTINUOUS app rows — no nested comparison
+ * cards. Row identity is the packageName so a re-classified row keeps its place.
+ *
+ * [contentPadding] is consumed exactly once through the list reserves so the
+ * background scrolls under the bars while text stays clear (phone passes the
+ * scaffold insets; the wide pane passes zero — its parent already consumed them).
+ */
 @Composable
 internal fun SavedConfigurationDetailContent(
     configuration: SavedLocaleConfiguration?,
-    comparison: SavedLocaleConfigurationComparison?,
+    detailRows: List<ConfigurationAppProjection>?,
     isComparing: Boolean,
     isApplying: Boolean,
+    iconLoader: AppIconLoader,
     onApply: () -> Unit,
     onRefresh: () -> Unit,
+    onEditApp: ((packageName: String) -> Unit)?,
+    editingPackageName: String?,
+    editBusy: Boolean,
+    showRefreshAction: Boolean,
+    anchorPackage: String?,
+    onAnchorConsumed: () -> Unit,
+    contentPadding: PaddingValues,
     modifier: Modifier = Modifier,
 ) {
     if (configuration == null) {
@@ -134,81 +210,210 @@ internal fun SavedConfigurationDetailContent(
     }
     val listState = rememberLazyListState()
     val systemLocaleTag = rememberSystemLocaleTag()
+    var detailFilter by rememberSaveable { mutableStateOf(ConfigurationDetailFilter.All) }
+    var othersExpanded by rememberSaveable { mutableStateOf(false) }
+    var othersQuery by rememberSaveable { mutableStateOf("") }
 
+    // Only a real user-driven switch to another configuration scrolls to the
+    // top (the wide pane keeps this composable alive). A derived auto-save
+    // (038) keeps the edited row's anchor instead: the anchor survives until
+    // the rows arrive, then scrolls once to the SAME package row whose key
+    // never changed, and never scrolls to the top for that switch.
+    var lastSeenConfigurationId by remember { mutableStateOf<String?>(null) }
     LaunchedEffect(configuration.id) {
-        listState.scrollToItem(0)
+        if (anchorPackage == null &&
+            lastSeenConfigurationId != null &&
+            lastSeenConfigurationId != configuration.id
+        ) {
+            listState.scrollToItem(0)
+        }
+        lastSeenConfigurationId = configuration.id
+    }
+    var anchorApplied by rememberSaveable { mutableStateOf(false) }
+    LaunchedEffect(detailRows, anchorPackage) {
+        if (anchorApplied || anchorPackage == null || detailRows == null) return@LaunchedEffect
+        val managed = detailRows.filter { it.section != ConfigurationAppSection.OtherApps }
+        val headerItems = 1 + // summary
+            (if (managed.isNotEmpty() || isComparing) 1 else 0) // filter chips
+        val index = headerItems + managed.indexOfFirst { it.packageName == anchorPackage }
+        if (index >= headerItems) {
+            listState.scrollToItem(index)
+            anchorApplied = true
+            onAnchorConsumed()
+        }
+    }
+
+    val managedRows = remember(detailRows) {
+        detailRows.orEmpty().filter { it.section != ConfigurationAppSection.OtherApps }
+    }
+    val visibleRows = when (detailFilter) {
+        ConfigurationDetailFilter.All -> managedRows
+        ConfigurationDetailFilter.Differences -> managedRows.filter {
+            it.needsAttention || it.section == ConfigurationAppSection.ExternalModified
+        }
+    }
+    val otherRows = remember(detailRows, othersQuery) {
+        val others = detailRows.orEmpty().filter { it.section == ConfigurationAppSection.OtherApps }
+        val query = othersQuery.trim()
+        if (query.isEmpty()) {
+            others
+        } else {
+            others.filter {
+                it.label.contains(query, ignoreCase = true) ||
+                    it.packageName.contains(query, ignoreCase = true)
+            }
+        }
     }
 
     LazyColumn(
         state = listState,
         modifier = modifier,
-        contentPadding = PaddingValues(AppSpacing.lg),
-        verticalArrangement = Arrangement.spacedBy(AppSpacing.md),
+        contentPadding = PaddingValues(
+            top = listTopReserve(contentPadding.calculateTopPadding()),
+            bottom = listBottomReserve(contentPadding.calculateBottomPadding()),
+        ),
+        verticalArrangement = Arrangement.spacedBy(AppSpacing.sm),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         item(key = "summary") {
-            ConfigurationSummaryCard(
+            ConfigurationSummaryHeader(
                 configuration = configuration,
+                // A live edit or unresolved pending record stands the whole
+                // configuration's actions down, not just the edited row.
+                isApplying = isApplying || editBusy,
                 isComparing = isComparing,
-                isApplying = isApplying,
                 onApply = onApply,
                 onRefresh = onRefresh,
-                modifier = Modifier.readableContentWidth(),
+                showRefreshAction = showRefreshAction,
+                modifier = Modifier
+                    .readableContentWidth()
+                    .padding(horizontal = AppLayout.contentFrameMargin),
             )
         }
+
+        if (managedRows.isNotEmpty() || isComparing) {
+            item(key = "filter_chips") {
+                ConfigurationFilterChipRow(
+                    selected = detailFilter,
+                    onSelect = { detailFilter = it },
+                    modifier = Modifier
+                        .readableContentWidth()
+                        .padding(horizontal = AppLayout.contentFrameMargin),
+                )
+            }
+        }
+
         when {
             isComparing -> item(key = "loading") {
                 Box(
                     modifier = Modifier
                         .readableContentWidth()
                         .fillMaxWidth()
-                        .padding(AppSpacing.xxl),
+                        .padding(AppSpacing.xl),
                     contentAlignment = Alignment.Center,
                 ) {
-                    CircularProgressIndicator()
+                    AppCircularProgressIndicator()
                 }
             }
 
-            comparison == null -> item(key = "unavailable") {
-                ConfigurationComparisonUnavailable(
-                    modifier = Modifier.readableContentWidth(),
+            detailRows == null -> item(key = "unavailable") {
+                Column(
+                    modifier = Modifier
+                        .readableContentWidth()
+                        .padding(horizontal = AppLayout.contentFrameMargin),
+                    verticalArrangement = Arrangement.spacedBy(AppSpacing.sm),
+                ) {
+                    AppText(
+                        text = stringResource(R.string.configuration_operation_failed),
+                        style = AppUiTheme.textStyles.body,
+                        color = AppUiTheme.palette.muted,
+                    )
+                    AppTextButton(
+                        text = stringResource(R.string.refresh),
+                        onClick = onRefresh,
+                    )
+                }
+            }
+
+            visibleRows.isEmpty() -> item(key = "no_visible_rows") {
+                AppText(
+                    text = stringResource(R.string.configuration_filter_empty),
+                    style = AppUiTheme.textStyles.body,
+                    color = AppUiTheme.palette.muted,
+                    modifier = Modifier
+                        .readableContentWidth()
+                        .padding(horizontal = AppLayout.contentFrameMargin),
                 )
             }
 
-            comparison.differences.isEmpty() -> item(key = "no_differences") {
-                NoDifferencesState(modifier = Modifier.readableContentWidth())
+            else -> items(
+                items = visibleRows,
+                key = { it.packageName },
+                contentType = { "configuration_app" },
+            ) { row ->
+                ConfigurationAppRow(
+                    row = row,
+                    systemLocaleTag = systemLocaleTag,
+                    iconLoader = iconLoader,
+                    onEdit = onEditApp?.let { edit -> if (row.isInstalled) ({ edit(row.packageName) }) else null },
+                    isProcessing = editingPackageName == row.packageName,
+                    modifier = Modifier
+                        .readableContentWidth()
+                        .padding(horizontal = AppLayout.localeRowOuterMargin),
+                )
             }
+        }
 
-            else -> {
-                item(key = "differences_title") {
-                    Column(
-                        modifier = Modifier.readableContentWidth(),
-                        verticalArrangement = Arrangement.spacedBy(AppSpacing.xs),
-                    ) {
-                        Text(
-                            text = stringResource(
-                                R.string.configuration_differences,
-                                comparison.differences.size,
-                            ),
-                            style = MaterialTheme.typography.titleMedium,
-                        )
-                        Text(
-                            text = stringResource(R.string.configuration_difference_description),
-                            style = MaterialTheme.typography.bodyMedium,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+        if (!isComparing && detailRows != null) {
+            item(key = "others_header") {
+                OtherAppsHeader(
+                    count = detailRows.count { it.section == ConfigurationAppSection.OtherApps },
+                    expanded = othersExpanded,
+                    onToggle = { othersExpanded = !othersExpanded },
+                    modifier = Modifier
+                        .readableContentWidth()
+                        .padding(horizontal = AppLayout.contentFrameMargin),
+                )
+            }
+            if (othersExpanded) {
+                item(key = "others_search") {
+                    AppSearchField(
+                        query = othersQuery,
+                        onQueryChange = { othersQuery = it },
+                        placeholder = stringResource(R.string.configuration_other_apps_search_hint),
+                        modifier = Modifier
+                            .readableContentWidth()
+                            .padding(horizontal = AppLayout.contentFrameMargin),
+                    )
+                }
+                if (otherRows.isEmpty()) {
+                    item(key = "others_empty") {
+                        AppText(
+                            text = stringResource(R.string.configuration_other_apps_empty),
+                            style = AppUiTheme.textStyles.body,
+                            color = AppUiTheme.palette.muted,
+                            modifier = Modifier
+                                .readableContentWidth()
+                                .padding(horizontal = AppLayout.contentFrameMargin),
                         )
                     }
-                }
-                items(
-                    items = comparison.differences,
-                    key = { "${it.kind}:${it.packageName}" },
-                    contentType = { "difference" },
-                ) { difference ->
-                    ConfigurationDifferenceItem(
-                        difference = difference,
-                        systemLocaleTag = systemLocaleTag,
-                        modifier = Modifier.readableContentWidth(),
-                    )
+                } else {
+                    items(
+                        items = otherRows,
+                        key = { it.packageName },
+                        contentType = { "configuration_app" },
+                    ) { row ->
+                        ConfigurationAppRow(
+                            row = row,
+                            systemLocaleTag = systemLocaleTag,
+                            iconLoader = iconLoader,
+                            onEdit = onEditApp?.let { edit -> if (row.isInstalled) ({ edit(row.packageName) }) else null },
+                            isProcessing = editingPackageName == row.packageName,
+                            modifier = Modifier
+                                .readableContentWidth()
+                                .padding(horizontal = AppLayout.localeRowOuterMargin),
+                        )
+                    }
                 }
             }
         }
@@ -216,70 +421,60 @@ internal fun SavedConfigurationDetailContent(
 }
 
 @Composable
-private fun ConfigurationSummaryCard(
+private fun ConfigurationSummaryHeader(
     configuration: SavedLocaleConfiguration,
-    isComparing: Boolean,
     isApplying: Boolean,
+    isComparing: Boolean,
     onApply: () -> Unit,
     onRefresh: () -> Unit,
+    showRefreshAction: Boolean,
     modifier: Modifier = Modifier,
 ) {
     val formattedDate = remember(configuration.createdAt) {
         DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.SHORT)
             .format(Date(configuration.createdAt))
     }
-    Card(
-        modifier = modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.surfaceContainerLow,
-        ),
+    Column(
+        modifier = modifier,
+        verticalArrangement = Arrangement.spacedBy(AppSpacing.sm),
     ) {
-        Column(
-            modifier = Modifier.padding(AppSpacing.lg),
-            verticalArrangement = Arrangement.spacedBy(AppSpacing.sm),
+        // One or two quiet meta lines — no panel, no two big paragraphs.
+        AppText(
+            text = stringResource(R.string.configuration_saved_at, formattedDate),
+            style = AppUiTheme.textStyles.metadata,
+            color = AppUiTheme.palette.muted,
+        )
+        AppText(
+            text = stringResource(R.string.configuration_app_count, configuration.appCount),
+            style = AppUiTheme.textStyles.metadata,
+            color = AppUiTheme.palette.muted,
+        )
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(AppSpacing.sm),
         ) {
-            Text(
-                text = stringResource(R.string.configuration_saved_at, formattedDate),
-                style = MaterialTheme.typography.titleMedium,
+            // The single primary action; 48dp minimum touch height. The wide
+            // pane pairs it with the refresh icon, the phone keeps refresh in
+            // its top bar — both call the same callbacks.
+            AppFilledTonalButton(
+                text = stringResource(R.string.apply_configuration),
+                onClick = onApply,
+                enabled = !isApplying,
+                modifier = Modifier
+                    .weight(1f)
+                    .heightIn(min = 48.dp),
             )
-            Text(
-                text = stringResource(R.string.configuration_app_count, configuration.appCount),
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-            )
-            Column(
-                modifier = Modifier.fillMaxWidth(),
-                verticalArrangement = Arrangement.spacedBy(AppSpacing.sm),
-            ) {
-                FilledTonalButton(
-                    onClick = onApply,
-                    enabled = !isApplying,
-                    modifier = Modifier.fillMaxWidth(),
-                ) {
-                    if (isApplying) {
-                        CircularProgressIndicator(
-                            modifier = Modifier.size(AppSpacing.lg),
-                        )
-                    } else {
-                        Icon(
-                            imageVector = Icons.Outlined.Sync,
-                            contentDescription = null,
-                            modifier = Modifier.padding(end = AppSpacing.xs),
-                        )
-                    }
-                    Text(stringResource(R.string.apply_configuration))
-                }
-                OutlinedButton(
+            if (showRefreshAction) {
+                AppIconButton(
                     onClick = onRefresh,
                     enabled = !isComparing && !isApplying,
-                    modifier = Modifier.fillMaxWidth(),
+                    modifier = Modifier.size(48.dp),
                 ) {
-                    Icon(
-                        imageVector = Icons.Outlined.Refresh,
-                        contentDescription = null,
-                        modifier = Modifier.padding(end = AppSpacing.xs),
+                    AppIcon(
+                        imageVector = AppSymbolVector(AppSymbol.Refresh),
+                        contentDescription = stringResource(R.string.refresh),
                     )
-                    Text(stringResource(R.string.refresh))
                 }
             }
         }
@@ -287,147 +482,58 @@ private fun ConfigurationSummaryCard(
 }
 
 @Composable
-private fun ConfigurationDifferenceItem(
-    difference: SavedLocaleDifference,
-    systemLocaleTag: String,
+private fun ConfigurationFilterChipRow(
+    selected: ConfigurationDetailFilter,
+    onSelect: (ConfigurationDetailFilter) -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    val typeText = when (difference.kind) {
-        SavedLocaleDifferenceKind.NeedsApply -> stringResource(R.string.difference_needs_apply)
-        SavedLocaleDifferenceKind.MissingApp -> stringResource(R.string.difference_missing_app)
-        SavedLocaleDifferenceKind.CurrentOnly -> stringResource(R.string.difference_current_only)
-    }
-    val icon = when (difference.kind) {
-        SavedLocaleDifferenceKind.NeedsApply -> Icons.Outlined.Sync
-        SavedLocaleDifferenceKind.MissingApp -> Icons.Outlined.ErrorOutline
-        SavedLocaleDifferenceKind.CurrentOnly -> Icons.Outlined.Info
-    }
-    val containerColor = when (difference.kind) {
-        SavedLocaleDifferenceKind.NeedsApply -> MaterialTheme.colorScheme.primaryContainer
-        SavedLocaleDifferenceKind.MissingApp -> MaterialTheme.colorScheme.errorContainer
-        SavedLocaleDifferenceKind.CurrentOnly -> MaterialTheme.colorScheme.surfaceContainerLow
-    }
-    val contentColor = when (difference.kind) {
-        SavedLocaleDifferenceKind.NeedsApply -> MaterialTheme.colorScheme.onPrimaryContainer
-        SavedLocaleDifferenceKind.MissingApp -> MaterialTheme.colorScheme.onErrorContainer
-        SavedLocaleDifferenceKind.CurrentOnly -> MaterialTheme.colorScheme.onSurface
-    }
-    val systemDefaultLocale = if (systemLocaleTag.isBlank()) {
-        stringResource(R.string.system_default)
-    } else {
-        stringResource(R.string.system_default_with_locale, systemLocaleTag)
-    }
-    val currentLocale = when (difference.kind) {
-        SavedLocaleDifferenceKind.MissingApp -> stringResource(R.string.unavailable)
-        else -> difference.currentLocaleTag ?: systemDefaultLocale
-    }
-    val savedLocale = when (difference.kind) {
-        SavedLocaleDifferenceKind.CurrentOnly -> stringResource(R.string.unavailable)
-        else -> difference.savedLocaleTag ?: systemDefaultLocale
-    }
-
-    Surface(
-        modifier = modifier.fillMaxWidth(),
-        shape = MaterialTheme.shapes.large,
-        color = containerColor,
+    Row(
+        modifier = modifier,
+        horizontalArrangement = Arrangement.spacedBy(AppSpacing.sm),
+        verticalAlignment = Alignment.CenterVertically,
     ) {
-        ListItem(
-            headlineContent = {
-                Text(
-                    text = difference.label,
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis,
-                    color = contentColor,
-                )
-            },
-            overlineContent = { Text(typeText, color = contentColor) },
-            supportingContent = {
-                Column(verticalArrangement = Arrangement.spacedBy(AppSpacing.xs)) {
-                    Text(
-                        text = difference.packageName,
-                        maxLines = 1,
-                        overflow = TextOverflow.Ellipsis,
-                        color = contentColor,
-                    )
-                    LocaleChangeRow(
-                        currentLocale = currentLocale,
-                        savedLocale = savedLocale,
-                        contentColor = contentColor,
-                    )
-                }
-            },
-            leadingContent = {
-                Icon(
-                    imageVector = icon,
-                    contentDescription = null,
-                    tint = contentColor,
-                )
-            },
-            colors = ListItemDefaults.colors(containerColor = Color.Transparent),
+        AppFilterChip(
+            selected = selected == ConfigurationDetailFilter.All,
+            onClick = { onSelect(ConfigurationDetailFilter.All) },
+            label = stringResource(R.string.configuration_filter_all),
+        )
+        AppFilterChip(
+            selected = selected == ConfigurationDetailFilter.Differences,
+            onClick = { onSelect(ConfigurationDetailFilter.Differences) },
+            label = stringResource(R.string.configuration_filter_differences),
         )
     }
 }
 
 @Composable
-private fun LocaleChangeRow(
-    currentLocale: String,
-    savedLocale: String,
-    contentColor: Color,
+private fun OtherAppsHeader(
+    count: Int,
+    expanded: Boolean,
+    onToggle: () -> Unit,
+    modifier: Modifier = Modifier,
 ) {
-    Surface(
-        shape = MaterialTheme.shapes.large,
-        color = contentColor.copy(alpha = 0.10f),
-        modifier = Modifier.fillMaxWidth(),
-    ) {
-        Row(
-            modifier = Modifier.padding(
-                horizontal = AppSpacing.lg,
-                vertical = AppSpacing.sm,
-            ),
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.spacedBy(AppSpacing.sm),
-        ) {
-            Column(modifier = Modifier.weight(1f)) {
-                Text(
-                    text = stringResource(R.string.difference_current_short),
-                    style = MaterialTheme.typography.labelSmall,
-                    color = contentColor,
-                )
-                Text(
-                    text = currentLocale,
-                    style = MaterialTheme.typography.titleSmall,
-                    fontWeight = FontWeight.SemiBold,
-                    color = contentColor,
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis,
-                )
-            }
-            Icon(
-                imageVector = Icons.AutoMirrored.Outlined.ArrowForward,
+    // A quiet expandable section header following the settings-row anatomy;
+    // the chevron rotates in place to carry the expand/collapse state.
+    AppSettingsRow(
+        title = otherAppsSectionTitle(count),
+        onClick = onToggle,
+        modifier = modifier,
+        trailing = {
+            AppIcon(
+                imageVector = AppSymbolVector(AppSymbol.Forward),
                 contentDescription = null,
-                tint = contentColor,
+                tint = AppUiTheme.palette.muted,
+                modifier = Modifier.graphicsLayer {
+                    rotationZ = if (expanded) 90f else 0f
+                },
             )
-            Column(
-                modifier = Modifier.weight(1f),
-                horizontalAlignment = Alignment.End,
-            ) {
-                Text(
-                    text = stringResource(R.string.difference_saved_short),
-                    style = MaterialTheme.typography.labelSmall,
-                    color = contentColor,
-                )
-                Text(
-                    text = savedLocale,
-                    style = MaterialTheme.typography.titleSmall,
-                    fontWeight = FontWeight.SemiBold,
-                    color = contentColor,
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis,
-                )
-            }
-        }
-    }
+        },
+    )
 }
+
+@Composable
+private fun otherAppsSectionTitle(count: Int): String =
+    stringResource(R.string.configuration_section_other_apps, count)
 
 @Composable
 private fun EmptyConfigurationSelection(modifier: Modifier = Modifier) {
@@ -439,51 +545,15 @@ private fun EmptyConfigurationSelection(modifier: Modifier = Modifier) {
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(AppSpacing.sm),
         ) {
-            Text(
+            AppText(
                 text = stringResource(R.string.no_configuration_selected),
-                style = MaterialTheme.typography.titleMedium,
+                style = AppUiTheme.textStyles.itemTitle,
             )
-            Text(
+            AppText(
                 text = stringResource(R.string.no_configuration_selected_description),
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                style = AppUiTheme.textStyles.body,
+                color = AppUiTheme.palette.muted,
             )
         }
     }
-}
-
-@Composable
-private fun NoDifferencesState(modifier: Modifier = Modifier) {
-    Column(
-        modifier = modifier
-            .fillMaxWidth()
-            .padding(AppSpacing.xxl),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.spacedBy(AppSpacing.sm),
-    ) {
-        Icon(
-            imageVector = Icons.Outlined.Sync,
-            contentDescription = null,
-            tint = MaterialTheme.colorScheme.primary,
-        )
-        Text(
-            text = stringResource(R.string.configuration_no_differences),
-            style = MaterialTheme.typography.titleMedium,
-        )
-        Text(
-            text = stringResource(R.string.configuration_no_differences_description),
-            style = MaterialTheme.typography.bodyMedium,
-            color = MaterialTheme.colorScheme.onSurfaceVariant,
-        )
-    }
-}
-
-@Composable
-private fun ConfigurationComparisonUnavailable(modifier: Modifier = Modifier) {
-    Text(
-        text = stringResource(R.string.configuration_operation_failed),
-        style = MaterialTheme.typography.bodyMedium,
-        color = MaterialTheme.colorScheme.onSurfaceVariant,
-        modifier = modifier.padding(AppSpacing.lg),
-    )
 }

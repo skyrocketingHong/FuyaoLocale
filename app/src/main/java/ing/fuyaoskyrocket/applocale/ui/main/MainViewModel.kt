@@ -152,6 +152,24 @@ class MainViewModel @Inject constructor(
         }
     }
 
+    /** Shows the search input; the query, filters and list stay untouched. */
+    fun openSearch() {
+        _uiState.update { it.copy(isSearchExpanded = true) }
+    }
+
+    /**
+     * Exits the search input and clears the query in one update; filters (modified
+     * only, system apps) and sorting keep their current values.
+     */
+    fun closeSearch() {
+        _uiState.update { state ->
+            state.copy(
+                isSearchExpanded = false,
+                listQuery = state.listQuery.copy(query = ""),
+            )
+        }
+    }
+
     // -------------------------------------------------------------- Filter chips
 
     fun toggleModifiedOnly() {
@@ -166,22 +184,20 @@ class MainViewModel @Inject constructor(
         }
     }
 
-    fun selectSortOption(option: AppListSortOption) {
+    /**
+     * Tri-state sort cycle driven by tapping a sort chip: an unselected option starts
+     * ascending, the selected option flips to descending, and tapping it again cancels
+     * the sort (null option → natural repository order).
+     */
+    fun cycleSortOption(option: AppListSortOption) {
         _uiState.update { state ->
-            state.copy(
-                listQuery = state.listQuery.copy(
-                    sortOption = option,
-                    sortAscending = true,
-                ),
-            )
-        }
-    }
-
-    fun toggleSortDirection() {
-        _uiState.update { state ->
-            state.copy(
-                listQuery = state.listQuery.copy(sortAscending = !state.sortAscending),
-            )
+            val query = state.listQuery
+            val newQuery = when {
+                query.sortOption != option -> query.copy(sortOption = option, sortAscending = true)
+                query.sortAscending -> query.copy(sortAscending = false)
+                else -> query.copy(sortOption = null, sortAscending = true)
+            }
+            state.copy(listQuery = newQuery)
         }
     }
 

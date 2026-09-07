@@ -23,40 +23,42 @@
     <string name="pin">ピン留め</string>
     <string name="unpin">ピン留めを解除</string>
     <string name="clear">クリア</string>
-    <string name="home">ホーム</string>
     <string name="configurations">構成</string>
-    <string name="navigation_configurations">保存済み</string>
+    <string name="navigation_home">アプリの言語</string>
+    <string name="navigation_system_languages">システムの言語</string>
+    <string name="navigation_configurations">構成</string>
     <string name="about">アプリについて</string>
-    <string name="deps_libs">依存関係とライブラリ</string>
     <string name="version">バージョン %1$s（%2$s）</string>
-    <string name="app">アプリ</string>
-    <string name="ghrepo">GitHub リポジトリ</string>
-    <string name="view_source">ソースコードを表示</string>
-    <string name="project_repository">GitHub の Fuyao Locale</string>
-    <string name="original_project">元のプロジェクト</string>
-    <string name="original_project_summary">VegaBobo による Language Selector</string>
     <string name="about_overview">概要</string>
-    <string name="about_summary">Fuyao Locale は、適切なシステム画面がない場合にアプリごとの言語を確認・管理できる Material 3 ツールです。</string>
+    <string name="about_summary">Fuyao Locale は、適切なシステム画面がない環境で、アプリごとの言語とシステムの言語リストを確認・管理できる、2つのテーマを持つ言語管理ツールです。</string>
+    <string name="about_regional_display_statement">「一つの中国」原則と地域表示に関する声明</string>
+    <string name="about_regional_display_statement_body">Fuyao Locale およびその開発者は、「一つの中国」原則を堅持します。アプリに台湾地域に関する名称や旗の記号が表示される場合、地域名は Android のロケールデータに由来し、旗の記号は共通の処理によって地域コードから標準の Unicode 文字列として生成され、端末のシステムフォントで描画されます。これらの名称や旗の図柄は、開発者が当該地域のために個別に作成・設計したものではありません。こうした表示は端末のシステムデータと描画機能を反映するものであり、本アプリおよび開発者の立場の変更や逸脱を意味するものではありません。</string>
     <string name="about_features">主な機能</string>
     <string name="about_feature_per_app">アプリごとの言語設定</string>
     <string name="about_feature_per_app_summary">現在の言語を確認し、対応言語を設定するか、システムのデフォルトに戻せます。</string>
+    <string name="about_feature_system_languages">システムの言語リスト</string>
+    <string name="about_feature_system_languages_summary">メーカーが非表示にしている言語を追加し、順序を変更して、システム全体の優先言語として保存できます。</string>
     <string name="about_feature_batch">言語の一括設定</string>
     <string name="about_feature_batch_summary">アプリを長押しして複数選択し、同じ言語をまとめて適用できます。</string>
     <string name="about_feature_filters">検索とフィルター</string>
     <string name="about_feature_filters_summary">アプリの検索、変更済み項目の絞り込み、並べ替え、システムアプリの表示切り替えに対応します。</string>
     <string name="about_feature_quick_settings">クイック設定タイル</string>
     <string name="about_feature_quick_settings_summary">よく使う言語をピン留めし、クイック設定タイルから順に切り替えられます。</string>
-    <string name="about_feature_adaptive">Material 3 とアダプティブレイアウト</string>
-    <string name="about_feature_adaptive_summary">ネイティブ Material 3 UI、スマートフォンの下部ナビゲーション、大画面のリストと詳細表示、エッジツーエッジ表示に対応します。</string>
-    <string name="about_requirements">動作要件</string>
+    <string name="about_feature_adaptive">2つのテーマとアダプティブレイアウト</string>
+    <string name="about_feature_adaptive_summary">2つのテーマのネイティブ UI、スマートフォンの下部ナビゲーション、大画面のリストと詳細表示、エッジツーエッジ表示に対応します。</string>
     <string name="about_requirement_android">Android 13（API 33）以降。</string>
     <string name="about_requirement_shizuku">Shizuku をインストールして起動し、Fuyao Locale を許可する必要があります。</string>
     <string name="about_usage_notes">使用上の注意</string>
     <string name="about_usage_note">Fuyao Locale はアプリを翻訳しません。対象アプリがすでに対応している言語を適用するよう Android に要求します。システムアプリや未対応言語では想定外の動作が起こる場合があります。</string>
-    <string name="about_credits_license">クレジットとライセンス</string>
-    <string name="about_open_source">オープンソース</string>
-    <string name="about_credits">Fuyao Locale は、VegaBobo の Language Selector の考え方と機能を基に大幅に書き直したプロジェクトです。</string>
-    <string name="about_license">Fuyao Locale は GNU AGPL v3 only（AGPL-3.0-only）で提供されます。Language Selector に由来する部分には Apache License 2.0 の表示と帰属が引き続き適用されます。</string>
+        <string name="about_credits_and_references">クレジットと参考プロジェクト</string>
+<string name="about_this_project">このプロジェクト</string>
+    <string name="about_reference_projects">参考プロジェクト</string>
+    <string name="about_cited_projects">引用プロジェクト</string>
+    <string name="about_theme">テーマ</string>
+    <string name="theme_liquid_glass_navigation_bar">リキッドグラスのタブバー</string>
+    <string name="theme_liquid_glass_navigation_bar_summary">下部のタブバーを壁紙を屈折するガラス表示にします</string>
+    <string name="about_credits">Fuyao Locale は、VegaBobo の Language Selector の考え方と機能を基に大幅に書き直したプロジェクトです。システムの言語リスト機能は Nightdavisao の MultiLocale に着想を得ています。リキッドグラスのタブバーと Miuix テーマは Kyant0 の AndroidLiquidGlass と miuix を使って構築されています。</string>
+    <string name="about_license">Fuyao Locale は GNU AGPL v3 only（AGPL-3.0-only）で提供されます。Language Selector に由来する部分には Apache License 2.0 の表示と帰属が引き続き適用されます。MultiLocale は MIT ライセンスで配布されています。AndroidLiquidGlass と miuix は Apache License 2.0 で配布されています。</string>
     <string name="loading">読み込み中…</string>
     <string name="unavailable">利用できません</string>
     <string name="warning">警告</string>
@@ -81,7 +83,8 @@
     <string name="not_modified">未変更</string>
     <string name="modified_count">変更済み（%1$d）</string>
     <string name="more">その他</string>
-    <string name="back">戻る</string>
+        <string name="scroll_to_top">トップへ戻る</string>
+<string name="back">戻る</string>
     <string name="no_results">アプリが見つかりません</string>
     <string name="no_results_description">検索内容またはフィルターを調整してください。</string>
     <string name="clear_filters">フィルターをクリア</string>
@@ -91,6 +94,12 @@
     <string name="sort_by_modified">変更状態</string>
     <string name="sort_by_app_type">アプリの種類</string>
     <string name="toggle_sort_direction">並び順を反転</string>
+    <string name="clear_search">検索をクリア</string>
+    <string name="close_search">検索を閉じる</string>
+    <string name="more_actions">その他の操作</string>
+    <string name="sort_direction_ascending">昇順</string>
+    <string name="sort_direction_descending">降順</string>
+    <string name="sort_direction_none">並べ替えなし</string>
 
     <!-- Selection mode -->
     <string name="exit_selection">選択を終了</string>
@@ -110,7 +119,6 @@
     <!-- App detail -->
     <string name="current_language">現在の言語</string>
     <string name="reset_to_system_default">システムのデフォルトに戻す</string>
-    <string name="app_language_section">アプリの言語</string>
 
     <!-- Saved configurations -->
     <string name="save_current_changes">現在の変更を保存</string>
@@ -141,6 +149,30 @@
     <string name="configuration_no_differences">差分はありません</string>
     <string name="configuration_no_differences_description">この構成は現在の端末と一致しています。</string>
     <string name="apply_configuration">構成を適用</string>
+
+    <!-- 第8段階037：連続的な設定詳細 -->
+    <string name="configuration_state_not_installed">未インストール</string>
+    <string name="configuration_state_unknown">現在の言語を取得できません</string>
+    <string name="configuration_current_to_target">現在：%1$s → 設定：%2$s</string>
+    <string name="configuration_current_only_line">現在：%1$s</string>
+    <string name="configuration_filter_all">すべて</string>
+    <string name="configuration_filter_differences">差異あり</string>
+    <string name="configuration_filter_empty">このフィルターに一致する項目はありません。</string>
+    <string name="configuration_section_other_apps">その他のアプリ（%1$d）</string>
+    <string name="configuration_other_apps_search_hint">その他のアプリを検索</string>
+    <string name="configuration_other_apps_empty">一致するアプリはありません。</string>
+    <string name="configuration_edit_processing">言語を変更しています…</string>
+    <string name="configuration_edit_completed">アプリの言語を変更し、新しい設定として保存しました</string>
+    <string name="configuration_edit_completed_save_only">新しい設定を保存しました</string>
+    <string name="configuration_edit_no_change">変更はありません</string>
+    <string name="configuration_edit_apply_failed">アプリの言語を変更できませんでした</string>
+    <string name="configuration_edit_save_failed">言語は変更されましたが、新しい設定の保存に失敗しました</string>
+    <string name="configuration_edit_outcome_unknown">変更の結果は不明です</string>
+    <string name="configuration_edit_rejected_busy">別の変更が進行中です</string>
+    <string name="configuration_edit_pending_banner">未完了の設定変更があります</string>
+    <string name="configuration_edit_retry_save">保存を再試行</string>
+    <string name="configuration_edit_recheck">再確認</string>
+    <string name="configuration_edit_discard">保留中の変更を破棄</string>
     <string name="refresh">更新</string>
     <string name="difference_needs_apply">更新予定</string>
     <string name="difference_missing_app">未インストール</string>
@@ -152,7 +184,43 @@
     <string name="no_configuration_selected">構成を選択</string>
     <string name="no_configuration_selected_description">保存済みの構成を選択して差分を確認してください。</string>
 
+    <!-- システムの言語 -->
+    <string name="system_languages">システムの言語</string>
+    <string name="add_system_language">言語を追加</string>
+    <string name="save_system_languages">システムの言語を保存</string>
+    <string name="system_language_order">言語の順序</string>
+    <string name="system_languages_summary">Android では先頭の言語が優先されます。長押ししてドラッグで順序を変更し、変更を保存してください。</string>
+    <string name="system_languages_unsaved">未保存の変更</string>
+    <string name="reorder_system_language">言語の順序を変更</string>
+    <string name="move_language_up">上へ移動</string>
+    <string name="move_language_down">下へ移動</string>
+    <string name="remove_system_language">言語を削除</string>
+    <string name="system_languages_saved">システムの言語を保存しました</string>
+    <string name="system_languages_load_failed">システムの言語を読み込めませんでした。</string>
+    <string name="system_languages_save_failed">システムの言語を保存できませんでした。</string>
+    <string name="system_languages_cannot_remove_last">システムの言語は少なくとも 1 つ残してください。</string>
+    <string name="system_languages_already_added">この言語はすでにシステムのリストにあります。</string>
+
     <!-- Privileged service state -->
     <string name="connecting_to_shizuku">Shizuku に接続中</string>
     <string name="connecting_to_shizuku_description">権限は許可済みです。特権サービスの再接続を待っています。</string>
+    <!-- アプリ詳細（第4ラウンド 013-B） -->
+    <string name="app_info">アプリ情報</string>
+    <string name="app_info_package_name">パッケージ名</string>
+    <string name="app_info_version">バージョン</string>
+    <string name="app_info_sdk">SDK %1$d – %2$d</string>
+    <string name="app_info_sdk_single">SDK %1$d</string>
+    <string name="app_info_type">種類</string>
+    <string name="candidate_languages_count">候補言語：%1$d</string>
+    <!-- 視覚効果（第4ラウンド 014） -->
+    <string name="more_blur">ぼかしを増やす</string>
+    <string name="more_blur_summary">トップバーと通常のナビゲーションの背後をぼかす</string>
+    <string name="visual_effect_unavailable">このデバイスではこの効果を利用できません</string>
+    <string name="appearance_change_failed">変更を適用できませんでした。現在の設定を表示しています。</string>
+    <string name="language_sort_name">名前</string>
+    <string name="language_sort_autonym">自称</string>
+    <string name="language_sort_tag">コード</string>
+    <string name="save_languages_before_refresh">更新する前に現在の言語の順序を保存してください。</string>
+    <string name="system_languages_refresh_hint">下に引いて更新できます。</string>
+    <string name="system_languages_refresh_hint_keyboard">下に引いて更新、または Ctrl+R を押してください。</string>
 </resources>

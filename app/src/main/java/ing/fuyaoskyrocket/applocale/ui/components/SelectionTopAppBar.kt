@@ -1,22 +1,22 @@
 package ing.fuyaoskyrocket.applocale.ui.components
 
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.outlined.ArrowBack
-import androidx.compose.material.icons.outlined.Checklist
 import androidx.compose.material.icons.outlined.Deselect
-import androidx.compose.material.icons.outlined.SelectAll
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
 import ing.fuyaoskyrocket.applocale.R
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppIcon
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppIconButton
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppSymbol
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppSymbolVector
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppTopAppBar
 
 /**
- * Contextual top app bar shown during multi-selection.
+ * Contextual top app bar shown during multi-selection. Exit and select-all
+ * resolve their native glyphs by symbol; miuix has no deselect glyph, so that
+ * one stays a project vector drawn by the backend icon control (asset
+ * exception, see the 012 execution record).
  */
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SelectionTopAppBar(
     selectedCount: Int,
@@ -24,27 +24,25 @@ fun SelectionTopAppBar(
     onSelectAll: () -> Unit,
     onClear: () -> Unit,
 ) {
-    TopAppBar(
+    AppTopAppBar(
         navigationIcon = {
-            IconButton(onClick = onClose) {
-                Icon(
-                    imageVector = Icons.AutoMirrored.Outlined.ArrowBack,
+            AppIconButton(onClick = onClose) {
+                AppIcon(
+                    imageVector = AppSymbolVector(AppSymbol.Close),
                     contentDescription = stringResource(R.string.exit_selection),
                 )
             }
         },
-        title = {
-            AppTopAppBarTitle(title = stringResource(R.string.selected_count, selectedCount))
-        },
+        title = stringResource(R.string.selected_count, selectedCount),
         actions = {
-            IconButton(onClick = onSelectAll) {
-                Icon(
-                    imageVector = Icons.Outlined.SelectAll,
+            AppIconButton(onClick = onSelectAll) {
+                AppIcon(
+                    imageVector = AppSymbolVector(AppSymbol.SelectAll),
                     contentDescription = stringResource(R.string.select_all),
                 )
             }
-            IconButton(onClick = onClear) {
-                Icon(
+            AppIconButton(onClick = onClear) {
+                AppIcon(
                     imageVector = Icons.Outlined.Deselect,
                     contentDescription = stringResource(R.string.clear_selection),
                 )

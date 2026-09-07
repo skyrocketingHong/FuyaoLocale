@@ -6,22 +6,24 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.style.TextOverflow
-import ing.fuyaoskyrocket.applocale.R
 import ing.fuyaoskyrocket.applocale.data.system.AppIconLoader
 import ing.fuyaoskyrocket.applocale.ui.components.AppIcon
+import ing.fuyaoskyrocket.applocale.ui.components.AppLocaleStatusBadge
+import ing.fuyaoskyrocket.applocale.ui.components.LocaleStatusEmphasis
 import ing.fuyaoskyrocket.applocale.ui.designsystem.AppLayout
 import ing.fuyaoskyrocket.applocale.ui.designsystem.AppSpacing
+import ing.fuyaoskyrocket.applocale.ui.designsystem.AppUiTheme
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppText
 
 /**
- * App identity section: icon, label, package name, current language.
+ * Compact app identity (round-5 019-A): icon, label, package name and the
+ * current-language marker in one tight block — 8dp internal vertical padding,
+ * 4dp gaps between the text lines. The top spacing comes from the page's
+ * shared content padding, never from here. Continuous with the page
+ * background; no outer rounded card.
  */
 @Composable
 fun AppIdentityHeader(
@@ -32,54 +34,39 @@ fun AppIdentityHeader(
     iconLoader: AppIconLoader,
     modifier: Modifier = Modifier,
 ) {
-    Surface(
-        modifier = modifier.fillMaxWidth(),
-        shape = MaterialTheme.shapes.extraLarge,
-        color = MaterialTheme.colorScheme.surfaceContainerLow,
+    Row(
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(vertical = AppSpacing.sm),
+        verticalAlignment = Alignment.CenterVertically,
     ) {
-        Row(
+        AppIcon(
+            packageName = packageName,
+            iconLoader = iconLoader,
+            modifier = Modifier.size(AppLayout.appHeaderIconSize),
+        )
+        Column(
             modifier = Modifier
-                .fillMaxWidth()
-                .padding(AppSpacing.lg),
-            verticalAlignment = Alignment.CenterVertically,
+                .padding(start = AppLayout.homeListIconTextGap)
+                .weight(1f),
+            verticalArrangement = Arrangement.spacedBy(AppSpacing.xs),
         ) {
-            AppIcon(
-                packageName = packageName,
-                iconLoader = iconLoader,
-                modifier = Modifier.size(AppLayout.appHeaderIconSize),
+            AppText(
+                text = label,
+                style = AppUiTheme.textStyles.itemTitle,
+                maxLines = 2,
             )
-            Column(
-                modifier = Modifier
-                    .padding(start = AppSpacing.lg)
-                    .weight(1f),
-                verticalArrangement = Arrangement.spacedBy(AppSpacing.xs),
-            ) {
-                Text(
-                    text = label,
-                    style = MaterialTheme.typography.titleLarge,
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis,
-                )
-                Text(
-                    text = packageName,
-                    style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis,
-                )
-                val currentLang = currentLocaleTag ?: if (systemLocaleTag.isBlank()) {
-                    stringResource(R.string.system_default)
-                } else {
-                    stringResource(R.string.system_default_with_locale, systemLocaleTag)
-                }
-                Text(
-                    text = currentLang,
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.primary,
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis,
-                )
-            }
+            AppText(
+                text = packageName,
+                style = AppUiTheme.textStyles.metadata,
+                color = AppUiTheme.palette.muted,
+                maxLines = 2,
+            )
+            AppLocaleStatusBadge(
+                localeTag = currentLocaleTag,
+                systemLocaleTag = systemLocaleTag,
+                emphasis = LocaleStatusEmphasis.Quiet,
+            )
         }
     }
 }

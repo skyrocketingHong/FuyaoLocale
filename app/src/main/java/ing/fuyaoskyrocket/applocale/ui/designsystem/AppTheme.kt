@@ -1,37 +1,39 @@
 package ing.fuyaoskyrocket.applocale.ui.designsystem
 
 import android.graphics.Color as AndroidColor
-import android.os.Build
 import androidx.activity.ComponentActivity
 import androidx.activity.SystemBarStyle
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.dynamicDarkColorScheme
-import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
-import androidx.compose.ui.platform.LocalContext
+import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.platform.LocalView
+import ing.fuyaoskyrocket.applocale.ui.designsystem.material.MaterialAppTheme
+import ing.fuyaoskyrocket.applocale.ui.designsystem.miuix.MiuixAppTheme
 
 /**
- * App theme: dynamic colour on Android 12+ (which is every device given minSdk = 33),
- * falling back to the static [LightColorScheme] / [DarkColorScheme] for previews and edge cases.
+ * Non-null while the Liquid Glass navigation bar preference is enabled and supported:
+ * [LiquidGlassScaffold] captures the page content into this backdrop layer and the
+ * floating overlay tab bar refracts it. Top-level screens must skip their own in-slot
+ * bottom navigation bar while this is non-null. Components rendered in their own
+ * window (dialogs, sheets, dropdown menus) must clear it so they fall back to their
+ * normal theme rendering.
+ */
+val LocalGlassBackdrop = staticCompositionLocalOf<top.yukonga.miuix.kmp.blur.LayerBackdrop?> { null }
+
+/**
+ * App theme with selectable interface styles. Each style installs only its native
+ * backend — miuix/ renders the MIUIX tree through MiuixTheme alone, material/
+ * installs the Material 3 theme — and every backend also provides the neutral
+ * [LocalAppUiTheme] roles. The MIUIX runtime path never installs a MaterialTheme.
  */
 @Composable
 fun AppTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
+    style: AppThemeStyle = AppThemePreferences.style,
     content: @Composable () -> Unit,
 ) {
-    val colorScheme = when {
-        Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
-            val context = LocalContext.current
-            if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
-        }
-        darkTheme -> DarkColorScheme
-        else -> LightColorScheme
-    }
-
     val view = LocalView.current
     if (!view.isInEditMode) {
         SideEffect {
@@ -45,7 +47,7 @@ fun AppTheme(
                 )
             }
             // Re-apply the icon appearance when the theme changes. The transparent style lets
-            // the current Material surface continue through HyperOS' gesture-navigation area.
+            // the active backend's surface continue through HyperOS' gesture-navigation area.
             activity.enableEdgeToEdge(
                 statusBarStyle = transparentSystemBarStyle,
                 navigationBarStyle = transparentSystemBarStyle,
@@ -54,10 +56,9 @@ fun AppTheme(
         }
     }
 
-    MaterialTheme(
-        colorScheme = colorScheme,
-        typography = AppTypography,
-        shapes = AppShapes,
-        content = content,
-    )
+    if (style == AppThemeStyle.MIUIX) {
+        MiuixAppTheme(darkTheme = darkTheme, content = content)
+    } else {
+        MaterialAppTheme(darkTheme = darkTheme, content = content)
+    }
 }

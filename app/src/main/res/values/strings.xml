@@ -28,41 +28,56 @@
     <string name="pin">Pin</string>
     <string name="unpin">Unpin</string>
     <string name="clear">Clear</string>
-    <string name="home">Home</string>
     <string name="configurations">Configurations</string>
-    <string name="navigation_configurations">Saved</string>
+    <!-- Bottom navigation labels reuse the full screen titles in every language;
+         the navigation bar auto-shrinks longer labels so they never wrap or squeeze. -->
+    <string name="navigation_home">App languages</string>
+    <string name="navigation_system_languages">System languages</string>
+    <string name="navigation_configurations">Configurations</string>
     <string name="about">About</string>
-    <string name="deps_libs">Dependencies and libraries</string>
     <string name="version">version %1$s (%2$s)</string>
-    <string name="app">Application</string>
-    <string name="ghrepo">GitHub repo</string>
-    <string name="view_source">View source code</string>
-    <string name="project_repository">Fuyao Locale on GitHub</string>
+    <string name="project_repository" translatable="false">Fuyao Locale</string>
     <string name="project_repository_summary" translatable="false">skyrocketingHong/FuyaoLocale</string>
-    <string name="original_project">Original project</string>
-    <string name="original_project_summary">Language Selector by VegaBobo</string>
+    <string name="original_project" translatable="false">Language Selector</string>
+    <string name="original_project_summary" translatable="false">VegaBobo/Language-Selector</string>
+    <string name="credit_multilocale" translatable="false">MultiLocale</string>
+    <string name="credit_multilocale_summary" translatable="false">Nightdavisao/MultiLocale</string>
+    <string name="credit_liquidglass" translatable="false">AndroidLiquidGlass</string>
+    <string name="credit_liquidglass_summary" translatable="false">Kyant0/AndroidLiquidGlass</string>
+    <string name="credit_miuix" translatable="false">miuix</string>
+    <string name="credit_miuix_summary" translatable="false">compose-miuix-ui/miuix</string>
     <string name="about_overview">Overview</string>
-    <string name="about_summary">Fuyao Locale is a Material 3 tool for viewing and managing per-app locales when a suitable system interface is unavailable.</string>
+    <string name="about_summary">Fuyao Locale is a dual-theme language tool for managing per-app languages and the system language list when a suitable system interface is unavailable.</string>
+    <string name="about_regional_display_statement">One-China principle and regional display</string>
+    <string name="about_regional_display_statement_body">Fuyao Locale and its developer uphold the One-China principle. If references to the Taiwan region or associated flag symbols appear in the app, the regional names are supplied by Android\'s locale data, while flag symbols are generated from region codes using standard Unicode sequences and rendered by the device\'s system fonts. These names and flag graphics are not individually authored or designed by the developer for that region. Their appearance reflects the device\'s system data and rendering support and does not imply any change in, or departure from, this position.</string>
     <string name="about_features">Highlights</string>
-    <string name="about_feature_per_app">Per-app locale controls</string>
-    <string name="about_feature_per_app_summary">View the current locale, set a supported locale, or reset it to the system default.</string>
+    <string name="about_feature_per_app">Per-app language controls</string>
+    <string name="about_feature_per_app_summary">View the current language, set a supported language, or reset it to the system default.</string>
+    <string name="about_feature_system_languages">System language list</string>
+    <string name="about_feature_system_languages_summary">Add languages the OEM hides, reorder them, and save the system-wide preference.</string>
     <string name="about_feature_batch">Batch language setting</string>
     <string name="about_feature_batch_summary">Long-press apps to enter selection mode, then apply one locale to multiple apps.</string>
     <string name="about_feature_filters">Search and filters</string>
     <string name="about_feature_filters_summary">Search apps, show only modified entries, choose a sort order, and show or hide system apps.</string>
     <string name="about_feature_quick_settings">Quick Settings tile</string>
     <string name="about_feature_quick_settings_summary">Pin frequently used locales and cycle them from the system Quick Settings tile.</string>
-    <string name="about_feature_adaptive">Material 3 and adaptive layout</string>
-    <string name="about_feature_adaptive_summary">Native Material 3 UI with phone bottom navigation, large-screen list-detail layout, and edge-to-edge system bars.</string>
-    <string name="about_requirements">Requirements</string>
+    <string name="about_feature_adaptive">Two themes and adaptive layouts</string>
+    <string name="about_feature_adaptive_summary">Native UI in two themes with phone bottom navigation, large-screen list-detail layout, and edge-to-edge system bars.</string>
     <string name="about_requirement_android">Android 13 (API 33) or later.</string>
     <string name="about_requirement_shizuku">Shizuku must be installed, running, and authorized for Fuyao Locale.</string>
     <string name="about_usage_notes">Usage notes</string>
     <string name="about_usage_note">Fuyao Locale does not translate apps. It asks Android to apply a locale already supported by the selected app. System apps and unsupported locales may behave unexpectedly.</string>
-    <string name="about_credits_license">Credits and license</string>
-    <string name="about_open_source">Open source</string>
-    <string name="about_credits">Fuyao Locale is a substantial rewrite built from concepts and functionality of Language Selector by VegaBobo.</string>
-    <string name="about_license">Fuyao Locale is licensed under GNU AGPL v3 only (AGPL-3.0-only). Portions derived from Language Selector retain their Apache License 2.0 notices.</string>
+        <string name="about_credits_and_references">Credits and reference projects</string>
+<string name="about_this_project">This project</string>
+    <string name="about_reference_projects">Reference projects</string>
+    <string name="about_cited_projects">Cited projects</string>
+    <string name="about_theme">Theme</string>
+    <string name="theme_material_you" translatable="false">Material You</string>
+    <string name="theme_miuix" translatable="false">Miuix</string>
+    <string name="theme_liquid_glass_navigation_bar">Liquid Glass tab bar</string>
+    <string name="theme_liquid_glass_navigation_bar_summary">Render the bottom tab bar as glass refracting the wallpaper</string>
+    <string name="about_credits">Fuyao Locale is a substantial rewrite built from concepts and functionality of Language Selector by VegaBobo. The system language list is inspired by MultiLocale by Nightdavisao. The Liquid Glass tab bar and the Miuix theme are built with AndroidLiquidGlass by Kyant0 and miuix.</string>
+    <string name="about_license">Fuyao Locale is licensed under GNU AGPL v3 only (AGPL-3.0-only). Portions derived from Language Selector retain their Apache License 2.0 notices. MultiLocale is distributed under the MIT License. AndroidLiquidGlass and miuix are distributed under the Apache License 2.0.</string>
     <string name="loading">Loading…</string>
     <string name="unavailable">Unavailable</string>
     <string name="warning">Warning</string>
@@ -87,7 +102,8 @@
     <string name="not_modified">Not modified</string>
     <string name="modified_count">Modified (%1$d)</string>
     <string name="more">More</string>
-    <string name="back">Back</string>
+        <string name="scroll_to_top">Scroll to top</string>
+<string name="back">Back</string>
     <string name="no_results">No apps found</string>
     <string name="no_results_description">Try adjusting your search or filters.</string>
     <string name="clear_filters">Clear filters</string>
@@ -97,6 +113,12 @@
     <string name="sort_by_modified">Modified status</string>
     <string name="sort_by_app_type">App type</string>
     <string name="toggle_sort_direction">Reverse sort order</string>
+    <string name="clear_search">Clear search</string>
+    <string name="close_search">Close search</string>
+    <string name="more_actions">More actions</string>
+    <string name="sort_direction_ascending">Ascending</string>
+    <string name="sort_direction_descending">Descending</string>
+    <string name="sort_direction_none">No sorting</string>
 
     <!-- Selection mode -->
     <string name="exit_selection">Exit selection</string>
@@ -116,7 +138,6 @@
     <!-- App detail -->
     <string name="current_language">Current language</string>
     <string name="reset_to_system_default">Reset to system default</string>
-    <string name="app_language_section">App language</string>
 
     <!-- Saved configurations -->
     <string name="save_current_changes">Save current changes</string>
@@ -147,6 +168,30 @@
     <string name="configuration_no_differences">No differences</string>
     <string name="configuration_no_differences_description">This configuration already matches the current device.</string>
     <string name="apply_configuration">Apply configuration</string>
+
+    <!-- Round-8 037: continuous configuration detail -->
+    <string name="configuration_state_not_installed">Not installed</string>
+    <string name="configuration_state_unknown">Couldn\'t read the current language</string>
+    <string name="configuration_current_to_target">Current: %1$s → Config: %2$s</string>
+    <string name="configuration_current_only_line">Current: %1$s</string>
+    <string name="configuration_filter_all">All</string>
+    <string name="configuration_filter_differences">Differences</string>
+    <string name="configuration_filter_empty">No entries match this filter.</string>
+    <string name="configuration_section_other_apps">Other apps (%1$d)</string>
+    <string name="configuration_other_apps_search_hint">Search other apps</string>
+    <string name="configuration_other_apps_empty">No matching apps.</string>
+    <string name="configuration_edit_processing">Changing language…</string>
+    <string name="configuration_edit_completed">Language changed and saved as a new configuration</string>
+    <string name="configuration_edit_completed_save_only">New configuration saved</string>
+    <string name="configuration_edit_no_change">No change needed</string>
+    <string name="configuration_edit_apply_failed">Couldn\'t change the app language</string>
+    <string name="configuration_edit_save_failed">Language changed, but saving the new configuration failed</string>
+    <string name="configuration_edit_outcome_unknown">The result of the change is unknown</string>
+    <string name="configuration_edit_rejected_busy">Another change is already in progress</string>
+    <string name="configuration_edit_pending_banner">An unfinished configuration change is waiting</string>
+    <string name="configuration_edit_retry_save">Retry save</string>
+    <string name="configuration_edit_recheck">Check again</string>
+    <string name="configuration_edit_discard">Discard pending change</string>
     <string name="refresh">Refresh</string>
     <string name="difference_needs_apply">Will update</string>
     <string name="difference_missing_app">Not installed</string>
@@ -158,7 +203,43 @@
     <string name="no_configuration_selected">Select a configuration</string>
     <string name="no_configuration_selected_description">Choose a saved configuration to review its differences.</string>
 
+    <!-- System languages -->
+    <string name="system_languages">System languages</string>
+    <string name="add_system_language">Add language</string>
+    <string name="save_system_languages">Save system languages</string>
+    <string name="system_language_order">Language order</string>
+    <string name="system_languages_summary">Android uses the first language as the primary preference. Long-press and drag to reorder, then save your changes.</string>
+    <string name="system_languages_unsaved">Unsaved changes</string>
+    <string name="reorder_system_language">Reorder language</string>
+    <string name="move_language_up">Move up</string>
+    <string name="move_language_down">Move down</string>
+    <string name="remove_system_language">Remove language</string>
+    <string name="system_languages_saved">System languages saved</string>
+    <string name="system_languages_load_failed">Couldn’t load system languages.</string>
+    <string name="system_languages_save_failed">Couldn’t save system languages.</string>
+    <string name="system_languages_cannot_remove_last">Keep at least one system language.</string>
+    <string name="system_languages_already_added">This language is already in the system list.</string>
+
     <!-- Privileged service state -->
     <string name="connecting_to_shizuku">Connecting to Shizuku</string>
     <string name="connecting_to_shizuku_description">Permission is already granted. Waiting for the privileged service to reconnect.</string>
+    <!-- App detail (round-4 013-B) -->
+    <string name="app_info">App info</string>
+    <string name="app_info_package_name">Package name</string>
+    <string name="app_info_version">Version</string>
+    <string name="app_info_sdk">SDK %1$d \u2013 %2$d</string>
+    <string name="app_info_sdk_single">SDK %1$d</string>
+    <string name="app_info_type">Type</string>
+    <string name="candidate_languages_count">Candidate languages: %1$d</string>
+    <!-- Visual effects (round-4 014) -->
+    <string name="more_blur">More blur</string>
+    <string name="more_blur_summary">Blur content behind app bars and standard navigation</string>
+    <string name="visual_effect_unavailable">This effect is unavailable on this device</string>
+    <string name="appearance_change_failed">Change could not be applied; showing the current settings.</string>
+    <string name="language_sort_name">Name</string>
+    <string name="language_sort_autonym">Autonym</string>
+    <string name="language_sort_tag">Code</string>
+    <string name="save_languages_before_refresh">Save the current language order before refreshing.</string>
+    <string name="system_languages_refresh_hint">Pull down to refresh.</string>
+    <string name="system_languages_refresh_hint_keyboard">Pull down to refresh, or press Ctrl+R.</string>
 </resources>

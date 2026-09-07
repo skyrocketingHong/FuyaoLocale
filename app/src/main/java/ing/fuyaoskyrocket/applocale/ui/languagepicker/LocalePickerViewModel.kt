@@ -3,21 +3,22 @@ package ing.fuyaoskyrocket.applocale.ui.languagepicker
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import ing.fuyaoskyrocket.applocale.data.repository.LocaleRepository
+import javax.inject.Inject
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import ing.fuyaoskyrocket.applocale.data.repository.LocaleRepository
-import javax.inject.Inject
 
 /**
- * ViewModel for the batch language selection [ModalBottomSheet][androidx.compose.material3.ModalBottomSheet].
- * Holds [LocalePickerUiState] so the Composable never touches [LocaleRepository] directly.
- * Pin/unpin are disabled in batch mode (no-ops).
+ * Shared state holder for read-only locale selection surfaces.
+ *
+ * Batch application and system-language editing both use the same language directory, search,
+ * section ordering, and sort behavior. Their parent surfaces own what a selected locale means.
  */
 @HiltViewModel
-class BatchLanguagePickerViewModel @Inject constructor(
+class LocalePickerViewModel @Inject constructor(
     private val localeRepository: LocaleRepository,
 ) : ViewModel() {
 
@@ -25,8 +26,32 @@ class BatchLanguagePickerViewModel @Inject constructor(
     val uiState: StateFlow<LocalePickerUiState> = _uiState.asStateFlow()
     private var displayLocaleTag: String = ""
 
+    // Round-8 038: sessions isolate picker state between surfaces. A new
+    // session key resets query/group/selection only; the loaded directory
+    // stays, and the async loads above never overwrite the session's
+    // selectedLanguageTag (they copy over it untouched).
+    private var activeSessionKey: String? = null
+
     init {
         load()
+    }
+
+    /**
+     * Starts a fresh selection session for a caller-owned surface (round-8
+     * 038): query and drilled-in group reset and the selection seeds from the
+     * caller. Calling twice with the same key is a no-op, so a config-change
+     * recomposition does not clobber an open session.
+     */
+    fun beginSession(sessionKey: String, selectedLanguageTag: String?) {
+        if (activeSessionKey == sessionKey) return
+        activeSessionKey = sessionKey
+        _uiState.update {
+            it.copy(
+                query = "",
+                selectedGroupId = null,
+                selectedLanguageTag = selectedLanguageTag,
+            )
+        }
     }
 
     private fun load() {
@@ -77,29 +102,29 @@ class BatchLanguagePickerViewModel @Inject constructor(
             LocalePickerAction.BackToGroups -> {
                 _uiState.update { it.copy(selectedGroupId = null) }
             }
-            is LocalePickerAction.GroupSortChanged -> {
+            is LocalePickerAction.CycleGroupSort -> {
+                val (option, ascending) = cycledLanguageGroupSort(
+                    currentOption = _uiState.value.groupSortOption,
+                    currentAscending = _uiState.value.groupSortAscending,
+                    tapped = action.option,
+                )
                 _uiState.update {
-                    it.copy(groupSortOption = action.option, groupSortAscending = true)
+                    it.copy(groupSortOption = option, groupSortAscending = ascending)
                 }
             }
-            LocalePickerAction.ToggleGroupSortDirection -> {
-                _uiState.update { it.copy(groupSortAscending = !it.groupSortAscending) }
-            }
-            is LocalePickerAction.VariantSortChanged -> {
+            is LocalePickerAction.CycleVariantSort -> {
+                val (option, ascending) = cycledLocaleVariantSort(
+                    currentOption = _uiState.value.variantSortOption,
+                    currentAscending = _uiState.value.variantSortAscending,
+                    tapped = action.option,
+                )
                 _uiState.update {
-                    it.copy(variantSortOption = action.option, variantSortAscending = true)
+                    it.copy(variantSortOption = option, variantSortAscending = ascending)
                 }
-            }
-            LocalePickerAction.ToggleVariantSortDirection -> {
-                _uiState.update { it.copy(variantSortAscending = !it.variantSortAscending) }
             }
             is LocalePickerAction.PinClicked,
-            is LocalePickerAction.UnpinClicked -> {
-                // Pin/unpin disabled in batch mode
-            }
-            is LocalePickerAction.LocaleSelected -> {
-                // Handled by the parent — selection is communicated via callback
-            }
+            is LocalePickerAction.UnpinClicked,
+            is LocalePickerAction.LocaleSelected -> Unit
         }
     }
 }

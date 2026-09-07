@@ -1,6 +1,7 @@
 package ing.fuyaoskyrocket.applocale.ui.appinfo
 
 import android.content.Intent
+import android.content.pm.ApplicationInfo
 import android.net.Uri
 import android.provider.Settings
 import androidx.lifecycle.ViewModel
@@ -22,6 +23,8 @@ import ing.fuyaoskyrocket.applocale.model.LocaleOption
 import ing.fuyaoskyrocket.applocale.ui.languagepicker.LocalePickerAction
 import ing.fuyaoskyrocket.applocale.ui.languagepicker.LocalePickerEvent
 import ing.fuyaoskyrocket.applocale.ui.languagepicker.LocalePickerUiState
+import ing.fuyaoskyrocket.applocale.ui.languagepicker.cycledLanguageGroupSort
+import ing.fuyaoskyrocket.applocale.ui.languagepicker.cycledLocaleVariantSort
 import javax.inject.Inject
 
 @HiltViewModel
@@ -71,6 +74,7 @@ class AppInfoViewModel @Inject constructor(
                     packageName = pkg,
                     label = label,
                     currentLocaleTag = currentTag.takeIf { tag -> tag.isNotBlank() },
+                    isSystemApp = (info.flags and ApplicationInfo.FLAG_SYSTEM) != 0,
                     isLoading = false,
                 )
             }
@@ -140,18 +144,26 @@ class AppInfoViewModel @Inject constructor(
                 _pickerState.update { it.copy(selectedGroupId = action.groupId) }
             LocalePickerAction.BackToGroups ->
                 _pickerState.update { it.copy(selectedGroupId = null) }
-            is LocalePickerAction.GroupSortChanged ->
+            is LocalePickerAction.CycleGroupSort -> {
+                val (option, ascending) = cycledLanguageGroupSort(
+                    currentOption = _pickerState.value.groupSortOption,
+                    currentAscending = _pickerState.value.groupSortAscending,
+                    tapped = action.option,
+                )
                 _pickerState.update {
-                    it.copy(groupSortOption = action.option, groupSortAscending = true)
+                    it.copy(groupSortOption = option, groupSortAscending = ascending)
                 }
-            LocalePickerAction.ToggleGroupSortDirection ->
-                _pickerState.update { it.copy(groupSortAscending = !it.groupSortAscending) }
-            is LocalePickerAction.VariantSortChanged ->
+            }
+            is LocalePickerAction.CycleVariantSort -> {
+                val (option, ascending) = cycledLocaleVariantSort(
+                    currentOption = _pickerState.value.variantSortOption,
+                    currentAscending = _pickerState.value.variantSortAscending,
+                    tapped = action.option,
+                )
                 _pickerState.update {
-                    it.copy(variantSortOption = action.option, variantSortAscending = true)
+                    it.copy(variantSortOption = option, variantSortAscending = ascending)
                 }
-            LocalePickerAction.ToggleVariantSortDirection ->
-                _pickerState.update { it.copy(variantSortAscending = !it.variantSortAscending) }
+            }
             is LocalePickerAction.PinClicked -> {
                 localeRepository.pinLocale(action.option)
                 _pickerState.update { it.copy(pinnedLocales = localeRepository.getPinnedLocales()) }

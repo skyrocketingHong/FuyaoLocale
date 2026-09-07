@@ -4,12 +4,19 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import ing.fuyaoskyrocket.applocale.data.repository.ApplySavedLocaleConfigurationUseCase
+import ing.fuyaoskyrocket.applocale.data.repository.ConfigurationEditCoordinator
 import ing.fuyaoskyrocket.applocale.data.repository.LocaleChangeNotifier
 import ing.fuyaoskyrocket.applocale.data.repository.SavedLocaleConfigurationsRepository
+import ing.fuyaoskyrocket.applocale.data.system.AppIconLoader
 import ing.fuyaoskyrocket.applocale.model.BatchLocaleResult
+import ing.fuyaoskyrocket.applocale.model.ConfigurationAppProjection
+import ing.fuyaoskyrocket.applocale.model.ConfigurationEditCommand
+import ing.fuyaoskyrocket.applocale.model.ConfigurationEditPhase
+import ing.fuyaoskyrocket.applocale.model.ConfigurationEditRejection
+import ing.fuyaoskyrocket.applocale.model.ConfigurationEditState
 import ing.fuyaoskyrocket.applocale.model.ConfigurationImportResult
 import ing.fuyaoskyrocket.applocale.model.SavedLocaleConfiguration
-import ing.fuyaoskyrocket.applocale.model.SavedLocaleConfigurationComparison
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -25,9 +32,20 @@ data class ConfigurationsUiState(
     val isImporting: Boolean = false,
     val applyingConfigurationId: String? = null,
     val selectedConfigurationId: String? = null,
-    val comparison: SavedLocaleConfigurationComparison? = null,
+    /** The selected configuration's full app projection; null while loading or after a failure. */
+    val detailRows: List<ConfigurationAppProjection>? = null,
     val isComparing: Boolean = false,
-)
+    /** Round-8 038: the live edit command's target row while it runs. */
+    val editingPackageName: String? = null,
+    val editingPhase: ConfigurationEditPhase? = null,
+    /** An unresolved pending record (save failed or outcome unknown) blocking new edits. */
+    val pendingEdit: ConfigurationEditCommand? = null,
+    val pendingEditOutcomeUnknown: Boolean = false,
+) {
+    /** Any live or unresolved command: edit rows, apply and delete stand down. */
+    val isEditBusy: Boolean
+        get() = editingPackageName != null || pendingEdit != null
+}
 
 sealed interface ConfigurationsEvent {
     data class Saved(val appCount: Int) : ConfigurationsEvent
@@ -39,6 +57,19 @@ sealed interface ConfigurationsEvent {
     data object Exported : ConfigurationsEvent
     data object ExportFailed : ConfigurationsEvent
     data object Failed : ConfigurationsEvent
+
+    /** Round-8 038 live-edit outcomes. */
+    data class EditCompleted(
+        val sourceConfigurationId: String,
+        val packageName: String,
+        val newConfigurationId: String?,
+        val appliedLocaleChange: Boolean,
+    ) : ConfigurationsEvent
+
+    data class EditRejected(val reason: ConfigurationEditRejection) : ConfigurationsEvent
+    data object EditApplyFailed : ConfigurationsEvent
+    data object EditSaveFailed : ConfigurationsEvent
+    data object EditOutcomeUnknown : ConfigurationsEvent
 }
 
 @HiltViewModel
@@ -46,6 +77,8 @@ class ConfigurationsViewModel @Inject constructor(
     private val configurationsRepository: SavedLocaleConfigurationsRepository,
     private val applySavedConfiguration: ApplySavedLocaleConfigurationUseCase,
     private val localeChangeNotifier: LocaleChangeNotifier,
+    private val editCoordinator: ConfigurationEditCoordinator,
+    val appIconLoader: AppIconLoader,
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(ConfigurationsUiState())
@@ -54,7 +87,90 @@ class ConfigurationsViewModel @Inject constructor(
     private val _events = Channel<ConfigurationsEvent>(Channel.BUFFERED)
     val events = _events.receiveAsFlow()
 
+    /**
+     * Detail projection requests carry a generation (round-8 038): a stale job
+     * for an older source configuration — or an older refresh of the same id —
+     * can never overwrite a newer result.
+     */
+    private var detailJob: Job? = null
+    private var detailGeneration = 0
+
     init {
+        // The coordinator's app-level state drives this surface's mirrors and
+        // one-shot events; terminal outcomes are acknowledged here exactly
+        // once, so a rotation or route change never replays them.
+        viewModelScope.launch {
+            editCoordinator.state.collect { state ->
+                when (state) {
+                    is ConfigurationEditState.Running -> _uiState.update {
+                        it.copy(
+                            editingPackageName = state.command.packageName,
+                            editingPhase = state.phase,
+                            pendingEdit = null,
+                            pendingEditOutcomeUnknown = false,
+                        )
+                    }
+
+                    is ConfigurationEditState.Rejected -> {
+                        _uiState.update { it.copy(editingPackageName = null, editingPhase = null) }
+                        _events.send(ConfigurationsEvent.EditRejected(state.reason))
+                        editCoordinator.acknowledge()
+                    }
+
+                    is ConfigurationEditState.ApplyFailed -> {
+                        _uiState.update { it.copy(editingPackageName = null, editingPhase = null) }
+                        _events.send(ConfigurationsEvent.EditApplyFailed)
+                        editCoordinator.acknowledge()
+                    }
+
+                    is ConfigurationEditState.OutcomeUnknown -> _uiState.update {
+                        it.copy(
+                            editingPackageName = null,
+                            editingPhase = null,
+                            pendingEdit = state.command,
+                            pendingEditOutcomeUnknown = true,
+                        )
+                    }
+
+                    is ConfigurationEditState.AppliedPendingSave -> _uiState.update {
+                        it.copy(
+                            editingPackageName = null,
+                            editingPhase = null,
+                            pendingEdit = state.command,
+                            pendingEditOutcomeUnknown = false,
+                        )
+                    }
+
+                    is ConfigurationEditState.Completed -> {
+                        _uiState.update {
+                            it.copy(editingPackageName = null, editingPhase = null, pendingEdit = null)
+                        }
+                        _events.send(
+                            ConfigurationsEvent.EditCompleted(
+                                sourceConfigurationId = state.command.sourceConfigurationId,
+                                packageName = state.command.packageName,
+                                newConfigurationId = state.newConfigurationId,
+                                appliedLocaleChange = state.appliedLocaleChange,
+                            ),
+                        )
+                        // The wide pane's selection switches to the derived
+                        // configuration here; the phone detail route follows
+                        // from the event consumer.
+                        state.newConfigurationId?.let(::loadDetail)
+                        editCoordinator.acknowledge()
+                    }
+
+                    ConfigurationEditState.Idle -> _uiState.update {
+                        it.copy(
+                            editingPackageName = null,
+                            editingPhase = null,
+                            pendingEdit = null,
+                            pendingEditOutcomeUnknown = false,
+                        )
+                    }
+                }
+            }
+        }
         viewModelScope.launch {
             configurationsRepository.configurations.collect { configurations ->
                 _uiState.update { state ->
@@ -63,8 +179,8 @@ class ConfigurationsViewModel @Inject constructor(
                     state.copy(
                         configurations = configurations,
                         selectedConfigurationId = selectedId,
-                        comparison = state.comparison?.takeIf {
-                            it.configuration.id == selectedId
+                        detailRows = state.detailRows?.takeIf {
+                            state.selectedConfigurationId == selectedId
                         },
                     )
                 }
@@ -162,65 +278,106 @@ class ConfigurationsViewModel @Inject constructor(
     }
 
     fun selectConfiguration(configurationId: String) {
-        loadComparison(configurationId)
+        loadDetail(configurationId)
     }
 
     fun refreshSelectedComparison() {
-        _uiState.value.selectedConfigurationId?.let(::loadComparison)
+        _uiState.value.selectedConfigurationId?.let(::loadDetail)
+    }
+
+    /**
+     * Submits one live edit (round-8 038): the coordinator owns validation,
+     * the Binder apply and the derived save; closing the sheet or a cancelled
+     * gesture never reaches here.
+     */
+    fun submitEdit(sourceConfigurationId: String, packageName: String, targetLocaleTag: String?) {
+        if (_uiState.value.isEditBusy) return
+        editCoordinator.submit(
+            sourceConfigurationId = sourceConfigurationId,
+            packageName = packageName,
+            targetLocaleTag = targetLocaleTag,
+        )
+    }
+
+    fun retryPendingSave() {
+        editCoordinator.retrySave()
+    }
+
+    fun recheckPendingEdit() {
+        editCoordinator.recheckPendingOutcome()
+    }
+
+    fun discardPendingEdit() {
+        editCoordinator.discardPendingEdit()
     }
 
     fun clearSelection() {
+        detailJob?.cancel()
         _uiState.update {
             it.copy(
                 selectedConfigurationId = null,
-                comparison = null,
+                detailRows = null,
                 isComparing = false,
             )
         }
     }
 
-    private fun loadComparison(configurationId: String) {
+    private fun loadDetail(configurationId: String) {
         val configuration = configurationsRepository.findConfiguration(configurationId) ?: return
+        detailJob?.cancel()
+        val generation = ++detailGeneration
         _uiState.update {
             it.copy(
                 selectedConfigurationId = configurationId,
-                comparison = null,
+                detailRows = null,
                 isComparing = true,
             )
         }
 
-        viewModelScope.launch {
+        detailJob = viewModelScope.launch {
             try {
-                val comparison = configurationsRepository.compare(configuration)
-                _uiState.update { state ->
-                    if (state.selectedConfigurationId == configurationId) {
-                        state.copy(comparison = comparison, isComparing = false)
-                    } else {
-                        state
+                val rows = configurationsRepository.buildAppProjection(configuration)
+                if (detailGeneration == generation) {
+                    _uiState.update { state ->
+                        if (state.selectedConfigurationId == configurationId) {
+                            state.copy(detailRows = rows, isComparing = false)
+                        } else {
+                            state
+                        }
                     }
                 }
             } catch (_: Exception) {
-                _uiState.update { state ->
-                    if (state.selectedConfigurationId == configurationId) {
-                        state.copy(isComparing = false)
-                    } else {
-                        state
+                if (detailGeneration == generation) {
+                    _uiState.update { state ->
+                        if (state.selectedConfigurationId == configurationId) {
+                            state.copy(isComparing = false)
+                        } else {
+                            state
+                        }
                     }
+                    _events.send(ConfigurationsEvent.Failed)
                 }
-                _events.send(ConfigurationsEvent.Failed)
             }
         }
     }
 
     fun delete(configurationId: String) {
+        // An unresolved edit command must not be overwritten by a deletion.
+        if (_uiState.value.isEditBusy) return
         _uiState.update { state ->
             if (state.selectedConfigurationId == configurationId) {
-                state.copy(selectedConfigurationId = null, comparison = null, isComparing = false)
+                state.copy(selectedConfigurationId = null, detailRows = null, isComparing = false)
             } else {
                 state
             }
         }
-        configurationsRepository.delete(configurationId)
-        viewModelScope.launch { _events.send(ConfigurationsEvent.Deleted) }
+        viewModelScope.launch {
+            try {
+                configurationsRepository.delete(configurationId)
+                _events.send(ConfigurationsEvent.Deleted)
+            } catch (_: Exception) {
+                _events.send(ConfigurationsEvent.Failed)
+            }
+        }
     }
 }

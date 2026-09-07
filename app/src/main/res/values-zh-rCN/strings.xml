@@ -20,40 +20,42 @@
     <string name="proceed">继续</string>
     <string name="pinned_ok">%1$s 已置顶</string>
     <string name="unpinned">%1$s 取消置顶</string>
-    <string name="home">主页</string>
     <string name="configurations">配置</string>
+    <string name="navigation_home">应用语言</string>
+    <string name="navigation_system_languages">系统语言</string>
     <string name="navigation_configurations">配置</string>
     <string name="about">关于</string>
-    <string name="deps_libs">依赖库信息</string>
     <string name="version">版本 %1$s (%2$s)</string>
-    <string name="app">应用</string>
-    <string name="ghrepo">GitHub 仓库</string>
-    <string name="view_source">查看源码</string>
-    <string name="project_repository">Fuyao Locale GitHub 项目</string>
-    <string name="original_project">原始项目</string>
-    <string name="original_project_summary">VegaBobo 的 Language Selector</string>
     <string name="about_overview">简介</string>
-    <string name="about_summary">Fuyao Locale 是一款采用 Material 3 的应用独立语言管理工具，适用于系统未提供合适管理界面的设备。</string>
+    <string name="about_summary">Fuyao Locale 是一款双主题语言管理工具，可管理应用独立语言与系统语言列表，适用于系统未提供合适管理界面的设备。</string>
+    <string name="about_regional_display_statement">一个中国原则及地区显示声明</string>
+    <string name="about_regional_display_statement_body">Fuyao Locale 及其开发者坚持一个中国原则。应用中如出现台湾地区相关名称或旗帜符号，其地区名称来源于 Android 系统的区域设置数据，旗帜符号则由通用逻辑依据地区代码生成标准 Unicode 字符序列，并由设备系统字库渲染，并非开发者针对该地区单独编写名称或设计、绘制旗帜图案。上述显示仅反映设备系统的数据及渲染支持情况，不代表本应用及开发者立场的改变或偏离。</string>
     <string name="about_features">核心特性</string>
     <string name="about_feature_per_app">单应用语言设置</string>
     <string name="about_feature_per_app_summary">查看当前语言、设置已支持的语言，或恢复为系统默认语言。</string>
+    <string name="about_feature_system_languages">系统语言列表</string>
+    <string name="about_feature_system_languages_summary">添加被厂商隐藏的语言、调整顺序，并保存系统级语言偏好。</string>
     <string name="about_feature_batch">批量设置语言</string>
     <string name="about_feature_batch_summary">长按应用进入多选模式，然后为多个应用应用同一种语言。</string>
     <string name="about_feature_filters">搜索与筛选</string>
     <string name="about_feature_filters_summary">搜索应用、仅显示已修改项目、选择排序方式，并显示或隐藏系统应用。</string>
     <string name="about_feature_quick_settings">快捷设置磁贴</string>
     <string name="about_feature_quick_settings_summary">置顶常用语言，并通过系统快捷设置磁贴循环切换。</string>
-    <string name="about_feature_adaptive">Material 3 与自适应布局</string>
-    <string name="about_feature_adaptive_summary">采用原生 Material 3 UI、手机端底部导航、大屏列表—详情布局，以及边到边系统栏。</string>
-    <string name="about_requirements">使用条件</string>
+    <string name="about_feature_adaptive">双主题与自适应布局</string>
+    <string name="about_feature_adaptive_summary">双主题原生 UI、手机端底部导航、大屏列表—详情布局，以及边到边系统栏。</string>
     <string name="about_requirement_android">Android 13（API 33）或更高版本。</string>
     <string name="about_requirement_shizuku">需要安装并启动 Shizuku，并向 Fuyao Locale 授权。</string>
     <string name="about_usage_notes">使用说明</string>
     <string name="about_usage_note">Fuyao Locale 不会翻译其他应用，而是请求 Android 为目标应用设置其已经支持的语言。系统应用和不受支持的语言可能出现不可预期的行为。</string>
-    <string name="about_credits_license">致谢与许可证</string>
-    <string name="about_open_source">开源与致谢</string>
-    <string name="about_credits">Fuyao Locale 在 VegaBobo 的 Language Selector 的思路和功能基础上进行了大幅重写。</string>
-    <string name="about_license">Fuyao Locale 采用 GNU AGPL v3 only（AGPL-3.0-only）许可；源自 Language Selector 的部分继续保留 Apache License 2.0 许可证与署名。</string>
+        <string name="about_credits_and_references">引用与参考项目</string>
+<string name="about_this_project">本项目</string>
+    <string name="about_reference_projects">参考项目</string>
+    <string name="about_cited_projects">引用项目</string>
+    <string name="about_theme">主题</string>
+    <string name="theme_liquid_glass_navigation_bar">液态玻璃标签栏</string>
+    <string name="theme_liquid_glass_navigation_bar_summary">将底部标签栏渲染为折射壁纸的玻璃效果</string>
+    <string name="about_credits">Fuyao Locale 在 VegaBobo 的 Language Selector 的思路和功能基础上进行了大幅重写；系统语言列表功能参考了 Nightdavisao 的 MultiLocale；液态玻璃标签栏与 Miuix 主题基于 Kyant0 的 AndroidLiquidGlass 与 miuix 构建。</string>
+    <string name="about_license">Fuyao Locale 采用 GNU AGPL v3 only（AGPL-3.0-only）许可；源自 Language Selector 的部分继续保留 Apache License 2.0 许可证与署名。MultiLocale 采用 MIT 许可证发布。AndroidLiquidGlass 与 miuix 采用 Apache License 2.0 许可证发布。</string>
     <string name="loading">加载中…</string>
     <string name="unavailable">不可用</string>
     <string name="warning">警告</string>
@@ -81,7 +83,8 @@
     <string name="not_modified">未修改</string>
     <string name="modified_count">已修改（%1$d）</string>
     <string name="more">更多</string>
-    <string name="back">返回</string>
+        <string name="scroll_to_top">回到顶部</string>
+<string name="back">返回</string>
     <string name="no_results">未找到应用</string>
     <string name="no_results_description">请尝试调整搜索内容或筛选条件。</string>
     <string name="clear_filters">清除筛选</string>
@@ -91,6 +94,12 @@
     <string name="sort_by_modified">修改状态</string>
     <string name="sort_by_app_type">应用类型</string>
     <string name="toggle_sort_direction">反转排序方向</string>
+    <string name="clear_search">清空搜索</string>
+    <string name="close_search">关闭搜索</string>
+    <string name="more_actions">更多操作</string>
+    <string name="sort_direction_ascending">正序</string>
+    <string name="sort_direction_descending">倒序</string>
+    <string name="sort_direction_none">未排序</string>
 
     <!-- Selection mode -->
     <string name="exit_selection">退出选择</string>
@@ -110,7 +119,6 @@
     <!-- 应用详情 -->
     <string name="current_language">当前语言</string>
     <string name="reset_to_system_default">恢复为系统默认</string>
-    <string name="app_language_section">应用语言</string>
 
     <!-- 已保存配置 -->
     <string name="save_current_changes">保存当前修改</string>
@@ -141,6 +149,30 @@
     <string name="configuration_no_differences">没有差异项</string>
     <string name="configuration_no_differences_description">该配置已与当前设备状态一致。</string>
     <string name="apply_configuration">应用配置</string>
+
+    <!-- 第八阶段037：连续配置详情 -->
+    <string name="configuration_state_not_installed">未安装</string>
+    <string name="configuration_state_unknown">无法读取当前语言</string>
+    <string name="configuration_current_to_target">当前：%1$s → 配置：%2$s</string>
+    <string name="configuration_current_only_line">当前：%1$s</string>
+    <string name="configuration_filter_all">全部</string>
+    <string name="configuration_filter_differences">有差异</string>
+    <string name="configuration_filter_empty">没有符合该筛选的条目。</string>
+    <string name="configuration_section_other_apps">其他应用（%1$d）</string>
+    <string name="configuration_other_apps_search_hint">搜索其他应用</string>
+    <string name="configuration_other_apps_empty">没有匹配的应用。</string>
+    <string name="configuration_edit_processing">正在修改语言…</string>
+    <string name="configuration_edit_completed">已修改应用语言并另存新配置</string>
+    <string name="configuration_edit_completed_save_only">已另存新配置</string>
+    <string name="configuration_edit_no_change">无变化</string>
+    <string name="configuration_edit_apply_failed">修改应用语言失败</string>
+    <string name="configuration_edit_save_failed">语言已修改，新配置保存失败</string>
+    <string name="configuration_edit_outcome_unknown">修改结果未明</string>
+    <string name="configuration_edit_rejected_busy">已有配置修改正在进行</string>
+    <string name="configuration_edit_pending_banner">有一项未完成的配置修改</string>
+    <string name="configuration_edit_retry_save">重试保存</string>
+    <string name="configuration_edit_recheck">重新检查</string>
+    <string name="configuration_edit_discard">放弃待处理修改</string>
     <string name="refresh">刷新</string>
     <string name="difference_needs_apply">将被更新</string>
     <string name="difference_missing_app">未安装</string>
@@ -152,7 +184,43 @@
     <string name="no_configuration_selected">选择一个配置</string>
     <string name="no_configuration_selected_description">选择已保存的配置以查看差异项。</string>
 
+    <!-- 系统语言 -->
+    <string name="system_languages">系统语言</string>
+    <string name="add_system_language">添加语言</string>
+    <string name="save_system_languages">保存系统语言</string>
+    <string name="system_language_order">语言顺序</string>
+    <string name="system_languages_summary">Android 会将列表中的第一种语言作为首选语言。长按拖动即可调整顺序，完成后保存。</string>
+    <string name="system_languages_unsaved">存在未保存的更改</string>
+    <string name="reorder_system_language">调整语言顺序</string>
+    <string name="move_language_up">上移</string>
+    <string name="move_language_down">下移</string>
+    <string name="remove_system_language">移除语言</string>
+    <string name="system_languages_saved">系统语言已保存</string>
+    <string name="system_languages_load_failed">无法读取系统语言。</string>
+    <string name="system_languages_save_failed">无法保存系统语言。</string>
+    <string name="system_languages_cannot_remove_last">系统语言至少需要保留一种。</string>
+    <string name="system_languages_already_added">此语言已在系统列表中。</string>
+
     <!-- 特权服务状态 -->
     <string name="connecting_to_shizuku">正在连接 Shizuku</string>
     <string name="connecting_to_shizuku_description">权限已授予，正在等待特权服务重新连接。</string>
+    <!-- 应用详情（第四轮 013-B） -->
+    <string name="app_info">应用信息</string>
+    <string name="app_info_package_name">包名</string>
+    <string name="app_info_version">版本</string>
+    <string name="app_info_sdk">SDK %1$d – %2$d</string>
+    <string name="app_info_sdk_single">SDK %1$d</string>
+    <string name="app_info_type">类型</string>
+    <string name="candidate_languages_count">候选语言：%1$d</string>
+    <!-- 视觉效果（第四轮 014） -->
+    <string name="more_blur">更多模糊</string>
+    <string name="more_blur_summary">模糊顶栏和普通底栏后方的内容</string>
+    <string name="visual_effect_unavailable">此设备暂不支持该效果</string>
+    <string name="appearance_change_failed">更改未能应用，已恢复当前实际设置。</string>
+    <string name="language_sort_name">名称</string>
+    <string name="language_sort_autonym">自称</string>
+    <string name="language_sort_tag">代码</string>
+    <string name="save_languages_before_refresh">请先保存当前语言顺序后再刷新。</string>
+    <string name="system_languages_refresh_hint">下拉可刷新。</string>
+    <string name="system_languages_refresh_hint_keyboard">下拉可刷新，也可按 Ctrl+R。</string>
 </resources>

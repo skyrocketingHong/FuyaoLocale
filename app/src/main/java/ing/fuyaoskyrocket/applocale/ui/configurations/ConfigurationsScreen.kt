@@ -1,43 +1,37 @@
 package ing.fuyaoskyrocket.applocale.ui.configurations
 
+import androidx.activity.compose.BackHandler
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.background
 import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.consumeWindowInsets
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.layout.isImeVisible
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListScope
+import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.BookmarkAdd
 import androidx.compose.material.icons.outlined.Bookmarks
-import androidx.compose.material.icons.outlined.DeleteOutline
 import androidx.compose.material.icons.outlined.FileOpen
-import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.ListItem
-import androidx.compose.material3.ListItemDefaults
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.SnackbarHost
-import androidx.compose.material3.SnackbarHostState
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -48,23 +42,41 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
-import androidx.compose.ui.graphics.Color
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import ing.fuyaoskyrocket.applocale.R
+import ing.fuyaoskyrocket.applocale.data.system.AppIconLoader
+import ing.fuyaoskyrocket.applocale.model.ConfigurationEditCommand
 import ing.fuyaoskyrocket.applocale.model.SavedLocaleConfiguration
-import ing.fuyaoskyrocket.applocale.ui.components.AppNavigationBar
 import ing.fuyaoskyrocket.applocale.ui.components.AppNavigationDestination
-import ing.fuyaoskyrocket.applocale.ui.components.AppTopAppBarTitle
-import ing.fuyaoskyrocket.applocale.ui.components.predictiveBackTransform
-import ing.fuyaoskyrocket.applocale.ui.components.rememberPredictiveBackMotion
 import ing.fuyaoskyrocket.applocale.ui.designsystem.AppSpacing
 import ing.fuyaoskyrocket.applocale.ui.designsystem.AppLayout
+import ing.fuyaoskyrocket.applocale.ui.designsystem.AppComponentDefaults
+import ing.fuyaoskyrocket.applocale.ui.designsystem.AppUiTheme
+import ing.fuyaoskyrocket.applocale.ui.designsystem.listBottomReserve
+import ing.fuyaoskyrocket.applocale.ui.designsystem.listTopReserve
+import ing.fuyaoskyrocket.applocale.ui.screen.TabScrollCoordinator
+import ing.fuyaoskyrocket.applocale.ui.screen.TabScrollToTopConsumer
+import ing.fuyaoskyrocket.applocale.ui.screen.tabScrollToTopKeyAction
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppCircularProgressIndicator
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppIcon
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppIconButton
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppScaffold
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppSnackbarHost
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppTextButton
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppSymbol
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppSymbolVector
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppText
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppTopAppBar
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.rememberAppSnackbarHostState
 import ing.fuyaoskyrocket.applocale.ui.designsystem.readableContentWidth
 import ing.fuyaoskyrocket.applocale.ui.designsystem.wideContentWidth
+import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -78,20 +90,37 @@ import java.util.Locale
  * Saved locale presets. Compact layouts open a dedicated difference screen;
  * expanded layouts keep the preset list and the difference detail side by side.
  */
-@OptIn(ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun ConfigurationsScreen(
     navigateToHome: () -> Unit,
+    navigateToSystemLanguages: () -> Unit,
     navigateToAbout: () -> Unit,
     onOpenConfiguration: (String) -> Unit,
     showBottomNavigation: Boolean,
     useWideLayout: Boolean,
     viewModel: ConfigurationsViewModel = hiltViewModel(),
+    tabScrollCoordinator: TabScrollCoordinator? = null,
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     val context = LocalContext.current
-    val snackbarHostState = remember { SnackbarHostState() }
+    val snackbarHostState = rememberAppSnackbarHostState()
     val importScope = rememberCoroutineScope()
+    // Round-8 038: the wide pane's single-app chooser and the package anchor
+    // kept across an auto-saved derived configuration.
+    var editingPackage by remember { mutableStateOf<String?>(null) }
+    var detailAnchorPackage by remember { mutableStateOf<String?>(null) }
+    // One list state for whichever configuration list is currently shown
+    // (round-8 035): the compact route and the wide master pane are never both
+    // mounted, so only the visible layout ever consumes scroll requests.
+    val configurationsListState = rememberLazyListState()
+    if (tabScrollCoordinator != null) {
+        TabScrollToTopConsumer(
+            coordinator = tabScrollCoordinator,
+            destination = AppNavigationDestination.Configurations,
+            listState = configurationsListState,
+        )
+    }
     var pendingExportId by rememberSaveable { mutableStateOf<String?>(null) }
     val importLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.OpenDocument(),
@@ -134,6 +163,11 @@ fun ConfigurationsScreen(
     LaunchedEffect(Unit) {
         viewModel.events.collect { event ->
             snackbarHostState.showSnackbar(context.configurationEventMessage(event))
+            // The ViewModel has already switched the selection to the derived
+            // configuration; the anchor keeps the edited row's scroll position.
+            if (event is ConfigurationsEvent.EditCompleted && event.newConfigurationId != null) {
+                detailAnchorPackage = event.packageName
+            }
         }
     }
 
@@ -145,48 +179,46 @@ fun ConfigurationsScreen(
         exportLauncher.launch(configuration.exportFileName())
     }
 
-    val predictiveBackMotion = rememberPredictiveBackMotion(
-        enabled = useWideLayout && uiState.selectedConfigurationId != null,
+    // Wide-screen selection is in-page state: back clears it without page motion.
+    // The IME goes first; compact layouts navigate via the NavHost route instead.
+    val imeVisible = WindowInsets.isImeVisible
+    BackHandler(
+        enabled = useWideLayout && uiState.selectedConfigurationId != null && !imeVisible,
         onBack = viewModel::clearSelection,
     )
 
-    Scaffold(
-        modifier = Modifier.predictiveBackTransform(predictiveBackMotion),
+    AppScaffold(
         topBar = {
-            TopAppBar(
-                title = {
-                    AppTopAppBarTitle(
-                        title = stringResource(R.string.configurations),
-                    )
-                },
+            AppTopAppBar(
+                title = stringResource(R.string.configurations),
                 actions = {
-                    IconButton(
+                    AppIconButton(
                         onClick = viewModel::saveCurrentChanges,
                         enabled = !uiState.isSaving && !uiState.isImporting,
                     ) {
                         if (uiState.isSaving) {
-                            CircularProgressIndicator(
+                            AppCircularProgressIndicator(
                                 modifier = Modifier.size(AppSpacing.lg),
                                 strokeWidth = AppSpacing.xs / 2,
                             )
                         } else {
-                            Icon(
+                            AppIcon(
                                 imageVector = Icons.Outlined.BookmarkAdd,
                                 contentDescription = stringResource(R.string.save_current_changes),
                             )
                         }
                     }
-                    IconButton(
+                    AppIconButton(
                         onClick = openImportPicker,
                         enabled = !uiState.isSaving && !uiState.isImporting,
                     ) {
                         if (uiState.isImporting) {
-                            CircularProgressIndicator(
+                            AppCircularProgressIndicator(
                                 modifier = Modifier.size(AppSpacing.lg),
                                 strokeWidth = AppSpacing.xs / 2,
                             )
                         } else {
-                            Icon(
+                            AppIcon(
                                 imageVector = Icons.Outlined.FileOpen,
                                 contentDescription = stringResource(R.string.import_configuration),
                             )
@@ -196,69 +228,149 @@ fun ConfigurationsScreen(
             )
         },
         bottomBar = {
-            if (showBottomNavigation) {
-                AppNavigationBar(
-                    currentDestination = AppNavigationDestination.Configurations,
-                    onHomeClick = navigateToHome,
-                    onConfigurationsClick = {},
-                    onAboutClick = navigateToAbout,
+            // The navigation dock is owned by AppChromeHost.
+        },
+        snackbarHost = { AppSnackbarHost(snackbarHostState) },
+        contentWindowInsets = WindowInsets(0, 0, 0, 0),
+        containerColor = AppUiTheme.palette.background,
+    ) { innerPadding ->
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .then(
+                    if (tabScrollCoordinator != null) {
+                        Modifier.tabScrollToTopKeyAction(
+                            coordinator = tabScrollCoordinator,
+                            destination = AppNavigationDestination.Configurations,
+                        )
+                    } else {
+                        Modifier
+                    },
+                ),
+        ) {
+            if (useWideLayout) {
+                WideConfigurationsContent(
+                    uiState = uiState,
+                    listState = configurationsListState,
+                    iconLoader = viewModel.appIconLoader,
+                    onSelect = viewModel::selectConfiguration,
+                    onApply = viewModel::apply,
+                    onRefresh = viewModel::refreshSelectedComparison,
+                    onDelete = viewModel::delete,
+                    onExport = exportConfiguration,
+                    onRetryPendingSave = viewModel::retryPendingSave,
+                    onRecheckPendingEdit = viewModel::recheckPendingEdit,
+                    onDiscardPendingEdit = viewModel::discardPendingEdit,
+                    onEditApp = if (uiState.isEditBusy) null else ({ packageName ->
+                        editingPackage = packageName
+                    }),
+                    anchorPackage = detailAnchorPackage,
+                    onAnchorConsumed = { detailAnchorPackage = null },
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(innerPadding),
+                )
+            } else {
+                CompactConfigurationsContent(
+                    configurations = uiState.configurations,
+                    pendingEdit = uiState.pendingEdit,
+                    pendingEditOutcomeUnknown = uiState.pendingEditOutcomeUnknown,
+                    onRetryPendingSave = viewModel::retryPendingSave,
+                    onRecheckPendingEdit = viewModel::recheckPendingEdit,
+                    onDiscardPendingEdit = viewModel::discardPendingEdit,
+                    deleteEnabled = !uiState.isEditBusy,
+                    listState = configurationsListState,
+                    onOpen = onOpenConfiguration,
+                    onDelete = viewModel::delete,
+                    onExport = exportConfiguration,
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .consumeWindowInsets(innerPadding),
+                    contentPadding = PaddingValues(
+                        start = AppLayout.contentFrameMargin,
+                        end = AppLayout.contentFrameMargin,
+                        top = listTopReserve(innerPadding.calculateTopPadding()),
+                        bottom = listBottomReserve(innerPadding.calculateBottomPadding()),
+                    ),
+                )
+            }
+        }
+    }
+
+    // The wide pane's single-app chooser (round-8 038), same contract as the
+    // phone detail's sheet.
+    ConfigurationLanguageSheet(
+        visible = editingPackage != null,
+        packageName = editingPackage,
+        selectedLanguageTag = uiState.detailRows
+            ?.firstOrNull { it.packageName == editingPackage }
+            ?.let { row -> row.savedLocaleTag ?: row.currentLocaleTag },
+        onDismiss = { editingPackage = null },
+        onLocaleSelected = { tag ->
+            val packageName = editingPackage
+            val sourceId = uiState.selectedConfigurationId
+            if (packageName != null && sourceId != null) {
+                editingPackage = null
+                viewModel.submitEdit(
+                    sourceConfigurationId = sourceId,
+                    packageName = packageName,
+                    targetLocaleTag = tag,
                 )
             }
         },
-        snackbarHost = { SnackbarHost(snackbarHostState) },
-        contentWindowInsets = WindowInsets(0, 0, 0, 0),
-        containerColor = MaterialTheme.colorScheme.surface,
-    ) { innerPadding ->
-        if (useWideLayout) {
-            WideConfigurationsContent(
-                uiState = uiState,
-                onSelect = viewModel::selectConfiguration,
-                onApply = viewModel::apply,
-                onRefresh = viewModel::refreshSelectedComparison,
-                onDelete = viewModel::delete,
-                onExport = exportConfiguration,
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(innerPadding),
-            )
-        } else {
-            CompactConfigurationsContent(
-                configurations = uiState.configurations,
-                onOpen = onOpenConfiguration,
-                onDelete = viewModel::delete,
-                onExport = exportConfiguration,
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(innerPadding),
-            )
-        }
-    }
+    )
 }
 
 @Composable
 private fun CompactConfigurationsContent(
     configurations: List<SavedLocaleConfiguration>,
+    pendingEdit: ConfigurationEditCommand?,
+    pendingEditOutcomeUnknown: Boolean,
+    onRetryPendingSave: () -> Unit,
+    onRecheckPendingEdit: () -> Unit,
+    onDiscardPendingEdit: () -> Unit,
+    deleteEnabled: Boolean,
+    listState: LazyListState,
     onOpen: (String) -> Unit,
     onDelete: (String) -> Unit,
     onExport: (SavedLocaleConfiguration) -> Unit,
     modifier: Modifier = Modifier,
+    contentPadding: PaddingValues = PaddingValues(),
 ) {
+    // Round-8 037: the host list keeps NO horizontal inset — rows frame
+    // themselves with the shared 4dp outer margin (16dp foreground, selected
+    // background 4dp from the frame edge), and the empty state uses the 16dp
+    // content frame.
     LazyColumn(
+        state = listState,
         modifier = modifier,
-        contentPadding = PaddingValues(
-            horizontal = AppSpacing.lg,
-            vertical = AppSpacing.lg,
-        ),
-        verticalArrangement = Arrangement.spacedBy(AppSpacing.md),
+        contentPadding = contentPadding,
+        verticalArrangement = Arrangement.spacedBy(AppSpacing.sm),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
+        if (pendingEdit != null) {
+            item(key = "pending_edit_banner") {
+                PendingEditBanner(
+                    outcomeUnknown = pendingEditOutcomeUnknown,
+                    onRetrySave = onRetryPendingSave,
+                    onRecheck = onRecheckPendingEdit,
+                    onDiscard = onDiscardPendingEdit,
+                    modifier = Modifier.readableContentWidth()
+                        .padding(horizontal = AppLayout.contentFrameMargin),
+                )
+            }
+        }
         configurationListItems(
             configurations = configurations,
             selectedConfigurationId = null,
             onOpen = onOpen,
             onDelete = onDelete,
             onExport = onExport,
-            itemModifier = Modifier.readableContentWidth(),
+            deleteEnabled = deleteEnabled,
+            rowModifier = Modifier.readableContentWidth()
+                .padding(horizontal = AppLayout.localeRowOuterMargin),
+            emptyStateModifier = Modifier.readableContentWidth()
+                .padding(horizontal = AppLayout.contentFrameMargin),
         )
     }
 }
@@ -266,11 +378,19 @@ private fun CompactConfigurationsContent(
 @Composable
 private fun WideConfigurationsContent(
     uiState: ConfigurationsUiState,
+    listState: LazyListState,
+    iconLoader: AppIconLoader,
     onSelect: (String) -> Unit,
     onApply: (String) -> Unit,
     onRefresh: () -> Unit,
     onDelete: (String) -> Unit,
     onExport: (SavedLocaleConfiguration) -> Unit,
+    onRetryPendingSave: () -> Unit,
+    onRecheckPendingEdit: () -> Unit,
+    onDiscardPendingEdit: () -> Unit,
+    onEditApp: ((packageName: String) -> Unit)?,
+    anchorPackage: String?,
+    onAnchorConsumed: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val selectedConfiguration = uiState.configurations.firstOrNull {
@@ -281,46 +401,73 @@ private fun WideConfigurationsContent(
         modifier = modifier,
         contentAlignment = Alignment.TopCenter,
     ) {
+        // Round-8 037: no rounded card shells around the panes — a plain row,
+        // one quiet vertical divider, and each pane framing its own content
+        // (16dp foreground / 4dp selected-background edge). The row itself
+        // contributes no horizontal padding.
         Row(
             modifier = Modifier
                 .wideContentWidth()
                 .fillMaxHeight()
-                .padding(
-                    horizontal = AppSpacing.screenExpanded,
-                    vertical = AppSpacing.screenExpanded,
-                ),
+                .padding(vertical = AppSpacing.screenExpanded),
             horizontalArrangement = Arrangement.spacedBy(AppSpacing.paneGap),
         ) {
-            Surface(
+            Column(
                 modifier = Modifier
                     .width(AppLayout.listPaneWidth)
                     .fillMaxHeight(),
-                shape = MaterialTheme.shapes.extraLarge,
-                color = MaterialTheme.colorScheme.surfaceContainerLow,
             ) {
+                if (uiState.pendingEdit != null) {
+                    PendingEditBanner(
+                        outcomeUnknown = uiState.pendingEditOutcomeUnknown,
+                        onRetrySave = onRetryPendingSave,
+                        onRecheck = onRecheckPendingEdit,
+                        onDiscard = onDiscardPendingEdit,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(
+                                horizontal = AppLayout.contentFrameMargin,
+                                vertical = AppSpacing.sm,
+                            ),
+                    )
+                }
                 ConfigurationList(
                     configurations = uiState.configurations,
+                    listState = listState,
                     selectedConfigurationId = uiState.selectedConfigurationId,
                     onOpen = onSelect,
                     onDelete = onDelete,
                     onExport = onExport,
+                    deleteEnabled = !uiState.isEditBusy,
                     modifier = Modifier.fillMaxSize(),
                 )
             }
-            Surface(
+            Box(
+                modifier = Modifier
+                    .width(1.dp)
+                    .fillMaxHeight()
+                    .background(AppUiTheme.palette.divider),
+            )
+            Column(
                 modifier = Modifier
                     .weight(1f)
                     .fillMaxHeight(),
-                shape = MaterialTheme.shapes.extraLarge,
-                color = MaterialTheme.colorScheme.surfaceContainerLowest,
             ) {
                 SavedConfigurationDetailContent(
                     configuration = selectedConfiguration,
-                    comparison = uiState.comparison,
+                    detailRows = uiState.detailRows,
                     isComparing = uiState.isComparing,
                     isApplying = uiState.applyingConfigurationId == selectedConfiguration?.id,
+                    iconLoader = iconLoader,
                     onApply = { selectedConfiguration?.let { onApply(it.id) } },
                     onRefresh = onRefresh,
+                    onEditApp = onEditApp,
+                    editingPackageName = uiState.editingPackageName,
+                    editBusy = uiState.isEditBusy,
+                    showRefreshAction = true,
+                    anchorPackage = anchorPackage,
+                    onAnchorConsumed = onAnchorConsumed,
+                    contentPadding = PaddingValues(0.dp),
                     modifier = Modifier.fillMaxSize(),
                 )
             }
@@ -334,10 +481,16 @@ private fun LazyListScope.configurationListItems(
     onOpen: (String) -> Unit,
     onDelete: (String) -> Unit,
     onExport: (SavedLocaleConfiguration) -> Unit,
-    itemModifier: Modifier = Modifier,
+    deleteEnabled: Boolean,
+    rowModifier: Modifier = Modifier,
+    emptyStateModifier: Modifier = Modifier,
 ) {
     if (configurations.isEmpty()) {
-        item(key = "empty") { EmptyConfigurationsState(modifier = itemModifier) }
+        // The empty state frames itself on the 16dp content edge, never on the
+        // 4dp row margin.
+        item(key = "empty") {
+            EmptyConfigurationsState(modifier = emptyStateModifier)
+        }
     } else {
         items(configurations, key = { it.id }) { configuration ->
             ConfigurationListItem(
@@ -346,7 +499,8 @@ private fun LazyListScope.configurationListItems(
                 onOpen = { onOpen(configuration.id) },
                 onDelete = { onDelete(configuration.id) },
                 onExport = { onExport(configuration) },
-                modifier = itemModifier,
+                deleteEnabled = deleteEnabled,
+                modifier = rowModifier,
             )
         }
     }
@@ -355,18 +509,20 @@ private fun LazyListScope.configurationListItems(
 @Composable
 private fun ConfigurationList(
     configurations: List<SavedLocaleConfiguration>,
+    listState: LazyListState,
     selectedConfigurationId: String?,
     onOpen: (String) -> Unit,
     onDelete: (String) -> Unit,
     onExport: (SavedLocaleConfiguration) -> Unit,
+    deleteEnabled: Boolean,
     modifier: Modifier = Modifier,
 ) {
+    // Round-8 037: the 320dp pane keeps the rows full-width with their own 4dp
+    // outer margin — no 840dp box inside a constrained pane, no host inset.
     LazyColumn(
+        state = listState,
         modifier = modifier,
-        contentPadding = PaddingValues(
-            horizontal = AppSpacing.lg,
-            vertical = AppSpacing.lg,
-        ),
+        contentPadding = PaddingValues(vertical = AppSpacing.lg),
         verticalArrangement = Arrangement.spacedBy(AppSpacing.sm),
     ) {
         configurationListItems(
@@ -375,7 +531,13 @@ private fun ConfigurationList(
             onOpen = onOpen,
             onDelete = onDelete,
             onExport = onExport,
-            itemModifier = Modifier.fillMaxWidth(),
+            deleteEnabled = deleteEnabled,
+            rowModifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = AppLayout.localeRowOuterMargin),
+            emptyStateModifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = AppLayout.contentFrameMargin),
         )
     }
 }
@@ -388,73 +550,83 @@ private fun ConfigurationListItem(
     onOpen: () -> Unit,
     onDelete: () -> Unit,
     onExport: () -> Unit,
+    deleteEnabled: Boolean,
     modifier: Modifier = Modifier,
 ) {
     val formattedDate = remember(configuration.createdAt) {
         DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.SHORT)
             .format(Date(configuration.createdAt))
     }
-    val containerColor = if (isSelected) {
-        MaterialTheme.colorScheme.secondaryContainer
-    } else {
-        MaterialTheme.colorScheme.surfaceContainerLowest
-    }
-    val contentColor = if (isSelected) {
-        MaterialTheme.colorScheme.onSecondaryContainer
-    } else {
-        MaterialTheme.colorScheme.onSurface
-    }
+    val palette = AppUiTheme.palette
+    // Round-8 037: same anatomy as the locale rows — normal rows transparent on
+    // the page background, only a real selection paints its container (4dp from
+    // the frame edge via the caller's outer margin); no card shell or shadow.
+    val contentColor = if (isSelected) palette.onSelected else palette.surfaceContent
+    val containerColor = if (isSelected) palette.selected else Color.Transparent
 
-    Surface(
-        modifier = modifier.fillMaxWidth(),
-        shape = MaterialTheme.shapes.large,
-        color = containerColor,
+    Row(
+        modifier = modifier
+            .fillMaxWidth()
+            .heightIn(min = AppLayout.localeChoiceRowMinHeight)
+            .clip(RoundedCornerShape(AppComponentDefaults.rowCornerRadius))
+            .background(containerColor)
+            .combinedClickable(
+                onClick = onOpen,
+                onLongClick = onExport,
+            )
+            .padding(
+                start = AppSpacing.md,
+                top = AppSpacing.md,
+                end = 0.dp,
+                bottom = AppSpacing.md,
+            ),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.spacedBy(AppSpacing.md),
     ) {
-        ListItem(
-            modifier = Modifier
-                .fillMaxWidth()
-                .heightIn(min = AppLayout.appListItemMinHeight)
-                .combinedClickable(
-                    onClick = onOpen,
-                    onLongClick = onExport,
-                ),
-            headlineContent = {
-                Text(
-                    text = stringResource(R.string.configuration_saved_at, formattedDate),
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis,
-                    color = contentColor,
-                )
-            },
-            supportingContent = {
-                Text(
-                    text = stringResource(
-                        R.string.configuration_app_count,
-                        configuration.appCount,
-                    ),
-                    color = contentColor,
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis,
-                )
-            },
-            leadingContent = {
-                Icon(
-                    imageVector = Icons.Outlined.Bookmarks,
-                    contentDescription = null,
-                    tint = contentColor,
-                )
-            },
-            trailingContent = {
-                IconButton(onClick = onDelete) {
-                    Icon(
-                        imageVector = Icons.Outlined.DeleteOutline,
-                        contentDescription = stringResource(R.string.delete_configuration),
-                        tint = contentColor,
-                    )
-                }
-            },
-            colors = ListItemDefaults.colors(containerColor = Color.Transparent),
+        // No miuix bookmark glyph; the project vector is drawn by the
+        // backend icon control (asset exception). Explicit 24dp glyph.
+        AppIcon(
+            imageVector = Icons.Outlined.Bookmarks,
+            contentDescription = null,
+            tint = contentColor,
+            modifier = Modifier.size(24.dp),
         )
+        Column(
+            modifier = Modifier.weight(1f),
+            verticalArrangement = Arrangement.spacedBy(AppSpacing.xs),
+        ) {
+            AppText(
+                text = stringResource(R.string.configuration_saved_at, formattedDate),
+                style = AppComponentDefaults.titleStyle(),
+                color = contentColor,
+                maxLines = 2,
+                overflow = TextOverflow.Ellipsis,
+            )
+            AppText(
+                text = stringResource(
+                    R.string.configuration_app_count,
+                    configuration.appCount,
+                ),
+                style = AppComponentDefaults.metadataStyle(),
+                color = contentColor,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
+            )
+        }
+        // 48dp touch slot with the 24dp glyph centered: the glyph's right edge
+        // lands 16dp from the readable frame, matching the leading foreground.
+        AppIconButton(
+            onClick = onDelete,
+            enabled = deleteEnabled,
+            modifier = Modifier.size(AppLayout.appListSelectionSlotWidth),
+        ) {
+            AppIcon(
+                imageVector = AppSymbolVector(AppSymbol.Delete),
+                contentDescription = stringResource(R.string.delete_configuration),
+                tint = contentColor,
+                modifier = Modifier.size(24.dp),
+            )
+        }
     }
 }
 
@@ -471,20 +643,77 @@ private fun EmptyConfigurationsState(modifier: Modifier = Modifier) {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(AppSpacing.sm),
     ) {
-        Icon(
+        // Bookmark motif keeps its project vector (asset exception).
+        AppIcon(
             imageVector = Icons.Outlined.Bookmarks,
             contentDescription = null,
-            tint = MaterialTheme.colorScheme.onSurfaceVariant,
+            tint = AppUiTheme.palette.muted,
             modifier = Modifier.size(AppSpacing.xl),
         )
-        Text(
+        AppText(
             text = stringResource(R.string.no_saved_configurations),
-            style = MaterialTheme.typography.titleMedium,
+            style = AppUiTheme.textStyles.itemTitle,
         )
-        Text(
+        AppText(
             text = stringResource(R.string.no_saved_configurations_description),
-            style = MaterialTheme.typography.bodyMedium,
-            color = MaterialTheme.colorScheme.onSurfaceVariant,
+            style = AppUiTheme.textStyles.body,
+            color = AppUiTheme.palette.muted,
         )
+    }
+}
+
+/**
+ * The unresolved-edit banner (round-8 038): a save that can be retried
+ * WITHOUT another Binder call, or an unclear outcome that can only be
+ * rechecked or explicitly discarded. Both keep new edits locked until
+ * resolved; nothing here rolls the app language back.
+ */
+@Composable
+private fun PendingEditBanner(
+    outcomeUnknown: Boolean,
+    onRetrySave: () -> Unit,
+    onRecheck: () -> Unit,
+    onDiscard: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    Column(
+        modifier = modifier,
+        verticalArrangement = Arrangement.spacedBy(AppSpacing.sm),
+    ) {
+        AppText(
+            text = stringResource(
+                if (outcomeUnknown) {
+                    R.string.configuration_edit_outcome_unknown
+                } else {
+                    R.string.configuration_edit_pending_banner
+                },
+            ),
+            style = AppUiTheme.textStyles.body,
+            color = if (outcomeUnknown) {
+                AppUiTheme.palette.surfaceContent
+            } else {
+                AppUiTheme.palette.muted
+            },
+        )
+        Row(
+            horizontalArrangement = Arrangement.spacedBy(AppSpacing.sm),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            if (outcomeUnknown) {
+                AppTextButton(
+                    text = stringResource(R.string.configuration_edit_recheck),
+                    onClick = onRecheck,
+                )
+            } else {
+                AppTextButton(
+                    text = stringResource(R.string.configuration_edit_retry_save),
+                    onClick = onRetrySave,
+                )
+            }
+            AppTextButton(
+                text = stringResource(R.string.configuration_edit_discard),
+                onClick = onDiscard,
+            )
+        }
     }
 }

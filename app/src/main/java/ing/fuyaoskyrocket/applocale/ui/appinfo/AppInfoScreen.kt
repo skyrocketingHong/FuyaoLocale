@@ -1,52 +1,58 @@
 package ing.fuyaoskyrocket.applocale.ui.appinfo
 
 import android.content.Intent
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.isImeVisible
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.outlined.ArrowBack
-import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.SnackbarHost
-import androidx.compose.material3.SnackbarHostState
-import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.derivedStateOf
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.layout.onSizeChanged
+import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.platform.LocalFocusManager
+import androidx.compose.ui.platform.LocalSoftwareKeyboardController
+import androidx.compose.ui.unit.dp
+import ing.fuyaoskyrocket.applocale.ui.languagepicker.rememberLanguagePickerListStates
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.stringResource
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import ing.fuyaoskyrocket.applocale.R
-import ing.fuyaoskyrocket.applocale.ui.components.AppTopAppBarTitle
-import ing.fuyaoskyrocket.applocale.ui.components.predictiveBackTransform
-import ing.fuyaoskyrocket.applocale.ui.components.rememberPredictiveBackMotion
+import ing.fuyaoskyrocket.applocale.ui.designsystem.AppUiTheme
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppCircularProgressIndicator
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppScaffold
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppSnackbarHost
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.rememberAppSnackbarHostState
 import ing.fuyaoskyrocket.applocale.ui.languagepicker.LocalePickerAction
 import ing.fuyaoskyrocket.applocale.ui.languagepicker.LocalePickerEvent
 import kotlinx.coroutines.flow.collect
 
-@OptIn(ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun AppInfoScreen(
     appId: String,
     navigateBack: () -> Unit,
     viewModel: AppInfoViewModel = hiltViewModel(),
+    backEnabled: Boolean = true,
+    interceptNavigationBack: Boolean = false,
 ) {
     val appInfoState by viewModel.uiState.collectAsStateWithLifecycle()
     val pickerState by viewModel.pickerState.collectAsStateWithLifecycle()
     val ctx = LocalContext.current
     val displayLocaleTag = LocalConfiguration.current.locales[0].toLanguageTag()
-    val snackbarHostState = remember { SnackbarHostState() }
+    val snackbarHostState = rememberAppSnackbarHostState()
 
     LaunchedEffect(appId, displayLocaleTag) {
         viewModel.initFromPackage(appId)
@@ -65,45 +71,88 @@ fun AppInfoScreen(
         }
     }
 
-    val hasPickerBackTarget = pickerState.isInGroup || pickerState.query.isNotBlank()
-    val handlePickerBack: () -> Unit = {
-        when {
-            pickerState.isInGroup -> {
-                viewModel.onPickerAction(LocalePickerAction.BackToGroups)
-            }
-            pickerState.query.isNotBlank() -> {
-                viewModel.onPickerAction(LocalePickerAction.QueryChanged(""))
+    var searchExpanded by rememberSaveable(appId) { mutableStateOf(false) }
+    val searchActive = searchExpanded || pickerState.query.isNotBlank()
+    val focusManager = LocalFocusManager.current
+    val keyboard = LocalSoftwareKeyboardController.current
+    val listStates = rememberLanguagePickerListStates(pickerState, contentKey = appId)
+    val activeListState = listStates.forState(pickerState)
+    var topBarHeight by remember { mutableIntStateOf(0) }
+    // Raw distance of the identity header's bottom edge below the list top:
+    // null while the bar is unmeasured or the list is empty (loading keeps the
+    // page title), negative infinity once the header left the window entirely.
+    val headerBottom by remember(activeListState) {
+        derivedStateOf {
+            val info = activeListState.layoutInfo
+            val header = info.visibleItemsInfo.firstOrNull { it.key == "header" }
+            when {
+                topBarHeight <= 0 || info.totalItemsCount == 0 -> null
+                header == null -> Float.NEGATIVE_INFINITY
+                else -> (header.offset + header.size - info.viewportStartOffset).toFloat()
             }
         }
     }
-    val predictiveBackMotion = rememberPredictiveBackMotion(
-        enabled = hasPickerBackTarget,
-        onBack = handlePickerBack,
-    )
-    val handleTopBarBack: () -> Unit = {
-        if (hasPickerBackTarget) handlePickerBack() else navigateBack()
+    // 4dp hysteresis (in px) so the compact identity doesn't flicker when the
+    // header bottom hovers right at the bar edge. The latch resets per app.
+    val hysteresisPx = with(LocalDensity.current) { 4.dp.toPx() }
+    var collapsed by remember(appId) { mutableStateOf(false) }
+    LaunchedEffect(headerBottom, topBarHeight, hysteresisPx) {
+        val bottom = headerBottom ?: return@LaunchedEffect
+        collapsed = if (collapsed) {
+            bottom <= topBarHeight + hysteresisPx
+        } else {
+            bottom <= topBarHeight
+        }
     }
-
-    Scaffold(
-        modifier = Modifier.predictiveBackTransform(predictiveBackMotion),
+    val closeSearch = {
+        searchExpanded = false
+        viewModel.onPickerAction(LocalePickerAction.QueryChanged(""))
+        keyboard?.hide()
+        focusManager.clearFocus()
+    }
+    val handleTopBarBack: () -> Unit = {
+        when {
+            searchActive -> closeSearch()
+            pickerState.isInGroup -> viewModel.onPickerAction(LocalePickerAction.BackToGroups)
+            else -> navigateBack()
+        }
+    }
+    // Group back is owned by the seekable child transition below. Search/IME
+    // close independently; phone route back stays with the outer NavHost.
+    val imeVisible = WindowInsets.isImeVisible
+    BackHandler(
+        enabled = backEnabled && !imeVisible &&
+            (searchActive || (interceptNavigationBack && !pickerState.isInGroup)),
+        onBack = handleTopBarBack,
+    )
+    AppScaffold(
         topBar = {
-            TopAppBar(
-                title = {
-                    AppTopAppBarTitle(title = stringResource(R.string.app_language))
+            AppDetailTopBar(
+                state = appInfoState,
+                iconLoader = viewModel.appIconLoader,
+                // Loading or unmeasured states never show a stale app name.
+                collapsed = collapsed && !appInfoState.isLoading,
+                searchExpanded = searchExpanded,
+                query = pickerState.query,
+                onBack = handleTopBarBack,
+                onOpenSearch = { searchExpanded = true },
+                onCloseSearch = closeSearch,
+                onQueryChange = { viewModel.onPickerAction(LocalePickerAction.QueryChanged(it)) },
+                onOpen = {
+                    viewModel.getOpenIntent()
+                        ?.apply { flags = Intent.FLAG_ACTIVITY_NEW_TASK }
+                        ?.let { ctx.startActivity(it) }
                 },
-                navigationIcon = {
-                    IconButton(onClick = handleTopBarBack) {
-                        Icon(
-                            imageVector = Icons.AutoMirrored.Outlined.ArrowBack,
-                            contentDescription = stringResource(R.string.back),
-                        )
-                    }
+                onForceStop = { viewModel.forceStop() },
+                onSettings = {
+                    ctx.startActivity(viewModel.getSettingsIntent().apply { flags = Intent.FLAG_ACTIVITY_NEW_TASK })
                 },
+                modifier = Modifier.onSizeChanged { topBarHeight = it.height },
             )
         },
-        snackbarHost = { SnackbarHost(snackbarHostState) },
+        snackbarHost = { AppSnackbarHost(snackbarHostState) },
         contentWindowInsets = WindowInsets(0, 0, 0, 0),
-        containerColor = MaterialTheme.colorScheme.surface,
+        containerColor = AppUiTheme.palette.background,
     ) { innerPadding ->
         if (appInfoState.isLoading) {
             Box(
@@ -112,38 +161,30 @@ fun AppInfoScreen(
                     .padding(innerPadding),
                 contentAlignment = Alignment.Center,
             ) {
-                CircularProgressIndicator()
+                AppCircularProgressIndicator()
             }
-            return@Scaffold
+            return@AppScaffold
         }
 
         AppDetailContent(
             appInfoState = appInfoState,
             pickerState = pickerState,
             iconLoader = viewModel.appIconLoader,
+            listStates = listStates,
+            backEnabled = backEnabled && !searchActive,
             onPickerAction = viewModel::onPickerAction,
             onResetLocale = { viewModel.onResetLocale() },
             onSelectLocale = { option ->
+                // Business write first, then the search presentation collapses
+                // (query, focus, IME), and only then the return-to-directory move.
                 viewModel.onSelectLocale(option)
+                if (searchActive) closeSearch()
                 viewModel.onPickerAction(
                     LocalePickerAction.BackToGroups
                 )
             },
-            onOpen = {
-                viewModel.getOpenIntent()
-                    ?.apply { flags = Intent.FLAG_ACTIVITY_NEW_TASK }
-                    ?.let { ctx.startActivity(it) }
-            },
-            onForceStop = { viewModel.forceStop() },
-            onSettings = {
-                ctx.startActivity(
-                    viewModel.getSettingsIntent()
-                        .apply { flags = Intent.FLAG_ACTIVITY_NEW_TASK }
-                )
-            },
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(innerPadding),
+            modifier = Modifier.fillMaxSize(),
+            contentPadding = innerPadding,
         )
     }
 }
