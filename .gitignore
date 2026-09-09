@@ -35,3 +35,6 @@
 # User-exported locale configurations may reveal installed applications.
 /configurations/*.fuyao-locale.json
 !/configurations/*.example.fuyao-locale.json
+
+# Python cache for resource import and validation tools
+/tools/**/__pycache__/

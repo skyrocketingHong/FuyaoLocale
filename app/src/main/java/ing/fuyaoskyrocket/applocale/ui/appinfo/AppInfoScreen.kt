@@ -10,6 +10,9 @@ import androidx.compose.foundation.layout.isImeVisible
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.repeatOnLifecycle
+import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.mutableIntStateOf
@@ -27,8 +30,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
-import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import ing.fuyaoskyrocket.applocale.ui.screen.pageHiltViewModel as hiltViewModel
+import ing.fuyaoskyrocket.applocale.ui.screen.collectPageUiState
 import ing.fuyaoskyrocket.applocale.R
 import ing.fuyaoskyrocket.applocale.ui.designsystem.AppUiTheme
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppCircularProgressIndicator
@@ -48,8 +51,8 @@ fun AppInfoScreen(
     backEnabled: Boolean = true,
     interceptNavigationBack: Boolean = false,
 ) {
-    val appInfoState by viewModel.uiState.collectAsStateWithLifecycle()
-    val pickerState by viewModel.pickerState.collectAsStateWithLifecycle()
+    val appInfoState by viewModel.uiState.collectPageUiState()
+    val pickerState by viewModel.pickerState.collectPageUiState()
     val ctx = LocalContext.current
     val displayLocaleTag = LocalConfiguration.current.locales[0].toLanguageTag()
     val snackbarHostState = rememberAppSnackbarHostState()
@@ -59,7 +62,9 @@ fun AppInfoScreen(
     }
 
     // Snackbar events (pin/unpin messages)
-    LaunchedEffect(Unit) {
+    val lifecycleOwner = LocalLifecycleOwner.current
+    LaunchedEffect(viewModel, lifecycleOwner) {
+        lifecycleOwner.lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
         viewModel.events.collect { event ->
             val msg = when (event) {
                 is LocalePickerEvent.Pinned ->
@@ -68,6 +73,7 @@ fun AppInfoScreen(
                     ctx.getString(R.string.unpinned, event.displayName)
             }
             snackbarHostState.showSnackbar(msg)
+        }
         }
     }
 

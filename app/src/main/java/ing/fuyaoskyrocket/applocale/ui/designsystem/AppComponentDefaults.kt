@@ -2,7 +2,6 @@ package ing.fuyaoskyrocket.applocale.ui.designsystem
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.unit.dp
 
 /**
  * Shared component metrics and text roles used by the theme-aware wrappers.
@@ -13,8 +12,8 @@ import androidx.compose.ui.unit.dp
  * squircle rendering happens in the component wrappers, not here.
  */
 object AppComponentDefaults {
-    val rowCornerRadius = 16.dp
-    val sectionCornerRadius = 28.dp
+    val rowCornerRadius @Composable get() = AppUiTheme.shapes.row.radius
+    val sectionCornerRadius @Composable get() = AppUiTheme.shapes.section.radius
 
     @Composable
     fun titleStyle(): TextStyle = AppUiTheme.textStyles.itemTitle

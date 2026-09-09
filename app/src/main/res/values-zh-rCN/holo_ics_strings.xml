@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Verbatim AOSP 4.0.4 values-zh-rCN capital_on/capital_off. Apache-2.0. -->
+<resources>
+    <string name="holo_ics_switch_on">打开</string>
+    <string name="holo_ics_switch_off">关闭</string>
+    <string name="appearance_mode">显示模式</string>
+    <string name="appearance_mode_light">日间模式</string>
+    <string name="appearance_mode_dark">夜间模式</string>
+    <string name="appearance_mode_system">跟随系统</string>
+</resources>

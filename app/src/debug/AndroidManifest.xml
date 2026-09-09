@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application>
+        <activity android:name="ing.fuyaoskyrocket.applocale.dev.ThemeGalleryActivity"
+            android:exported="true" android:label="Theme Gallery">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="ing.fuyaoskyrocket.applocale.dev.HoloGalleryActivity"
+            android:exported="true"
+            android:label="Holo ICS Gallery">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="ing.fuyaoskyrocket.applocale.dev.KitKatGalleryActivity"
+            android:exported="true"
+            android:label="KitKat 4.4 Gallery">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

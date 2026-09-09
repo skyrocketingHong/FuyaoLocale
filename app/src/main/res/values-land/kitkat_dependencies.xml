@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- AOSP, Apache-2.0. See docs/android-themes/kitkat/asset-manifest.json. -->
+<resources>
+<dimen name="kitkat_action_bar_default_height">40dip</dimen>
+<dimen name="kitkat_action_bar_subtitle_text_size">12dp</dimen>
+<dimen name="kitkat_action_bar_title_text_size">16dp</dimen>
+</resources>

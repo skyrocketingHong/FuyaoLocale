@@ -68,6 +68,22 @@ class AppAppearanceTransitionViewModel : ViewModel() {
         }
     }
 
+    fun requestColorMode(mode: AppColorMode) {
+        _uiState.update { state ->
+            if (mode == state.requested.colorMode && state.phase == AppearancePhase.Idle &&
+                !state.hasPendingLocale
+            ) {
+                state
+            } else {
+                state.copy(
+                    requested = state.requested.copy(colorMode = mode),
+                    generation = state.generation + 1,
+                    phase = AppearancePhase.FadingOut,
+                )
+            }
+        }
+    }
+
     fun requestGlass(enabled: Boolean) {
         _uiState.update { state ->
             if (enabled == state.requested.liquidGlassNavigationBar) {
@@ -153,15 +169,21 @@ class AppAppearanceTransitionViewModel : ViewModel() {
             if (generation != state.generation) {
                 state
             } else {
-                // Correct only what this failed transaction owns — the style —
+                // Correct only what this failed transaction owns — style/mode —
                 // to the real persisted value; the two effect fields keep the
                 // latest requested/applied targets (their independent executor
                 // commits them, and this older snapshot must not clobber them).
                 // Pending language targets are dropped; the picker shows the
                 // live locale truth on its next read.
                 state.copy(
-                    requested = state.requested.copy(style = actualAppearance.style),
-                    applied = state.applied.copy(style = actualAppearance.style),
+                    requested = state.requested.copy(
+                        style = actualAppearance.style,
+                        colorMode = actualAppearance.colorMode,
+                    ),
+                    applied = state.applied.copy(
+                        style = actualAppearance.style,
+                        colorMode = actualAppearance.colorMode,
+                    ),
                     phase = AppearancePhase.Idle,
                     hasPendingLocale = false,
                     pendingLocaleTag = null,

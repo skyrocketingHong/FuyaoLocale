@@ -1,0 +1,242 @@
+{
+  "source": {
+    "version": "android-2.2_r1 / 71beeab14a891297b6658c4aeb47557083091aa1",
+    "archiveUrl": "https://android.googlesource.com/platform/frameworks/base/+archive/71beeab14a891297b6658c4aeb47557083091aa1/core/res/res.tar.gz",
+    "archiveSha256": "537ba6c97636deb2db2800bf4e1e4a97d85e905b6360fd6362476a1512874367",
+    "license": "Apache-2.0"
+  },
+  "files": [
+    {
+      "source": "core/res/res/drawable-hdpi/btn_dropdown_disabled.9.png",
+      "target": "app/src/main/res/drawable-hdpi/froyo_btn_dropdown_disabled.9.png",
+      "sourceSha256": "2af4071546d8e0000467c8a6f8b169d30961e34a33bb52fe4d28b50d7be8bb24",
+      "sha256": "2af4071546d8e0000467c8a6f8b169d30961e34a33bb52fe4d28b50d7be8bb24",
+      "size": 1374,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/btn_dropdown_disabled_focused.9.png",
+      "target": "app/src/main/res/drawable-hdpi/froyo_btn_dropdown_disabled_focused.9.png",
+      "sourceSha256": "7d9b0fc08d6b39062e8a46d97902cb207894b20a5f05c9715861073b28b8b0b6",
+      "sha256": "7d9b0fc08d6b39062e8a46d97902cb207894b20a5f05c9715861073b28b8b0b6",
+      "size": 1775,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/btn_dropdown_normal.9.png",
+      "target": "app/src/main/res/drawable-hdpi/froyo_btn_dropdown_normal.9.png",
+      "sourceSha256": "7e1685f54d5994c6609ece3e2813b6fa7865fc3a49031e47814bac283fae5177",
+      "sha256": "7e1685f54d5994c6609ece3e2813b6fa7865fc3a49031e47814bac283fae5177",
+      "size": 1840,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/btn_dropdown_pressed.9.png",
+      "target": "app/src/main/res/drawable-hdpi/froyo_btn_dropdown_pressed.9.png",
+      "sourceSha256": "0e00130edc82231bc230918f2d293e0494a46854d698082d2e7b89c6b0ff5a8a",
+      "sha256": "0e00130edc82231bc230918f2d293e0494a46854d698082d2e7b89c6b0ff5a8a",
+      "size": 3199,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/btn_dropdown_selected.9.png",
+      "target": "app/src/main/res/drawable-hdpi/froyo_btn_dropdown_selected.9.png",
+      "sourceSha256": "1e17db85ef1a1503a7c9bc89886d877b658b4872fd0dc0400df26160ec8f80c5",
+      "sha256": "1e17db85ef1a1503a7c9bc89886d877b658b4872fd0dc0400df26160ec8f80c5",
+      "size": 3231,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/progressbar_indeterminate1.png",
+      "target": "app/src/main/res/drawable-hdpi/froyo_progressbar_indeterminate1.png",
+      "sourceSha256": "70ff0253404c018eb927ecf962adffe8e4214b5f6bbb0efcc4e60808a71729da",
+      "sha256": "70ff0253404c018eb927ecf962adffe8e4214b5f6bbb0efcc4e60808a71729da",
+      "size": 474,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/progressbar_indeterminate2.png",
+      "target": "app/src/main/res/drawable-hdpi/froyo_progressbar_indeterminate2.png",
+      "sourceSha256": "428c7efc95ae9fb7416c63ba787cd189a30eb43d8d3dd68de66cd32e0cec5240",
+      "sha256": "428c7efc95ae9fb7416c63ba787cd189a30eb43d8d3dd68de66cd32e0cec5240",
+      "size": 472,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/progressbar_indeterminate3.png",
+      "target": "app/src/main/res/drawable-hdpi/froyo_progressbar_indeterminate3.png",
+      "sourceSha256": "fc8ffffb09e4438c9b2434909b99c2f8192947632691d2cc4b395f7c026a0f12",
+      "sha256": "fc8ffffb09e4438c9b2434909b99c2f8192947632691d2cc4b395f7c026a0f12",
+      "size": 469,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/btn_dropdown_disabled.9.png",
+      "target": "app/src/main/res/drawable-mdpi/froyo_btn_dropdown_disabled.9.png",
+      "sourceSha256": "b5ac8c80b2bcd69189b8d94887c7bceadbc859b083ac81af8cf83b1d6e3876b5",
+      "sha256": "b5ac8c80b2bcd69189b8d94887c7bceadbc859b083ac81af8cf83b1d6e3876b5",
+      "size": 901,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/btn_dropdown_disabled_focused.9.png",
+      "target": "app/src/main/res/drawable-mdpi/froyo_btn_dropdown_disabled_focused.9.png",
+      "sourceSha256": "16fb9b91a4a8e8dbcee6d81d39d30f8ba242e0f96a05bb0c1d06ec04c2320859",
+      "sha256": "16fb9b91a4a8e8dbcee6d81d39d30f8ba242e0f96a05bb0c1d06ec04c2320859",
+      "size": 1118,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/btn_dropdown_normal.9.png",
+      "target": "app/src/main/res/drawable-mdpi/froyo_btn_dropdown_normal.9.png",
+      "sourceSha256": "5b90c8efb382056a926e62f67343a93077eac16d6a3d3c460ca9cae06e0568f5",
+      "sha256": "5b90c8efb382056a926e62f67343a93077eac16d6a3d3c460ca9cae06e0568f5",
+      "size": 1290,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/btn_dropdown_pressed.9.png",
+      "target": "app/src/main/res/drawable-mdpi/froyo_btn_dropdown_pressed.9.png",
+      "sourceSha256": "7f1cabec5bcca5246f95ed0d223e9c8649cfbb6000c48294b106fe19ca23ef98",
+      "sha256": "7f1cabec5bcca5246f95ed0d223e9c8649cfbb6000c48294b106fe19ca23ef98",
+      "size": 2025,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/btn_dropdown_selected.9.png",
+      "target": "app/src/main/res/drawable-mdpi/froyo_btn_dropdown_selected.9.png",
+      "sourceSha256": "562e68cb6be3a15d8eafb2cb35e233c5f42063e55f4daaaa7eb169d8d477d672",
+      "sha256": "562e68cb6be3a15d8eafb2cb35e233c5f42063e55f4daaaa7eb169d8d477d672",
+      "size": 2014,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/progressbar_indeterminate1.png",
+      "target": "app/src/main/res/drawable-mdpi/froyo_progressbar_indeterminate1.png",
+      "sourceSha256": "a2a8fdd5233c3a6b35c9e58ebf0a253a8157486006d5884213f0bc5587a91906",
+      "sha256": "a2a8fdd5233c3a6b35c9e58ebf0a253a8157486006d5884213f0bc5587a91906",
+      "size": 687,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/progressbar_indeterminate2.png",
+      "target": "app/src/main/res/drawable-mdpi/froyo_progressbar_indeterminate2.png",
+      "sourceSha256": "cba7b8f55a1caa1af3aca5866719417f8941c6507be7c633518de97c7d581100",
+      "sha256": "cba7b8f55a1caa1af3aca5866719417f8941c6507be7c633518de97c7d581100",
+      "size": 624,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/progressbar_indeterminate3.png",
+      "target": "app/src/main/res/drawable-mdpi/froyo_progressbar_indeterminate3.png",
+      "sourceSha256": "bd1429e16597e69c715cdde4d2d0ac56501831f7fecc318e6652b6db7eefd44a",
+      "sha256": "bd1429e16597e69c715cdde4d2d0ac56501831f7fecc318e6652b6db7eefd44a",
+      "size": 637,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable/btn_dropdown.xml",
+      "target": "app/src/main/res/drawable/froyo_btn_dropdown.xml",
+      "sourceSha256": "842b6771382ca72d493ffbc768bd384520a14061628e24f400a341b6f558739b",
+      "sha256": "01f062ae233da5186c012f260146f3de6b305e6d6e7a57c8a2f1d8e47a3867e2",
+      "size": 1628,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "core/res/res/drawable/progress_indeterminate_horizontal.xml",
+      "target": "app/src/main/res/drawable/froyo_progress_indeterminate_horizontal.xml",
+      "sourceSha256": "ff0accba41b2ba01fb89e19dd0215850d0d348778f2fb487f550333de415f8f9",
+      "sha256": "4dbee30d4b3dd1d8eecb20df637c353ffcf751e7a05bde5cb9f28f9f3817458a",
+      "size": 1154,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    }
+  ],
+  "references": [
+    {
+      "source": "core/res/res/drawable/btn_default.xml",
+      "target": "docs/android-themes/froyo/reference/drawable/btn_default.xml",
+      "sha256": "a29ed99b1a97097f46f781070f9a10c624602839a04486cbd3f8479025fce146"
+    },
+    {
+      "source": "core/res/res/drawable/edit_text.xml",
+      "target": "docs/android-themes/froyo/reference/drawable/edit_text.xml",
+      "sha256": "fbbb7c97d33fe52d05998e96e8fb18cd9c895baee83438782e427f08ec7f31f1"
+    },
+    {
+      "source": "core/res/res/drawable/tab_indicator.xml",
+      "target": "docs/android-themes/froyo/reference/drawable/tab_indicator.xml",
+      "sha256": "a2fc62b6216812e1b763f6ba6feef37ee7acb41b11c65da013f762f9356ef847"
+    },
+    {
+      "source": "core/res/res/layout/tab_indicator.xml",
+      "target": "docs/android-themes/froyo/reference/layout/tab_indicator.xml",
+      "sha256": "aed0da43749188fc7cc7ca213b86da28bc8613774795af69f23a360191a3a2ed"
+    },
+    {
+      "source": "core/res/res/values-land/dimens.xml",
+      "target": "docs/android-themes/froyo/reference/values-land/dimens.xml",
+      "sha256": "cfe0d87af7611e700d8a3fa2f61429d844d9af2e048e9e69c3dcce0f76e9f95f"
+    },
+    {
+      "source": "core/res/res/values/colors.xml",
+      "target": "docs/android-themes/froyo/reference/values/colors.xml",
+      "sha256": "d5811c89a9884ff12661eb5ae160f706cd4fb2a1b3dc6f30588a436d54c9ae43"
+    },
+    {
+      "source": "core/res/res/values/config.xml",
+      "target": "docs/android-themes/froyo/reference/values/config.xml",
+      "sha256": "e41eb59104dae88b022fab042e8a01b48c78ca4499cfc0b0dbbcb4d521b5dc0a"
+    },
+    {
+      "source": "core/res/res/values/dimens.xml",
+      "target": "docs/android-themes/froyo/reference/values/dimens.xml",
+      "sha256": "899cc7c26ef51adb13aaf5f922a35cd843ab461a88c32176ea84310cedd6d4c3"
+    },
+    {
+      "source": "core/res/res/values/styles.xml",
+      "target": "docs/android-themes/froyo/reference/values/styles.xml",
+      "sha256": "e734bb8bd1759fe8524b1a9bc23560a9527354490d0053b3ab63f90623ef600a"
+    },
+    {
+      "source": "core/res/res/values/themes.xml",
+      "target": "docs/android-themes/froyo/reference/values/themes.xml",
+      "sha256": "84b5ddd585d611cf2c6976ecbcaad5038c420c04b55448744f4952c13bf20aa4"
+    }
+  ]
+}

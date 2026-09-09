@@ -1,11 +1,6 @@
 package ing.fuyaoskyrocket.applocale.ui.main
 
 import androidx.activity.compose.BackHandler
-import androidx.compose.animation.core.FastOutSlowInEasing
-import androidx.compose.animation.core.MutableTransitionState
-import androidx.compose.animation.core.animateFloat
-import androidx.compose.animation.core.tween
-import androidx.compose.animation.core.updateTransition
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -14,7 +9,6 @@ import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.consumeWindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.isImeVisible
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.rememberLazyListState
@@ -30,24 +24,19 @@ import androidx.compose.runtime.setValue
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.unit.dp
-import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import ing.fuyaoskyrocket.applocale.ui.screen.pageHiltViewModel as hiltViewModel
+import ing.fuyaoskyrocket.applocale.ui.screen.collectPageUiState
 import ing.fuyaoskyrocket.applocale.R
 import ing.fuyaoskyrocket.applocale.model.BatchApplyState
 import ing.fuyaoskyrocket.applocale.model.OperationMode
 import ing.fuyaoskyrocket.applocale.ui.components.AppFilterBar
 import ing.fuyaoskyrocket.applocale.ui.components.AppNavigationDestination
 import ing.fuyaoskyrocket.applocale.ui.components.AppResultsList
-import ing.fuyaoskyrocket.applocale.ui.components.BatchBottomAppBar
-import ing.fuyaoskyrocket.applocale.ui.components.SelectionTopAppBar
 import ing.fuyaoskyrocket.applocale.ui.components.ShizukuConnectingState
 import ing.fuyaoskyrocket.applocale.ui.components.ShizukuRequiredWarning
 import ing.fuyaoskyrocket.applocale.ui.components.SystemDialogWarn
@@ -58,17 +47,17 @@ import ing.fuyaoskyrocket.applocale.ui.designsystem.AppUiTheme
 import ing.fuyaoskyrocket.applocale.ui.designsystem.listBottomReserve
 import ing.fuyaoskyrocket.applocale.ui.designsystem.listTopReserve
 import ing.fuyaoskyrocket.applocale.ui.designsystem.LocalGlassNavigationBarVisibility
+import ing.fuyaoskyrocket.applocale.ui.screen.LocalTopLevelPageActive
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppCircularProgressIndicator
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppHomeTopAppBar
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppIcon
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppPullToRefresh
-import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppScaffold
-import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppSnackbarHost
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppSelectionScaffold
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppSelectionState
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppText
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppTextButton
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.rememberAppSnackbarHostState
 import ing.fuyaoskyrocket.applocale.ui.designsystem.readableContentWidth
-import ing.fuyaoskyrocket.applocale.ui.designsystem.shouldShowBatchBar
 import ing.fuyaoskyrocket.applocale.ui.languagepicker.BatchLanguageSheet
 import ing.fuyaoskyrocket.applocale.ui.screen.TabScrollCoordinator
 import ing.fuyaoskyrocket.applocale.ui.screen.TabScrollToTopConsumer
@@ -87,13 +76,15 @@ fun MainScreen(
     onOpenShizuku: () -> Unit,
     showBottomNavigation: Boolean = true,
     tabScrollCoordinator: TabScrollCoordinator? = null,
+    listState: androidx.compose.foundation.lazy.LazyListState = rememberLazyListState(),
 ) {
-    val uiState by viewModel.uiState.collectAsStateWithLifecycle()
+    val uiState by viewModel.uiState.collectPageUiState()
+    val pageActive = LocalTopLevelPageActive.current
     val ctx = LocalContext.current
     val focusManager = LocalFocusManager.current
     val keyboardController = LocalSoftwareKeyboardController.current
     val snackbarHostState = rememberAppSnackbarHostState()
-    val lazyListState = rememberLazyListState()
+    val lazyListState = listState
     val systemLocaleTag = rememberSystemLocaleTag()
 
     // Round-8 035: a tab double tap only scrolls the current filtered list back
@@ -145,9 +136,9 @@ fun MainScreen(
     }
 
     // Snackbar for batch results
-    LaunchedEffect(uiState.batchState) {
+    LaunchedEffect(uiState.batchState, pageActive) {
         val batch = uiState.batchState
-        if (batch is BatchApplyState.Done) {
+        if (pageActive && batch is BatchApplyState.Done) {
             val msg = if (batch.result.isAllSuccess) {
                 ctx.getString(R.string.batch_success, batch.result.successCount)
             } else {
@@ -169,95 +160,38 @@ fun MainScreen(
     // Selection mode hands the bottom edge to the batch bar; the floating glass tab
     // bar must get out of the way while it is shown.
     val glassNavigationBarVisibility = LocalGlassNavigationBarVisibility.current
-    DisposableEffect(glassNavigationBarVisibility, uiState.isSelectionMode) {
-        glassNavigationBarVisibility?.isSuppressed = uiState.isSelectionMode
+    DisposableEffect(glassNavigationBarVisibility, uiState.isSelectionMode, pageActive) {
+        glassNavigationBarVisibility?.isSuppressed = uiState.isSelectionMode && pageActive
         onDispose { glassNavigationBarVisibility?.isSuppressed = false }
     }
-    // Measured batch-slot height: the snackbar host only needs to dodge the part
-    // of the glass footprint that this slot has not already reserved.
-    val density = LocalDensity.current
-    var batchSlotHeight by remember { mutableStateOf(0.dp) }
-    val horizontalPagePadding = AppLayout.contentFrameMargin
-
-    // The single presentation source for the batch bar (021): the target is the
-    // real selection state gated by the dock hand-off, the transition is created
-    // once here — never inside the bottomBar branch — and the slot stays
-    // composed until the exit animation has actually finished.
-    val batchPresentation = remember { MutableTransitionState(false) }
-    val batchTarget = uiState.isSelectionMode && shouldShowBatchBar()
-    LaunchedEffect(batchTarget) {
-        batchPresentation.targetState = batchTarget
+    val horizontalPagePadding = AppUiTheme.spacing.contentInset
+    val openBatchFlow = {
+        if (hasSystemAppInSelection) showSystemWarning = true else showBatchSheet = true
     }
-    val batchTransition = updateTransition(
-        transitionState = batchPresentation,
-        label = "BatchPresentation",
-    )
-    val batchPresentationProgress by batchTransition.animateFloat(
-        targetValueByState = { presented -> if (presented) 1f else 0f },
-        transitionSpec = { tween(durationMillis = 180, easing = FastOutSlowInEasing) },
-        label = "batchPresentationProgress",
-    )
-    val keepBatchSlot = uiState.isSelectionMode || batchPresentation.currentState ||
-        batchPresentation.targetState || !batchPresentation.isIdle
 
-    AppScaffold(
+    AppSelectionScaffold(
+        selection = if (uiState.isSelectionMode) AppSelectionState(
+            count = uiState.selectedPackages.size,
+            applying = uiState.batchState is BatchApplyState.Applying,
+            onClose = viewModel::clearSelection,
+            onSelectAll = viewModel::selectAllVisible,
+            onClear = viewModel::clearSelection,
+            onApply = openBatchFlow,
+        ) else null,
         topBar = {
-            if (uiState.isSelectionMode) {
-                SelectionTopAppBar(
-                    selectedCount = uiState.selectedPackages.size,
-                    onClose = { viewModel.clearSelection() },
-                    onSelectAll = { viewModel.selectAllVisible() },
-                    onClear = { viewModel.clearSelection() },
-                )
-            } else {
-                AppHomeTopAppBar(
-                    title = stringResource(R.string.app_name),
-                    searchExpanded = uiState.isSearchExpanded,
-                    query = uiState.query,
-                    showSystemApps = uiState.showSystemApps,
-                    onOpenSearch = viewModel::openSearch,
-                    onCloseSearch = viewModel::closeSearch,
-                    onQueryChange = viewModel::onQueryChange,
-                    onRefresh = viewModel::refreshApps,
-                    onToggleSystemApps = viewModel::toggleShowSystemApps,
-                )
-            }
+        AppHomeTopAppBar(
+            title = stringResource(R.string.app_name),
+            searchExpanded = uiState.isSearchExpanded,
+            query = uiState.query,
+            showSystemApps = uiState.showSystemApps,
+            onOpenSearch = viewModel::openSearch,
+            onCloseSearch = viewModel::closeSearch,
+            onQueryChange = viewModel::onQueryChange,
+            onRefresh = viewModel::refreshApps,
+            onToggleSystemApps = viewModel::toggleShowSystemApps,
+        )
         },
-        bottomBar = {
-            // The navigation dock is owned by AppChromeHost; this slot only
-            // hosts the selection-mode batch bar, kept while its exit runs.
-            if (keepBatchSlot) {
-                Box(
-                    modifier = Modifier.onSizeChanged { size ->
-                        batchSlotHeight = with(density) { size.height.toDp() }
-                    },
-                ) {
-                    BatchBottomAppBar(
-                        hasSelection = uiState.selectedPackages.isNotEmpty(),
-                        isApplying = uiState.batchState is BatchApplyState.Applying,
-                        onClick = {
-                            if (hasSystemAppInSelection) {
-                                showSystemWarning = true
-                            } else {
-                                showBatchSheet = true
-                            }
-                        },
-                        // The lambda defers the animation read to the bar's
-                        // graphics layer; interactivity is the real business
-                        // gate (selection + dock vacated), never the alpha.
-                        presentationProgress = { batchPresentationProgress },
-                        interactive = uiState.isSelectionMode && shouldShowBatchBar(),
-                    )
-                }
-            }
-        },
-        snackbarHost = {
-            AppSnackbarHost(
-                snackbarHostState,
-                hostSlotBottom = if (keepBatchSlot) batchSlotHeight else 0.dp,
-            )
-        },
-        contentWindowInsets = WindowInsets(0, 0, 0, 0),
+        snackbarHostState = snackbarHostState,
         containerColor = AppUiTheme.palette.background,
     ) { innerPadding ->
         // The scaffold padding is consumed exactly once (round-5 018-A): the
@@ -369,6 +303,7 @@ fun MainScreen(
                                         sortAscending = uiState.sortAscending,
                                         onToggleModifiedOnly = { viewModel.toggleModifiedOnly() },
                                         onCycleSortOption = viewModel::cycleSortOption,
+                                        onSetSort = viewModel::setSort,
                                         horizontalPadding = horizontalPagePadding,
                                     )
                                 },

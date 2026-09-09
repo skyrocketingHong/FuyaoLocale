@@ -2,8 +2,7 @@ package ing.fuyaoskyrocket.applocale.ui.designsystem.component
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.vector.ImageVector
-import ing.fuyaoskyrocket.applocale.ui.designsystem.AppThemePreferences
-import ing.fuyaoskyrocket.applocale.ui.designsystem.AppThemeStyle
+import ing.fuyaoskyrocket.applocale.ui.designsystem.AppUiTheme
 import ing.fuyaoskyrocket.applocale.ui.designsystem.material.materialSymbolVector
 import ing.fuyaoskyrocket.applocale.ui.designsystem.miuix.miuixSymbolVector
 
@@ -46,10 +45,14 @@ enum class AppSymbol {
 /**
  * Resolves the theme-native glyph for [symbol]; render the result with
  * [AppIcon]. Never cache the value outside composition.
+ *
+ * Vector backends only: the Holo backend has no native vectors — its named
+ * glyphs render through [AppSymbolIcon] with the imported era bitmaps, and no
+ * Holo path may call this function (the round-9 044 audit enforces it).
  */
 @Composable
 fun AppSymbolVector(symbol: AppSymbol): ImageVector =
-    if (AppThemePreferences.style == AppThemeStyle.MIUIX) {
+    if (AppUiTheme.icons.source == ing.fuyaoskyrocket.applocale.ui.designsystem.IconSource.Miuix) {
         symbol.miuixSymbolVector()
     } else {
         symbol.materialSymbolVector()

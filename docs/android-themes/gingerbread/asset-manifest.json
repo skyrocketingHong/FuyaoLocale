@@ -1,0 +1,3315 @@
+{
+  "source": {
+    "version": "android-2.3.7_r1 / 3f2821425f1ab6eddb76a8725e3f2c3edb5d8b07",
+    "archiveUrl": "https://android.googlesource.com/platform/frameworks/base/+archive/3f2821425f1ab6eddb76a8725e3f2c3edb5d8b07/core/res/res.tar.gz",
+    "archiveSha256": "627da3793259dc352bd418ae20d92e106beda242661938471cdbfb3cd119dd61",
+    "license": "Apache-2.0"
+  },
+  "files": [
+    {
+      "source": "core/res/res/color/primary_text_dark.xml",
+      "target": "app/src/main/res/color/gingerbread_primary_text_dark.xml",
+      "sourceSha256": "83d339caf82403a9fd21e1dba636354599bc3857319e8e7737dac34f67bf66e0",
+      "sha256": "73b4caaaa4e20f4b611bab5d7249a28644b787c15e468916bccb1709d7c9ed2e",
+      "size": 1389,
+      "density": "color",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "core/res/res/color/primary_text_light.xml",
+      "target": "app/src/main/res/color/gingerbread_primary_text_light.xml",
+      "sourceSha256": "b6ccf4797960fb4fb6fa18278b65398d5074cc9533b739f061316d573673840c",
+      "sha256": "4cde31bf5c6c8cfe89dfae8fe37d29319a9ac8ea9dffdc854e8bc21d5b156765",
+      "size": 1275,
+      "density": "color",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "core/res/res/color/secondary_text_dark.xml",
+      "target": "app/src/main/res/color/gingerbread_secondary_text_dark.xml",
+      "sourceSha256": "50dfab2d5314934ed6ac343ad214407f4633fda2a88ef56c8fe6b2e0f4897ac0",
+      "sha256": "224ed18d8dec34dad8190c0f3036f767af7b4fedc54a5cc0333bf94c85705cfd",
+      "size": 1695,
+      "density": "color",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "core/res/res/color/secondary_text_light.xml",
+      "target": "app/src/main/res/color/gingerbread_secondary_text_light.xml",
+      "sourceSha256": "10793f6b21f85c01b5739d4ff428539ee1795050d8badb68be27ce8178e45982",
+      "sha256": "9196596951996fdc348d8da077fc9e4facebe31b5d09cbbd44689248f9efbd39",
+      "size": 1810,
+      "density": "color",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "core/res/res/color/tab_indicator_text.xml",
+      "target": "app/src/main/res/color/gingerbread_tab_indicator_text.xml",
+      "sourceSha256": "9b836c75f10b59a1e50fddb53e47e93a8d6d259902cf54ff80e4c28ed6b1e5f2",
+      "sha256": "9b836c75f10b59a1e50fddb53e47e93a8d6d259902cf54ff80e4c28ed6b1e5f2",
+      "size": 881,
+      "density": "color",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/activity_title_bar.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_activity_title_bar.9.png",
+      "sourceSha256": "479886370af10f402e2580cecd14bfeb4dc84b03abf4607aed9f06bdd14bbf2c",
+      "sha256": "479886370af10f402e2580cecd14bfeb4dc84b03abf4607aed9f06bdd14bbf2c",
+      "size": 1697,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/btn_check_label_background.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_btn_check_label_background.9.png",
+      "sourceSha256": "e77efa22f4b6adb679b0d994995b4db317d36654dcdbefb76fe83b933faf1f02",
+      "sha256": "e77efa22f4b6adb679b0d994995b4db317d36654dcdbefb76fe83b933faf1f02",
+      "size": 224,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/btn_check_off.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_btn_check_off.png",
+      "sourceSha256": "19b3806137fe28dab418987a888454d54aae021492b9899cf9a45e597cc5ce57",
+      "sha256": "19b3806137fe28dab418987a888454d54aae021492b9899cf9a45e597cc5ce57",
+      "size": 1249,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/btn_check_off_disable.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_btn_check_off_disable.png",
+      "sourceSha256": "0db6f1002edeee9fb56efedbfe813900c482ef560a3f6b8f8874b7731eb8559a",
+      "sha256": "0db6f1002edeee9fb56efedbfe813900c482ef560a3f6b8f8874b7731eb8559a",
+      "size": 1237,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/btn_check_off_disable_focused.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_btn_check_off_disable_focused.png",
+      "sourceSha256": "f5bcb82125ddd00806f5a99f3f35625addc12bdacee193dd54c023faf7f84d53",
+      "sha256": "f5bcb82125ddd00806f5a99f3f35625addc12bdacee193dd54c023faf7f84d53",
+      "size": 1384,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/btn_check_off_pressed.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_btn_check_off_pressed.png",
+      "sourceSha256": "47b766aefa46480002fa98d5ea94c0a81c54d92d9c4b6065f1586b046ec5ba65",
+      "sha256": "47b766aefa46480002fa98d5ea94c0a81c54d92d9c4b6065f1586b046ec5ba65",
+      "size": 3380,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/btn_check_off_selected.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_btn_check_off_selected.png",
+      "sourceSha256": "2cc126d45322f0d7087a162ac813fb5d3b79bd9529e8f39d622ce01afea50f97",
+      "sha256": "2cc126d45322f0d7087a162ac813fb5d3b79bd9529e8f39d622ce01afea50f97",
+      "size": 3568,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/btn_check_on.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_btn_check_on.png",
+      "sourceSha256": "24ecd8d3dc5f85669d10ae09712a04a6dc3588747fced7d6a026c8b475de62d7",
+      "sha256": "24ecd8d3dc5f85669d10ae09712a04a6dc3588747fced7d6a026c8b475de62d7",
+      "size": 2152,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/btn_check_on_disable.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_btn_check_on_disable.png",
+      "sourceSha256": "9f7622e481122020b2f1e45c288f8cfdfd0bcad22f85289142bde631439444b3",
+      "sha256": "9f7622e481122020b2f1e45c288f8cfdfd0bcad22f85289142bde631439444b3",
+      "size": 1846,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/btn_check_on_disable_focused.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_btn_check_on_disable_focused.png",
+      "sourceSha256": "14d67000a9ad8b3ab86b9c5c7a4b1c1913ad4525f3d55cafd0dfaa04ea5e77d9",
+      "sha256": "14d67000a9ad8b3ab86b9c5c7a4b1c1913ad4525f3d55cafd0dfaa04ea5e77d9",
+      "size": 1995,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/btn_check_on_pressed.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_btn_check_on_pressed.png",
+      "sourceSha256": "2c22c5eff13a0ffb76832a17ccf0685c306feece898abd59edf975de1bfacc57",
+      "sha256": "2c22c5eff13a0ffb76832a17ccf0685c306feece898abd59edf975de1bfacc57",
+      "size": 3407,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/btn_check_on_selected.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_btn_check_on_selected.png",
+      "sourceSha256": "013f7530cded0ddaa30dff49ecf3d7fde0ac83765d4008fd5087f3e78a6408bf",
+      "sha256": "013f7530cded0ddaa30dff49ecf3d7fde0ac83765d4008fd5087f3e78a6408bf",
+      "size": 3581,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/btn_default_normal.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_btn_default_normal.9.png",
+      "sourceSha256": "be79215c73d6df4dc04e21b95cf7ed5d80e07bb81fa25e1f27ae188a6d10a57a",
+      "sha256": "be79215c73d6df4dc04e21b95cf7ed5d80e07bb81fa25e1f27ae188a6d10a57a",
+      "size": 927,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/btn_default_normal_disable.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_btn_default_normal_disable.9.png",
+      "sourceSha256": "71152f5dada14778d402a0f0dd16aadbf2816e4436d22d70d5d913a83f312771",
+      "sha256": "71152f5dada14778d402a0f0dd16aadbf2816e4436d22d70d5d913a83f312771",
+      "size": 3601,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/btn_default_normal_disable_focused.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_btn_default_normal_disable_focused.9.png",
+      "sourceSha256": "9617f88bb95f5baab9773c3b27d1f4523497a7f50e6e7809278ad5f704e041bc",
+      "sha256": "9617f88bb95f5baab9773c3b27d1f4523497a7f50e6e7809278ad5f704e041bc",
+      "size": 862,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/btn_default_pressed.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_btn_default_pressed.9.png",
+      "sourceSha256": "c36a6283c62cd493c2d760d82f306eb4f6309fdd959844a5c781aa1561673f35",
+      "sha256": "c36a6283c62cd493c2d760d82f306eb4f6309fdd959844a5c781aa1561673f35",
+      "size": 975,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/btn_default_selected.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_btn_default_selected.9.png",
+      "sourceSha256": "eddba7887c4532893589962e51c4cc72fc27409f2c9c819bf8cfbacd4651e824",
+      "sha256": "eddba7887c4532893589962e51c4cc72fc27409f2c9c819bf8cfbacd4651e824",
+      "size": 579,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/btn_default_small_normal.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_btn_default_small_normal.9.png",
+      "sourceSha256": "31c7f02e0e7cc3c4be369d229931f24fe11ff43fc619e4608dea00f2625ca872",
+      "sha256": "31c7f02e0e7cc3c4be369d229931f24fe11ff43fc619e4608dea00f2625ca872",
+      "size": 774,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/btn_default_small_normal_disable.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_btn_default_small_normal_disable.9.png",
+      "sourceSha256": "ec9e50fe7aad05dde868ed5eeaa78ed7511bee8937ec5d2e59f580d3bcda97ac",
+      "sha256": "ec9e50fe7aad05dde868ed5eeaa78ed7511bee8937ec5d2e59f580d3bcda97ac",
+      "size": 727,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/btn_default_small_normal_disable_focused.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_btn_default_small_normal_disable_focused.9.png",
+      "sourceSha256": "f302b1a85f47952177495af838c8890e91114cadd82d5d5fbc43ec2d6e7a6964",
+      "sha256": "f302b1a85f47952177495af838c8890e91114cadd82d5d5fbc43ec2d6e7a6964",
+      "size": 792,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/btn_default_small_pressed.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_btn_default_small_pressed.9.png",
+      "sourceSha256": "f214cb7fb1119d633252d6e7363e734e03ad53fa290ec6b06366db839e855cfa",
+      "sha256": "f214cb7fb1119d633252d6e7363e734e03ad53fa290ec6b06366db839e855cfa",
+      "size": 575,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/btn_default_small_selected.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_btn_default_small_selected.9.png",
+      "sourceSha256": "2b1108c2fa520a6cee7876ce111e0e4b8f29b5c701a81d8df9b0ea288d176f31",
+      "sha256": "2b1108c2fa520a6cee7876ce111e0e4b8f29b5c701a81d8df9b0ea288d176f31",
+      "size": 507,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/btn_dropdown_disabled.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_btn_dropdown_disabled.9.png",
+      "sourceSha256": "1ec3f1ead96e9e009a2216bbf440cf7df3ff8c5bf3cd9ff2cb79ab0c128f6712",
+      "sha256": "1ec3f1ead96e9e009a2216bbf440cf7df3ff8c5bf3cd9ff2cb79ab0c128f6712",
+      "size": 2517,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/btn_dropdown_disabled_focused.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_btn_dropdown_disabled_focused.9.png",
+      "sourceSha256": "981c5d62e49fb71d6760bcbcd49a53ae1fcf5030c816308d2947b602ab42bc99",
+      "sha256": "981c5d62e49fb71d6760bcbcd49a53ae1fcf5030c816308d2947b602ab42bc99",
+      "size": 2584,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/btn_dropdown_normal.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_btn_dropdown_normal.9.png",
+      "sourceSha256": "7bdb7fb9a786f6223ffcaf6d17d7aa038357094e084727b62515baad2ba7216a",
+      "sha256": "7bdb7fb9a786f6223ffcaf6d17d7aa038357094e084727b62515baad2ba7216a",
+      "size": 1730,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/btn_dropdown_pressed.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_btn_dropdown_pressed.9.png",
+      "sourceSha256": "5e825f87e661fd7c966b966faa074b3b0aa93457a2671c430553742085d00378",
+      "sha256": "5e825f87e661fd7c966b966faa074b3b0aa93457a2671c430553742085d00378",
+      "size": 6351,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/btn_dropdown_selected.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_btn_dropdown_selected.9.png",
+      "sourceSha256": "2b6d86ef65347512c832b6879ab80e5ad836a05556d6a2daa0050210566182c9",
+      "sha256": "2b6d86ef65347512c832b6879ab80e5ad836a05556d6a2daa0050210566182c9",
+      "size": 7782,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/btn_radio_label_background.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_btn_radio_label_background.9.png",
+      "sourceSha256": "31c30b171b8a473167959382bf911384ecf608857f095b06e34c111d19238ef1",
+      "sha256": "31c30b171b8a473167959382bf911384ecf608857f095b06e34c111d19238ef1",
+      "size": 216,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/btn_radio_off.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_btn_radio_off.png",
+      "sourceSha256": "90703dd1a97d12ca90bdb1f3c1d3a7844785e895f4032ebc893a15e9e28d3183",
+      "sha256": "90703dd1a97d12ca90bdb1f3c1d3a7844785e895f4032ebc893a15e9e28d3183",
+      "size": 2225,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/btn_radio_off_pressed.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_btn_radio_off_pressed.png",
+      "sourceSha256": "7198b214fb4a9eac1f475d8b14249d7468e2a83bb683750244e7f94d83560756",
+      "sha256": "7198b214fb4a9eac1f475d8b14249d7468e2a83bb683750244e7f94d83560756",
+      "size": 3551,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/btn_radio_off_selected.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_btn_radio_off_selected.png",
+      "sourceSha256": "0d102151936490ac3d219611d79fe8103c2cb139de44cf6459bbd9bfeadca3c7",
+      "sha256": "0d102151936490ac3d219611d79fe8103c2cb139de44cf6459bbd9bfeadca3c7",
+      "size": 3559,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/btn_radio_on.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_btn_radio_on.png",
+      "sourceSha256": "2f3df9a0365cfd1fe49f491b115b70a84b6739d007ddc6418532ca3c33aecd0d",
+      "sha256": "2f3df9a0365cfd1fe49f491b115b70a84b6739d007ddc6418532ca3c33aecd0d",
+      "size": 2161,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/btn_radio_on_pressed.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_btn_radio_on_pressed.png",
+      "sourceSha256": "770b3facb935828357aefbb5513e482312843e8a5649d0c014454012552ef612",
+      "sha256": "770b3facb935828357aefbb5513e482312843e8a5649d0c014454012552ef612",
+      "size": 3476,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/btn_radio_on_selected.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_btn_radio_on_selected.png",
+      "sourceSha256": "87c21a72669020e7911503e3f884131b7c748af34e9de970730a428834007bcf",
+      "sha256": "87c21a72669020e7911503e3f884131b7c748af34e9de970730a428834007bcf",
+      "size": 3436,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/dark_header.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_dark_header.9.png",
+      "sourceSha256": "d2c8881fe6ddbfcb5bd175989e655add205ffddb1688bf2ac9ab903399cb5046",
+      "sha256": "d2c8881fe6ddbfcb5bd175989e655add205ffddb1688bf2ac9ab903399cb5046",
+      "size": 693,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/divider_horizontal_bright_opaque.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_divider_horizontal_bright_opaque.9.png",
+      "sourceSha256": "eba7794e60996b81f9d9868cc738b5568d6f2cff62681ed875a25f5daa1eba7d",
+      "sha256": "eba7794e60996b81f9d9868cc738b5568d6f2cff62681ed875a25f5daa1eba7d",
+      "size": 2805,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/divider_horizontal_dark_opaque.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_divider_horizontal_dark_opaque.9.png",
+      "sourceSha256": "eba7794e60996b81f9d9868cc738b5568d6f2cff62681ed875a25f5daa1eba7d",
+      "sha256": "eba7794e60996b81f9d9868cc738b5568d6f2cff62681ed875a25f5daa1eba7d",
+      "size": 2805,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/highlight_disabled.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_highlight_disabled.9.png",
+      "sourceSha256": "f29e7a81703ac15464c61555365aa2f78495fb4429f5b5cc5bc8e52dd618e693",
+      "sha256": "f29e7a81703ac15464c61555365aa2f78495fb4429f5b5cc5bc8e52dd618e693",
+      "size": 1506,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/highlight_pressed.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_highlight_pressed.9.png",
+      "sourceSha256": "d12582d7e83a4a744764f4833e15b1d6978c8392cfb7eee249766550df07ef3f",
+      "sha256": "d12582d7e83a4a744764f4833e15b1d6978c8392cfb7eee249766550df07ef3f",
+      "size": 1538,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/highlight_selected.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_highlight_selected.9.png",
+      "sourceSha256": "8a21cedc3e4bad839e0c8b59a42e1d4fc1297fd4bc25c0824e122e7a8cc8a878",
+      "sha256": "8a21cedc3e4bad839e0c8b59a42e1d4fc1297fd4bc25c0824e122e7a8cc8a878",
+      "size": 1666,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/ic_menu_add.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_ic_menu_add.png",
+      "sourceSha256": "c0c429de5a04f0ac1ec00371794230c818f931a54dbf48d99dd369e5b67df723",
+      "sha256": "c0c429de5a04f0ac1ec00371794230c818f931a54dbf48d99dd369e5b67df723",
+      "size": 2891,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/ic_menu_back.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_ic_menu_back.png",
+      "sourceSha256": "80c01cae4f1a4344467d46cc2b6ce089d9965a81f909077761f8fa05fdad6c9e",
+      "sha256": "80c01cae4f1a4344467d46cc2b6ce089d9965a81f909077761f8fa05fdad6c9e",
+      "size": 1583,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/ic_menu_close_clear_cancel.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_ic_menu_close_clear_cancel.png",
+      "sourceSha256": "725c6b6e5ffa51f6d1c9040cb8af4b97927417e2a1d6eada10a0376f6bff9fe2",
+      "sha256": "725c6b6e5ffa51f6d1c9040cb8af4b97927417e2a1d6eada10a0376f6bff9fe2",
+      "size": 3698,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/ic_menu_delete.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_ic_menu_delete.png",
+      "sourceSha256": "dcf03bd5b6f0688de16cc9a8d90aeac41f037e493ccc88eee540807c3caf4475",
+      "sha256": "dcf03bd5b6f0688de16cc9a8d90aeac41f037e493ccc88eee540807c3caf4475",
+      "size": 2029,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/ic_menu_forward.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_ic_menu_forward.png",
+      "sourceSha256": "ea82cb429d13b76f3cf6c00d090e7b9c14a699aab109f9a241acc917ab5f1642",
+      "sha256": "ea82cb429d13b76f3cf6c00d090e7b9c14a699aab109f9a241acc917ab5f1642",
+      "size": 1580,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/ic_menu_info_details.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_ic_menu_info_details.png",
+      "sourceSha256": "f759072302c3ee9226695481c75fcfe0310e2f3f325534c6e89b803db4ea241a",
+      "sha256": "f759072302c3ee9226695481c75fcfe0310e2f3f325534c6e89b803db4ea241a",
+      "size": 2602,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/ic_menu_manage.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_ic_menu_manage.png",
+      "sourceSha256": "2d96aa2670bae522c2058d73bf215b743be2f02b6e82f25f8b27ef3f15b96d39",
+      "sha256": "2d96aa2670bae522c2058d73bf215b743be2f02b6e82f25f8b27ef3f15b96d39",
+      "size": 2701,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/ic_menu_mapmode.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_ic_menu_mapmode.png",
+      "sourceSha256": "a2852a8aa87df362bda04a3938169a8697478eb8dc41b77e13c1a44106936b23",
+      "sha256": "a2852a8aa87df362bda04a3938169a8697478eb8dc41b77e13c1a44106936b23",
+      "size": 2352,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/ic_menu_mark.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_ic_menu_mark.png",
+      "sourceSha256": "9ed9faeb985b8ea3eb0ad9a23a4d70d20cc6a712a34a39967f49aff17fdecf91",
+      "sha256": "9ed9faeb985b8ea3eb0ad9a23a4d70d20cc6a712a34a39967f49aff17fdecf91",
+      "size": 2934,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/ic_menu_more.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_ic_menu_more.png",
+      "sourceSha256": "bdb9a8d2bc5b529eb8a07a03a6dbde82ba9729d7a181bd5ea6743dac8f0d0cd9",
+      "sha256": "bdb9a8d2bc5b529eb8a07a03a6dbde82ba9729d7a181bd5ea6743dac8f0d0cd9",
+      "size": 3515,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/ic_menu_preferences.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_ic_menu_preferences.png",
+      "sourceSha256": "ae5dfb29775d0c7271a1a210392019df9d0330e9d8637d815dd9cefb339f6200",
+      "sha256": "ae5dfb29775d0c7271a1a210392019df9d0330e9d8637d815dd9cefb339f6200",
+      "size": 3106,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/ic_menu_refresh.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_ic_menu_refresh.png",
+      "sourceSha256": "12315f98bb7435c9be565271c2539905c4c6ad6ebcb15ee18ca25ba8922ffc5a",
+      "sha256": "12315f98bb7435c9be565271c2539905c4c6ad6ebcb15ee18ca25ba8922ffc5a",
+      "size": 3289,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/ic_menu_search.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_ic_menu_search.png",
+      "sourceSha256": "e8a92ef3a5e6baf31e56f0135cfb88748385251a90918f4bec13a9176532c97f",
+      "sha256": "e8a92ef3a5e6baf31e56f0135cfb88748385251a90918f4bec13a9176532c97f",
+      "size": 2722,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/ic_menu_sort_alphabetically.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_ic_menu_sort_alphabetically.png",
+      "sourceSha256": "1ae30fe750da7caa0f531ed766b87bc06fe5fae6d370cca6f88736ca90511be7",
+      "sha256": "1ae30fe750da7caa0f531ed766b87bc06fe5fae6d370cca6f88736ca90511be7",
+      "size": 2317,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/ic_menu_star.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_ic_menu_star.png",
+      "sourceSha256": "00d6151328051ff402548ed7ff001e071706e95f87bca8b341ffb7efe71be534",
+      "sha256": "00d6151328051ff402548ed7ff001e071706e95f87bca8b341ffb7efe71be534",
+      "size": 2046,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/ic_menu_view.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_ic_menu_view.png",
+      "sourceSha256": "1159cc8fedceb8799bf47c45cedc7e24e63c625d63b9a3fbafcc756c38c642f4",
+      "sha256": "1159cc8fedceb8799bf47c45cedc7e24e63c625d63b9a3fbafcc756c38c642f4",
+      "size": 2495,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/light_header.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_light_header.9.png",
+      "sourceSha256": "4265dc7eda0256395afd69f8bd9666345469ca5aad7ba8fbdebd5c478adddab1",
+      "sha256": "4265dc7eda0256395afd69f8bd9666345469ca5aad7ba8fbdebd5c478adddab1",
+      "size": 174,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/list_selector_background_disabled.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_list_selector_background_disabled.9.png",
+      "sourceSha256": "ccf593b1b3483bba617f9d10de5265a58f827df834283de18ff96087d320ea89",
+      "sha256": "ccf593b1b3483bba617f9d10de5265a58f827df834283de18ff96087d320ea89",
+      "size": 537,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/list_selector_background_focus.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_list_selector_background_focus.9.png",
+      "sourceSha256": "32520457f0571e9b897d18f76fbe9b2cf67d1db96f79639915a93665cd1e42c9",
+      "sha256": "32520457f0571e9b897d18f76fbe9b2cf67d1db96f79639915a93665cd1e42c9",
+      "size": 6207,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/list_selector_background_longpress.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_list_selector_background_longpress.9.png",
+      "sourceSha256": "e367c89c48ce45b0fee633912482cb8fe7c14b8d4f9839e9ce22fee293ce6e5d",
+      "sha256": "e367c89c48ce45b0fee633912482cb8fe7c14b8d4f9839e9ce22fee293ce6e5d",
+      "size": 2311,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/list_selector_background_pressed.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_list_selector_background_pressed.9.png",
+      "sourceSha256": "21551aca4ab795ba0bbc1dce888aa0ed39c7a2ce8d4e997c5edb1d32e61b5ce5",
+      "sha256": "21551aca4ab795ba0bbc1dce888aa0ed39c7a2ce8d4e997c5edb1d32e61b5ce5",
+      "size": 5453,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/menu_background.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_menu_background.9.png",
+      "sourceSha256": "ed304cfed2e73b8ab8741f4ab77a009516d7b827fefad6dd293e0a62b301f246",
+      "sha256": "ed304cfed2e73b8ab8741f4ab77a009516d7b827fefad6dd293e0a62b301f246",
+      "size": 199,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/menuitem_background_focus.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_menuitem_background_focus.9.png",
+      "sourceSha256": "0c91d1776fbd086b4b91689dd314b0ed3c3010b548a0b9783fd8bc50b2c13e4b",
+      "sha256": "0c91d1776fbd086b4b91689dd314b0ed3c3010b548a0b9783fd8bc50b2c13e4b",
+      "size": 4329,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/menuitem_background_pressed.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_menuitem_background_pressed.9.png",
+      "sourceSha256": "e9fecfbf2422b77bb74b9394bd2251cf339b5ca2eeace8083acb253ae0031e74",
+      "sha256": "e9fecfbf2422b77bb74b9394bd2251cf339b5ca2eeace8083acb253ae0031e74",
+      "size": 4203,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/panel_background.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_panel_background.9.png",
+      "sourceSha256": "5675eee3f2278f5e4826f89cd22bee0ac024ad44e65095dc8a2f87070777b7a5",
+      "sha256": "5675eee3f2278f5e4826f89cd22bee0ac024ad44e65095dc8a2f87070777b7a5",
+      "size": 1144,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/popup_bottom_bright.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_popup_bottom_bright.9.png",
+      "sourceSha256": "44ce636eaa1de441686414b855d5b1c1ffa3a7af5612fbb146d9caef18063e4b",
+      "sha256": "44ce636eaa1de441686414b855d5b1c1ffa3a7af5612fbb146d9caef18063e4b",
+      "size": 770,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/popup_bottom_dark.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_popup_bottom_dark.9.png",
+      "sourceSha256": "a2020fa9e8e3bc4f59e8ea36d3fd7da7f98c530ac3b21c37c87dd7069078c6a5",
+      "sha256": "a2020fa9e8e3bc4f59e8ea36d3fd7da7f98c530ac3b21c37c87dd7069078c6a5",
+      "size": 760,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/popup_bottom_medium.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_popup_bottom_medium.9.png",
+      "sourceSha256": "8116a7eebdb4613563d52bd83b7a5d66c5c2192049a01ee71036b1272cb6ac88",
+      "sha256": "8116a7eebdb4613563d52bd83b7a5d66c5c2192049a01ee71036b1272cb6ac88",
+      "size": 3485,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/popup_center_bright.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_popup_center_bright.9.png",
+      "sourceSha256": "d7e4c2b4dd2861836ba49637ad17a4a311c7ab662056df6369ad76aaa0c34760",
+      "sha256": "d7e4c2b4dd2861836ba49637ad17a4a311c7ab662056df6369ad76aaa0c34760",
+      "size": 169,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/popup_center_dark.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_popup_center_dark.9.png",
+      "sourceSha256": "de766c022294bd52c9ee690c0196a9fe8682ad671a21b6012e3e2bc36081bc58",
+      "sha256": "de766c022294bd52c9ee690c0196a9fe8682ad671a21b6012e3e2bc36081bc58",
+      "size": 253,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/popup_center_medium.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_popup_center_medium.9.png",
+      "sourceSha256": "4d874765c16fb68ea82c926287993c139fe7fe2dbdcf3bb7d3dac6ab75e5642b",
+      "sha256": "4d874765c16fb68ea82c926287993c139fe7fe2dbdcf3bb7d3dac6ab75e5642b",
+      "size": 2912,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/popup_full_bright.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_popup_full_bright.9.png",
+      "sourceSha256": "4adbcfd812312ce861c2a91c09a7d50f85787a6d82c503c7ef10dd5a8478caba",
+      "sha256": "4adbcfd812312ce861c2a91c09a7d50f85787a6d82c503c7ef10dd5a8478caba",
+      "size": 1078,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/popup_full_dark.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_popup_full_dark.9.png",
+      "sourceSha256": "4f511b43895b71509000b199333fd7fd8849b90da1846e79c34da29cc8003f34",
+      "sha256": "4f511b43895b71509000b199333fd7fd8849b90da1846e79c34da29cc8003f34",
+      "size": 1106,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/popup_top_bright.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_popup_top_bright.9.png",
+      "sourceSha256": "daa5ac282929ad94836f6206cbd6f4759ea92d97020c5a657ff74c32f9d1b875",
+      "sha256": "daa5ac282929ad94836f6206cbd6f4759ea92d97020c5a657ff74c32f9d1b875",
+      "size": 677,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/popup_top_dark.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_popup_top_dark.9.png",
+      "sourceSha256": "32d93eb92383b096d5e44653daed55eaad599f76a95df710a66bc572b0c1d0dd",
+      "sha256": "32d93eb92383b096d5e44653daed55eaad599f76a95df710a66bc572b0c1d0dd",
+      "size": 692,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/progressbar_indeterminate1.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_progressbar_indeterminate1.png",
+      "sourceSha256": "70ff0253404c018eb927ecf962adffe8e4214b5f6bbb0efcc4e60808a71729da",
+      "sha256": "70ff0253404c018eb927ecf962adffe8e4214b5f6bbb0efcc4e60808a71729da",
+      "size": 474,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/progressbar_indeterminate2.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_progressbar_indeterminate2.png",
+      "sourceSha256": "428c7efc95ae9fb7416c63ba787cd189a30eb43d8d3dd68de66cd32e0cec5240",
+      "sha256": "428c7efc95ae9fb7416c63ba787cd189a30eb43d8d3dd68de66cd32e0cec5240",
+      "size": 472,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/progressbar_indeterminate3.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_progressbar_indeterminate3.png",
+      "sourceSha256": "fc8ffffb09e4438c9b2434909b99c2f8192947632691d2cc4b395f7c026a0f12",
+      "sha256": "fc8ffffb09e4438c9b2434909b99c2f8192947632691d2cc4b395f7c026a0f12",
+      "size": 469,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/scrollbar_handle_vertical.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_scrollbar_handle_vertical.9.png",
+      "sourceSha256": "98f9a5cee3fa4cb441c2e019be0be362436755ec4cbd1a23335112c931f58a04",
+      "sha256": "98f9a5cee3fa4cb441c2e019be0be362436755ec4cbd1a23335112c931f58a04",
+      "size": 308,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/spinner_black_48.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_spinner_black_48.png",
+      "sourceSha256": "0e139b3d5bb2e86087c6feb9e5a1d8c4df90b5fadc7f77d4c1321a47054b8de6",
+      "sha256": "0e139b3d5bb2e86087c6feb9e5a1d8c4df90b5fadc7f77d4c1321a47054b8de6",
+      "size": 4939,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/spinner_white_48.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_spinner_white_48.png",
+      "sourceSha256": "eca65bc7057db0f1b098bfc03c5e059d18e57835808544adf334e7de161c7eef",
+      "sha256": "eca65bc7057db0f1b098bfc03c5e059d18e57835808544adf334e7de161c7eef",
+      "size": 5570,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/tab_focus.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_tab_focus.9.png",
+      "sourceSha256": "0aee3a434fcc16283a36606a49f0d3d3df78d1c9dc3f7dbfb474ba8234e15c83",
+      "sha256": "0aee3a434fcc16283a36606a49f0d3d3df78d1c9dc3f7dbfb474ba8234e15c83",
+      "size": 3067,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/tab_focus_bar_left.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_tab_focus_bar_left.9.png",
+      "sourceSha256": "17d757adc69904e2dd2494f5091d90bf5a11bc0fbd5ebb3f5396611554ab05ed",
+      "sha256": "17d757adc69904e2dd2494f5091d90bf5a11bc0fbd5ebb3f5396611554ab05ed",
+      "size": 2826,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/tab_focus_bar_right.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_tab_focus_bar_right.9.png",
+      "sourceSha256": "17d757adc69904e2dd2494f5091d90bf5a11bc0fbd5ebb3f5396611554ab05ed",
+      "sha256": "17d757adc69904e2dd2494f5091d90bf5a11bc0fbd5ebb3f5396611554ab05ed",
+      "size": 2826,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/tab_press.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_tab_press.9.png",
+      "sourceSha256": "5f9c3f51eaba75705927c8799d4fa36fab7cddf8c378f159580e535a4cb7587f",
+      "sha256": "5f9c3f51eaba75705927c8799d4fa36fab7cddf8c378f159580e535a4cb7587f",
+      "size": 2973,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/tab_press_bar_left.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_tab_press_bar_left.9.png",
+      "sourceSha256": "801813f03f28edc07afc031dde0f3f9e1ffb5955a1d732b5b219e23bec669138",
+      "sha256": "801813f03f28edc07afc031dde0f3f9e1ffb5955a1d732b5b219e23bec669138",
+      "size": 2827,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/tab_press_bar_right.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_tab_press_bar_right.9.png",
+      "sourceSha256": "801813f03f28edc07afc031dde0f3f9e1ffb5955a1d732b5b219e23bec669138",
+      "sha256": "801813f03f28edc07afc031dde0f3f9e1ffb5955a1d732b5b219e23bec669138",
+      "size": 2827,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/tab_selected.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_tab_selected.9.png",
+      "sourceSha256": "893c940f98ae3d6291ec1bfd7db6b4fe3eecd88eba1b8b13d27e09b5ebb8d108",
+      "sha256": "893c940f98ae3d6291ec1bfd7db6b4fe3eecd88eba1b8b13d27e09b5ebb8d108",
+      "size": 226,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/tab_selected_bar_left.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_tab_selected_bar_left.9.png",
+      "sourceSha256": "fa2962785df73954f88ea46861ff584fd1fa360c83d3b9586b4271e1d409126f",
+      "sha256": "fa2962785df73954f88ea46861ff584fd1fa360c83d3b9586b4271e1d409126f",
+      "size": 88,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/tab_selected_bar_right.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_tab_selected_bar_right.9.png",
+      "sourceSha256": "fa2962785df73954f88ea46861ff584fd1fa360c83d3b9586b4271e1d409126f",
+      "sha256": "fa2962785df73954f88ea46861ff584fd1fa360c83d3b9586b4271e1d409126f",
+      "size": 88,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/tab_unselected.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_tab_unselected.9.png",
+      "sourceSha256": "4327b50e7361806da601ed7b89a1c90a0961bc5151aaf8b13b6d203c12c07a46",
+      "sha256": "4327b50e7361806da601ed7b89a1c90a0961bc5151aaf8b13b6d203c12c07a46",
+      "size": 403,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/textfield_default.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_textfield_default.9.png",
+      "sourceSha256": "3920e29973c1ce1df4ea5b815a3b484f8e981ffe9b3f1a829ed388a1fd1d3440",
+      "sha256": "3920e29973c1ce1df4ea5b815a3b484f8e981ffe9b3f1a829ed388a1fd1d3440",
+      "size": 529,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/textfield_disabled.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_textfield_disabled.9.png",
+      "sourceSha256": "d679dad723ed05bf9f10aa926497951b82908a4ee78056990fa19dc0f90a1c47",
+      "sha256": "d679dad723ed05bf9f10aa926497951b82908a4ee78056990fa19dc0f90a1c47",
+      "size": 613,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/textfield_disabled_selected.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_textfield_disabled_selected.9.png",
+      "sourceSha256": "cbe13ed9588d13e0df6ff7588ced0853c281cab807c88270e4dea84ab16db294",
+      "sha256": "cbe13ed9588d13e0df6ff7588ced0853c281cab807c88270e4dea84ab16db294",
+      "size": 738,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/textfield_pressed.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_textfield_pressed.9.png",
+      "sourceSha256": "125c45d4373fab1353e098e5f025fc1e4da35b3ff8877731c220977090e8fd26",
+      "sha256": "125c45d4373fab1353e098e5f025fc1e4da35b3ff8877731c220977090e8fd26",
+      "size": 591,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/textfield_selected.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_textfield_selected.9.png",
+      "sourceSha256": "ff51703ab244beb609c66b8eb2ec6756691a0376681536c0e23e4a964b7da743",
+      "sha256": "ff51703ab244beb609c66b8eb2ec6756691a0376681536c0e23e4a964b7da743",
+      "size": 616,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-hdpi/toast_frame.9.png",
+      "target": "app/src/main/res/drawable-hdpi/gingerbread_toast_frame.9.png",
+      "sourceSha256": "def721b85d48e29ba4bf7ebbe13cd53264edc86d40907123cac2a8bec2fee74b",
+      "sha256": "def721b85d48e29ba4bf7ebbe13cd53264edc86d40907123cac2a8bec2fee74b",
+      "size": 2461,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/activity_title_bar.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_activity_title_bar.9.png",
+      "sourceSha256": "2bb2d18a80eaf4162d9c5473fd911d03a76cad43977d07fb2dd134ef740bef4e",
+      "sha256": "2bb2d18a80eaf4162d9c5473fd911d03a76cad43977d07fb2dd134ef740bef4e",
+      "size": 505,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/btn_check_label_background.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_btn_check_label_background.9.png",
+      "sourceSha256": "c07af0e83716b41aabd2a6fb6877bf2e3ff4e7d95c06b75b76780cbc9871a79e",
+      "sha256": "c07af0e83716b41aabd2a6fb6877bf2e3ff4e7d95c06b75b76780cbc9871a79e",
+      "size": 138,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/btn_check_off.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_btn_check_off.png",
+      "sourceSha256": "a50120e8f85a3180b4e8cd6e3735c84772caf81063a4995a21846833e7ce7309",
+      "sha256": "a50120e8f85a3180b4e8cd6e3735c84772caf81063a4995a21846833e7ce7309",
+      "size": 427,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/btn_check_off_disable.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_btn_check_off_disable.png",
+      "sourceSha256": "ae937146693b6cdd89ad7804a1b0b78b807265d1b08c6f5dfe2dc83ed94d4332",
+      "sha256": "ae937146693b6cdd89ad7804a1b0b78b807265d1b08c6f5dfe2dc83ed94d4332",
+      "size": 443,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/btn_check_off_disable_focused.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_btn_check_off_disable_focused.png",
+      "sourceSha256": "baed93cd83ef77e055ce04f8d748695ac7cfc92c7f1464bb753e6d76627a7388",
+      "sha256": "baed93cd83ef77e055ce04f8d748695ac7cfc92c7f1464bb753e6d76627a7388",
+      "size": 572,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/btn_check_off_pressed.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_btn_check_off_pressed.png",
+      "sourceSha256": "c93210923f5a3861d4a2d7accc503af98017cc84c6e5d549cb13cb93266949a2",
+      "sha256": "c93210923f5a3861d4a2d7accc503af98017cc84c6e5d549cb13cb93266949a2",
+      "size": 1017,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/btn_check_off_selected.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_btn_check_off_selected.png",
+      "sourceSha256": "8f69126813af8b2b304b368397df3bf6e49ce93223a32de514ed0860015df2d6",
+      "sha256": "8f69126813af8b2b304b368397df3bf6e49ce93223a32de514ed0860015df2d6",
+      "size": 1072,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/btn_check_on.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_btn_check_on.png",
+      "sourceSha256": "f8182b47f28cbb5d74cc69c58cea35786bd846c1a811b30c2aa0616ac8e56c49",
+      "sha256": "f8182b47f28cbb5d74cc69c58cea35786bd846c1a811b30c2aa0616ac8e56c49",
+      "size": 1052,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/btn_check_on_disable.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_btn_check_on_disable.png",
+      "sourceSha256": "0c77b848ba783ee99c64700f7148529ba2c93da165136120533481a2ce994491",
+      "sha256": "0c77b848ba783ee99c64700f7148529ba2c93da165136120533481a2ce994491",
+      "size": 669,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/btn_check_on_disable_focused.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_btn_check_on_disable_focused.png",
+      "sourceSha256": "772ca8d696cefc2c99559fa65abea6ee214e3c7a0f0ec0a4eec87f3671a6dc78",
+      "sha256": "772ca8d696cefc2c99559fa65abea6ee214e3c7a0f0ec0a4eec87f3671a6dc78",
+      "size": 988,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/btn_check_on_pressed.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_btn_check_on_pressed.png",
+      "sourceSha256": "e4f8304caffef329fa8f554d89ca0831bbd9e0f0d965f91f54c607fe51ce3d9a",
+      "sha256": "e4f8304caffef329fa8f554d89ca0831bbd9e0f0d965f91f54c607fe51ce3d9a",
+      "size": 1165,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/btn_check_on_selected.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_btn_check_on_selected.png",
+      "sourceSha256": "e04887dff3e835db5a094054da207311a926f930ef4cb1dd52eb6ff13a4c9643",
+      "sha256": "e04887dff3e835db5a094054da207311a926f930ef4cb1dd52eb6ff13a4c9643",
+      "size": 1214,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/btn_default_normal.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_btn_default_normal.9.png",
+      "sourceSha256": "181ef9dc998c589f98d58856c8999966f75e2b95dc859c9783f907574f795a02",
+      "sha256": "181ef9dc998c589f98d58856c8999966f75e2b95dc859c9783f907574f795a02",
+      "size": 545,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/btn_default_normal_disable.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_btn_default_normal_disable.9.png",
+      "sourceSha256": "ebf12c8aeee21ea473c5b43bbc3e673621c7dfd9a1c1ad3b396533fb738afb96",
+      "sha256": "ebf12c8aeee21ea473c5b43bbc3e673621c7dfd9a1c1ad3b396533fb738afb96",
+      "size": 518,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/btn_default_normal_disable_focused.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_btn_default_normal_disable_focused.9.png",
+      "sourceSha256": "c97e568c825fbe423eb6fe5327dfb5bdb17abf384afde861b10e1b6d1d2740c2",
+      "sha256": "c97e568c825fbe423eb6fe5327dfb5bdb17abf384afde861b10e1b6d1d2740c2",
+      "size": 584,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/btn_default_pressed.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_btn_default_pressed.9.png",
+      "sourceSha256": "04c8cce1826bd7c8c2fd1921826af320d35fabb81183d3bd3698308ef953534c",
+      "sha256": "04c8cce1826bd7c8c2fd1921826af320d35fabb81183d3bd3698308ef953534c",
+      "size": 505,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/btn_default_selected.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_btn_default_selected.9.png",
+      "sourceSha256": "3b6150f8f3da7769243b0becddae83c16c363bdd9cfd48bfad3a53505891f551",
+      "sha256": "3b6150f8f3da7769243b0becddae83c16c363bdd9cfd48bfad3a53505891f551",
+      "size": 408,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/btn_default_small_normal.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_btn_default_small_normal.9.png",
+      "sourceSha256": "dce8263f7919cba6e6bbf1e57e50aa036def7274a7de65bd80b53bf12a4cb638",
+      "sha256": "dce8263f7919cba6e6bbf1e57e50aa036def7274a7de65bd80b53bf12a4cb638",
+      "size": 473,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/btn_default_small_normal_disable.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_btn_default_small_normal_disable.9.png",
+      "sourceSha256": "4192038a55128d6c26c1559233aa2d92440b0c96bb57eabc5f373c2d1f52f7ea",
+      "sha256": "4192038a55128d6c26c1559233aa2d92440b0c96bb57eabc5f373c2d1f52f7ea",
+      "size": 457,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/btn_default_small_normal_disable_focused.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_btn_default_small_normal_disable_focused.9.png",
+      "sourceSha256": "dd767163c45d9cd528e9816804304c60990d82808ce8bf62f6a3c96a78b115b9",
+      "sha256": "dd767163c45d9cd528e9816804304c60990d82808ce8bf62f6a3c96a78b115b9",
+      "size": 545,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/btn_default_small_pressed.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_btn_default_small_pressed.9.png",
+      "sourceSha256": "d23731f9d9754d5d10abdfe72286f046978256250735d90865fb09a5c24493f5",
+      "sha256": "d23731f9d9754d5d10abdfe72286f046978256250735d90865fb09a5c24493f5",
+      "size": 369,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/btn_default_small_selected.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_btn_default_small_selected.9.png",
+      "sourceSha256": "048dec1bfc33f45c97644c3944054855f76374fb2155b51396d429e65800ef3f",
+      "sha256": "048dec1bfc33f45c97644c3944054855f76374fb2155b51396d429e65800ef3f",
+      "size": 356,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/btn_dropdown_disabled.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_btn_dropdown_disabled.9.png",
+      "sourceSha256": "6cbc69ace6d79727452bc01c883b14b7359f68643c015244fa4d84589c272c98",
+      "sha256": "6cbc69ace6d79727452bc01c883b14b7359f68643c015244fa4d84589c272c98",
+      "size": 1262,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/btn_dropdown_disabled_focused.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_btn_dropdown_disabled_focused.9.png",
+      "sourceSha256": "9f5d31503d5c95bd432e36f578829993455cdd4eb75e13c548b628a22c19a8bc",
+      "sha256": "9f5d31503d5c95bd432e36f578829993455cdd4eb75e13c548b628a22c19a8bc",
+      "size": 1423,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/btn_dropdown_normal.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_btn_dropdown_normal.9.png",
+      "sourceSha256": "62a503976cc2e909b2b7e441d320c2b1083413a493f96161d9231698708dadde",
+      "sha256": "62a503976cc2e909b2b7e441d320c2b1083413a493f96161d9231698708dadde",
+      "size": 1029,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/btn_dropdown_pressed.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_btn_dropdown_pressed.9.png",
+      "sourceSha256": "01134c561e71b7ee1d494ced922e98600ad5329cf89060ec6cbd9872f87b66be",
+      "sha256": "01134c561e71b7ee1d494ced922e98600ad5329cf89060ec6cbd9872f87b66be",
+      "size": 1870,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/btn_dropdown_selected.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_btn_dropdown_selected.9.png",
+      "sourceSha256": "a20d4116dd229710a28a2f352be22b2161c917aa9887cc0cc4dd1a7472aaa20f",
+      "sha256": "a20d4116dd229710a28a2f352be22b2161c917aa9887cc0cc4dd1a7472aaa20f",
+      "size": 2026,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/btn_radio_label_background.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_btn_radio_label_background.9.png",
+      "sourceSha256": "48eaa752fab3599f7f7db4e97179cf0ed081425a0e64b5f39c7523337c0e54ef",
+      "sha256": "48eaa752fab3599f7f7db4e97179cf0ed081425a0e64b5f39c7523337c0e54ef",
+      "size": 140,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/btn_radio_off.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_btn_radio_off.png",
+      "sourceSha256": "c08859b65d4eb5362b142a1c959553adf39c8a5ec5c02ca151cb2a333844b598",
+      "sha256": "c08859b65d4eb5362b142a1c959553adf39c8a5ec5c02ca151cb2a333844b598",
+      "size": 1510,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/btn_radio_off_pressed.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_btn_radio_off_pressed.png",
+      "sourceSha256": "2824813aa7cb65f462ce69ecdc78278561ee5fa898d93acba76445ac5fad050f",
+      "sha256": "2824813aa7cb65f462ce69ecdc78278561ee5fa898d93acba76445ac5fad050f",
+      "size": 1651,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/btn_radio_off_selected.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_btn_radio_off_selected.png",
+      "sourceSha256": "e0d09e3fa4433d5bce06a12ccd1b40a9e2534baea04414c907cc010994856113",
+      "sha256": "e0d09e3fa4433d5bce06a12ccd1b40a9e2534baea04414c907cc010994856113",
+      "size": 1672,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/btn_radio_on.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_btn_radio_on.png",
+      "sourceSha256": "06893ad0e085f1468171f3394ce2c94df457e9ea0d1150dc711763b7692ffcb7",
+      "sha256": "06893ad0e085f1468171f3394ce2c94df457e9ea0d1150dc711763b7692ffcb7",
+      "size": 1528,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/btn_radio_on_pressed.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_btn_radio_on_pressed.png",
+      "sourceSha256": "f51ed28da9f01cc8f5c5d6b78842e0323dfc764805228df677d50cb1b92b6992",
+      "sha256": "f51ed28da9f01cc8f5c5d6b78842e0323dfc764805228df677d50cb1b92b6992",
+      "size": 1674,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/btn_radio_on_selected.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_btn_radio_on_selected.png",
+      "sourceSha256": "ef682fec0216967ddc69be5af772d7fea4ffa2d6f36b31c62d7f589e83909c27",
+      "sha256": "ef682fec0216967ddc69be5af772d7fea4ffa2d6f36b31c62d7f589e83909c27",
+      "size": 1694,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/dark_header.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_dark_header.9.png",
+      "sourceSha256": "a92841798d465dc68d7d5e2f4c275f0b384c7a4f57161007b30f825a20a6652d",
+      "sha256": "a92841798d465dc68d7d5e2f4c275f0b384c7a4f57161007b30f825a20a6652d",
+      "size": 124,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/divider_horizontal_bright_opaque.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_divider_horizontal_bright_opaque.9.png",
+      "sourceSha256": "8ffa83d3cab66441e87e3eb7e50cc130a124d542cad06a1fb322867e406861bf",
+      "sha256": "8ffa83d3cab66441e87e3eb7e50cc130a124d542cad06a1fb322867e406861bf",
+      "size": 109,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/divider_horizontal_dark_opaque.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_divider_horizontal_dark_opaque.9.png",
+      "sourceSha256": "8ffa83d3cab66441e87e3eb7e50cc130a124d542cad06a1fb322867e406861bf",
+      "sha256": "8ffa83d3cab66441e87e3eb7e50cc130a124d542cad06a1fb322867e406861bf",
+      "size": 109,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/highlight_disabled.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_highlight_disabled.9.png",
+      "sourceSha256": "dff19d7d95c500558f4cdbb3d20490b05a044ac0d52222397d0afbc6f6f6d8a8",
+      "sha256": "dff19d7d95c500558f4cdbb3d20490b05a044ac0d52222397d0afbc6f6f6d8a8",
+      "size": 698,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/highlight_pressed.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_highlight_pressed.9.png",
+      "sourceSha256": "5d04ceefde3581847761542e11490539c999b2d047ec60c68a28e65c5ace07f2",
+      "sha256": "5d04ceefde3581847761542e11490539c999b2d047ec60c68a28e65c5ace07f2",
+      "size": 747,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/highlight_selected.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_highlight_selected.9.png",
+      "sourceSha256": "b6fad2fcc0f1b4dbbbbfb80c8a50d8c19ae001a0eebd7e93fab4250ea73e2f2f",
+      "sha256": "b6fad2fcc0f1b4dbbbbfb80c8a50d8c19ae001a0eebd7e93fab4250ea73e2f2f",
+      "size": 781,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/ic_menu_add.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_ic_menu_add.png",
+      "sourceSha256": "0178a3f5a9ec0e1bad8bfeaee0d2d092e4bb78c8653f735bdd8c714b0a2ab14a",
+      "sha256": "0178a3f5a9ec0e1bad8bfeaee0d2d092e4bb78c8653f735bdd8c714b0a2ab14a",
+      "size": 1580,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/ic_menu_back.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_ic_menu_back.png",
+      "sourceSha256": "a4eda8b6539e439e850986c01b7c52a80244b49f6030c9c0cad97d3cd6abcc38",
+      "sha256": "a4eda8b6539e439e850986c01b7c52a80244b49f6030c9c0cad97d3cd6abcc38",
+      "size": 1071,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/ic_menu_close_clear_cancel.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_ic_menu_close_clear_cancel.png",
+      "sourceSha256": "266ffd508110570406d1c0c82392f455aa80dd70f2ada7d88a5fb1d3f2637dad",
+      "sha256": "266ffd508110570406d1c0c82392f455aa80dd70f2ada7d88a5fb1d3f2637dad",
+      "size": 1851,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/ic_menu_delete.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_ic_menu_delete.png",
+      "sourceSha256": "94218a6105c4ef432a5a3dc9d67d2d7822c23a3c14918e3bfb9e6c2a78f890fa",
+      "sha256": "94218a6105c4ef432a5a3dc9d67d2d7822c23a3c14918e3bfb9e6c2a78f890fa",
+      "size": 1247,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/ic_menu_forward.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_ic_menu_forward.png",
+      "sourceSha256": "eec801f5064d610957f22bb34d6b9fb160198e166bb74077464610e4d5020980",
+      "sha256": "eec801f5064d610957f22bb34d6b9fb160198e166bb74077464610e4d5020980",
+      "size": 1112,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/ic_menu_info_details.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_ic_menu_info_details.png",
+      "sourceSha256": "c7e29ef2f886674e6bc46079fe2e4865b7f114a6aa971cf5a8b369ae553a4408",
+      "sha256": "c7e29ef2f886674e6bc46079fe2e4865b7f114a6aa971cf5a8b369ae553a4408",
+      "size": 1499,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/ic_menu_manage.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_ic_menu_manage.png",
+      "sourceSha256": "72aa15a51699351928039a44275a5ceaed1f042c0a8b43dab28c065fddbe92f6",
+      "sha256": "72aa15a51699351928039a44275a5ceaed1f042c0a8b43dab28c065fddbe92f6",
+      "size": 1377,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/ic_menu_mapmode.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_ic_menu_mapmode.png",
+      "sourceSha256": "e941cf8337e63c9b554f2d838fe332afaf3517c8365de34da4618085051a46f1",
+      "sha256": "e941cf8337e63c9b554f2d838fe332afaf3517c8365de34da4618085051a46f1",
+      "size": 1269,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/ic_menu_mark.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_ic_menu_mark.png",
+      "sourceSha256": "f69b8e25c2ccd73c892a141ba99a23dd0b59b583307f9f7182c4dbffdf39e535",
+      "sha256": "f69b8e25c2ccd73c892a141ba99a23dd0b59b583307f9f7182c4dbffdf39e535",
+      "size": 1534,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/ic_menu_more.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_ic_menu_more.png",
+      "sourceSha256": "e4e971a32ab4916bb84ddfdc88af3f14855974d17ef216c2587505b8f3283520",
+      "sha256": "e4e971a32ab4916bb84ddfdc88af3f14855974d17ef216c2587505b8f3283520",
+      "size": 1837,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/ic_menu_preferences.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_ic_menu_preferences.png",
+      "sourceSha256": "10005c15fd490f06267e2b5dade59c659048edd11ef9703bcffde4f0811b86a2",
+      "sha256": "10005c15fd490f06267e2b5dade59c659048edd11ef9703bcffde4f0811b86a2",
+      "size": 1601,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/ic_menu_refresh.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_ic_menu_refresh.png",
+      "sourceSha256": "ac81e7bd2ecb7ec212b5cc00a100f98b6432b9b81d72ad379560fb4674676ab1",
+      "sha256": "ac81e7bd2ecb7ec212b5cc00a100f98b6432b9b81d72ad379560fb4674676ab1",
+      "size": 1695,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/ic_menu_search.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_ic_menu_search.png",
+      "sourceSha256": "5250aa7de41e996f38f9927eb47f3b7c47b185dd6c9e2fdd54a69616b49f7bff",
+      "sha256": "5250aa7de41e996f38f9927eb47f3b7c47b185dd6c9e2fdd54a69616b49f7bff",
+      "size": 1480,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/ic_menu_sort_alphabetically.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_ic_menu_sort_alphabetically.png",
+      "sourceSha256": "8af4bbc93120cf2b932ec45ab590be3a4adbbf15fd566d92ee9a0a92212dde57",
+      "sha256": "8af4bbc93120cf2b932ec45ab590be3a4adbbf15fd566d92ee9a0a92212dde57",
+      "size": 1282,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/ic_menu_star.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_ic_menu_star.png",
+      "sourceSha256": "27f84b9635c8f03a428e3bb5f5e832d407c8249df2fa086f698510e00e82243f",
+      "sha256": "27f84b9635c8f03a428e3bb5f5e832d407c8249df2fa086f698510e00e82243f",
+      "size": 1286,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/ic_menu_view.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_ic_menu_view.png",
+      "sourceSha256": "63c7218287717f7b8a66a00f3404f5906a0a9dbc1306d092c88da4cc22bb67c1",
+      "sha256": "63c7218287717f7b8a66a00f3404f5906a0a9dbc1306d092c88da4cc22bb67c1",
+      "size": 1343,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/light_header.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_light_header.9.png",
+      "sourceSha256": "972daf02946623df118b6d6486a0b6f4b27780853db2389b3fe604c6869635bb",
+      "sha256": "972daf02946623df118b6d6486a0b6f4b27780853db2389b3fe604c6869635bb",
+      "size": 134,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/list_selector_background_disabled.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_list_selector_background_disabled.9.png",
+      "sourceSha256": "0ee7fcd1b5776836395e736643a019dd4784bc416d48afd95731f2ea800db082",
+      "sha256": "0ee7fcd1b5776836395e736643a019dd4784bc416d48afd95731f2ea800db082",
+      "size": 192,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/list_selector_background_focus.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_list_selector_background_focus.9.png",
+      "sourceSha256": "6696d41463f804ae689de59c98106cc5adff815639f2d30202c72e966948a0dc",
+      "sha256": "6696d41463f804ae689de59c98106cc5adff815639f2d30202c72e966948a0dc",
+      "size": 1424,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/list_selector_background_longpress.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_list_selector_background_longpress.9.png",
+      "sourceSha256": "c15e7e894504a3bd8f189f39eca1f1fab236dfd2266225be1261e1fb8adba53c",
+      "sha256": "c15e7e894504a3bd8f189f39eca1f1fab236dfd2266225be1261e1fb8adba53c",
+      "size": 625,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/list_selector_background_pressed.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_list_selector_background_pressed.9.png",
+      "sourceSha256": "b77d66120878391bd25c2551b6e9bb47a96277e8ed7ff64491cd016a998f907c",
+      "sha256": "b77d66120878391bd25c2551b6e9bb47a96277e8ed7ff64491cd016a998f907c",
+      "size": 1265,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/menu_background.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_menu_background.9.png",
+      "sourceSha256": "e02eec9bff05b55c6a82a36e6bfe51d5bd03c78d33198078a9450a4ef971f89f",
+      "sha256": "e02eec9bff05b55c6a82a36e6bfe51d5bd03c78d33198078a9450a4ef971f89f",
+      "size": 198,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/menuitem_background_focus.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_menuitem_background_focus.9.png",
+      "sourceSha256": "4809901d1c1cdf01df8e1815b92acbce4eccb0d3c1359a7eae1ca2f147fe0cc9",
+      "sha256": "4809901d1c1cdf01df8e1815b92acbce4eccb0d3c1359a7eae1ca2f147fe0cc9",
+      "size": 777,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/menuitem_background_pressed.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_menuitem_background_pressed.9.png",
+      "sourceSha256": "a63f304cc2d9e184f1ca51759bfbc745ac3b0b435b542fc89b3918f3e28aae7e",
+      "sha256": "a63f304cc2d9e184f1ca51759bfbc745ac3b0b435b542fc89b3918f3e28aae7e",
+      "size": 740,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/panel_background.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_panel_background.9.png",
+      "sourceSha256": "b3075b9f4da5e9e65bcb9891353c60b4730fa3acac585b7029dbef4401da9431",
+      "sha256": "b3075b9f4da5e9e65bcb9891353c60b4730fa3acac585b7029dbef4401da9431",
+      "size": 579,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/popup_bottom_bright.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_popup_bottom_bright.9.png",
+      "sourceSha256": "4737a391d00d7637e988e7c95f72b4a63b6150061281d48f7969e1349872bda6",
+      "sha256": "4737a391d00d7637e988e7c95f72b4a63b6150061281d48f7969e1349872bda6",
+      "size": 455,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/popup_bottom_dark.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_popup_bottom_dark.9.png",
+      "sourceSha256": "a8dd9906d43500833becb03421e6e7b092ab31c7d1114114ab9e6f6b62fd9403",
+      "sha256": "a8dd9906d43500833becb03421e6e7b092ab31c7d1114114ab9e6f6b62fd9403",
+      "size": 498,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/popup_bottom_medium.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_popup_bottom_medium.9.png",
+      "sourceSha256": "7dfb52066cc186afcf61b9c7f339523073c9668c14a9d2aa649bab02f8bc9a38",
+      "sha256": "7dfb52066cc186afcf61b9c7f339523073c9668c14a9d2aa649bab02f8bc9a38",
+      "size": 488,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/popup_center_bright.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_popup_center_bright.9.png",
+      "sourceSha256": "36ea9a29397f1a847c201d22135268eb8460f12e4df0bce2f9fbb89a2cc4291d",
+      "sha256": "36ea9a29397f1a847c201d22135268eb8460f12e4df0bce2f9fbb89a2cc4291d",
+      "size": 174,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/popup_center_dark.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_popup_center_dark.9.png",
+      "sourceSha256": "460d5b51d887ce149b9b3d2f30e8d39a7ad2be270e6112aefe74dbd19cf5eca3",
+      "sha256": "460d5b51d887ce149b9b3d2f30e8d39a7ad2be270e6112aefe74dbd19cf5eca3",
+      "size": 208,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/popup_center_medium.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_popup_center_medium.9.png",
+      "sourceSha256": "57b145f898eda39995420dc3358f83bc1f7a2e7b955d9809186d167dbbcaaad8",
+      "sha256": "57b145f898eda39995420dc3358f83bc1f7a2e7b955d9809186d167dbbcaaad8",
+      "size": 203,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/popup_full_bright.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_popup_full_bright.9.png",
+      "sourceSha256": "3128f5b22a851ab7a1f179e979662003f0b0118b659e4d5e2e3ab9cf80bb0c01",
+      "sha256": "3128f5b22a851ab7a1f179e979662003f0b0118b659e4d5e2e3ab9cf80bb0c01",
+      "size": 569,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/popup_full_dark.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_popup_full_dark.9.png",
+      "sourceSha256": "fbd441e4b3c2f10ca138b9eac2d4482b577468d11d32b53f5851ae40562634b1",
+      "sha256": "fbd441e4b3c2f10ca138b9eac2d4482b577468d11d32b53f5851ae40562634b1",
+      "size": 574,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/popup_top_bright.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_popup_top_bright.9.png",
+      "sourceSha256": "59882a43da63a0965e1153db4050e866c86a1f810e1bf75920725699729d5300",
+      "sha256": "59882a43da63a0965e1153db4050e866c86a1f810e1bf75920725699729d5300",
+      "size": 455,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/popup_top_dark.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_popup_top_dark.9.png",
+      "sourceSha256": "9a88b39515d79a9fabbc82153d527b158be59f32fe0a3d660dfa6f67be623d60",
+      "sha256": "9a88b39515d79a9fabbc82153d527b158be59f32fe0a3d660dfa6f67be623d60",
+      "size": 472,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/progressbar_indeterminate1.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_progressbar_indeterminate1.png",
+      "sourceSha256": "e01b0b72845dd032891a3badd829bbd9453ed61dedd43b0114403905ad530845",
+      "sha256": "e01b0b72845dd032891a3badd829bbd9453ed61dedd43b0114403905ad530845",
+      "size": 402,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/progressbar_indeterminate2.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_progressbar_indeterminate2.png",
+      "sourceSha256": "4bf9b7fcd26f2c5ff0f8e9c0d4d5a3f60d22a56ff9bd8494ef13b6ca4866f0aa",
+      "sha256": "4bf9b7fcd26f2c5ff0f8e9c0d4d5a3f60d22a56ff9bd8494ef13b6ca4866f0aa",
+      "size": 403,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/progressbar_indeterminate3.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_progressbar_indeterminate3.png",
+      "sourceSha256": "a4e1687c7623a7981a5fc1d6158585ac3506c9db3ad99cad1779449db26d58e6",
+      "sha256": "a4e1687c7623a7981a5fc1d6158585ac3506c9db3ad99cad1779449db26d58e6",
+      "size": 403,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/scrollbar_handle_vertical.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_scrollbar_handle_vertical.9.png",
+      "sourceSha256": "f5ea1ea97b1de9568014c58f06e53813bad4df0c63b72d081d9116eb68fa4182",
+      "sha256": "f5ea1ea97b1de9568014c58f06e53813bad4df0c63b72d081d9116eb68fa4182",
+      "size": 204,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/spinner_black_48.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_spinner_black_48.png",
+      "sourceSha256": "8390e077db3c332270bce450fa61896e6ea19c92607d0d554c860d01109e277a",
+      "sha256": "8390e077db3c332270bce450fa61896e6ea19c92607d0d554c860d01109e277a",
+      "size": 2172,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/spinner_white_48.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_spinner_white_48.png",
+      "sourceSha256": "989a91aa0fb216da0a03b89698cd260e06cef3450b01184b26ef3cb5ee35abb7",
+      "sha256": "989a91aa0fb216da0a03b89698cd260e06cef3450b01184b26ef3cb5ee35abb7",
+      "size": 2031,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/tab_focus.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_tab_focus.9.png",
+      "sourceSha256": "4ef2007f344aec1744b6e61ae67ad8f78c52112753fad437957c6235a5ae4de6",
+      "sha256": "4ef2007f344aec1744b6e61ae67ad8f78c52112753fad437957c6235a5ae4de6",
+      "size": 365,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/tab_focus_bar_left.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_tab_focus_bar_left.9.png",
+      "sourceSha256": "17d757adc69904e2dd2494f5091d90bf5a11bc0fbd5ebb3f5396611554ab05ed",
+      "sha256": "17d757adc69904e2dd2494f5091d90bf5a11bc0fbd5ebb3f5396611554ab05ed",
+      "size": 2826,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/tab_focus_bar_right.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_tab_focus_bar_right.9.png",
+      "sourceSha256": "17d757adc69904e2dd2494f5091d90bf5a11bc0fbd5ebb3f5396611554ab05ed",
+      "sha256": "17d757adc69904e2dd2494f5091d90bf5a11bc0fbd5ebb3f5396611554ab05ed",
+      "size": 2826,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/tab_press.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_tab_press.9.png",
+      "sourceSha256": "791e5ea3f5e6ba52fe8a593ea888b3c8327cb0a885fdfcd5f8ca944210049c61",
+      "sha256": "791e5ea3f5e6ba52fe8a593ea888b3c8327cb0a885fdfcd5f8ca944210049c61",
+      "size": 274,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/tab_press_bar_left.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_tab_press_bar_left.9.png",
+      "sourceSha256": "801813f03f28edc07afc031dde0f3f9e1ffb5955a1d732b5b219e23bec669138",
+      "sha256": "801813f03f28edc07afc031dde0f3f9e1ffb5955a1d732b5b219e23bec669138",
+      "size": 2827,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/tab_press_bar_right.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_tab_press_bar_right.9.png",
+      "sourceSha256": "801813f03f28edc07afc031dde0f3f9e1ffb5955a1d732b5b219e23bec669138",
+      "sha256": "801813f03f28edc07afc031dde0f3f9e1ffb5955a1d732b5b219e23bec669138",
+      "size": 2827,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/tab_selected.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_tab_selected.9.png",
+      "sourceSha256": "20744dcda172e669b5bfc8438fe11bdcdb35ea278008cb19e3da2930573a2098",
+      "sha256": "20744dcda172e669b5bfc8438fe11bdcdb35ea278008cb19e3da2930573a2098",
+      "size": 197,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/tab_selected_bar_left.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_tab_selected_bar_left.9.png",
+      "sourceSha256": "fa2962785df73954f88ea46861ff584fd1fa360c83d3b9586b4271e1d409126f",
+      "sha256": "fa2962785df73954f88ea46861ff584fd1fa360c83d3b9586b4271e1d409126f",
+      "size": 88,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/tab_selected_bar_right.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_tab_selected_bar_right.9.png",
+      "sourceSha256": "fa2962785df73954f88ea46861ff584fd1fa360c83d3b9586b4271e1d409126f",
+      "sha256": "fa2962785df73954f88ea46861ff584fd1fa360c83d3b9586b4271e1d409126f",
+      "size": 88,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/tab_unselected.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_tab_unselected.9.png",
+      "sourceSha256": "3e654f717d56f505d9eb8c6400dab3a743a40b85b0ffe4882e6a60d619e98a31",
+      "sha256": "3e654f717d56f505d9eb8c6400dab3a743a40b85b0ffe4882e6a60d619e98a31",
+      "size": 215,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/textfield_default.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_textfield_default.9.png",
+      "sourceSha256": "39b7e4f1eff52615958af024efb053179900502b1da267dd599370a345e94e94",
+      "sha256": "39b7e4f1eff52615958af024efb053179900502b1da267dd599370a345e94e94",
+      "size": 327,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/textfield_disabled.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_textfield_disabled.9.png",
+      "sourceSha256": "9db976851654cadb3b5f416a0890f3e32118ede86e7fe1e7f3cbb3113035dc1d",
+      "sha256": "9db976851654cadb3b5f416a0890f3e32118ede86e7fe1e7f3cbb3113035dc1d",
+      "size": 381,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/textfield_disabled_selected.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_textfield_disabled_selected.9.png",
+      "sourceSha256": "78fa0361c1db90252f75b83f47305e32555513cf146d5d603cb8b9f2dcfe00b1",
+      "sha256": "78fa0361c1db90252f75b83f47305e32555513cf146d5d603cb8b9f2dcfe00b1",
+      "size": 517,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/textfield_pressed.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_textfield_pressed.9.png",
+      "sourceSha256": "22bc5013554f4577dbb0ec7e7993e1a5bcf20452b2eac6aac0b5fab40760ee8b",
+      "sha256": "22bc5013554f4577dbb0ec7e7993e1a5bcf20452b2eac6aac0b5fab40760ee8b",
+      "size": 642,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/textfield_selected.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_textfield_selected.9.png",
+      "sourceSha256": "a44cd6afe82818a0017104ebbd60414c625a2080bac9c3759a0f1103f2a0140f",
+      "sha256": "a44cd6afe82818a0017104ebbd60414c625a2080bac9c3759a0f1103f2a0140f",
+      "size": 465,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-ldpi/toast_frame.9.png",
+      "target": "app/src/main/res/drawable-ldpi/gingerbread_toast_frame.9.png",
+      "sourceSha256": "92d8445056dc8a39ff856f83282cae288e4d52dba8cd43316cb0ca24b5d2aa99",
+      "sha256": "92d8445056dc8a39ff856f83282cae288e4d52dba8cd43316cb0ca24b5d2aa99",
+      "size": 1180,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/activity_title_bar.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_activity_title_bar.9.png",
+      "sourceSha256": "2fbc7cc3616ab2cfadbc71a9fa68db9c8323354460bf95d2a5cf145ae321038f",
+      "sha256": "2fbc7cc3616ab2cfadbc71a9fa68db9c8323354460bf95d2a5cf145ae321038f",
+      "size": 205,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/btn_check_label_background.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_btn_check_label_background.9.png",
+      "sourceSha256": "ef1b85af7fd7484f84ee9e485db1108486297c46f299bab2287485f84cb04e31",
+      "sha256": "ef1b85af7fd7484f84ee9e485db1108486297c46f299bab2287485f84cb04e31",
+      "size": 178,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/btn_check_off.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_btn_check_off.png",
+      "sourceSha256": "a2051f0b17e1b4a1c2f2a2a34659976b7bdc1730637e06969865d97329da46dd",
+      "sha256": "a2051f0b17e1b4a1c2f2a2a34659976b7bdc1730637e06969865d97329da46dd",
+      "size": 1191,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/btn_check_off_disable.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_btn_check_off_disable.png",
+      "sourceSha256": "97d9bd569b202869c0c1a5b4debdcaaf7a19c08cdb8d1cb0ba1744eb71421d7d",
+      "sha256": "97d9bd569b202869c0c1a5b4debdcaaf7a19c08cdb8d1cb0ba1744eb71421d7d",
+      "size": 1194,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/btn_check_off_disable_focused.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_btn_check_off_disable_focused.png",
+      "sourceSha256": "cd9c1c0fa84f055095fcd232448dd7e7f06b97bafd782f44896bb6300eda6744",
+      "sha256": "cd9c1c0fa84f055095fcd232448dd7e7f06b97bafd782f44896bb6300eda6744",
+      "size": 1265,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/btn_check_off_pressed.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_btn_check_off_pressed.png",
+      "sourceSha256": "be01545f28a83b8a421efee481093c3c6a16a527a22f0ddb153d787afb1b6d87",
+      "sha256": "be01545f28a83b8a421efee481093c3c6a16a527a22f0ddb153d787afb1b6d87",
+      "size": 2408,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/btn_check_off_selected.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_btn_check_off_selected.png",
+      "sourceSha256": "40a159e7f5b1ecba6a7323a53a6567b4436be632280d6602df5daded536cf6c3",
+      "sha256": "40a159e7f5b1ecba6a7323a53a6567b4436be632280d6602df5daded536cf6c3",
+      "size": 2457,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/btn_check_on.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_btn_check_on.png",
+      "sourceSha256": "1760dd2193cce03d0167f612b0ec4d0cf96681ac2d6a501e6dc4a95bb20e60ae",
+      "sha256": "1760dd2193cce03d0167f612b0ec4d0cf96681ac2d6a501e6dc4a95bb20e60ae",
+      "size": 1919,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/btn_check_on_disable.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_btn_check_on_disable.png",
+      "sourceSha256": "d93fa9800bb0848403880d0593aa5c207c69461862179bec554345a2915d218a",
+      "sha256": "d93fa9800bb0848403880d0593aa5c207c69461862179bec554345a2915d218a",
+      "size": 1716,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/btn_check_on_disable_focused.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_btn_check_on_disable_focused.png",
+      "sourceSha256": "6e88cc05184911662180853c7af2028105c63cb9678100202285207c898282e8",
+      "sha256": "6e88cc05184911662180853c7af2028105c63cb9678100202285207c898282e8",
+      "size": 1892,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/btn_check_on_pressed.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_btn_check_on_pressed.png",
+      "sourceSha256": "045f6d87c0cfe6b8d295d5731a9f0dbf337204204da91b03cd1cf7875b99652c",
+      "sha256": "045f6d87c0cfe6b8d295d5731a9f0dbf337204204da91b03cd1cf7875b99652c",
+      "size": 2465,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/btn_check_on_selected.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_btn_check_on_selected.png",
+      "sourceSha256": "df72cc304401e53ffe496e316b75770b6d7cb5ca3e4cac0b909cda866e7e4889",
+      "sha256": "df72cc304401e53ffe496e316b75770b6d7cb5ca3e4cac0b909cda866e7e4889",
+      "size": 2515,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/btn_default_normal.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_btn_default_normal.9.png",
+      "sourceSha256": "29ae204f14ec1ed538adb3950a7dc12b85bb46040ea364e1b551b3782cb0b854",
+      "sha256": "29ae204f14ec1ed538adb3950a7dc12b85bb46040ea364e1b551b3782cb0b854",
+      "size": 683,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/btn_default_normal_disable.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_btn_default_normal_disable.9.png",
+      "sourceSha256": "f125dc77818b6a0a5345dce41c832e994d4a05f2b9007b372195871c6d6ff19f",
+      "sha256": "f125dc77818b6a0a5345dce41c832e994d4a05f2b9007b372195871c6d6ff19f",
+      "size": 663,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/btn_default_normal_disable_focused.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_btn_default_normal_disable_focused.9.png",
+      "sourceSha256": "f0ae182efa0f1f16e9e32b2c9f695f783f00b1c085067b27e5bfaff1d24dc8ad",
+      "sha256": "f0ae182efa0f1f16e9e32b2c9f695f783f00b1c085067b27e5bfaff1d24dc8ad",
+      "size": 713,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/btn_default_pressed.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_btn_default_pressed.9.png",
+      "sourceSha256": "f0788924dd2d38071dc2a93335b7dcc1bd76d54006a2490455f3da2288dfe180",
+      "sha256": "f0788924dd2d38071dc2a93335b7dcc1bd76d54006a2490455f3da2288dfe180",
+      "size": 713,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/btn_default_selected.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_btn_default_selected.9.png",
+      "sourceSha256": "889d2e084258ce4e11bd41afbeb099e06ad4a0e4cb9ddf3a85e1bb91d755dd04",
+      "sha256": "889d2e084258ce4e11bd41afbeb099e06ad4a0e4cb9ddf3a85e1bb91d755dd04",
+      "size": 504,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/btn_default_small_normal.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_btn_default_small_normal.9.png",
+      "sourceSha256": "dcb659f32977766d0c805c7fe2e93679705128d9ec37be7759694c5ca496caa9",
+      "sha256": "dcb659f32977766d0c805c7fe2e93679705128d9ec37be7759694c5ca496caa9",
+      "size": 586,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/btn_default_small_normal_disable.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_btn_default_small_normal_disable.9.png",
+      "sourceSha256": "ff43dda44df66770f25e9a1c34db2548d5ce8128d82c9b0060f44100dcfc6732",
+      "sha256": "ff43dda44df66770f25e9a1c34db2548d5ce8128d82c9b0060f44100dcfc6732",
+      "size": 562,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/btn_default_small_normal_disable_focused.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_btn_default_small_normal_disable_focused.9.png",
+      "sourceSha256": "84336bd09aec85baddb44bae84f7ea115183e94f5e3e68a95e696016ed728916",
+      "sha256": "84336bd09aec85baddb44bae84f7ea115183e94f5e3e68a95e696016ed728916",
+      "size": 593,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/btn_default_small_pressed.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_btn_default_small_pressed.9.png",
+      "sourceSha256": "e7e4325587333893c2b6b288cd3889a5e4a9d58c549e382215873ad045e55143",
+      "sha256": "e7e4325587333893c2b6b288cd3889a5e4a9d58c549e382215873ad045e55143",
+      "size": 476,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/btn_default_small_selected.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_btn_default_small_selected.9.png",
+      "sourceSha256": "5d71e3ce5fbf99c66218f60e3c276878564e504722b6c1d98f1907ab89d665aa",
+      "sha256": "5d71e3ce5fbf99c66218f60e3c276878564e504722b6c1d98f1907ab89d665aa",
+      "size": 463,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/btn_dropdown_disabled.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_btn_dropdown_disabled.9.png",
+      "sourceSha256": "5a30aad78013de3ed3f6bf1d94723e1be1ff4238879939647ddbdc928d563cd7",
+      "sha256": "5a30aad78013de3ed3f6bf1d94723e1be1ff4238879939647ddbdc928d563cd7",
+      "size": 1819,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/btn_dropdown_disabled_focused.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_btn_dropdown_disabled_focused.9.png",
+      "sourceSha256": "8a5ae90b83ee4539b1eb65c74ae4ec5213dbe37c8d90a55932a5277e228274fa",
+      "sha256": "8a5ae90b83ee4539b1eb65c74ae4ec5213dbe37c8d90a55932a5277e228274fa",
+      "size": 1951,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/btn_dropdown_normal.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_btn_dropdown_normal.9.png",
+      "sourceSha256": "6687b0fc71cea117bb901080baec72b855e91f76564e5fc6ff37866668e8abc5",
+      "sha256": "6687b0fc71cea117bb901080baec72b855e91f76564e5fc6ff37866668e8abc5",
+      "size": 1227,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/btn_dropdown_pressed.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_btn_dropdown_pressed.9.png",
+      "sourceSha256": "8ded326b80577623d2545410c1c38070c21ce86cfd5d2f9441a3fcad960533fc",
+      "sha256": "8ded326b80577623d2545410c1c38070c21ce86cfd5d2f9441a3fcad960533fc",
+      "size": 3214,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/btn_dropdown_selected.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_btn_dropdown_selected.9.png",
+      "sourceSha256": "609f9e4b2892a74176aa99d69a30f12d0215fa239a33152445124f8d6c94cfee",
+      "sha256": "609f9e4b2892a74176aa99d69a30f12d0215fa239a33152445124f8d6c94cfee",
+      "size": 3590,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/btn_radio_label_background.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_btn_radio_label_background.9.png",
+      "sourceSha256": "3f5e4fe0d60cdff831604c3ae3de70e2efa9d3f4a44c49ca58d4d590b5c48c49",
+      "sha256": "3f5e4fe0d60cdff831604c3ae3de70e2efa9d3f4a44c49ca58d4d590b5c48c49",
+      "size": 178,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/btn_radio_off.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_btn_radio_off.png",
+      "sourceSha256": "1e6120c4d8e17422fc9e91150d23c245aafc125d740bbf0b0667860f13b34087",
+      "sha256": "1e6120c4d8e17422fc9e91150d23c245aafc125d740bbf0b0667860f13b34087",
+      "size": 2224,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/btn_radio_off_pressed.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_btn_radio_off_pressed.png",
+      "sourceSha256": "d72a7803b841423ee1bebd28a41a22e4c451d3e28776ea923a0f46ddeed7d0f3",
+      "sha256": "d72a7803b841423ee1bebd28a41a22e4c451d3e28776ea923a0f46ddeed7d0f3",
+      "size": 2441,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/btn_radio_off_selected.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_btn_radio_off_selected.png",
+      "sourceSha256": "422f85142332a34f5cc58ffa5e9ced6b694528f52e02bb5f4ab4a9a2b4d2c407",
+      "sha256": "422f85142332a34f5cc58ffa5e9ced6b694528f52e02bb5f4ab4a9a2b4d2c407",
+      "size": 2473,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/btn_radio_on.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_btn_radio_on.png",
+      "sourceSha256": "ff39dd123f42712ca0718db630ca6dca4c43df16de72c295b9284f2fe9ed0315",
+      "sha256": "ff39dd123f42712ca0718db630ca6dca4c43df16de72c295b9284f2fe9ed0315",
+      "size": 2303,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/btn_radio_on_pressed.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_btn_radio_on_pressed.png",
+      "sourceSha256": "645b9ee663c4148d536d9910745f686d27277aeb07f139efc69a427345bbeb54",
+      "sha256": "645b9ee663c4148d536d9910745f686d27277aeb07f139efc69a427345bbeb54",
+      "size": 2493,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/btn_radio_on_selected.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_btn_radio_on_selected.png",
+      "sourceSha256": "27d457a19949ed59c4b3f8ac6da5794c70ad012a6717d85bcc7acc6623e6b971",
+      "sha256": "27d457a19949ed59c4b3f8ac6da5794c70ad012a6717d85bcc7acc6623e6b971",
+      "size": 2516,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/dark_header.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_dark_header.9.png",
+      "sourceSha256": "7ab16257405b23bf5d6360e6a41e84c83c00c18c3a299e6c9f330405b32b71c5",
+      "sha256": "7ab16257405b23bf5d6360e6a41e84c83c00c18c3a299e6c9f330405b32b71c5",
+      "size": 696,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/divider_horizontal_bright_opaque.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_divider_horizontal_bright_opaque.9.png",
+      "sourceSha256": "8ffa83d3cab66441e87e3eb7e50cc130a124d542cad06a1fb322867e406861bf",
+      "sha256": "8ffa83d3cab66441e87e3eb7e50cc130a124d542cad06a1fb322867e406861bf",
+      "size": 109,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/divider_horizontal_dark_opaque.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_divider_horizontal_dark_opaque.9.png",
+      "sourceSha256": "8ffa83d3cab66441e87e3eb7e50cc130a124d542cad06a1fb322867e406861bf",
+      "sha256": "8ffa83d3cab66441e87e3eb7e50cc130a124d542cad06a1fb322867e406861bf",
+      "size": 109,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/highlight_disabled.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_highlight_disabled.9.png",
+      "sourceSha256": "2191a828b15139b86b6e446ad8bd0da0999c6ed226ae49edf0939b6e2d481e73",
+      "sha256": "2191a828b15139b86b6e446ad8bd0da0999c6ed226ae49edf0939b6e2d481e73",
+      "size": 1291,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/highlight_pressed.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_highlight_pressed.9.png",
+      "sourceSha256": "528348a44987726a5e5a4838a474a3459b6b09875db372d19c08904f1ed49208",
+      "sha256": "528348a44987726a5e5a4838a474a3459b6b09875db372d19c08904f1ed49208",
+      "size": 1103,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/highlight_selected.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_highlight_selected.9.png",
+      "sourceSha256": "8c12d43e83966f92b73f224ceece7f113f076c2dac6c40b5dc31c4ed0d6bfc90",
+      "sha256": "8c12d43e83966f92b73f224ceece7f113f076c2dac6c40b5dc31c4ed0d6bfc90",
+      "size": 1145,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/ic_menu_add.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_ic_menu_add.png",
+      "sourceSha256": "79433ff8f0c2346d4231b8f5af12de23fd01161d816b9b28fc0020c8d4fc5520",
+      "sha256": "79433ff8f0c2346d4231b8f5af12de23fd01161d816b9b28fc0020c8d4fc5520",
+      "size": 2011,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/ic_menu_back.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_ic_menu_back.png",
+      "sourceSha256": "807417899c76c463d2caf8de3b2ca06eaa19e6b7ae4e6ad7ad64b18948a26d96",
+      "sha256": "807417899c76c463d2caf8de3b2ca06eaa19e6b7ae4e6ad7ad64b18948a26d96",
+      "size": 1163,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/ic_menu_close_clear_cancel.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_ic_menu_close_clear_cancel.png",
+      "sourceSha256": "45f4b735f897376bf59076a293b655ab4d3689a2e5f9fda301fe363fc51a600a",
+      "sha256": "45f4b735f897376bf59076a293b655ab4d3689a2e5f9fda301fe363fc51a600a",
+      "size": 2425,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/ic_menu_delete.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_ic_menu_delete.png",
+      "sourceSha256": "8cf68dad8250bc1bb96d36da2d3cf924c19f60341263470fce43a964664324ee",
+      "sha256": "8cf68dad8250bc1bb96d36da2d3cf924c19f60341263470fce43a964664324ee",
+      "size": 1457,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/ic_menu_forward.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_ic_menu_forward.png",
+      "sourceSha256": "cc655666f660ace7912647d9bfacf2797493014d3ca90b1886e5cf757ce294e0",
+      "sha256": "cc655666f660ace7912647d9bfacf2797493014d3ca90b1886e5cf757ce294e0",
+      "size": 1163,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/ic_menu_info_details.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_ic_menu_info_details.png",
+      "sourceSha256": "6f579d1ca8ac6fbc0acce3adce787c6f3f7939e0721172e442504319eb85921d",
+      "sha256": "6f579d1ca8ac6fbc0acce3adce787c6f3f7939e0721172e442504319eb85921d",
+      "size": 1842,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/ic_menu_manage.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_ic_menu_manage.png",
+      "sourceSha256": "4f883001c150d2622175393fbdb2756648b59654809be80ef499ec10b0451088",
+      "sha256": "4f883001c150d2622175393fbdb2756648b59654809be80ef499ec10b0451088",
+      "size": 1767,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/ic_menu_mapmode.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_ic_menu_mapmode.png",
+      "sourceSha256": "9c22a7b70dd1b5d1868ae75568abf545873aab1ce30307c8bac97a28ce0068f6",
+      "sha256": "9c22a7b70dd1b5d1868ae75568abf545873aab1ce30307c8bac97a28ce0068f6",
+      "size": 1577,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/ic_menu_mark.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_ic_menu_mark.png",
+      "sourceSha256": "1be9a3eac777113f53059d56b5ec560c8386a1e854d1d3c3863f4002c6395472",
+      "sha256": "1be9a3eac777113f53059d56b5ec560c8386a1e854d1d3c3863f4002c6395472",
+      "size": 1891,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/ic_menu_more.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_ic_menu_more.png",
+      "sourceSha256": "72ff8c071afe899c346538d200bfa33446d2bd8f08b2befaf5be8ca963dc3b10",
+      "sha256": "72ff8c071afe899c346538d200bfa33446d2bd8f08b2befaf5be8ca963dc3b10",
+      "size": 2364,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/ic_menu_preferences.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_ic_menu_preferences.png",
+      "sourceSha256": "7f32f015660c12d4f4b17826ac3e170f422bf0a14161d5f410ef1897ae416a00",
+      "sha256": "7f32f015660c12d4f4b17826ac3e170f422bf0a14161d5f410ef1897ae416a00",
+      "size": 2096,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/ic_menu_refresh.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_ic_menu_refresh.png",
+      "sourceSha256": "c42cae7c2131bf70ab9850a5a8a6e7afb60e32b39e94f35b1e623c7ae8576367",
+      "sha256": "c42cae7c2131bf70ab9850a5a8a6e7afb60e32b39e94f35b1e623c7ae8576367",
+      "size": 2156,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/ic_menu_search.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_ic_menu_search.png",
+      "sourceSha256": "9a847ef22f9c042dac8d54c4d103bc5ab9be609152117908c101202e41fca2e2",
+      "sha256": "9a847ef22f9c042dac8d54c4d103bc5ab9be609152117908c101202e41fca2e2",
+      "size": 1783,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/ic_menu_sort_alphabetically.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_ic_menu_sort_alphabetically.png",
+      "sourceSha256": "75d7e9cb8958ecb8fe6598756f1502942410aad335037c61493c75a31b4813d8",
+      "sha256": "75d7e9cb8958ecb8fe6598756f1502942410aad335037c61493c75a31b4813d8",
+      "size": 1553,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/ic_menu_star.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_ic_menu_star.png",
+      "sourceSha256": "62f05d5a152795bd5f0d7bd8b1b05637b98913f7b9ea783792e56523c12ebba3",
+      "sha256": "62f05d5a152795bd5f0d7bd8b1b05637b98913f7b9ea783792e56523c12ebba3",
+      "size": 1432,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/ic_menu_view.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_ic_menu_view.png",
+      "sourceSha256": "ca99abaf69eaa359cc638ab83498a987566496f52a4559d7d0bb6ed370e45e18",
+      "sha256": "ca99abaf69eaa359cc638ab83498a987566496f52a4559d7d0bb6ed370e45e18",
+      "size": 1632,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/light_header.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_light_header.9.png",
+      "sourceSha256": "5cc33f95922df5c9069a3690311942f6d5405ca3117a5a2bbe98f577b7354ffe",
+      "sha256": "5cc33f95922df5c9069a3690311942f6d5405ca3117a5a2bbe98f577b7354ffe",
+      "size": 162,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/list_selector_background_disabled.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_list_selector_background_disabled.9.png",
+      "sourceSha256": "1a80f04a724de5a3256e8722fd395753e44cd1566f09d60a9d3f385ae8bbab73",
+      "sha256": "1a80f04a724de5a3256e8722fd395753e44cd1566f09d60a9d3f385ae8bbab73",
+      "size": 213,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/list_selector_background_focus.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_list_selector_background_focus.9.png",
+      "sourceSha256": "b40ce9cec8ff7440b47e0ddde775e5b69b30a2e809bfb2fd87c8db3977b97256",
+      "sha256": "b40ce9cec8ff7440b47e0ddde775e5b69b30a2e809bfb2fd87c8db3977b97256",
+      "size": 2553,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/list_selector_background_longpress.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_list_selector_background_longpress.9.png",
+      "sourceSha256": "8a42b0e8b3a73ee469be6a0cd20cba6b2ce1830c598a9c1ae2d8bd6a900c1648",
+      "sha256": "8a42b0e8b3a73ee469be6a0cd20cba6b2ce1830c598a9c1ae2d8bd6a900c1648",
+      "size": 1051,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/list_selector_background_pressed.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_list_selector_background_pressed.9.png",
+      "sourceSha256": "eb623388933344cbb66f3f6468d53bbcc7c5e9c957382f8de1ceb8fffe72c9a0",
+      "sha256": "eb623388933344cbb66f3f6468d53bbcc7c5e9c957382f8de1ceb8fffe72c9a0",
+      "size": 2230,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/menu_background.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_menu_background.9.png",
+      "sourceSha256": "09900a19042a5a7a6f3e90f84e8a92c58f61f6587bafd62be2e43f76921d55d7",
+      "sha256": "09900a19042a5a7a6f3e90f84e8a92c58f61f6587bafd62be2e43f76921d55d7",
+      "size": 186,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/menuitem_background_focus.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_menuitem_background_focus.9.png",
+      "sourceSha256": "a35015c2a0322edd4267fc5bd0cfb6862ae896ca0a0a8c8ed682052550fe5e58",
+      "sha256": "a35015c2a0322edd4267fc5bd0cfb6862ae896ca0a0a8c8ed682052550fe5e58",
+      "size": 11006,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/menuitem_background_pressed.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_menuitem_background_pressed.9.png",
+      "sourceSha256": "904054c33a4d3cb23a57e646c3d5184f4eb27a973eec6d7394390accf7ea62b4",
+      "sha256": "904054c33a4d3cb23a57e646c3d5184f4eb27a973eec6d7394390accf7ea62b4",
+      "size": 11006,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/panel_background.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_panel_background.9.png",
+      "sourceSha256": "8d595f9deaadc423228ee1506d703eff8863f51e2b386fe81a88baaaf40f44a6",
+      "sha256": "8d595f9deaadc423228ee1506d703eff8863f51e2b386fe81a88baaaf40f44a6",
+      "size": 606,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/popup_bottom_bright.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_popup_bottom_bright.9.png",
+      "sourceSha256": "f0d24895222366fa8196251cdd54a10ffcd7a32cd264527a4a140e1571328df3",
+      "sha256": "f0d24895222366fa8196251cdd54a10ffcd7a32cd264527a4a140e1571328df3",
+      "size": 598,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/popup_bottom_dark.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_popup_bottom_dark.9.png",
+      "sourceSha256": "f57217a1323079105be2d20f2c2e281973d8e56cd5aebb3180dc1e6f6d524729",
+      "sha256": "f57217a1323079105be2d20f2c2e281973d8e56cd5aebb3180dc1e6f6d524729",
+      "size": 584,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/popup_bottom_medium.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_popup_bottom_medium.9.png",
+      "sourceSha256": "bbd3ed79630bc11b42519b1e82acf729ca33753a87711348fa33513533515506",
+      "sha256": "bbd3ed79630bc11b42519b1e82acf729ca33753a87711348fa33513533515506",
+      "size": 3307,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/popup_center_bright.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_popup_center_bright.9.png",
+      "sourceSha256": "8530a791bdd9e12af194b40936d50352961e4b4f5ec69d1b39dd78e5bd1239e5",
+      "sha256": "8530a791bdd9e12af194b40936d50352961e4b4f5ec69d1b39dd78e5bd1239e5",
+      "size": 148,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/popup_center_dark.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_popup_center_dark.9.png",
+      "sourceSha256": "ec79b69b426d8939b064d0ef6a3463d416cdd38b7a0f4390a312ca1b54bf8717",
+      "sha256": "ec79b69b426d8939b064d0ef6a3463d416cdd38b7a0f4390a312ca1b54bf8717",
+      "size": 211,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/popup_center_medium.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_popup_center_medium.9.png",
+      "sourceSha256": "e4e55d8c98088d3267cf9e2eb6730be2e8b81b26c50656f142b23fe4f9bb7b7a",
+      "sha256": "e4e55d8c98088d3267cf9e2eb6730be2e8b81b26c50656f142b23fe4f9bb7b7a",
+      "size": 2896,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/popup_full_bright.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_popup_full_bright.9.png",
+      "sourceSha256": "ffb3acf76922d71536b392b5f09ec5ddef193c51a505ad6e5bd5bdf1eb7248d8",
+      "sha256": "ffb3acf76922d71536b392b5f09ec5ddef193c51a505ad6e5bd5bdf1eb7248d8",
+      "size": 765,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/popup_full_dark.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_popup_full_dark.9.png",
+      "sourceSha256": "c6c98bd656c8ef589a8e10b2b40ab78bcb89f7bec740808a53e0196d1f18e17e",
+      "sha256": "c6c98bd656c8ef589a8e10b2b40ab78bcb89f7bec740808a53e0196d1f18e17e",
+      "size": 607,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/popup_top_bright.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_popup_top_bright.9.png",
+      "sourceSha256": "0aba9c891c2f53748bade42d954f33bcc5425773b640bcb9eae8c931baf04188",
+      "sha256": "0aba9c891c2f53748bade42d954f33bcc5425773b640bcb9eae8c931baf04188",
+      "size": 582,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/popup_top_dark.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_popup_top_dark.9.png",
+      "sourceSha256": "dedf39b94a5b2ffd04e2eb8faabf881923619bf36d7a41be4d55af14edde33f2",
+      "sha256": "dedf39b94a5b2ffd04e2eb8faabf881923619bf36d7a41be4d55af14edde33f2",
+      "size": 714,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/progressbar_indeterminate1.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_progressbar_indeterminate1.png",
+      "sourceSha256": "a2a8fdd5233c3a6b35c9e58ebf0a253a8157486006d5884213f0bc5587a91906",
+      "sha256": "a2a8fdd5233c3a6b35c9e58ebf0a253a8157486006d5884213f0bc5587a91906",
+      "size": 687,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/progressbar_indeterminate2.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_progressbar_indeterminate2.png",
+      "sourceSha256": "cba7b8f55a1caa1af3aca5866719417f8941c6507be7c633518de97c7d581100",
+      "sha256": "cba7b8f55a1caa1af3aca5866719417f8941c6507be7c633518de97c7d581100",
+      "size": 624,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/progressbar_indeterminate3.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_progressbar_indeterminate3.png",
+      "sourceSha256": "bd1429e16597e69c715cdde4d2d0ac56501831f7fecc318e6652b6db7eefd44a",
+      "sha256": "bd1429e16597e69c715cdde4d2d0ac56501831f7fecc318e6652b6db7eefd44a",
+      "size": 637,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/scrollbar_handle_vertical.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_scrollbar_handle_vertical.9.png",
+      "sourceSha256": "d34f7b437b865560e1c85e7c005f5eea859e1853ad7a6b38eec44cb56028b42f",
+      "sha256": "d34f7b437b865560e1c85e7c005f5eea859e1853ad7a6b38eec44cb56028b42f",
+      "size": 254,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/spinner_black_48.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_spinner_black_48.png",
+      "sourceSha256": "620e953aaf4edfc8fba0a8da30c94c1b6ed41c707737c686ab413d1999ecab42",
+      "sha256": "620e953aaf4edfc8fba0a8da30c94c1b6ed41c707737c686ab413d1999ecab42",
+      "size": 3307,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/spinner_white_48.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_spinner_white_48.png",
+      "sourceSha256": "6b313fa4980b06dad47b85e3849c9b540b8b65c305aa7ed077575ff1e3d17e24",
+      "sha256": "6b313fa4980b06dad47b85e3849c9b540b8b65c305aa7ed077575ff1e3d17e24",
+      "size": 3062,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/tab_focus.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_tab_focus.9.png",
+      "sourceSha256": "47f2047fd07d2cc97e268b8e667f6d9882dc12a65a748a19227b0ba9706a35db",
+      "sha256": "47f2047fd07d2cc97e268b8e667f6d9882dc12a65a748a19227b0ba9706a35db",
+      "size": 422,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/tab_focus_bar_left.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_tab_focus_bar_left.9.png",
+      "sourceSha256": "993afa8409df31240b4b4e7b60c06e98a864b7b3f7608be49d74b2a03f92f3c8",
+      "sha256": "993afa8409df31240b4b4e7b60c06e98a864b7b3f7608be49d74b2a03f92f3c8",
+      "size": 125,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/tab_focus_bar_right.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_tab_focus_bar_right.9.png",
+      "sourceSha256": "993afa8409df31240b4b4e7b60c06e98a864b7b3f7608be49d74b2a03f92f3c8",
+      "sha256": "993afa8409df31240b4b4e7b60c06e98a864b7b3f7608be49d74b2a03f92f3c8",
+      "size": 125,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/tab_press.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_tab_press.9.png",
+      "sourceSha256": "a38d2a08a05084240c1e50cc601b21b2382f68506206a67c82da8657a764be8c",
+      "sha256": "a38d2a08a05084240c1e50cc601b21b2382f68506206a67c82da8657a764be8c",
+      "size": 328,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/tab_press_bar_left.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_tab_press_bar_left.9.png",
+      "sourceSha256": "b908195738745d4a90eb85f8b6b5b055c0c262052b2e87cc26a170abf21b4e31",
+      "sha256": "b908195738745d4a90eb85f8b6b5b055c0c262052b2e87cc26a170abf21b4e31",
+      "size": 126,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/tab_press_bar_right.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_tab_press_bar_right.9.png",
+      "sourceSha256": "b908195738745d4a90eb85f8b6b5b055c0c262052b2e87cc26a170abf21b4e31",
+      "sha256": "b908195738745d4a90eb85f8b6b5b055c0c262052b2e87cc26a170abf21b4e31",
+      "size": 126,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/tab_selected.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_tab_selected.9.png",
+      "sourceSha256": "3bae2d00c7f13f15122257473094376a75555de682094e34e6d7b68729b17289",
+      "sha256": "3bae2d00c7f13f15122257473094376a75555de682094e34e6d7b68729b17289",
+      "size": 212,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/tab_selected_bar_left.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_tab_selected_bar_left.9.png",
+      "sourceSha256": "d65698285bbbb123ad592dc222f19b20150bf946f9f4506e1729f81473ff701d",
+      "sha256": "d65698285bbbb123ad592dc222f19b20150bf946f9f4506e1729f81473ff701d",
+      "size": 116,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/tab_selected_bar_right.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_tab_selected_bar_right.9.png",
+      "sourceSha256": "d65698285bbbb123ad592dc222f19b20150bf946f9f4506e1729f81473ff701d",
+      "sha256": "d65698285bbbb123ad592dc222f19b20150bf946f9f4506e1729f81473ff701d",
+      "size": 116,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/tab_unselected.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_tab_unselected.9.png",
+      "sourceSha256": "61df161b99ede8e4b9ae9b8aa50726e8b08ea1e8c3ac074232848cb152f4f3a9",
+      "sha256": "61df161b99ede8e4b9ae9b8aa50726e8b08ea1e8c3ac074232848cb152f4f3a9",
+      "size": 235,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/textfield_default.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_textfield_default.9.png",
+      "sourceSha256": "6e88e3a6d478112349075c6a9a5a42504080d6130c56d3a41e2a9f38a5250c6b",
+      "sha256": "6e88e3a6d478112349075c6a9a5a42504080d6130c56d3a41e2a9f38a5250c6b",
+      "size": 417,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/textfield_disabled.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_textfield_disabled.9.png",
+      "sourceSha256": "9e36728a1f2c14669c310cd06846a7d09e055dc0909fbb8d73c07a05fec37a39",
+      "sha256": "9e36728a1f2c14669c310cd06846a7d09e055dc0909fbb8d73c07a05fec37a39",
+      "size": 483,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/textfield_disabled_selected.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_textfield_disabled_selected.9.png",
+      "sourceSha256": "6a3f4bb26e88c305e01c853d8437d8f8e665b88915a7f7919af853aba9678653",
+      "sha256": "6a3f4bb26e88c305e01c853d8437d8f8e665b88915a7f7919af853aba9678653",
+      "size": 685,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/textfield_pressed.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_textfield_pressed.9.png",
+      "sourceSha256": "d5ec3eeebf6281aa68fa4e9d86987c4a3241d9c6599ce25eec8cbeaf72c0e07b",
+      "sha256": "d5ec3eeebf6281aa68fa4e9d86987c4a3241d9c6599ce25eec8cbeaf72c0e07b",
+      "size": 584,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/textfield_selected.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_textfield_selected.9.png",
+      "sourceSha256": "3fe51e7aa100e32a9c077080c9d8a45db30922539f930ec015c28a71e298e24b",
+      "sha256": "3fe51e7aa100e32a9c077080c9d8a45db30922539f930ec015c28a71e298e24b",
+      "size": 600,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable-mdpi/toast_frame.9.png",
+      "target": "app/src/main/res/drawable-mdpi/gingerbread_toast_frame.9.png",
+      "sourceSha256": "a66c393389cb436e0e36224ce5f4d5c153dea29daec33ea3f8a3b9a5171f3c37",
+      "sha256": "a66c393389cb436e0e36224ce5f4d5c153dea29daec33ea3f8a3b9a5171f3c37",
+      "size": 4328,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "core/res/res/drawable/btn_check.xml",
+      "target": "app/src/main/res/drawable/gingerbread_btn_check.xml",
+      "sourceSha256": "d869a259f226ece9cb6812f66960e3c9c4905d034730eb06462869185aa189be",
+      "sha256": "df548e8948808dbeffe5e63885b4fe79b2a556adf040fdcbcb236d572ac98fc3",
+      "size": 3039,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "core/res/res/drawable/btn_default.xml",
+      "target": "app/src/main/res/drawable/gingerbread_btn_default.xml",
+      "sourceSha256": "a29ed99b1a97097f46f781070f9a10c624602839a04486cbd3f8479025fce146",
+      "sha256": "72314273a9c4907037ffc10ae491872cf7610bf93e8a0adfc815efc83f20e289",
+      "size": 1635,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "core/res/res/drawable/btn_default_small.xml",
+      "target": "app/src/main/res/drawable/gingerbread_btn_default_small.xml",
+      "sourceSha256": "a3ea3d5f3f940702915d405d9accfdb78e1fddd0b38fe29455dbc6cb27d46dea",
+      "sha256": "d4bbc32f5d448d83e5e6f95fa5c7747e07c96152481f0a60ee716313fe6838e3",
+      "size": 1678,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "core/res/res/drawable/btn_dropdown.xml",
+      "target": "app/src/main/res/drawable/gingerbread_btn_dropdown.xml",
+      "sourceSha256": "842b6771382ca72d493ffbc768bd384520a14061628e24f400a341b6f558739b",
+      "sha256": "60c2ceeab54f153a2a57a719a4e975dd323d909ae0c5e0fc88d3d60682319194",
+      "size": 1670,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "core/res/res/drawable/btn_radio.xml",
+      "target": "app/src/main/res/drawable/gingerbread_btn_radio.xml",
+      "sourceSha256": "9e8b46e237d1a4083cc05510a3b48dc7dff3fcdd28a409b900e1ba47771d7305",
+      "sha256": "99f7d98f46f4657d8579f0dacff4ba1f82cb4915f3437b6f21765d7b8695f92d",
+      "size": 1826,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "core/res/res/drawable/dark_header_dither.xml",
+      "target": "app/src/main/res/drawable/gingerbread_dark_header_dither.xml",
+      "sourceSha256": "b99dfcf14fff90e534de02bf7362bf0b69f7c6f57eb725ae1fe5bcc91c1008db",
+      "sha256": "e1cc10a2f96c0c2921620c0bf0ad6bbf21e1d19577c4030a96a28d69de6cecc8",
+      "size": 823,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "core/res/res/drawable/edit_text.xml",
+      "target": "app/src/main/res/drawable/gingerbread_edit_text.xml",
+      "sourceSha256": "fbbb7c97d33fe52d05998e96e8fb18cd9c895baee83438782e427f08ec7f31f1",
+      "sha256": "5663bf83a2edb31f524925d46475f326722161f6d8132a8dc3752e62a60f6ea4",
+      "size": 1569,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "core/res/res/drawable/light_header_dither.xml",
+      "target": "app/src/main/res/drawable/gingerbread_light_header_dither.xml",
+      "sourceSha256": "33ea34847def5d8a80c1d18587fcc7be2c4f1334edb16db89dd3e92098abcf69",
+      "sha256": "3ca0131b9930e6b7a67e6bfaba6137e10a7262a7ada28d3cf7346b2fbc8b5246",
+      "size": 824,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "core/res/res/drawable/list_selector_background.xml",
+      "target": "app/src/main/res/drawable/gingerbread_list_selector_background.xml",
+      "sourceSha256": "b4e7cfea0e1f92b53ba2cfe787d01716b00ee5c2ca6508e4eca6c7a372cb0846",
+      "sha256": "d611d171cf17c06fbeb9a2e19bc4b2e6249b937a4f9a6f41ee1ccd4ddc19152c",
+      "size": 1804,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "core/res/res/drawable/list_selector_background_transition.xml",
+      "target": "app/src/main/res/drawable/gingerbread_list_selector_background_transition.xml",
+      "sourceSha256": "7467b391066787939db7fef31983cc4f01ae6b1d996e96e5a4021579d21f6d06",
+      "sha256": "3fce9117b4e0390df5fe73114d6484d3e10020df0164104da97bf1c59c92bb7a",
+      "size": 939,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "core/res/res/drawable/menu_selector.xml",
+      "target": "app/src/main/res/drawable/gingerbread_menu_selector.xml",
+      "sourceSha256": "c54fe156249ca23943b7b938231649f0a09eb2bda45571e48a959db93e023685",
+      "sha256": "2dc1ea794e6b7f265f629e8e3c9f424c4d6c9add71cb65dcb80a27d5c895e886",
+      "size": 1541,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "core/res/res/drawable/menuitem_background.xml",
+      "target": "app/src/main/res/drawable/gingerbread_menuitem_background.xml",
+      "sourceSha256": "266774d70db54e9d2aa93dc120cbeddee0e495fe4e58ef12f8d24af5c5dd3783",
+      "sha256": "19eda6665f7cf56391c9b54843461572cad8decc0a075214d647de88f29926f5",
+      "size": 1165,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "core/res/res/drawable/progress_horizontal.xml",
+      "target": "app/src/main/res/drawable/gingerbread_progress_horizontal.xml",
+      "sourceSha256": "5d6f290c7a88137cdb4a5da9a49f9c54922573433a70ad4eccd3ffd21fdc0e79",
+      "sha256": "5d6f290c7a88137cdb4a5da9a49f9c54922573433a70ad4eccd3ffd21fdc0e79",
+      "size": 2155,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "core/res/res/drawable/progress_indeterminate_horizontal.xml",
+      "target": "app/src/main/res/drawable/gingerbread_progress_indeterminate_horizontal.xml",
+      "sourceSha256": "ff0accba41b2ba01fb89e19dd0215850d0d348778f2fb487f550333de415f8f9",
+      "sha256": "e9f7b0d8fdeb7155b12096d0391490e7c9a9216c1610164a8346a0b8d9644cb8",
+      "size": 1172,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "core/res/res/drawable/progress_medium.xml",
+      "target": "app/src/main/res/drawable/gingerbread_progress_medium.xml",
+      "sourceSha256": "f9d94dd5e11a52e8dccdff100d2786bc005df9c3c95362e96934324b2e4eb540",
+      "sha256": "8664ea33e139014f72092e107209ac9e9b8e1b50c21a3000fb96f75c99d71d94",
+      "size": 904,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed; public RotateDrawable with source-timed discrete levels",
+      "adaptation": {
+        "type": "level-driven rotation",
+        "frames": 12,
+        "frameDurationMillis": 100
+      }
+    },
+    {
+      "source": "core/res/res/drawable/progress_medium_white.xml",
+      "target": "app/src/main/res/drawable/gingerbread_progress_medium_white.xml",
+      "sourceSha256": "1203d737f57536e07b348550bfafa83d074d5b48e1964ed2785607a28085b40f",
+      "sha256": "a65d05c06a6737a7253744f4011780e9517b4f2b4435d0da124f4e263d663de5",
+      "size": 904,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed; public RotateDrawable with source-timed discrete levels",
+      "adaptation": {
+        "type": "level-driven rotation",
+        "frames": 12,
+        "frameDurationMillis": 100
+      }
+    },
+    {
+      "source": "core/res/res/drawable/tab_bottom_left.xml",
+      "target": "app/src/main/res/drawable/gingerbread_tab_bottom_left.xml",
+      "sourceSha256": "a67b28cef5bf88a73a2fa3d708bcb02508cc403728b3fbddfd90d60e6e3b9bc1",
+      "sha256": "099558b88368c884a04d945dd65518ee2f6d4724e5382746492fdee9eefd98fe",
+      "size": 1064,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "core/res/res/drawable/tab_bottom_right.xml",
+      "target": "app/src/main/res/drawable/gingerbread_tab_bottom_right.xml",
+      "sourceSha256": "4717967076e8e696f9c777493270f53fbdfda8ebd6413d7c4f105c795ba5b6cb",
+      "sha256": "b92c16077ddc2a958380c0f654276c580026d714d9ff78ea7d4da1f27050e1cf",
+      "size": 1127,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "core/res/res/drawable/tab_indicator.xml",
+      "target": "app/src/main/res/drawable/gingerbread_tab_indicator.xml",
+      "sourceSha256": "a2fc62b6216812e1b763f6ba6feef37ee7acb41b11c65da013f762f9356ef847",
+      "sha256": "8743d918d8b1131dfd27a24d82fe7f89cae034d6ea98a944d4809504843ad65b",
+      "size": 1557,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "core/res/res/drawable/title_bar.xml",
+      "target": "app/src/main/res/drawable/gingerbread_title_bar.xml",
+      "sourceSha256": "c83fbcec6f9a776fe5c10948981d28f05733ca96bf89bb76c49cdd3b757d6cd9",
+      "sha256": "a52a8ab1c31591566b626aa0897033a8499c26954d65c770261c5f2a592633ed",
+      "size": 830,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "sources": [
+        "core/res/res/values/colors.xml",
+        "core/res/res/values/config.xml"
+      ],
+      "target": "app/src/main/res/values/gingerbread_dependencies.xml",
+      "sha256": "c8586ff6c6758789c02577a02fb01adea0b389a353c3d28cbd79d9d33d126f8a",
+      "size": 1448,
+      "license": "Apache-2.0",
+      "change": "selected dependency values; names and references prefixed"
+    },
+    {
+      "era": "gingerbread",
+      "source": "data/fonts/DroidSans.ttf",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/3f2821425f1ab6eddb76a8725e3f2c3edb5d8b07/data/fonts/DroidSans.ttf?format=TEXT",
+      "target": "app/src/main/res/font/gingerbread_droid_sans.ttf",
+      "sha256": "f51b88945f4c1b236f44b8d55a2d304316869127e95248c435c23f1e4142a7db",
+      "size": 190776,
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged",
+      "sourceSha256": "f51b88945f4c1b236f44b8d55a2d304316869127e95248c435c23f1e4142a7db"
+    },
+    {
+      "era": "gingerbread",
+      "source": "data/fonts/DroidSans-Bold.ttf",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/3f2821425f1ab6eddb76a8725e3f2c3edb5d8b07/data/fonts/DroidSans-Bold.ttf?format=TEXT",
+      "target": "app/src/main/res/font/gingerbread_droid_sans_bold.ttf",
+      "sha256": "2f529a3e60c007979d95d29794c3660694217fb882429fb33919d2245fe969e9",
+      "size": 194488,
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged",
+      "sourceSha256": "2f529a3e60c007979d95d29794c3660694217fb882429fb33919d2245fe969e9"
+    }
+  ],
+  "references": [
+    {
+      "source": "core/res/res/anim/decelerate_interpolator.xml",
+      "target": "docs/android-themes/gingerbread/reference/anim/decelerate_interpolator.xml",
+      "sha256": "935d0965a39c1f7ca3f62432393def41777b8b0f799343b1660445aecdb9ff70"
+    },
+    {
+      "source": "core/res/res/anim/dialog_enter.xml",
+      "target": "docs/android-themes/gingerbread/reference/anim/dialog_enter.xml",
+      "sha256": "766d01aa44ed0f2514364b0c3d56ab8ed73a662d98aec533dd4e265311c59e70"
+    },
+    {
+      "source": "core/res/res/anim/dialog_exit.xml",
+      "target": "docs/android-themes/gingerbread/reference/anim/dialog_exit.xml",
+      "sha256": "0038bc6831e2dc3e8a5a549f005a6748108f72487051ea415ed5924a2ca7d570"
+    },
+    {
+      "source": "core/res/res/drawable/progress_medium.xml",
+      "target": "docs/android-themes/gingerbread/reference/drawable/progress_medium.xml",
+      "sha256": "f9d94dd5e11a52e8dccdff100d2786bc005df9c3c95362e96934324b2e4eb540"
+    },
+    {
+      "source": "core/res/res/drawable/progress_medium_white.xml",
+      "target": "docs/android-themes/gingerbread/reference/drawable/progress_medium_white.xml",
+      "sha256": "1203d737f57536e07b348550bfafa83d074d5b48e1964ed2785607a28085b40f"
+    },
+    {
+      "source": "core/res/res/layout/alert_dialog.xml",
+      "target": "docs/android-themes/gingerbread/reference/layout/alert_dialog.xml",
+      "sha256": "0571838cb1a274dbe76873110ee403865e5dd5990e3a03cf33f325ebeb3caabd"
+    },
+    {
+      "source": "core/res/res/layout/preference.xml",
+      "target": "docs/android-themes/gingerbread/reference/layout/preference.xml",
+      "sha256": "8ade29359d34ee644d9229892c5687f98afcdec0ee5db03267af1d50d1b81817"
+    },
+    {
+      "source": "core/res/res/layout/preference_category.xml",
+      "target": "docs/android-themes/gingerbread/reference/layout/preference_category.xml",
+      "sha256": "98e007821d41adfab8fa85110b822cafa3ad7b9cf408a18c9893d4887ebffdfa"
+    },
+    {
+      "source": "core/res/res/layout/select_dialog_multichoice.xml",
+      "target": "docs/android-themes/gingerbread/reference/layout/select_dialog_multichoice.xml",
+      "sha256": "87867de122ac90fb7f15d533b171ee5d4aeff01215e189e3dc998b19c364d4ea"
+    },
+    {
+      "source": "core/res/res/layout/select_dialog_singlechoice.xml",
+      "target": "docs/android-themes/gingerbread/reference/layout/select_dialog_singlechoice.xml",
+      "sha256": "35b98d1f0b9f668c964eb8394913f9be0b56117bf8bdfd6b26208b8f93ebd394"
+    },
+    {
+      "source": "core/res/res/layout/simple_list_item_2.xml",
+      "target": "docs/android-themes/gingerbread/reference/layout/simple_list_item_2.xml",
+      "sha256": "575ee5f8d42300fc5f47a7c6aa5a34789d41d4425a1faffb92bbfbbc2b139071"
+    },
+    {
+      "source": "core/res/res/layout/tab_indicator.xml",
+      "target": "docs/android-themes/gingerbread/reference/layout/tab_indicator.xml",
+      "sha256": "aed0da43749188fc7cc7ca213b86da28bc8613774795af69f23a360191a3a2ed"
+    },
+    {
+      "source": "core/res/res/values-land/dimens.xml",
+      "target": "docs/android-themes/gingerbread/reference/values-land/dimens.xml",
+      "sha256": "cfe0d87af7611e700d8a3fa2f61429d844d9af2e048e9e69c3dcce0f76e9f95f"
+    },
+    {
+      "source": "core/res/res/values-mcc219/config.xml",
+      "target": "docs/android-themes/gingerbread/reference/values-mcc219/config.xml",
+      "sha256": "df6614b8745208ad85ca1a7925d3f878d6db1a28f5211898a22a3d529cbe9604"
+    },
+    {
+      "source": "core/res/res/values-mcc220/config.xml",
+      "target": "docs/android-themes/gingerbread/reference/values-mcc220/config.xml",
+      "sha256": "df6614b8745208ad85ca1a7925d3f878d6db1a28f5211898a22a3d529cbe9604"
+    },
+    {
+      "source": "core/res/res/values/colors.xml",
+      "target": "docs/android-themes/gingerbread/reference/values/colors.xml",
+      "sha256": "d5811c89a9884ff12661eb5ae160f706cd4fb2a1b3dc6f30588a436d54c9ae43"
+    },
+    {
+      "source": "core/res/res/values/config.xml",
+      "target": "docs/android-themes/gingerbread/reference/values/config.xml",
+      "sha256": "1748045f5f19ba6629e277b5192c8f583fdda995e3deaf0f642ee8922e6c8e70"
+    },
+    {
+      "source": "core/res/res/values/dimens.xml",
+      "target": "docs/android-themes/gingerbread/reference/values/dimens.xml",
+      "sha256": "96868f61dccc59f74b8ec3ec2c5c3ad4698a1cb233ae121b52be79051182276a"
+    },
+    {
+      "source": "core/res/res/values/styles.xml",
+      "target": "docs/android-themes/gingerbread/reference/values/styles.xml",
+      "sha256": "4208a916f90857456140cce2df6ac82519a4b781bde736901c78176b5716695b"
+    },
+    {
+      "source": "core/res/res/values/themes.xml",
+      "target": "docs/android-themes/gingerbread/reference/values/themes.xml",
+      "sha256": "7f2fdeeead80ecc213c7e3ba597615792d43c803039acb3e1ff7b2462b8c3431"
+    }
+  ]
+}

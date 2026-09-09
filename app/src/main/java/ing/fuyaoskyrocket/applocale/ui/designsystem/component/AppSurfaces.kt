@@ -1,5 +1,8 @@
 package ing.fuyaoskyrocket.applocale.ui.designsystem.component
 
+import ing.fuyaoskyrocket.applocale.ui.designsystem.eclair.*
+import ing.fuyaoskyrocket.applocale.ui.designsystem.lollipop.LollipopSurface
+import ing.fuyaoskyrocket.applocale.ui.designsystem.AppControlFamily
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.PaddingValues
@@ -12,8 +15,9 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import ing.fuyaoskyrocket.applocale.ui.designsystem.AppComponentDefaults
 import ing.fuyaoskyrocket.applocale.ui.designsystem.AppUiTheme
-import ing.fuyaoskyrocket.applocale.ui.designsystem.AppThemePreferences
-import ing.fuyaoskyrocket.applocale.ui.designsystem.AppThemeStyle
+import ing.fuyaoskyrocket.applocale.ui.designsystem.holo.HoloCard
+import ing.fuyaoskyrocket.applocale.ui.designsystem.holo.HoloSectionSurface
+import ing.fuyaoskyrocket.applocale.ui.designsystem.holo.HoloSurface
 
 /**
  * Theme-aware card container. The Miuix style renders the miuix squircle card and
@@ -26,7 +30,27 @@ fun AppCard(
     containerColor: Color = AppUiTheme.palette.secondarySurface,
     content: @Composable ColumnScope.() -> Unit,
 ) {
-    if (AppThemePreferences.style == AppThemeStyle.MIUIX) {
+    if (AppUiTheme.policy.controls == AppControlFamily.Lollipop) {
+        LollipopSurface(modifier, containerColor, AppUiTheme.palette.surfaceContent, elevation = AppUiTheme.elevation.card) {
+            androidx.compose.foundation.layout.Column(content = content)
+        }
+        return
+    }
+    if (AppUiTheme.policy.controls == AppControlFamily.Material2) {
+        androidx.compose.material.Card(modifier = modifier,
+            shape = RoundedCornerShape(AppUiTheme.shapes.card.radius), backgroundColor = containerColor,
+            elevation = AppUiTheme.elevation.card) { androidx.compose.foundation.layout.Column(content = content) }
+        return
+    }
+    if (AppUiTheme.policy.controls == AppControlFamily.Eclair) {
+        androidx.compose.foundation.layout.Column(modifier = modifier, content = content)
+        return
+    }
+    if (AppUiTheme.policy.controls == AppControlFamily.Holo) {
+        HoloCard(modifier = modifier, containerColor = containerColor, content = content)
+        return
+    }
+    if (AppUiTheme.policy.controls == AppControlFamily.Miuix) {
         top.yukonga.miuix.kmp.basic.Card(
             modifier = modifier,
             insideMargin = PaddingValues(0.dp),
@@ -38,6 +62,7 @@ fun AppCard(
     } else {
         androidx.compose.material3.Card(
             modifier = modifier,
+            shape = RoundedCornerShape(AppUiTheme.shapes.card.radius),
             colors = androidx.compose.material3.CardDefaults.cardColors(
                 containerColor = containerColor,
             ),
@@ -59,7 +84,25 @@ fun AppSurface(
     contentColor: Color = AppUiTheme.palette.surfaceContent,
     content: @Composable () -> Unit,
 ) {
-    if (AppThemePreferences.style == AppThemeStyle.MIUIX) {
+    if (AppUiTheme.policy.controls == AppControlFamily.Lollipop) {
+        LollipopSurface(modifier, color, contentColor, shape ?: RoundedCornerShape(AppUiTheme.shapes.card.radius), content = content)
+        return
+    }
+    if (AppUiTheme.policy.controls == AppControlFamily.Material2) {
+        androidx.compose.material.Surface(modifier = modifier,
+            shape = shape ?: RoundedCornerShape(AppUiTheme.shapes.section.radius),
+            color = color, contentColor = contentColor, content = content)
+        return
+    }
+    if (AppUiTheme.policy.controls == AppControlFamily.Eclair) {
+        Box(modifier = modifier, propagateMinConstraints = true) { content() }
+        return
+    }
+    if (AppUiTheme.policy.controls == AppControlFamily.Holo) {
+        HoloSurface(modifier = modifier, color = color, content = content)
+        return
+    }
+    if (AppUiTheme.policy.controls == AppControlFamily.Miuix) {
         top.yukonga.miuix.kmp.basic.Surface(
             modifier = modifier,
             shape = shape ?: top.yukonga.miuix.kmp.basic.SurfaceDefaults.Shape,
@@ -70,7 +113,7 @@ fun AppSurface(
     } else {
         androidx.compose.material3.Surface(
             modifier = modifier,
-            shape = shape ?: androidx.compose.material3.MaterialTheme.shapes.medium,
+            shape = shape ?: RoundedCornerShape(AppUiTheme.shapes.card.radius),
             color = color,
             contentColor = contentColor,
             content = content,
@@ -93,7 +136,25 @@ fun AppPanel(
     contentColor: Color = AppUiTheme.palette.surfaceContent,
     content: @Composable () -> Unit,
 ) {
-    if (AppThemePreferences.style == AppThemeStyle.MIUIX) {
+    if (AppUiTheme.policy.controls == AppControlFamily.Lollipop) {
+        LollipopSurface(modifier, color, contentColor, RoundedCornerShape(cornerRadius), AppUiTheme.elevation.section, content)
+        return
+    }
+    if (AppUiTheme.policy.controls == AppControlFamily.Material2) {
+        androidx.compose.material.Surface(modifier = modifier,
+            shape = RoundedCornerShape(cornerRadius), color = color, contentColor = contentColor,
+            elevation = AppUiTheme.elevation.section, content = content)
+        return
+    }
+    if (AppUiTheme.policy.controls == AppControlFamily.Eclair) {
+        Box(modifier = modifier, propagateMinConstraints = true) { content() }
+        return
+    }
+    if (AppUiTheme.policy.controls == AppControlFamily.Holo) {
+        HoloSurface(modifier = modifier, color = color, content = content)
+        return
+    }
+    if (AppUiTheme.policy.controls == AppControlFamily.Miuix) {
         top.yukonga.miuix.kmp.basic.Card(
             modifier = modifier,
             cornerRadius = cornerRadius,
@@ -144,7 +205,31 @@ fun AppSectionSurface(
     modifier: Modifier = Modifier,
     content: @Composable () -> Unit,
 ) {
-    if (AppThemePreferences.style == AppThemeStyle.MIUIX) {
+    if (AppUiTheme.policy.controls == AppControlFamily.Lollipop) {
+        val warning = role == AppSectionRole.Warning
+        LollipopSurface(modifier, if (warning) AppUiTheme.palette.error else AppUiTheme.palette.secondarySurface,
+            if (warning) AppUiTheme.palette.onError else AppUiTheme.palette.surfaceContent,
+            shape = RoundedCornerShape(AppUiTheme.shapes.section.radius), elevation = AppUiTheme.elevation.section, content = content)
+        return
+    }
+    if (AppUiTheme.policy.controls == AppControlFamily.Material2) {
+        val warning = role == AppSectionRole.Warning
+        androidx.compose.material.Surface(modifier = modifier,
+            shape = RoundedCornerShape(AppUiTheme.shapes.section.radius),
+            color = if (warning) AppUiTheme.palette.error else AppUiTheme.palette.secondarySurface,
+            contentColor = if (warning) AppUiTheme.palette.onError else AppUiTheme.palette.foreground,
+            elevation = AppUiTheme.elevation.section, content = content)
+        return
+    }
+    if (AppUiTheme.policy.controls == AppControlFamily.Eclair) {
+        Box(modifier = modifier, propagateMinConstraints = true) { content() }
+        return
+    }
+    if (AppUiTheme.policy.controls == AppControlFamily.Holo) {
+        HoloSectionSurface(role = role, modifier = modifier, content = content)
+        return
+    }
+    if (AppUiTheme.policy.controls == AppControlFamily.Miuix) {
         val colors = when (role) {
             AppSectionRole.Group,
             AppSectionRole.Info,

@@ -1,11 +1,13 @@
 package ing.fuyaoskyrocket.applocale.ui.configurations
 
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppToolbarAction
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppListRow
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppToolbarActions
 import androidx.activity.compose.BackHandler
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
-import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -17,7 +19,6 @@ import androidx.compose.foundation.layout.consumeWindowInsets
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.isImeVisible
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -27,13 +28,15 @@ import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.BookmarkAdd
 import androidx.compose.material.icons.outlined.Bookmarks
 import androidx.compose.material.icons.outlined.FileOpen
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.repeatOnLifecycle
+import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -42,13 +45,10 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.style.TextOverflow
-import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import ing.fuyaoskyrocket.applocale.ui.screen.pageHiltViewModel as hiltViewModel
+import ing.fuyaoskyrocket.applocale.ui.screen.collectPageUiState
 import ing.fuyaoskyrocket.applocale.R
 import ing.fuyaoskyrocket.applocale.data.system.AppIconLoader
 import ing.fuyaoskyrocket.applocale.model.ConfigurationEditCommand
@@ -56,21 +56,19 @@ import ing.fuyaoskyrocket.applocale.model.SavedLocaleConfiguration
 import ing.fuyaoskyrocket.applocale.ui.components.AppNavigationDestination
 import ing.fuyaoskyrocket.applocale.ui.designsystem.AppSpacing
 import ing.fuyaoskyrocket.applocale.ui.designsystem.AppLayout
-import ing.fuyaoskyrocket.applocale.ui.designsystem.AppComponentDefaults
 import ing.fuyaoskyrocket.applocale.ui.designsystem.AppUiTheme
 import ing.fuyaoskyrocket.applocale.ui.designsystem.listBottomReserve
 import ing.fuyaoskyrocket.applocale.ui.designsystem.listTopReserve
 import ing.fuyaoskyrocket.applocale.ui.screen.TabScrollCoordinator
 import ing.fuyaoskyrocket.applocale.ui.screen.TabScrollToTopConsumer
 import ing.fuyaoskyrocket.applocale.ui.screen.tabScrollToTopKeyAction
-import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppCircularProgressIndicator
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppIcon
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppIconButton
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppScaffold
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppSnackbarHost
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppTextButton
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppSymbol
-import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppSymbolVector
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppSymbolIcon
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppText
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppTopAppBar
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.rememberAppSnackbarHostState
@@ -102,7 +100,7 @@ fun ConfigurationsScreen(
     viewModel: ConfigurationsViewModel = hiltViewModel(),
     tabScrollCoordinator: TabScrollCoordinator? = null,
 ) {
-    val uiState by viewModel.uiState.collectAsStateWithLifecycle()
+    val uiState by viewModel.uiState.collectPageUiState()
     val context = LocalContext.current
     val snackbarHostState = rememberAppSnackbarHostState()
     val importScope = rememberCoroutineScope()
@@ -160,7 +158,9 @@ fun ConfigurationsScreen(
         }
     }
 
-    LaunchedEffect(Unit) {
+    val lifecycleOwner = LocalLifecycleOwner.current
+    LaunchedEffect(viewModel, lifecycleOwner) {
+        lifecycleOwner.lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
         viewModel.events.collect { event ->
             snackbarHostState.showSnackbar(context.configurationEventMessage(event))
             // The ViewModel has already switched the selection to the derived
@@ -168,6 +168,7 @@ fun ConfigurationsScreen(
             if (event is ConfigurationsEvent.EditCompleted && event.newConfigurationId != null) {
                 detailAnchorPackage = event.packageName
             }
+        }
         }
     }
 
@@ -188,42 +189,17 @@ fun ConfigurationsScreen(
     )
 
     AppScaffold(
+        topLevelNavigation = true,
         topBar = {
             AppTopAppBar(
                 title = stringResource(R.string.configurations),
                 actions = {
-                    AppIconButton(
-                        onClick = viewModel::saveCurrentChanges,
-                        enabled = !uiState.isSaving && !uiState.isImporting,
-                    ) {
-                        if (uiState.isSaving) {
-                            AppCircularProgressIndicator(
-                                modifier = Modifier.size(AppSpacing.lg),
-                                strokeWidth = AppSpacing.xs / 2,
-                            )
-                        } else {
-                            AppIcon(
-                                imageVector = Icons.Outlined.BookmarkAdd,
-                                contentDescription = stringResource(R.string.save_current_changes),
-                            )
-                        }
-                    }
-                    AppIconButton(
-                        onClick = openImportPicker,
-                        enabled = !uiState.isSaving && !uiState.isImporting,
-                    ) {
-                        if (uiState.isImporting) {
-                            AppCircularProgressIndicator(
-                                modifier = Modifier.size(AppSpacing.lg),
-                                strokeWidth = AppSpacing.xs / 2,
-                            )
-                        } else {
-                            AppIcon(
-                                imageVector = Icons.Outlined.FileOpen,
-                                contentDescription = stringResource(R.string.import_configuration),
-                            )
-                        }
-                    }
+                    AppToolbarActions(listOf(
+                        AppToolbarAction(stringResource(R.string.save_current_changes), viewModel::saveCurrentChanges,
+                            icon = Icons.Outlined.BookmarkAdd, enabled = !uiState.isSaving && !uiState.isImporting, loading = uiState.isSaving),
+                        AppToolbarAction(stringResource(R.string.import_configuration), openImportPicker,
+                            icon = Icons.Outlined.FileOpen, enabled = !uiState.isSaving && !uiState.isImporting, loading = uiState.isImporting),
+                    ))
                 },
             )
         },
@@ -337,6 +313,9 @@ private fun CompactConfigurationsContent(
     modifier: Modifier = Modifier,
     contentPadding: PaddingValues = PaddingValues(),
 ) {
+    val rowInset = AppUiTheme.spacing.rowOuterInset
+    val contentInset = AppUiTheme.spacing.contentInset
+
     // Round-8 037: the host list keeps NO horizontal inset — rows frame
     // themselves with the shared 4dp outer margin (16dp foreground, selected
     // background 4dp from the frame edge), and the empty state uses the 16dp
@@ -345,7 +324,7 @@ private fun CompactConfigurationsContent(
         state = listState,
         modifier = modifier,
         contentPadding = contentPadding,
-        verticalArrangement = Arrangement.spacedBy(AppSpacing.sm),
+        verticalArrangement = Arrangement.spacedBy(AppUiTheme.spacing.listGap),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         if (pendingEdit != null) {
@@ -356,7 +335,7 @@ private fun CompactConfigurationsContent(
                     onRecheck = onRecheckPendingEdit,
                     onDiscard = onDiscardPendingEdit,
                     modifier = Modifier.readableContentWidth()
-                        .padding(horizontal = AppLayout.contentFrameMargin),
+                        .padding(horizontal = contentInset),
                 )
             }
         }
@@ -368,9 +347,9 @@ private fun CompactConfigurationsContent(
             onExport = onExport,
             deleteEnabled = deleteEnabled,
             rowModifier = Modifier.readableContentWidth()
-                .padding(horizontal = AppLayout.localeRowOuterMargin),
+                .padding(horizontal = rowInset),
             emptyStateModifier = Modifier.readableContentWidth()
-                .padding(horizontal = AppLayout.contentFrameMargin),
+                .padding(horizontal = contentInset),
         )
     }
 }
@@ -409,8 +388,8 @@ private fun WideConfigurationsContent(
             modifier = Modifier
                 .wideContentWidth()
                 .fillMaxHeight()
-                .padding(vertical = AppSpacing.screenExpanded),
-            horizontalArrangement = Arrangement.spacedBy(AppSpacing.paneGap),
+                .padding(horizontal = AppUiTheme.spacing.paneOuterInset),
+            horizontalArrangement = Arrangement.spacedBy(AppUiTheme.spacing.paneGap),
         ) {
             Column(
                 modifier = Modifier
@@ -517,13 +496,16 @@ private fun ConfigurationList(
     deleteEnabled: Boolean,
     modifier: Modifier = Modifier,
 ) {
+    val rowInset = AppUiTheme.spacing.rowOuterInset
+    val contentInset = AppUiTheme.spacing.contentInset
+
     // Round-8 037: the 320dp pane keeps the rows full-width with their own 4dp
     // outer margin — no 840dp box inside a constrained pane, no host inset.
     LazyColumn(
         state = listState,
         modifier = modifier,
-        contentPadding = PaddingValues(vertical = AppSpacing.lg),
-        verticalArrangement = Arrangement.spacedBy(AppSpacing.sm),
+        contentPadding = PaddingValues(vertical = AppUiTheme.spacing.bodyVerticalPadding),
+        verticalArrangement = Arrangement.spacedBy(AppUiTheme.spacing.listGap),
     ) {
         configurationListItems(
             configurations = configurations,
@@ -534,10 +516,10 @@ private fun ConfigurationList(
             deleteEnabled = deleteEnabled,
             rowModifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = AppLayout.localeRowOuterMargin),
+                .padding(horizontal = rowInset),
             emptyStateModifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = AppLayout.contentFrameMargin),
+                .padding(horizontal = contentInset),
         )
     }
 }
@@ -557,77 +539,16 @@ private fun ConfigurationListItem(
         DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.SHORT)
             .format(Date(configuration.createdAt))
     }
-    val palette = AppUiTheme.palette
-    // Round-8 037: same anatomy as the locale rows — normal rows transparent on
-    // the page background, only a real selection paints its container (4dp from
-    // the frame edge via the caller's outer margin); no card shell or shadow.
-    val contentColor = if (isSelected) palette.onSelected else palette.surfaceContent
-    val containerColor = if (isSelected) palette.selected else Color.Transparent
-
-    Row(
-        modifier = modifier
-            .fillMaxWidth()
-            .heightIn(min = AppLayout.localeChoiceRowMinHeight)
-            .clip(RoundedCornerShape(AppComponentDefaults.rowCornerRadius))
-            .background(containerColor)
-            .combinedClickable(
-                onClick = onOpen,
-                onLongClick = onExport,
-            )
-            .padding(
-                start = AppSpacing.md,
-                top = AppSpacing.md,
-                end = 0.dp,
-                bottom = AppSpacing.md,
-            ),
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.spacedBy(AppSpacing.md),
-    ) {
-        // No miuix bookmark glyph; the project vector is drawn by the
-        // backend icon control (asset exception). Explicit 24dp glyph.
-        AppIcon(
-            imageVector = Icons.Outlined.Bookmarks,
-            contentDescription = null,
-            tint = contentColor,
-            modifier = Modifier.size(24.dp),
-        )
-        Column(
-            modifier = Modifier.weight(1f),
-            verticalArrangement = Arrangement.spacedBy(AppSpacing.xs),
-        ) {
-            AppText(
-                text = stringResource(R.string.configuration_saved_at, formattedDate),
-                style = AppComponentDefaults.titleStyle(),
-                color = contentColor,
-                maxLines = 2,
-                overflow = TextOverflow.Ellipsis,
-            )
-            AppText(
-                text = stringResource(
-                    R.string.configuration_app_count,
-                    configuration.appCount,
-                ),
-                style = AppComponentDefaults.metadataStyle(),
-                color = contentColor,
-                maxLines = 1,
-                overflow = TextOverflow.Ellipsis,
-            )
-        }
-        // 48dp touch slot with the 24dp glyph centered: the glyph's right edge
-        // lands 16dp from the readable frame, matching the leading foreground.
-        AppIconButton(
-            onClick = onDelete,
-            enabled = deleteEnabled,
-            modifier = Modifier.size(AppLayout.appListSelectionSlotWidth),
-        ) {
-            AppIcon(
-                imageVector = AppSymbolVector(AppSymbol.Delete),
-                contentDescription = stringResource(R.string.delete_configuration),
-                tint = contentColor,
-                modifier = Modifier.size(24.dp),
-            )
-        }
-    }
+    AppListRow(
+        title = stringResource(R.string.configuration_saved_at, formattedDate),
+        subtitle = stringResource(R.string.configuration_app_count, configuration.appCount),
+        selected = isSelected, onClick = onOpen, onLongClick = onExport, modifier = modifier,
+        trailing = {
+            AppIconButton(onClick = onDelete, enabled = deleteEnabled, modifier = Modifier.size(48.dp)) {
+                AppSymbolIcon(AppSymbol.Delete, stringResource(R.string.delete_configuration), modifier = Modifier.size(24.dp))
+            }
+        },
+    )
 }
 
 private fun SavedLocaleConfiguration.exportFileName(): String {

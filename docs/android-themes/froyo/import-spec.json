@@ -1,0 +1,21 @@
+{
+  "version": "android-2.2_r1 / 71beeab14a891297b6658c4aeb47557083091aa1",
+  "archiveName": "froyo-res.tar.gz",
+  "archiveUrl": "https://android.googlesource.com/platform/frameworks/base/+archive/71beeab14a891297b6658c4aeb47557083091aa1/core/res/res.tar.gz",
+  "archiveSha256": "537ba6c97636deb2db2800bf4e1e4a97d85e905b6360fd6362476a1512874367",
+  "prefix": "froyo_",
+  "sourcePathPrefix": "core/res/res/",
+  "license": "Apache-2.0",
+  "roots": [
+    "drawable/progress_indeterminate_horizontal",
+    "drawable/btn_dropdown"
+  ],
+  "extraFiles": [],
+  "referenceFiles": [
+    "layout/tab_indicator.xml",
+    "drawable/tab_indicator.xml",
+    "drawable/btn_default.xml",
+    "drawable/edit_text.xml"
+  ],
+  "levelDrivenRotations": []
+}

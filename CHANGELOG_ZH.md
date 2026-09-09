@@ -4,6 +4,38 @@
 
 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.0.0/)。
 
+## 27.2 (2026-09-09)
+
+### 新增
+
+界面主题扩展为 8 个家族、11 个变体。在原有 Material You / Material Design 3（Android 12–15）和 miuix 扩展风格之外，新增：
+
+| 主题家族 | Android 版本与变体 |
+|---|---|
+| 经典 Android | Android 2.0 Eclair、Android 2.2 Froyo、Android 2.3 Gingerbread |
+| Honeycomb | Android 3.0–3.2 Honeycomb，以 Android 3.0 为基准 |
+| Holo | Android 4.0 Ice Cream Sandwich · 经典蓝色、Android 4.4 KitKat · 灰白 |
+| Material Design | Android 5.0–8.1，以 Android 5.0 Lollipop 为基准 |
+| Material Design 2 Rounded | Android 9–11 时期的圆润 Material Design 2 风格 |
+| Material Design 3 Expressive | Android 16 及以后的表达性设计风格 |
+
+- 增加独立设置页面，集中管理外观、应用列表、语言显示和浏览操作。
+- 增加独立于主题的明亮、深色和跟随系统显示模式；主题与细节风格按 Android 版本排序，展示完整名称与说明，并记住各家族上次使用的变体。
+- 增加系统字体兼容、系统应用、包名、应用类型、地区旗帜、横滑切页、双击回顶和记住上次页面等持久化选项。
+- 五个主页面支持手势横滑正文，标题和导航栏保持固定；宽屏侧栏支持双击回顶。
+- 正式安装包提供 universal、arm64-v8a、armeabi-v7a、x86 和 x86_64 下载选项。
+
+### 优化
+
+- 各主题采用对应的控件、文字、导航、菜单和窗口风格，共用应用语言、系统语言、批量设置及配置功能。
+- 完善开关滑块的拖动、松手和取消反馈，增加玻璃与普通底栏切换时的滑出/滑入动画。
+- 统一同一主题各页面的内容边距、连续列表与分类标题对齐，适配长名称、字体放大和宽屏布局。
+- 精简关于页，保留必要使用条件、地区显示声明、项目链接和许可归属；四种界面语言同步更新。
+
+### 修复
+
+- 保留系统语言草稿，避免初次读取完成或返回页面时覆盖未保存的编辑。
+
 ## 27.1 (2026-09-07)
 
 ### 新增

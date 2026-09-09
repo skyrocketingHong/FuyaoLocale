@@ -5,12 +5,12 @@
 <h1 align="center">Fuyao Locale</h1>
 
 <p align="center">
-  用于查看、管理和保存 Android 应用独立语言配置的 Material 3 工具
+  用于查看、管理和保存 Android 应用独立语言配置的工具
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Android-13%2B-3DDC84?logo=android&amp;logoColor=white" alt="Android 13 或更高版本">
-  <img src="https://img.shields.io/badge/version-27.0-4F6B00" alt="版本 27.0">
+  <img src="https://img.shields.io/badge/version-27.2-4F6B00" alt="版本 27.2">
   <img src="https://img.shields.io/badge/Kotlin-2.4.10-7F52FF?logo=kotlin&amp;logoColor=white" alt="Kotlin 2.4.10">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-AGPL--3.0--only-blue" alt="AGPL-3.0-only 许可证"></a>
 </p>
@@ -46,7 +46,7 @@ Fuyao Locale 是基于 [VegaBobo/Language-Selector](https://github.com/VegaBobo/
 
 - 按应用名称或包名直接筛选首页主列表，不创建独立的搜索结果列表。
 - 仅展示已设置非默认语言的应用。
-- 显示或隐藏系统应用；系统应用默认展示。
+- 显示或隐藏系统应用；默认展示，筛选选择会保存并与设置页同步。
 - 支持按应用名称、包名、Locale、修改状态和应用类型排序，并可切换升序或降序。
 - 通过下拉刷新重新读取应用和 Locale 快照。
 
@@ -57,7 +57,7 @@ Fuyao Locale 是基于 [VegaBobo/Language-Selector](https://github.com/VegaBobo/
 - 同时展示当前 Fuyao Locale 界面语言中的名称和语言自称。
 - 默认将目标应用当前实际使用的语言置顶，其余语言按当前 Fuyao Locale 界面语言中的名称排序；使用“系统默认”的应用以设备当前系统 Locale 作为实际语言。
 - 语言组支持按推荐顺序、界面语言名称、语言自称、语言标签和变体数量排序；语言变体及搜索结果支持按推荐顺序、界面语言名称、语言自称、语言标签和标签层级排序，两级列表均可切换升序或降序。
-- 通过系统 Emoji 渲染器展示地区国旗；没有对应国旗时，完整显示两位或三位语言/书写系统字母标识。
+- 可选通过系统 Emoji 渲染器展示地区旗帜；关闭后显示地区或文字代码，没有对应旗帜时保留语言/书写系统标识。
 - 支持搜索语言目录、置顶常用语言，并通过快捷设置磁贴循环切换置顶语言。
 - 语言目录、搜索结果和语言变体子列表分别保存独立的滚动位置；切换排序方式时只将当前列表返回起始位置。
 
@@ -72,16 +72,23 @@ Fuyao Locale 是基于 [VegaBobo/Language-Selector](https://github.com/VegaBobo/
 - 长按已保存配置，通过标准 `CreateDocument` 流程导出文件。
 - 紧凑屏幕使用独立详情页，宽屏使用列表—详情布局。
 
-### Material 3 与自适应交互
+### 界面主题与自适应交互
 
-- 使用原生 Material 3 页面、组件、语义颜色、字体层级和明暗主题。
-- 首页、配置和关于三个一级页面：紧凑屏幕使用底部导航，宽屏使用 Navigation Rail。
+- 八个一级主题家族：经典 Android（Android 2.0–2.3）、Honeycomb（Android 3.0–3.2）、Holo（Android 4.0–4.4）、Material Design（Android 5.0–8.1）、Material Design 2 Rounded（Android 9–11）、Material You / Material Design 3（Android 12–15）、Material Design 3 Expressive（Android 16+）及 miuix 扩展风格（本应用运行于 Android 13+）。经典 Android 默认 Gingerbread，并保留 Eclair、Froyo；Holo 保留 ICS 蓝色与 KitKat 灰白变体，共 11 个稳定变体。
+- Material 使用固定主色、纸面阴影和初代涟漪；Material Rounded 使用原生 Material 2、中性表面和固定蓝色强调；Material You 使用壁纸配色与常规 Material 3；Expressive 使用弹性动效、强调排版、形变按钮、动态加载指示和紧凑导航栏。详见[Material 系列说明](docs/android-themes/MATERIAL_GENERATIONS.md)。
+- 明亮、深色、跟随系统三种显示模式独立于主题。主题家族与细节变体分开选择，按 Android 版本排序并显示完整名称；保留旧选择，记住各家族上次使用的变体。复古主题使用固定年代的框架资源；默认使用系统字体兼容中文与字重，也可切回年代原版字体。
+- 设置页按外观、应用列表、语言显示和浏览操作分组，提供系统应用、包名、应用类型、地区旗帜、横滑切页、双击回顶与记住上次页面等持久化选项；复古主题保留已保存的现代效果偏好，同时禁用对应效果。
+- 应用、系统语言、配置、设置、关于五个一级页面：现代主题在紧凑屏幕使用底部导航，宽屏使用 Navigation Rail；复古主题使用各年代的顶部标签栏。
+- 五个主页面通过HorizontalPager随手势横向移动正文，标题栏、标签栏和底部或侧边导航保持固定。各页的搜索、筛选、滚动和草稿独立保留；详情页继续使用返回导航。标签单击立即切页，双击回顶，关闭双击后仍保留键盘与无障碍入口。
+- KitKat采用白色选中指示与灰阶强调，经典2.x采用原始橙黄焦点样式；Froyo另行保留2.2的下拉状态和进度资源。
 - 展开窗口使用列表—详情布局，并限制正文最大宽度以保证可读性。
-- 页面顶部仅展示文本标题，返回和上下文操作保留在 Top App Bar 对应语义位置。
-- 应用详情和语言项目使用同一个带稳定 key 的惰性列表，复用统一对齐 Token；过长标签使用自动滚动展示。
+- 标题栏、搜索、菜单和多选操作按各年代呈现，保留相同的应用操作。
+- 应用详情和语言项目使用带稳定 key 的惰性列表，按主题设置间距并支持长标签。
 - 支持包括 HyperOS 在内的全面屏手势和 Edge-to-Edge 绘制。
 - 为页面导航、搜索、多选、Bottom Sheet、语言变体层级和宽屏详情状态提供预测性返回。
 - Fuyao Locale 自身支持英文、简体中文、日文和巴西葡萄牙文界面。
+
+资源出处、各主题实现覆盖和仍需进行的设备／历史原版检查见[Android 主题验证记录](docs/android-themes/ACCEPTANCE.md)。构建结果不代表与历史 Android 系统逐像素一致。
 
 ## 使用条件
 
@@ -132,17 +139,25 @@ Fuyao Locale 是基于 [VegaBobo/Language-Selector](https://github.com/VegaBobo/
 ./gradlew :app:assembleRelease
 ~~~
 
-Release APK 输出路径：
+Release APK 输出到 `app/build/outputs/apk/release/`，四种构建类型统一采用以下文件名：
 
 ~~~text
-app/build/outputs/apk/release/app-release.apk
+FuyaoLocale-<包名>-<营销版本>(<BuildNumber>)-<架构>-<构建类型>.apk
 ~~~
 
-安装到已连接设备：
+版本部分合并显示营销版本与构建标识，例如 `27.2(1C82)`。Android versionName 和 versionCode 仍保留在 APK 及构建元数据中，不再重复写入文件名。每种构建类型生成五个 APK：包含全部四种架构的 `universal`，以及独立的 `arm64-v8a`、`armeabi-v7a`、`x86`、`x86_64` 分包。字段统一使用连字符分隔，架构名称保留正式拼写，包括 `x86_64` 中的下划线。构建类型为 `release`、`debug`、`releaseUnsigned` 或 `debugUnsigned`，包名自动包含该变体的后缀；同时构建四种类型时共生成 20 个 APK。
+
+
+27.2 使用 `1C` 构建系列，序号统计27.1提交后的构建调用次数。该提交时累计计数为36，因此累计第118次构建对应 `1C82`，Android versionCode 为 `272082`。根目录已忽略的 `.build-counter` 继续保存累计次数，不因迁移而清零；同次调用的所有变体共用序号，失败构建仍消耗已分配编号。
+
+从构建元数据获取当前 universal Release APK，再安装到已连接设备：
 
 ~~~bash
-adb install -r app/build/outputs/apk/release/app-release.apk
+FUYAO_LOCALE_APK="$(python3 -c 'import json,pathlib; p=pathlib.Path("app/build/outputs/apk/release"); m=json.loads((p/"output-metadata.json").read_text()); print(p/next(e["outputFile"] for e in m["elements"] if not e.get("filters")))')"
+adb install -r "$FUYAO_LOCALE_APK"
 ~~~
+
+在仓库根目录完成构建后执行。即使目录留有旧 APK，也会按元数据选择当前产物。缺少元数据时先完成 Release 构建；安装成功应显示 `Success`，`-r` 保留已有应用数据。这个 shell 变量无需额外清理。
 
 ### 签名与构建变体
 

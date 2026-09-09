@@ -1,5 +1,9 @@
 package ing.fuyaoskyrocket.applocale.ui.systemlanguages
 
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppReorderRow
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppDragSurface
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppToolbarAction
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppToolbarActions
 import androidx.compose.animation.core.spring
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -11,7 +15,6 @@ import androidx.compose.foundation.layout.consumeWindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.isImeVisible
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.padding
@@ -26,6 +29,9 @@ import androidx.compose.material.icons.outlined.Save
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.repeatOnLifecycle
+import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -37,7 +43,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.input.key.Key
-import androidx.compose.ui.input.key.KeyEvent
 import androidx.compose.ui.input.key.KeyEventType
 import androidx.compose.ui.input.key.isCtrlPressed
 import androidx.compose.ui.input.key.isMetaPressed
@@ -53,12 +58,9 @@ import androidx.compose.ui.semantics.CustomAccessibilityAction
 import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.semantics.customActions
 import androidx.compose.ui.semantics.semantics
-import androidx.compose.ui.text.style.TextOverflow
-import androidx.compose.ui.unit.Dp
-import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
-import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import ing.fuyaoskyrocket.applocale.ui.screen.pageHiltViewModel as hiltViewModel
+import ing.fuyaoskyrocket.applocale.ui.screen.collectPageUiState
 import ing.fuyaoskyrocket.applocale.R
 import ing.fuyaoskyrocket.applocale.model.LocaleOption
 import ing.fuyaoskyrocket.applocale.ui.components.AppNavigationDestination
@@ -68,8 +70,6 @@ import ing.fuyaoskyrocket.applocale.ui.designsystem.AppComponentDefaults
 import ing.fuyaoskyrocket.applocale.ui.designsystem.AppLayout
 import ing.fuyaoskyrocket.applocale.ui.designsystem.AppMotion
 import ing.fuyaoskyrocket.applocale.ui.designsystem.AppSpacing
-import ing.fuyaoskyrocket.applocale.ui.designsystem.AppThemePreferences
-import ing.fuyaoskyrocket.applocale.ui.designsystem.AppThemeStyle
 import ing.fuyaoskyrocket.applocale.ui.designsystem.AppUiTheme
 import ing.fuyaoskyrocket.applocale.ui.designsystem.LocalBottomDockMetrics
 import ing.fuyaoskyrocket.applocale.ui.designsystem.listBottomReserve
@@ -84,7 +84,7 @@ import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppScaffold
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppSnackbarHost
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppSurface
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppSymbol
-import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppSymbolVector
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppSymbolIcon
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppText
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppTopAppBar
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.rememberAppSnackbarHostState
@@ -93,22 +93,8 @@ import ing.fuyaoskyrocket.applocale.ui.screen.TabScrollCoordinator
 import ing.fuyaoskyrocket.applocale.ui.screen.TabScrollToTopConsumer
 import ing.fuyaoskyrocket.applocale.ui.screen.tabScrollToTopKeyAction
 
-/** Elevation of the floating drag overlay; matches the lifted-row look of the old in-row drag. */
-private val DragOverlayShadowElevation = 6.dp
 
-/**
- * Borderless AppIconButton footprint (48dp Material, 40dp miuix), mirrored by the
- * static overlay icons so the floating row wraps text exactly like the real one.
- */
-private val overlayIconButtonSize: Dp
-    @Composable get() = if (AppThemePreferences.style == AppThemeStyle.MIUIX) 40.dp else 48.dp
 
-/**
- * Global Android language-order editor.
- *
- * The list comes from the system Configuration rather than Locale.getAvailableLocales(), so
- * OEM-provided entries such as zh-CN remain available and stay first in the shared picker.
- */
 @OptIn(androidx.compose.foundation.layout.ExperimentalLayoutApi::class)
 @Composable
 fun SystemLanguagesScreen(
@@ -122,7 +108,7 @@ fun SystemLanguagesScreen(
     viewModel: SystemLanguagesViewModel = hiltViewModel(),
     tabScrollCoordinator: TabScrollCoordinator? = null,
 ) {
-    val uiState by viewModel.uiState.collectAsStateWithLifecycle()
+    val uiState by viewModel.uiState.collectPageUiState()
     val snackbarHostState = rememberAppSnackbarHostState()
     val context = LocalContext.current
     var showLanguagePicker by rememberSaveable { mutableStateOf(false) }
@@ -166,10 +152,12 @@ fun SystemLanguagesScreen(
         )
     }
 
+    val lifecycleOwner = LocalLifecycleOwner.current
     LaunchedEffect(hasGrantedShizukuPermission) {
         if (hasGrantedShizukuPermission) viewModel.load()
     }
-    LaunchedEffect(Unit) {
+    LaunchedEffect(viewModel, lifecycleOwner) {
+        lifecycleOwner.lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
         viewModel.events.collect { event ->
             val message = when (event) {
                 SystemLanguagesEvent.Saved -> R.string.system_languages_saved
@@ -181,46 +169,24 @@ fun SystemLanguagesScreen(
             }
             snackbarHostState.showSnackbar(message = context.getString(message))
         }
+        }
     }
 
     AppScaffold(
+        topLevelNavigation = true,
         topBar = {
             AppTopAppBar(
                 title = stringResource(R.string.system_languages),
                 actions = {
-                    // Add sits on the top-right (round-5 019-B); refreshing moved
-                    // to the pull gesture, the a11y action and Ctrl+R.
-                    AppIconButton(
-                        onClick = { showLanguagePicker = true },
-                        enabled = hasGrantedShizukuPermission && !uiState.isLoading &&
-                            !uiState.isSaving && !uiState.isRefreshing,
-                    ) {
-                        AppIcon(
-                            imageVector = AppSymbolVector(AppSymbol.Add),
-                            contentDescription = stringResource(R.string.add_system_language),
-                        )
-                    }
-                    AppIconButton(
-                        onClick = viewModel::save,
-                        enabled = hasGrantedShizukuPermission &&
-                            uiState.hasUnsavedChanges &&
-                            !uiState.isSaving &&
-                            !uiState.isRefreshing,
-                    ) {
-                        if (uiState.isSaving) {
-                            AppCircularProgressIndicator(
-                                modifier = Modifier.size(AppSpacing.lg),
-                                strokeWidth = AppSpacing.xs / 2,
-                            )
-                        } else {
-                            // No miuix save glyph; the project vector is drawn by
-                            // the backend icon control (asset exception).
-                            AppIcon(
-                                imageVector = Icons.Outlined.Save,
-                                contentDescription = stringResource(R.string.save_system_languages),
-                            )
-                        }
-                    }
+                    AppToolbarActions(listOf(
+                        AppToolbarAction(stringResource(R.string.refresh), viewModel::refresh, symbol = AppSymbol.Refresh,
+                            enabled = !uiState.isSaving, refreshAlternative = true),
+                        AppToolbarAction(stringResource(R.string.add_system_language), { showLanguagePicker = true }, symbol = AppSymbol.Add,
+                            enabled = hasGrantedShizukuPermission && !uiState.isLoading && !uiState.isSaving && !uiState.isRefreshing),
+                        AppToolbarAction(stringResource(R.string.save_system_languages), viewModel::save, icon = Icons.Outlined.Save,
+                            enabled = hasGrantedShizukuPermission && uiState.hasUnsavedChanges && !uiState.isSaving && !uiState.isRefreshing,
+                            loading = uiState.isSaving),
+                    ))
                 },
             )
         },
@@ -351,7 +317,7 @@ private fun SystemLanguagesList(
     Box(
         modifier = modifier
             .fillMaxSize()
-            .padding(horizontal = AppLayout.contentFrameMargin)
+            .padding(horizontal = AppUiTheme.spacing.contentInset)
             .onGloballyPositioned(reorderState::hostPositioned)
             .semantics {
                 customActions = listOf(
@@ -564,8 +530,8 @@ private fun SystemLocaleRow(
                         onClick = onRemove,
                         enabled = canRemove,
                     ) {
-                        AppIcon(
-                            imageVector = AppSymbolVector(AppSymbol.Delete),
+                        AppSymbolIcon(
+                            symbol = AppSymbol.Delete,
                             contentDescription = stringResource(R.string.remove_system_language),
                         )
                     }
@@ -581,36 +547,8 @@ private fun SystemLocaleRowContent(
     locale: LocaleOption,
     trailing: @Composable () -> Unit,
 ) {
-    Row(
-        // No horizontal padding here: the host Box already applies the shared
-        // 16dp frame and the drag overlay measures through this same content.
-        modifier = Modifier
-            .fillMaxWidth()
-            .heightIn(min = AppLayout.appListItemMinHeight),
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.spacedBy(AppSpacing.md),
-    ) {
-        LocaleBadge(languageTag = locale.languageTag, preferRegion = true)
-        Column(
-            modifier = Modifier.weight(1f),
-            verticalArrangement = Arrangement.spacedBy(AppSpacing.xs),
-        ) {
-            AppText(
-                text = locale.localizedDisplayName,
-                style = AppUiTheme.textStyles.itemTitle,
-                maxLines = 2,
-                overflow = TextOverflow.Ellipsis,
-            )
-            AppText(
-                text = "${locale.languageTag} · ${locale.displayName}",
-                style = AppUiTheme.textStyles.metadata,
-                maxLines = 1,
-                overflow = TextOverflow.Ellipsis,
-                color = AppUiTheme.palette.muted,
-            )
-        }
-        trailing()
-    }
+    AppReorderRow(locale.localizedDisplayName, "${locale.languageTag} · ${locale.displayName}",
+        leading = { LocaleBadge(locale.languageTag, preferRegion = true) }, trailing = trailing)
 }
 
 /**
@@ -630,24 +568,16 @@ private fun SystemLocaleDragOverlay(
     val density = LocalDensity.current
     val width = with(density) { state.overlayWidth.toDp() }
     val height = with(density) { state.overlayHeight.toDp() }
-    val rowShape = RoundedCornerShape(AppComponentDefaults.rowCornerRadius)
     Box(
         modifier = Modifier
             .zIndex(1f)
             .graphicsLayer {
                 translationY = state.overlayTop
-                shadowElevation = DragOverlayShadowElevation.toPx()
-                shape = rowShape
+
             }
             .size(width, height),
     ) {
-        AppSurface(
-            modifier = Modifier
-                .fillMaxSize()
-                .clearAndSetSemantics { },
-            shape = rowShape,
-            color = AppUiTheme.palette.secondarySurface,
-        ) {
+        AppDragSurface(Modifier.fillMaxSize().clearAndSetSemantics { }) {
             SystemLocaleRowContent(
                 locale = locale,
                 trailing = {
@@ -664,11 +594,11 @@ private fun SystemLocaleDragOverlay(
                             )
                         }
                         Box(
-                            modifier = Modifier.size(overlayIconButtonSize),
+                            modifier = Modifier.size(AppUiTheme.metrics.iconButtonSize),
                             contentAlignment = Alignment.Center,
                         ) {
-                            AppIcon(
-                                imageVector = AppSymbolVector(AppSymbol.Delete),
+                            AppSymbolIcon(
+                                symbol = AppSymbol.Delete,
                                 contentDescription = null,
                             )
                         }

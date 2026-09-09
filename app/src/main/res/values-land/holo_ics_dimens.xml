@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Landscape action bar height, AOSP values-land/dimens.xml. -->
+<resources>
+    <dimen name="holo_ics_action_bar_height">40dp</dimen>
+</resources>

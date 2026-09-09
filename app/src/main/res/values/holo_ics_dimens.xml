@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Holo widget metrics from AOSP android-4.0.4_r2.1 dimens.xml/styles.xml.
+     Apache-2.0. -->
+<resources>
+    <dimen name="holo_ics_action_bar_height">48dp</dimen>
+    <dimen name="holo_ics_action_bar_title_text_size">18sp</dimen>
+    <dimen name="holo_ics_action_bar_subtitle_text_size">14sp</dimen>
+    <dimen name="holo_ics_action_bar_tab_padding">16dp</dimen>
+    <dimen name="holo_ics_action_button_min_width">56dp</dimen>
+    <dimen name="holo_ics_button_min_height">48dp</dimen>
+    <dimen name="holo_ics_button_min_width">64dp</dimen>
+    <dimen name="holo_ics_list_preferred_item_height">64dp</dimen>
+    <dimen name="holo_ics_list_preferred_item_height_small">48dp</dimen>
+    <dimen name="holo_ics_list_preferred_item_height_large">80dp</dimen>
+    <dimen name="holo_ics_list_preferred_item_padding">8dp</dimen>
+    <dimen name="holo_ics_dialog_list_preferred_item_padding">16dp</dimen>
+    <dimen name="holo_ics_switch_min_width">96dp</dimen>
+    <dimen name="holo_ics_switch_thumb_text_padding">12dp</dimen>
+    <dimen name="holo_ics_switch_padding">16dp</dimen>
+    <dimen name="holo_ics_alert_dialog_title_height">64dp</dimen>
+    <dimen name="holo_ics_alert_dialog_button_bar_height">48dp</dimen>
+    <integer name="holo_ics_dialog_enter_duration">220</integer>
+    <integer name="holo_ics_dialog_short_duration">150</integer>
+</resources>

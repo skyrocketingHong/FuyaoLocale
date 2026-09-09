@@ -122,6 +122,16 @@ class LocalePickerViewModel @Inject constructor(
                     it.copy(variantSortOption = option, variantSortAscending = ascending)
                 }
             }
+            is LocalePickerAction.SetGroupSort -> {
+                _uiState.update {
+                    it.copy(groupSortOption = action.option, groupSortAscending = action.ascending)
+                }
+            }
+            is LocalePickerAction.SetVariantSort -> {
+                _uiState.update {
+                    it.copy(variantSortOption = action.option, variantSortAscending = action.ascending)
+                }
+            }
             is LocalePickerAction.PinClicked,
             is LocalePickerAction.UnpinClicked,
             is LocalePickerAction.LocaleSelected -> Unit

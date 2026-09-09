@@ -1,6 +1,8 @@
 package ing.fuyaoskyrocket.applocale.ui.components
 
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
+import ing.fuyaoskyrocket.applocale.ui.designsystem.AppUiTheme
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxHeight
@@ -45,6 +47,7 @@ fun AppResultsList(
             state = state,
             modifier = Modifier.fillMaxHeight(),
             contentPadding = contentPadding,
+            horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             if (header != null) {
                 item(key = "list_header", contentType = "header") {
@@ -72,6 +75,7 @@ fun AppResultsList(
                     onClick = { onAppClick(app) },
                     onLongClick = { onAppLongClick(app) },
                     query = query,
+                    modifier = Modifier.readableContentWidth().padding(horizontal = AppUiTheme.spacing.rowOuterInset),
                 )
             }
         }

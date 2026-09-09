@@ -39,8 +39,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import ing.fuyaoskyrocket.applocale.ui.designsystem.material.MaterialAppTheme
-import ing.fuyaoskyrocket.applocale.ui.designsystem.miuix.MiuixAppTheme
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.channels.BufferOverflow
 import kotlinx.coroutines.delay
@@ -52,6 +50,7 @@ interface AppearanceRequester {
     /** [restoreFocus] identifies the calling control so the transition gate can
      * hand keyboard focus back once the content is interactive again. */
     fun requestTheme(style: AppThemeStyle, restoreFocus: FocusRequester? = null)
+    fun requestColorMode(mode: AppColorMode, restoreFocus: FocusRequester? = null)
     fun requestMoreBlur(enabled: Boolean)
     fun requestGlass(enabled: Boolean)
     fun requestAppLocale(tag: String?)
@@ -93,14 +92,27 @@ private fun snapAnimations(): Boolean {
 private fun protectiveBackground(appliedStyle: AppThemeStyle, darkTheme: Boolean): Color {
     val context = LocalContext.current
     return remember(appliedStyle, darkTheme, context) {
-        if (appliedStyle == AppThemeStyle.MIUIX) {
-            if (darkTheme) {
-                top.yukonga.miuix.kmp.theme.darkColorScheme().background
-            } else {
-                top.yukonga.miuix.kmp.theme.lightColorScheme().background
+        when (appliedStyle) {
+            AppThemeStyle.MATERIAL_LOLLIPOP -> if (darkTheme) Color(0xff303030) else Color(0xffeeeeee)
+            AppThemeStyle.ECLAIR, AppThemeStyle.FROYO, AppThemeStyle.GINGERBREAD -> if (darkTheme) Color.Black else Color.White
+            AppThemeStyle.MATERIAL_ROUNDED -> if (darkTheme) Color(0xff121212) else Color(0xfffafafa)
+            AppThemeStyle.HOLO_HONEYCOMB -> if (darkTheme) Color.Black else Color(0xfff3f3f3)
+            AppThemeStyle.MIUIX -> {
+                if (darkTheme) {
+                    top.yukonga.miuix.kmp.theme.darkColorScheme().background
+                } else {
+                    top.yukonga.miuix.kmp.theme.lightColorScheme().background
+                }
             }
-        } else {
-            if (darkTheme) DarkColorScheme.background else LightColorScheme.background
+
+            AppThemeStyle.HOLO_KITKAT ->
+                if (darkTheme) Color(0xff000000) else Color(0xffe8e8e8)
+
+            AppThemeStyle.HOLO_ICS ->
+                if (darkTheme) Color(0xff000000) else Color(0xfff3f3f3)
+
+            AppThemeStyle.MATERIAL_YOU, AppThemeStyle.MATERIAL3_EXPRESSIVE ->
+                if (darkTheme) DarkColorScheme.background else LightColorScheme.background
         }
     }
 }
@@ -120,6 +132,8 @@ fun AppAppearanceHost(
     content: @Composable () -> Unit,
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
+    val resolvedDarkTheme = uiState.applied.colorMode.isDark(darkTheme)
+    AppSystemBars(style = uiState.applied.style, darkTheme = resolvedDarkTheme)
     val context = LocalContext.current
     val snap = snapAnimations()
 
@@ -187,6 +201,9 @@ fun AppAppearanceHost(
                 val requested = uiState.requested
                 if (requested.style != uiState.applied.style) {
                     AppThemePreferences.setStyle(context, requested.style)
+                }
+                if (requested.colorMode != uiState.applied.colorMode) {
+                    AppThemePreferences.setColorMode(context, requested.colorMode)
                 }
                 var waitingKey: String? = null
                 if (uiState.hasPendingLocale) {
@@ -289,7 +306,7 @@ fun AppAppearanceHost(
     }
 
     val appliedStyle = uiState.applied.style
-    val targetBackground = protectiveBackground(appliedStyle, darkTheme)
+    val targetBackground = protectiveBackground(appliedStyle, resolvedDarkTheme)
     val background by animateColorAsState(
         targetValue = targetBackground,
         animationSpec = tween(AppearanceMotion.BackgroundMillis, easing = FastOutSlowInEasing),
@@ -305,6 +322,10 @@ fun AppAppearanceHost(
             }
 
             override fun requestMoreBlur(enabled: Boolean) = viewModel.requestMoreBlur(enabled)
+            override fun requestColorMode(mode: AppColorMode, restoreFocus: FocusRequester?) {
+                pendingRestoreFocus = restoreFocus
+                viewModel.requestColorMode(mode)
+            }
             override fun requestGlass(enabled: Boolean) = viewModel.requestGlass(enabled)
             override fun requestAppLocale(tag: String?) = viewModel.requestAppLocale(tag)
             override fun confirmAppLocaleSheetClosed() =
@@ -371,11 +392,7 @@ fun AppAppearanceHost(
                     }
                 }
             }
-            if (appliedStyle == AppThemeStyle.MIUIX) {
-                MiuixAppTheme(darkTheme = darkTheme, content = gated)
-            } else {
-                MaterialAppTheme(darkTheme = darkTheme, content = gated)
-            }
+            AppThemeProvider(darkTheme = resolvedDarkTheme, style = appliedStyle, content = gated)
         }
     }
 }

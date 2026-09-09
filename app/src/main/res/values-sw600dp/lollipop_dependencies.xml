@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- AOSP, Apache-2.0. See docs/android-themes/lollipop/asset-manifest.json. -->
+<resources>
+<dimen name="lollipop_action_bar_default_height_material">64dp</dimen>
+</resources>

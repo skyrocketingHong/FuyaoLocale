@@ -9,5 +9,6 @@ class FuyaoLocaleApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         AppThemePreferences.initialize(this)
+        ing.fuyaoskyrocket.applocale.data.preferences.AppUserPreferences.initialize(this)
     }
 }

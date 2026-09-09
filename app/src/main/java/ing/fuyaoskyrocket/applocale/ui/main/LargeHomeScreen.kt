@@ -2,36 +2,31 @@ package ing.fuyaoskyrocket.applocale.ui.main
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.TouchApp
 import androidx.compose.runtime.Composable
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
+import ing.fuyaoskyrocket.applocale.ui.designsystem.*
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
-import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import ing.fuyaoskyrocket.applocale.ui.screen.pageHiltViewModel as hiltViewModel
+import ing.fuyaoskyrocket.applocale.ui.screen.collectPageUiState
 import ing.fuyaoskyrocket.applocale.R
 import ing.fuyaoskyrocket.applocale.ui.appinfo.AppInfoScreen
 import androidx.compose.runtime.key
 import ing.fuyaoskyrocket.applocale.ui.appinfo.AppInfoViewModel
-import ing.fuyaoskyrocket.applocale.ui.designsystem.AppComponentDefaults
-import ing.fuyaoskyrocket.applocale.ui.designsystem.AppLayout
 import ing.fuyaoskyrocket.applocale.ui.designsystem.AppSpacing
 import ing.fuyaoskyrocket.applocale.ui.designsystem.AppUiTheme
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppIcon
-import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppPanel
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppListDetailLayout
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppScaffold
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppText
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppTopAppBar
@@ -50,33 +45,22 @@ fun LargeHomeScreen(
     hasGrantedShizukuPermission: Boolean,
     onRequestShizukuPermission: () -> Unit,
     onOpenShizuku: () -> Unit,
+    selectedApp: String?,
+    onSelectApp: (String) -> Unit,
+    onCloseApp: () -> Unit,
+    mainListState: androidx.compose.foundation.lazy.LazyListState,
+    tabScrollCoordinator: ing.fuyaoskyrocket.applocale.ui.screen.TabScrollCoordinator,
     mainViewModel: MainViewModel = hiltViewModel(),
     detailViewModel: AppInfoViewModel = hiltViewModel(),
 ) {
-    var selectedApp by rememberSaveable { mutableStateOf<String?>(null) }
-    val mainUiState by mainViewModel.uiState.collectAsStateWithLifecycle()
+    val mainUiState by mainViewModel.uiState.collectPageUiState()
 
-    Row(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(
-                start = AppLayout.contentFrameMargin,
-                end = AppLayout.contentFrameMargin,
-                bottom = AppSpacing.screenExpanded,
-            ),
-        horizontalArrangement = Arrangement.spacedBy(AppSpacing.paneGap),
-    ) {
-        // A stable-width list pane preserves scanning rhythm as the window grows.
-        AppPanel(
-            modifier = Modifier
-                .width(AppLayout.listPaneWidth)
-                .fillMaxHeight(),
-            cornerRadius = AppComponentDefaults.sectionCornerRadius,
-            color = AppUiTheme.palette.secondarySurface,
-        ) {
+    AppListDetailLayout(contextual = mainUiState.isSelectionMode, list = {
             MainScreen(
                 viewModel = mainViewModel,
-                navigateToAppScreen = { selectedApp = it },
+                navigateToAppScreen = onSelectApp,
+                listState = mainListState,
+                tabScrollCoordinator = tabScrollCoordinator,
                 navigateToSystemLanguages = navigateToSystemLanguages,
                 navigateToConfigurations = navigateToConfigurations,
                 navigateToAbout = navigateToAbout,
@@ -85,20 +69,11 @@ fun LargeHomeScreen(
                 onOpenShizuku = onOpenShizuku,
                 showBottomNavigation = false,
             )
-        }
-
-        // Tonal separation replaces the old one-pixel divider and scales better
-        // across tablets, foldables and desktop-style windows.
-        AppPanel(
-            modifier = Modifier
-                .weight(1f)
-                .fillMaxHeight(),
-            cornerRadius = AppComponentDefaults.sectionCornerRadius,
-            color = AppUiTheme.palette.surface,
-        ) {
+    }, detail = {
             val appId = selectedApp
             if (appId == null) {
                 AppScaffold(
+                    topLevelNavigation = true,
                     topBar = { AppTopAppBar(title = stringResource(R.string.app_language)) },
                     containerColor = AppUiTheme.palette.background,
                 ) { innerPadding ->
@@ -108,16 +83,14 @@ fun LargeHomeScreen(
                 key(appId) {
                     AppInfoScreen(
                         appId = appId,
-                        navigateBack = { selectedApp = null },
+                        navigateBack = onCloseApp,
                         viewModel = detailViewModel,
                         backEnabled = !mainUiState.isSelectionMode && !mainUiState.isSearchActive,
                         interceptNavigationBack = true,
                     )
                 }
             }
-        }
-    }
-
+    })
 }
 
 @Composable

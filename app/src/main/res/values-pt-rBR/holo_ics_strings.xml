@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Verbatim AOSP 4.0.4 values-pt capital_on/capital_off (no pt-rBR directory
+     existed at that commit; pt-rBR falls back to pt). Apache-2.0. -->
+<resources>
+    <string name="holo_ics_switch_on">LIG</string>
+    <string name="holo_ics_switch_off">DESL</string>
+    <string name="appearance_mode">Modo de exibição</string>
+    <string name="appearance_mode_light">Modo claro</string>
+    <string name="appearance_mode_dark">Modo escuro</string>
+    <string name="appearance_mode_system">Seguir o sistema</string>
+</resources>

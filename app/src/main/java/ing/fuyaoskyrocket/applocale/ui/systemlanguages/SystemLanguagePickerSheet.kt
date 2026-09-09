@@ -17,12 +17,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.stringResource
-import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import ing.fuyaoskyrocket.applocale.ui.screen.pageHiltViewModel as hiltViewModel
+import ing.fuyaoskyrocket.applocale.ui.screen.collectPageUiState
 import ing.fuyaoskyrocket.applocale.R
 import ing.fuyaoskyrocket.applocale.model.LocaleOption
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppCircularProgressIndicator
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppModalBottomSheet
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.holoSheetHeightModifier
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.holoSheetListFillModifier
 import ing.fuyaoskyrocket.applocale.ui.languagepicker.LanguagePickerContent
 import ing.fuyaoskyrocket.applocale.ui.languagepicker.LocalePickerAction
 import ing.fuyaoskyrocket.applocale.ui.languagepicker.LocalePickerUiState
@@ -39,7 +41,7 @@ fun SystemLanguagePickerSheet(
     onLocaleSelected: (LocaleOption) -> Unit,
     viewModel: LocalePickerViewModel = hiltViewModel(),
 ) {
-    val pickerState by viewModel.uiState.collectAsStateWithLifecycle()
+    val pickerState by viewModel.uiState.collectPageUiState()
     val displayLocaleTag = LocalConfiguration.current.locales[0].toLanguageTag()
     val existingTags = remember(existingLocales) {
         existingLocales.mapTo(mutableSetOf()) { it.languageTag.lowercase(Locale.ROOT) }
@@ -71,7 +73,7 @@ fun SystemLanguagePickerSheet(
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .fillMaxHeight(0.9f),
+                .then(holoSheetHeightModifier()),
         ) {
             if (selectableState.isLoading) {
                 Box(
@@ -91,7 +93,7 @@ fun SystemLanguagePickerSheet(
                     canPin = false,
                     showSystemDefault = false,
                     backEnabled = visible && selectableState.query.isBlank(),
-                    modifier = Modifier.fillMaxHeight(),
+                    modifier = holoSheetListFillModifier(),
                 )
             }
         }

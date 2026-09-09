@@ -1,21 +1,8 @@
 package ing.fuyaoskyrocket.applocale.ui.components
 
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.EmojiSupportMatch
-import androidx.compose.ui.text.PlatformTextStyle
-import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
-import ing.fuyaoskyrocket.applocale.ui.designsystem.AppLayout
-import ing.fuyaoskyrocket.applocale.ui.designsystem.AppUiTheme
-import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppSurface
-import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppText
+import ing.fuyaoskyrocket.applocale.ui.designsystem.LocalUserPreferences
 import java.util.Locale
 
 /**
@@ -30,59 +17,19 @@ fun LocaleBadge(
     preferRegion: Boolean,
     modifier: Modifier = Modifier,
 ) {
-    val marker = localeMarker(languageTag, preferRegion)
-    // QuietBadge role (020): the flag/letter backing is a non-interactive info
-    // surface, never a selection-coloured one.
-    AppSurface(
-        modifier = modifier.size(AppLayout.localeBadgeSize),
-        shape = RoundedCornerShape(8.dp),
-        color = AppUiTheme.palette.quietContainer,
-        contentColor = AppUiTheme.palette.quietContent,
-    ) {
-        Box(contentAlignment = Alignment.Center) {
-            AppText(
-                text = marker.text,
-                style = marker.textStyle().let { style ->
-                    if (marker.isFlag) {
-                        style.copy(
-                            platformStyle = PlatformTextStyle(
-                                emojiSupportMatch = EmojiSupportMatch.None,
-                            ),
-                        )
-                    } else {
-                        style
-                    }
-                },
-                fontWeight = if (marker.isFlag) FontWeight.Normal else FontWeight.Bold,
-                maxLines = 1,
-            )
-        }
-    }
+    val marker = localeMarker(languageTag, preferRegion, LocalUserPreferences.current.showRegionFlags)
+    ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppBadge(marker.text, marker.isFlag, modifier)
 }
 
-private data class LocaleMarker(
-    val text: String,
-    val isFlag: Boolean,
-)
+private data class LocaleMarker(val text: String, val isFlag: Boolean)
 
-@Composable
-private fun LocaleMarker.textStyle(): TextStyle {
-    val textStyles = AppUiTheme.textStyles
-    return when {
-        isFlag -> textStyles.pageTitle
-        text.length <= 2 -> textStyles.label.copy(fontSize = 14.sp)
-        text.length == 3 -> textStyles.label
-        else -> textStyles.label.copy(fontSize = 11.sp)
-    }
-}
-
-private fun localeMarker(languageTag: String, preferRegion: Boolean): LocaleMarker {
+private fun localeMarker(languageTag: String, preferRegion: Boolean, showFlags: Boolean): LocaleMarker {
     val locale = Locale.forLanguageTag(languageTag)
     val language = locale.language.uppercase(Locale.ROOT)
     val script = locale.script.uppercase(Locale.ROOT)
     val region = locale.country.uppercase(Locale.ROOT)
 
-    if (preferRegion && region.length == 2 && region.all { it in 'A'..'Z' }) {
+    if (preferRegion && showFlags && region.length == 2 && region.all { it in 'A'..'Z' }) {
         return LocaleMarker(text = region.toFlagEmoji(), isFlag = true)
     }
 

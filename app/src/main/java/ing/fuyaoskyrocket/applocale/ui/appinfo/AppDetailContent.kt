@@ -13,8 +13,7 @@ import androidx.compose.ui.unit.dp
 import ing.fuyaoskyrocket.applocale.data.system.AppIconLoader
 import ing.fuyaoskyrocket.applocale.model.LocaleOption
 import ing.fuyaoskyrocket.applocale.ui.components.rememberSystemLocaleTag
-import ing.fuyaoskyrocket.applocale.ui.designsystem.AppLayout
-import ing.fuyaoskyrocket.applocale.ui.designsystem.AppSpacing
+import ing.fuyaoskyrocket.applocale.ui.designsystem.AppUiTheme
 import ing.fuyaoskyrocket.applocale.ui.designsystem.listBottomReserve
 import ing.fuyaoskyrocket.applocale.ui.designsystem.listTopReserve
 import ing.fuyaoskyrocket.applocale.ui.designsystem.readableContentWidth
@@ -39,6 +38,8 @@ fun AppDetailContent(
     backEnabled: Boolean = true,
 ) {
     val systemLocaleTag = rememberSystemLocaleTag()
+    val rowInset = AppUiTheme.spacing.rowOuterInset
+    val contentInset = AppUiTheme.spacing.contentInset
     LanguageGroupTransition(
         groupId = pickerState.selectedGroupId,
         onBack = { onPickerAction(LocalePickerAction.BackToGroups) },
@@ -58,7 +59,7 @@ fun AppDetailContent(
                 top = listTopReserve(contentPadding.calculateTopPadding()),
                 bottom = listBottomReserve(contentPadding.calculateBottomPadding()),
             ),
-            verticalArrangement = Arrangement.spacedBy(AppSpacing.md),
+            verticalArrangement = Arrangement.spacedBy(AppUiTheme.spacing.sectionGap),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             item(key = "header", contentType = "identity") {
@@ -70,7 +71,7 @@ fun AppDetailContent(
                     iconLoader = iconLoader,
                     modifier = Modifier
                         .readableContentWidth()
-                        .padding(horizontal = AppLayout.contentFrameMargin),
+                        .padding(horizontal = contentInset),
                 )
             }
             languagePickerItems(
@@ -85,10 +86,10 @@ fun AppDetailContent(
                 systemLocaleTag = systemLocaleTag,
                 contentModifier = Modifier
                     .readableContentWidth()
-                    .padding(horizontal = AppLayout.contentFrameMargin),
+                    .padding(horizontal = contentInset),
                 rowModifier = Modifier
                     .readableContentWidth()
-                    .padding(horizontal = AppLayout.localeRowOuterMargin),
+                    .padding(horizontal = rowInset),
                 showSearchField = false,
             )
         }

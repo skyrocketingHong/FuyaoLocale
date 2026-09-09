@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Switch ON/OFF labels, verbatim from AOSP android-4.0.4_r2.1
+     core/res/res/values*/strings.xml capital_on/capital_off (hidden API in
+     modern SDKs, so the app carries the era strings itself). Apache-2.0. -->
+<resources>
+    <string name="holo_ics_switch_on">ON</string>
+    <string name="holo_ics_switch_off">OFF</string>
+    <string name="appearance_mode">Display mode</string>
+    <string name="appearance_mode_light">Day mode</string>
+    <string name="appearance_mode_dark">Night mode</string>
+    <string name="appearance_mode_system">Follow system</string>
+</resources>

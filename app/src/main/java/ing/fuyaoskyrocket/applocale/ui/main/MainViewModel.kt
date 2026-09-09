@@ -13,6 +13,9 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import ing.fuyaoskyrocket.applocale.data.repository.AppRepository
+import ing.fuyaoskyrocket.applocale.data.preferences.AppUserPreferences
+import ing.fuyaoskyrocket.applocale.data.preferences.BooleanPreference
+import ing.fuyaoskyrocket.applocale.model.AppListQuery
 import ing.fuyaoskyrocket.applocale.data.repository.ApplyLocaleToAppsUseCase
 import ing.fuyaoskyrocket.applocale.data.repository.LocaleChangeNotifier
 import ing.fuyaoskyrocket.applocale.data.system.AppIconLoader
@@ -34,7 +37,9 @@ class MainViewModel @Inject constructor(
     val appIconLoader: AppIconLoader,
 ) : ViewModel() {
 
-    private val _uiState = MutableStateFlow(MainUiState())
+    private val _uiState = MutableStateFlow(
+        MainUiState(listQuery = AppListQuery(showSystemApps = AppUserPreferences.state.value.showSystemApps)),
+    )
     val uiState: StateFlow<MainUiState> = _uiState.asStateFlow()
 
     /**
@@ -50,6 +55,11 @@ class MainViewModel @Inject constructor(
     }
 
     init {
+        viewModelScope.launch {
+            AppUserPreferences.state.map { it.showSystemApps }.distinctUntilChanged().collect { show ->
+                _uiState.update { it.copy(listQuery = it.listQuery.copy(showSystemApps = show)) }
+            }
+        }
         val cachedApps = appRepository.getCachedApps()
         if (cachedApps != null) {
             _uiState.update {
@@ -179,8 +189,10 @@ class MainViewModel @Inject constructor(
     }
 
     fun toggleShowSystemApps() {
+        val show = !AppUserPreferences.state.value.showSystemApps
+        AppUserPreferences.set(BooleanPreference.ShowSystemApps, show)
         _uiState.update { state ->
-            state.copy(listQuery = state.listQuery.copy(showSystemApps = !state.showSystemApps))
+            state.copy(listQuery = state.listQuery.copy(showSystemApps = show))
         }
     }
 
@@ -201,7 +213,20 @@ class MainViewModel @Inject constructor(
         }
     }
 
+    /**
+     * One-shot explicit sort target (round-9 044): the Holo spinner menu sets
+     * the option and direction in a single update.
+     */
+    fun setSort(option: AppListSortOption?, ascending: Boolean) {
+        _uiState.update { state ->
+            state.copy(
+                listQuery = state.listQuery.copy(sortOption = option, sortAscending = ascending),
+            )
+        }
+    }
+
     fun clearFilters() {
+        AppUserPreferences.set(BooleanPreference.ShowSystemApps, true)
         _uiState.update { state ->
             state.copy(
                 listQuery = state.listQuery.copy(

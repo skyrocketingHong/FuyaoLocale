@@ -32,6 +32,8 @@ import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import kotlinx.coroutines.flow.first
+import androidx.compose.runtime.snapshotFlow
 import top.yukonga.miuix.kmp.blur.LayerBackdrop
 import top.yukonga.miuix.kmp.blur.layerBackdrop
 import top.yukonga.miuix.kmp.blur.rememberLayerBackdrop
@@ -93,7 +95,8 @@ class GlassNavigationBarVisibility(initialPresent: Boolean = false) {
     val isPresent: Boolean get() = presence.currentState || presence.targetState
 
     /** Whether the dock may accept interaction right now. */
-    val canInteract: Boolean get() = isVisible
+    internal var isPresentationReady by mutableStateOf(true)
+    val canInteract: Boolean get() = isVisible && isPresentationReady
 }
 
 val LocalGlassNavigationBarVisibility =
@@ -117,8 +120,25 @@ fun AppChromeHost(
     modifier: Modifier = Modifier,
     content: @Composable () -> Unit,
 ) {
+    // Holo navigation lives in the top tabs under the Action Bar (round-9 042):
+    // the host owns no bottom dock, publishes zero footprint metrics and no
+    // glass visibility, never samples, and lets the page scaffolds place the
+    // tabs under their action bars. Saved modern effect preferences stay put.
+    if (AppUiTheme.policy.navigation != AppNavigationPresentation.AdaptiveBottomOrRail) {
+        CompositionLocalProvider(
+            LocalBottomDockOwner provides false,
+            LocalBottomDockMetrics provides BottomDockMetrics(0.dp, 0.dp, isPresent = false),
+            LocalMoreBlurActive provides false,
+            LocalBlurProgress provides 0f,
+        ) {
+            Box(modifier = modifier.fillMaxSize()) {
+                content()
+            }
+        }
+        return
+    }
     val appearance = AppAppearanceState.fromPreferences()
-    val effectsSupported = isEffectRenderingSupported()
+    val effectsSupported = AppUiTheme.policy.supportsBackdropEffects && isEffectRenderingSupported()
     val glassDock = appearance.liquidGlassNavigationBar && effectsSupported
 
     // The shared presence state must exist before anything reads it: the glass
@@ -133,7 +153,16 @@ fun AppChromeHost(
     // suppression changes made deeper in the tree; the retarget stays in the
     // effect.
     val targetPresent = visibility.isVisible
-    LaunchedEffect(targetPresent) {
+    val form = remember { BottomDockFormState(glassDock) }
+    LaunchedEffect(glassDock, targetPresent) {
+        form.request(glassDock)
+        visibility.isPresentationReady = !form.changing
+        if (form.changing) {
+            visibility.presence.targetState = false
+            snapshotFlow { visibility.presence.isIdle && !visibility.presence.currentState }.first { it }
+            form.finishExit()
+        }
+        visibility.isPresentationReady = true
         visibility.presence.targetState = targetPresent
     }
 
@@ -142,7 +171,7 @@ fun AppChromeHost(
     // dock path leaves it null so glass-drawing widgets fall back to their
     // native rendering. Judging the route alone would swap the bar's form
     // mid-exit.
-    val glassActive = glassDock && (isTopLevelDestination || visibility.isPresent)
+    val glassActive = form.displayedGlass && (isTopLevelDestination || visibility.isPresent)
     // More blur is independent of the glass dock and works in both themes.
     val moreBlurActive = appearance.moreBlur && effectsSupported
     // Interruptible 0..1 progress: retargets from the current value, so a fast

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Fixed Android 5.0 role bindings. Source: docs/android-themes/lollipop. -->
+<resources>
+<attr name="lollipop_colorSwitchThumbNormal" format="color|reference" />
+<style name="LollipopDrawablesDark" parent="android:style/Theme.Material">
+<item name="android:colorBackground">@color/lollipop_background_material_dark</item>
+<item name="android:colorPrimary">@color/lollipop_primary_material_dark</item>
+<item name="android:colorPrimaryDark">@color/lollipop_primary_dark_material_dark</item>
+<item name="android:colorAccent">@color/lollipop_accent_material_dark</item>
+<item name="android:colorControlActivated">@color/lollipop_accent_material_dark</item>
+<item name="android:colorControlHighlight">@color/lollipop_ripple_material_dark</item>
+<item name="android:colorButtonNormal">@color/lollipop_btn_default_material_dark</item>
+<item name="android:textColorPrimary">@color/lollipop_primary_text_material_dark</item>
+<item name="android:textColorSecondary">@color/lollipop_secondary_text_material_dark</item>
+<item name="android:colorControlNormal">@color/lollipop_secondary_text_material_dark</item>
+<item name="android:colorForeground">#ffffffff</item>
+<item name="android:disabledAlpha">@dimen/lollipop_disabled_alpha_material_dark</item>
+<item name="lollipop_colorSwitchThumbNormal">@color/lollipop_switch_thumb_material_dark</item>
+</style>
+<style name="LollipopDrawablesLight" parent="android:style/Theme.Material.Light">
+<item name="android:colorBackground">@color/lollipop_background_material_light</item>
+<item name="android:colorPrimary">@color/lollipop_primary_material_light</item>
+<item name="android:colorPrimaryDark">@color/lollipop_primary_dark_material_light</item>
+<item name="android:colorAccent">@color/lollipop_accent_material_light</item>
+<item name="android:colorControlActivated">@color/lollipop_accent_material_light</item>
+<item name="android:colorControlHighlight">@color/lollipop_ripple_material_light</item>
+<item name="android:colorButtonNormal">@color/lollipop_btn_default_material_light</item>
+<item name="android:textColorPrimary">@color/lollipop_primary_text_material_light</item>
+<item name="android:textColorSecondary">@color/lollipop_secondary_text_material_light</item>
+<item name="android:colorControlNormal">@color/lollipop_secondary_text_material_light</item>
+<item name="android:colorForeground">#ff000000</item>
+<item name="android:disabledAlpha">@dimen/lollipop_disabled_alpha_material_light</item>
+<item name="lollipop_colorSwitchThumbNormal">@color/lollipop_switch_thumb_material_light</item>
+</style>
+</resources>

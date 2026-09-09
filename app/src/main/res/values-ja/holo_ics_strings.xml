@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Verbatim AOSP 4.0.4 values-ja capital_on/capital_off (ON/OFF unchanged). -->
+<resources>
+    <string name="holo_ics_switch_on">ON</string>
+    <string name="holo_ics_switch_off">OFF</string>
+    <string name="appearance_mode">表示モード</string>
+    <string name="appearance_mode_light">ライトモード</string>
+    <string name="appearance_mode_dark">ダークモード</string>
+    <string name="appearance_mode_system">システムに従う</string>
+</resources>

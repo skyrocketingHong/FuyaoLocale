@@ -103,4 +103,4 @@ fun listBottomReserve(bottomInset: Dp, endGap: Dp = AppSpacing.lg): Dp {
 
 /** A scrollable list's top contentPadding: the real measured bar height plus its gap. */
 @Composable
-fun listTopReserve(topInset: Dp, topGap: Dp = AppSpacing.lg): Dp = topInset + topGap
+fun listTopReserve(topInset: Dp, topGap: Dp = AppUiTheme.spacing.bodyVerticalPadding): Dp = topInset + topGap

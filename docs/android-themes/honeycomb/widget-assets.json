@@ -1,0 +1,146 @@
+{
+  "Button": [
+    "drawable/btn_default_holo_dark",
+    "drawable/btn_default_holo_light"
+  ],
+  "Checkbox": [
+    "drawable/btn_check_holo_dark",
+    "drawable/btn_check_holo_light"
+  ],
+  "RadioButton": [
+    "drawable/btn_radio_holo_dark",
+    "drawable/btn_radio_holo_light"
+  ],
+  "EditText": [
+    "drawable/edit_text_holo_dark",
+    "drawable/edit_text_holo_light"
+  ],
+  "ListSelector": [
+    "drawable/list_selector_holo_dark",
+    "drawable/list_selector_holo_light"
+  ],
+  "ItemBackground": [
+    "drawable/item_background_holo_dark",
+    "drawable/item_background_holo_light"
+  ],
+  "TabIndicator": [
+    "drawable/tab_indicator_holo",
+    "drawable/tab_indicator_holo"
+  ],
+  "ProgressMedium": [
+    "drawable/progress_medium_holo",
+    "drawable/progress_medium_holo"
+  ],
+  "ProgressHorizontal": [
+    "drawable/progress_horizontal_holo_dark",
+    "drawable/progress_horizontal_holo_light"
+  ],
+  "SwitchTrack": [
+    "drawable/switch_track_holo_dark",
+    "drawable/switch_track_holo_light"
+  ],
+  "SwitchThumb": [
+    "drawable/switch_inner_holo_dark",
+    "drawable/switch_inner_holo_light"
+  ],
+  "ActionBar": [
+    "color/transparent",
+    "color/transparent"
+  ],
+  "ActionBarStacked": [
+    "color/transparent",
+    "color/transparent"
+  ],
+  "ActionBarBottom": [
+    "color/transparent",
+    "color/transparent"
+  ],
+  "ActionBarShadow": [
+    "color/transparent",
+    "color/transparent"
+  ],
+  "CabBackground": [
+    "drawable/cab_background_holo_dark",
+    "drawable/cab_background_holo_light"
+  ],
+  "MenuPanel": [
+    "drawable/menu_dropdown_panel_holo_dark",
+    "drawable/menu_dropdown_panel_holo_light"
+  ],
+  "ToastFrame": [
+    "drawable/toast_frame_holo",
+    "drawable/toast_frame_holo"
+  ],
+  "DialogFrame": [
+    "drawable/dialog_full_holo_dark",
+    "drawable/dialog_full_holo_light"
+  ],
+  "Divider": [
+    "drawable/list_divider_holo_dark",
+    "drawable/list_divider_holo_light"
+  ],
+  "ScrollbarHandle": [
+    "drawable/scrollbar_handle_holo_dark",
+    "drawable/scrollbar_handle_holo_light"
+  ],
+  "Clear": [
+    "drawable/ic_clear",
+    "drawable/ic_clear"
+  ],
+  "Search": [
+    "drawable/ic_menu_search",
+    "drawable/ic_menu_search_holo_light"
+  ],
+  "Overflow": [
+    "drawable/ic_menu_moreoverflow_normal_holo_dark",
+    "drawable/ic_menu_moreoverflow_normal_holo_light"
+  ],
+  "Back": [
+    "drawable/ic_ab_back_holo_dark",
+    "drawable/ic_ab_back_holo_light"
+  ],
+  "Close": [
+    "drawable/ic_menu_close_clear_cancel",
+    "drawable/ic_menu_close_clear_cancel"
+  ],
+  "Refresh": [
+    "drawable/ic_menu_refresh",
+    "drawable/ic_menu_refresh"
+  ],
+  "Delete": [
+    "drawable/ic_menu_delete",
+    "drawable/ic_menu_delete"
+  ],
+  "Add": [
+    "drawable/ic_input_add",
+    "drawable/ic_input_add"
+  ],
+  "ActivatedBackground": [
+    "drawable/activated_background_holo_dark",
+    "drawable/activated_background_holo_light"
+  ],
+  "ProgressIndeterminateHorizontal": [
+    "drawable/progress_indeterminate_horizontal_holo",
+    "drawable/progress_indeterminate_horizontal_holo"
+  ],
+  "SearchField": [
+    "drawable/edit_text_holo_dark",
+    "drawable/edit_text_holo_light"
+  ],
+  "Spinner": [
+    "drawable/spinner_background_holo_dark",
+    "drawable/spinner_background_holo_light"
+  ],
+  "CategoryDivider": [
+    "drawable/list_section_divider_holo_dark",
+    "drawable/list_section_divider_holo_light"
+  ],
+  "VerticalDivider": [
+    "drawable/divider_vertical_holo_dark",
+    "drawable/divider_vertical_holo_light"
+  ],
+  "CabClose": [
+    "drawable/cab_ic_close_holo",
+    "drawable/cab_ic_close_holo"
+  ]
+}

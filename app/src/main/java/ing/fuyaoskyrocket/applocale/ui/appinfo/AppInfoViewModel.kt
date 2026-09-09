@@ -164,6 +164,16 @@ class AppInfoViewModel @Inject constructor(
                     it.copy(variantSortOption = option, variantSortAscending = ascending)
                 }
             }
+            is LocalePickerAction.SetGroupSort -> {
+                _pickerState.update {
+                    it.copy(groupSortOption = action.option, groupSortAscending = action.ascending)
+                }
+            }
+            is LocalePickerAction.SetVariantSort -> {
+                _pickerState.update {
+                    it.copy(variantSortOption = action.option, variantSortAscending = action.ascending)
+                }
+            }
             is LocalePickerAction.PinClicked -> {
                 localeRepository.pinLocale(action.option)
                 _pickerState.update { it.copy(pinnedLocales = localeRepository.getPinnedLocales()) }

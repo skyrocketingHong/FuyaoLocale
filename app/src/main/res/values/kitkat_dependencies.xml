@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- AOSP, Apache-2.0. See docs/android-themes/kitkat/asset-manifest.json. -->
+<resources>
+<color name="kitkat_background_holo_dark">#ff000000</color>
+<color name="kitkat_background_holo_light">#fff3f3f3</color>
+<color name="kitkat_bright_foreground_disabled_holo_dark">#ff4c4c4c</color>
+<color name="kitkat_bright_foreground_disabled_holo_light">#ffb2b2b2</color>
+<color name="kitkat_bright_foreground_holo_dark">@color/kitkat_background_holo_light</color>
+<color name="kitkat_bright_foreground_holo_light">@color/kitkat_background_holo_dark</color>
+<color name="kitkat_dim_foreground_disabled_holo_dark">#80bebebe</color>
+<color name="kitkat_dim_foreground_disabled_holo_light">#80323232</color>
+<color name="kitkat_dim_foreground_holo_dark">#bebebe</color>
+<color name="kitkat_dim_foreground_holo_light">#323232</color>
+<color name="kitkat_hint_foreground_holo_dark">#808080</color>
+<color name="kitkat_hint_foreground_holo_light">#808080</color>
+<color name="kitkat_holo_blue_dark">#ff0099cc</color>
+<color name="kitkat_holo_blue_light">#ff33b5e5</color>
+<color name="kitkat_holo_gray_bright">#33CCCCCC</color>
+<color name="kitkat_holo_gray_light">#33999999</color>
+<color name="kitkat_holo_green_light">#ff99cc00</color>
+<color name="kitkat_holo_red_light">#ffff4444</color>
+<color name="kitkat_transparent">#00000000</color>
+<dimen name="kitkat_action_bar_default_height">48dip</dimen>
+<dimen name="kitkat_action_bar_subtitle_text_size">14dp</dimen>
+<dimen name="kitkat_action_bar_title_text_size">18dp</dimen>
+<dimen name="kitkat_action_button_min_width">56dip</dimen>
+<dimen name="kitkat_alert_dialog_button_bar_height">48dip</dimen>
+<dimen name="kitkat_alert_dialog_title_height">64dip</dimen>
+</resources>

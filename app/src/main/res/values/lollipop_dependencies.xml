@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- AOSP, Apache-2.0. See docs/android-themes/lollipop/asset-manifest.json. -->
+<resources>
+<color name="lollipop_accent_material_dark">@color/lollipop_material_deep_teal_200</color>
+<color name="lollipop_accent_material_light">@color/lollipop_material_deep_teal_500</color>
+<color name="lollipop_background_floating_material_dark">#ff424242</color>
+<color name="lollipop_background_floating_material_light">#ffeeeeee</color>
+<color name="lollipop_background_material_dark">#ff303030</color>
+<color name="lollipop_background_material_light">#ffeeeeee</color>
+<color name="lollipop_button_material_dark">#ff5a595b</color>
+<color name="lollipop_button_material_light">#ffd6d7d7</color>
+<color name="lollipop_material_deep_teal_200">#ff80cbc4</color>
+<color name="lollipop_material_deep_teal_500">#ff009688</color>
+<color name="lollipop_primary_dark_material_dark">#ff000000</color>
+<color name="lollipop_primary_dark_material_light">#ff757575</color>
+<color name="lollipop_primary_material_dark">#ff212121</color>
+<color name="lollipop_primary_material_light">#ffbdbdbd</color>
+<color name="lollipop_primary_text_default_material_dark">#ffffffff</color>
+<color name="lollipop_primary_text_default_material_light">#de000000</color>
+<color name="lollipop_ripple_material_dark">#40ffffff</color>
+<color name="lollipop_ripple_material_light">#40000000</color>
+<color name="lollipop_secondary_text_default_material_dark">#b3ffffff</color>
+<color name="lollipop_secondary_text_default_material_light">#8a000000</color>
+<color name="lollipop_switch_thumb_disabled_material_dark">#ff616161</color>
+<color name="lollipop_switch_thumb_disabled_material_light">#ffbdbdbd</color>
+<color name="lollipop_switch_thumb_normal_material_dark">#ffbdbdbd</color>
+<color name="lollipop_switch_thumb_normal_material_light">#fff1f1f1</color>
+<color name="lollipop_transparent">#00000000</color>
+<color name="lollipop_white">#ffffffff</color>
+<dimen name="lollipop_action_bar_default_height_material">56dp</dimen>
+<dimen name="lollipop_button_elevation_material">1dp</dimen>
+<dimen name="lollipop_button_inset_horizontal_material">@dimen/lollipop_control_inset_material</dimen>
+<dimen name="lollipop_button_inset_vertical_material">6dp</dimen>
+<dimen name="lollipop_button_padding_horizontal_material">8dp</dimen>
+<dimen name="lollipop_button_padding_vertical_material">@dimen/lollipop_control_padding_material</dimen>
+<dimen name="lollipop_button_pressed_z_material">2dp</dimen>
+<dimen name="lollipop_control_corner_material">2dp</dimen>
+<dimen name="lollipop_control_inset_material">4dp</dimen>
+<dimen name="lollipop_control_padding_material">4dp</dimen>
+<item name="lollipop_disabled_alpha_material_dark" format="float" type="dimen">0.30</item>
+<item name="lollipop_disabled_alpha_material_light" format="float" type="dimen">0.26</item>
+<integer name="lollipop_button_pressed_animation_delay">100</integer>
+<integer name="lollipop_button_pressed_animation_duration">100</integer>
+</resources>

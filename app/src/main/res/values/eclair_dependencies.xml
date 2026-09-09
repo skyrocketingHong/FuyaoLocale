@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- AOSP, Apache-2.0. See docs/android-themes/eclair/asset-manifest.json. -->
+<resources>
+<color name="eclair_background_dark">#ff000000</color>
+<color name="eclair_background_light">#ffffffff</color>
+<color name="eclair_bright_foreground_dark">#ffffffff</color>
+<color name="eclair_bright_foreground_dark_disabled">#80ffffff</color>
+<color name="eclair_bright_foreground_dark_inverse">#ff000000</color>
+<color name="eclair_bright_foreground_light">#ff000000</color>
+<color name="eclair_bright_foreground_light_disabled">#80000000</color>
+<color name="eclair_dim_foreground_dark">#bebebe</color>
+<color name="eclair_dim_foreground_dark_disabled">#80bebebe</color>
+<color name="eclair_dim_foreground_dark_inverse">#323232</color>
+<color name="eclair_dim_foreground_dark_inverse_disabled">#80323232</color>
+<color name="eclair_dim_foreground_light">#323232</color>
+<color name="eclair_dim_foreground_light_disabled">#80323232</color>
+<color name="eclair_hint_foreground_dark">#808080</color>
+<color name="eclair_hint_foreground_light">#808080</color>
+<color name="eclair_transparent">#00000000</color>
+<drawable name="eclair_screen_background_dark">#ff000000</drawable>
+<drawable name="eclair_screen_background_light">#ffffffff</drawable>
+<integer name="eclair_config_shortAnimTime">150</integer>
+</resources>

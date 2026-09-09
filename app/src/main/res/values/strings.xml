@@ -47,37 +47,41 @@
     <string name="credit_miuix" translatable="false">miuix</string>
     <string name="credit_miuix_summary" translatable="false">compose-miuix-ui/miuix</string>
     <string name="about_overview">Overview</string>
-    <string name="about_summary">Fuyao Locale is a dual-theme language tool for managing per-app languages and the system language list when a suitable system interface is unavailable.</string>
+    <string name="about_summary">Manage app languages, system language order, and reusable configurations.</string>
     <string name="about_regional_display_statement">One-China principle and regional display</string>
-    <string name="about_regional_display_statement_body">Fuyao Locale and its developer uphold the One-China principle. If references to the Taiwan region or associated flag symbols appear in the app, the regional names are supplied by Android\'s locale data, while flag symbols are generated from region codes using standard Unicode sequences and rendered by the device\'s system fonts. These names and flag graphics are not individually authored or designed by the developer for that region. Their appearance reflects the device\'s system data and rendering support and does not imply any change in, or departure from, this position.</string>
-    <string name="about_features">Highlights</string>
-    <string name="about_feature_per_app">Per-app language controls</string>
-    <string name="about_feature_per_app_summary">View the current language, set a supported language, or reset it to the system default.</string>
-    <string name="about_feature_system_languages">System language list</string>
-    <string name="about_feature_system_languages_summary">Add languages the OEM hides, reorder them, and save the system-wide preference.</string>
-    <string name="about_feature_batch">Batch language setting</string>
-    <string name="about_feature_batch_summary">Long-press apps to enter selection mode, then apply one locale to multiple apps.</string>
-    <string name="about_feature_filters">Search and filters</string>
-    <string name="about_feature_filters_summary">Search apps, show only modified entries, choose a sort order, and show or hide system apps.</string>
-    <string name="about_feature_quick_settings">Quick Settings tile</string>
-    <string name="about_feature_quick_settings_summary">Pin frequently used locales and cycle them from the system Quick Settings tile.</string>
-    <string name="about_feature_adaptive">Two themes and adaptive layouts</string>
-    <string name="about_feature_adaptive_summary">Native UI in two themes with phone bottom navigation, large-screen list-detail layout, and edge-to-edge system bars.</string>
-    <string name="about_requirement_android">Android 13 (API 33) or later.</string>
-    <string name="about_requirement_shizuku">Shizuku must be installed, running, and authorized for Fuyao Locale.</string>
+    <string name="about_regional_display_statement_body">Fuyao Locale and its developer uphold the one-China principle. Region names come from Android, and flags are displayed through Unicode and system fonts; this includes Taiwan-related displays and does not change that position.</string>
+    <string name="about_features">Languages, your way</string>
+    <string name="about_feature_per_app">One app. Your choice.</string>
+    <string name="about_feature_per_app_summary">Choose a supported language for each app or follow the system.</string>
+    <string name="about_feature_system_languages">System languages, in your order</string>
+    <string name="about_feature_system_languages_summary">Add languages, reorder them, then save.</string>
+    <string name="about_feature_batch">Keep your favorite combinations</string>
+    <string name="about_feature_batch_summary">Set languages in batches and save, import, or reuse configurations.</string>
+    <string name="about_feature_filters">Find the app you have in mind</string>
+    <string name="about_feature_filters_summary">Search by name or package, filter changed or system apps, and choose a sort order.</string>
+    <string name="about_feature_quick_settings">Everyday languages, close at hand</string>
+    <string name="about_feature_quick_settings_summary">Pin the languages you use most. Use the Quick Settings tile to cycle languages for the non-system app currently in use.</string>
+    <string name="about_feature_adaptive">Modern or classic. Make it yours.</string>
+    <string name="about_feature_adaptive_summary">Choose a modern interface or a classic Android style, in light or dark. The layout adapts as your window changes.</string>
+    <string name="about_requirement_android">Requires Android 13 or later.</string>
+    <string name="about_requirement_shizuku">Shizuku must be running and authorized.</string>
     <string name="about_usage_notes">Usage notes</string>
-    <string name="about_usage_note">Fuyao Locale does not translate apps. It asks Android to apply a locale already supported by the selected app. System apps and unsupported locales may behave unexpectedly.</string>
-        <string name="about_credits_and_references">Credits and reference projects</string>
-<string name="about_this_project">This project</string>
+    <string name="about_usage_note">Available languages depend on each app; Fuyao Locale does not translate content.</string>
+        <string name="about_credits_and_references">Credits and references</string>
+<string name="about_this_project">An open project</string>
     <string name="about_reference_projects">Reference projects</string>
     <string name="about_cited_projects">Cited projects</string>
     <string name="about_theme">Theme</string>
-    <string name="theme_material_you" translatable="false">Material You</string>
-    <string name="theme_miuix" translatable="false">Miuix</string>
-    <string name="theme_liquid_glass_navigation_bar">Liquid Glass tab bar</string>
-    <string name="theme_liquid_glass_navigation_bar_summary">Render the bottom tab bar as glass refracting the wallpaper</string>
-    <string name="about_credits">Fuyao Locale is a substantial rewrite built from concepts and functionality of Language Selector by VegaBobo. The system language list is inspired by MultiLocale by Nightdavisao. The Liquid Glass tab bar and the Miuix theme are built with AndroidLiquidGlass by Kyant0 and miuix.</string>
-    <string name="about_license">Fuyao Locale is licensed under GNU AGPL v3 only (AGPL-3.0-only). Portions derived from Language Selector retain their Apache License 2.0 notices. MultiLocale is distributed under the MIT License. AndroidLiquidGlass and miuix are distributed under the Apache License 2.0.</string>
+    <string name="theme_material_you" translatable="false">Material You / Material Design 3 (Android 12–15)</string>
+    <string name="theme_miuix" translatable="false">miuix (Android 13+)</string>
+    <string name="theme_holo_ics" translatable="false">Android 4.0 Ice Cream Sandwich (Holo)</string>
+    <string name="theme_material_you_summary">Android 12–15 · Material You and Material Design 3, with wallpaper colors and tonal surfaces.</string>
+    <string name="theme_miuix_summary">miuix native controls and motion. Android 13+ is this app’s runtime requirement, not a historical design version.</string>
+    <string name="theme_holo_ics_summary">Android 4.0 Ice Cream Sandwich · Holo lines and classic blue accents.</string>
+    <string name="theme_liquid_glass_navigation_bar">Floating tab bar</string>
+    <string name="theme_liquid_glass_navigation_bar_summary">Float the tab bar above the page with a glass effect.</string>
+    <string name="about_credits">Fuyao Locale began with VegaBobo’s Language Selector and rewrites its main implementation. System language features draw on Nightdavisao’s MultiLocale. The floating glass tab bar builds on AndroidLiquidGlass and miuix, which also provides interface components. Thank you to their authors and contributors.</string>
+    <string name="about_license">AGPL-3.0-only. Upstream code and resources retain their licenses and attribution; see the repository NOTICE.</string>
     <string name="loading">Loading…</string>
     <string name="unavailable">Unavailable</string>
     <string name="warning">Warning</string>
@@ -242,4 +246,63 @@
     <string name="save_languages_before_refresh">Save the current language order before refreshing.</string>
     <string name="system_languages_refresh_hint">Pull down to refresh.</string>
     <string name="system_languages_refresh_hint_keyboard">Pull down to refresh, or press Ctrl+R.</string>
+    <string name="settings_category">Settings</string>
+    <string name="theme_modern">Modern themes</string>
+    <string name="theme_retro">Retro themes</string>
+    <string name="visual_effect_theme_unavailable">This effect is not used by the current theme</string>
+    <string name="theme_holo_kitkat" translatable="false">Android 4.4 KitKat (Holo)</string>
+    <string name="theme_holo_kitkat_summary">Android 4.4 KitKat · Holo with white indicators and neutral accents.</string>
+    <string name="legacy_menu">Menu</string>
+    <string name="theme_eclair_summary">Android 2.0 Eclair · Textured controls and the early Android look.</string>
+    <string name="theme_eclair" translatable="false">Android 2.0 Eclair</string>
+    <string name="theme_holo_honeycomb_summary">Android 3.0–3.2 Honeycomb · Deep blue Holo styling for wide layouts.</string>
+    <string name="theme_holo_honeycomb" translatable="false">Android 3.0 Honeycomb (Holo)</string>
+    <string name="theme_lollipop" translatable="false">Android 5.0 Lollipop (Material Design)</string>
+    <string name="theme_lollipop_summary">Android 5.0 Lollipop baseline · Material Design of Android 5.0–8.1, with paper layers and ripples.</string>
+
+    <!-- Display and navigation preferences. -->
+    <string name="settings_appearance">Appearance</string>
+    <string name="settings_app_list">App list</string>
+    <string name="settings_language_display">Language display</string>
+    <string name="settings_navigation">Navigation</string>
+    <string name="settings_system_font">Use system fonts in classic themes</string>
+    <string name="settings_system_font_summary">Prefer system fonts and weights. Turn off to use the original fonts from each Android era.</string>
+    <string name="settings_system_apps">Show system apps</string>
+    <string name="settings_system_apps_summary">Include system apps in the app list. Stays in sync with the home filter.</string>
+    <string name="settings_package_names">Show package names</string>
+    <string name="settings_package_names_summary">Show package names in app and configuration lists. Package search still works when hidden.</string>
+    <string name="settings_app_types">Show app types</string>
+    <string name="settings_app_types_summary">Identify system and user apps in the app list.</string>
+    <string name="settings_region_flags">Show regional flags</string>
+    <string name="settings_region_flags_summary">Use regional flags for language variants. Turn off to show region or script codes.</string>
+    <string name="settings_swipe_pages">Swipe between pages</string>
+    <string name="settings_swipe_pages_summary">Swipe page content left or right to switch between app languages, system languages, configurations, settings, and about.</string>
+    <string name="settings_double_tap">Double-tap to scroll to top</string>
+    <string name="settings_double_tap_summary">Double-tap the current navigation tab to return to the top of its page.</string>
+    <string name="settings_remember_page">Remember last page</string>
+    <string name="settings_remember_page_summary">Open the last visited main page the next time you launch the app.</string>
+    <string name="theme_material3_expressive" translatable="false">Material Design 3 Expressive (Android 16+)</string>
+    <string name="theme_material3_expressive_summary">Android 16+ · Material Design 3 Expressive, with spring motion and morphing controls.</string>
+    <string name="theme_froyo" translatable="false">Android 2.2 Froyo</string>
+    <string name="theme_froyo_summary">Android 2.2 Froyo · Classic controls, amber tabs, and updated dropdown and progress states.</string>
+
+    <!-- Design-language families and variants. -->
+    <string name="theme_family_preference">Theme style</string>
+    <string name="theme_variant_preference">Detail style</string>
+    <string name="theme_group_early">Early Android</string>
+    <string name="theme_group_material">Material family</string>
+    <string name="theme_group_extended">Extended styles</string>
+    <string name="theme_family_classic">Classic Android (Android 2.0–2.3)</string>
+    <string name="theme_family_classic_summary">Android 2.0 Eclair, Android 2.2 Froyo, and Android 2.3 Gingerbread · Early Android controls.</string>
+    <string name="theme_family_holo_summary">Android 4.0 Ice Cream Sandwich and Android 4.4 KitKat · Blue or neutral Holo styling.</string>
+    <string name="theme_gingerbread_summary">Android 2.3 Gingerbread · Dark layers, green controls, and classic textures.</string>
+    <string name="theme_material_rounded_summary">Android 9–11 · Material Design 2 with neutral surfaces and rounded controls.</string>
+    <string name="theme_variant_ics">Android 4.0 Ice Cream Sandwich · Classic blue</string>
+    <string name="theme_variant_kitkat">Android 4.4 KitKat · Neutral</string>
+    <string name="theme_family_honeycomb" translatable="false">Android 3.0–3.2 Honeycomb</string>
+    <string name="theme_family_holo" translatable="false">Android 4.0–4.4 Holo</string>
+    <string name="theme_family_material" translatable="false">Material Design (Android 5.0–8.1)</string>
+    <string name="theme_family_expressive" translatable="false">Material Design 3 Expressive (Android 16+)</string>
+    <string name="theme_gingerbread" translatable="false">Android 2.3 Gingerbread</string>
+    <string name="theme_material_rounded" translatable="false">Material Design 2 Rounded (Android 9–11)</string>
 </resources>

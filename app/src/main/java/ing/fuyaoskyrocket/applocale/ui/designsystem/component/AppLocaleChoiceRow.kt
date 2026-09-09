@@ -1,5 +1,8 @@
 package ing.fuyaoskyrocket.applocale.ui.designsystem.component
 
+import ing.fuyaoskyrocket.applocale.ui.designsystem.lollipop.*
+import ing.fuyaoskyrocket.applocale.ui.designsystem.eclair.*
+import ing.fuyaoskyrocket.applocale.ui.designsystem.AppControlFamily
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -15,7 +18,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -28,9 +30,15 @@ import androidx.compose.ui.unit.dp
 import ing.fuyaoskyrocket.applocale.ui.designsystem.AppComponentDefaults
 import ing.fuyaoskyrocket.applocale.ui.designsystem.AppLayout
 import ing.fuyaoskyrocket.applocale.ui.designsystem.AppSpacing
-import ing.fuyaoskyrocket.applocale.ui.designsystem.AppThemePreferences
-import ing.fuyaoskyrocket.applocale.ui.designsystem.AppThemeStyle
 import ing.fuyaoskyrocket.applocale.ui.designsystem.AppUiTheme
+import ing.fuyaoskyrocket.applocale.ui.designsystem.holo.LocalHoloListPadding
+import ing.fuyaoskyrocket.applocale.ui.designsystem.holo.holoListDivider
+import ing.fuyaoskyrocket.applocale.ui.designsystem.holo.HoloText
+import ing.fuyaoskyrocket.applocale.ui.designsystem.holo.LocalHoloTextColors
+import ing.fuyaoskyrocket.applocale.ui.designsystem.holo.holoBackground
+import ing.fuyaoskyrocket.applocale.ui.designsystem.holo.holoControlState
+import ing.fuyaoskyrocket.applocale.ui.designsystem.holo.rememberHoloDrawable
+import ing.fuyaoskyrocket.applocale.ui.designsystem.holo.HoloAsset
 
 /** The trailing selection glyph; the slot itself is the shared 48dp terminal slot. */
 private val ChoiceCheckGlyphSize = 24.dp
@@ -58,12 +66,37 @@ fun AppLocaleChoiceRow(
     leading: (@Composable () -> Unit)? = null,
     trailingAction: (@Composable () -> Unit)? = null,
     contentPadding: PaddingValues = PaddingValues(
-        start = AppSpacing.md,
+        start = AppUiTheme.spacing.contentInset - AppUiTheme.spacing.rowOuterInset,
         top = AppSpacing.md,
         end = 0.dp,
         bottom = AppSpacing.md,
     ),
+    titleMaxLines: Int = 2,
+    subtitleMaxLines: Int = 2,
 ) {
+    if (AppUiTheme.policy.controls == AppControlFamily.Lollipop) {
+        LollipopChoiceRow(title, subtitle, selected, onSelect, modifier, leading, trailingAction, titleMaxLines, subtitleMaxLines)
+        return
+    }
+    if (AppUiTheme.policy.controls == AppControlFamily.Eclair) {
+        EclairChoiceRow(title, subtitle, selected, onSelect, modifier, leading, trailingAction, titleMaxLines, subtitleMaxLines)
+        return
+    }
+    if (AppUiTheme.policy.controls == AppControlFamily.Holo) {
+        HoloChoiceRow(
+            title = title,
+            subtitle = subtitle,
+            selected = selected,
+            onSelect = onSelect,
+            modifier = modifier,
+            leading = leading,
+            trailingAction = trailingAction,
+            contentPadding = PaddingValues(horizontal = LocalHoloListPadding.current, vertical = 6.dp),
+            titleMaxLines = titleMaxLines,
+            subtitleMaxLines = subtitleMaxLines,
+        )
+        return
+    }
     val palette = AppUiTheme.palette
     val containerColor = if (selected) {
         palette.selected
@@ -99,7 +132,7 @@ fun AppLocaleChoiceRow(
                 onClick = onSelect,
             ),
     ) {
-        if (AppThemePreferences.style == AppThemeStyle.MIUIX) {
+        if (AppUiTheme.policy.controls == AppControlFamily.Miuix) {
             // Native layout container; the click/semantics stay on the shared
             // selectable above so both themes expose exactly one radio target.
             top.yukonga.miuix.kmp.basic.BasicComponent(
@@ -133,7 +166,7 @@ fun AppLocaleChoiceRow(
                     text = title,
                     style = AppComponentDefaults.titleStyle(),
                     color = contentColor,
-                    maxLines = 2,
+                    maxLines = titleMaxLines,
                     overflow = TextOverflow.Ellipsis,
                 )
                 if (subtitle != null) {
@@ -141,7 +174,7 @@ fun AppLocaleChoiceRow(
                         text = subtitle,
                         style = AppComponentDefaults.metadataStyle(),
                         color = subtitleColor,
-                        maxLines = 2,
+                        maxLines = subtitleMaxLines,
                         overflow = TextOverflow.Ellipsis,
                     )
                 }
@@ -167,19 +200,19 @@ fun AppLocaleChoiceRow(
                     modifier = Modifier.weight(1f),
                     verticalArrangement = Arrangement.spacedBy(AppSpacing.xs),
                 ) {
-                    Text(
+                    AppText(
                         text = title,
                         style = AppComponentDefaults.titleStyle(),
                         color = contentColor,
-                        maxLines = 2,
+                        maxLines = titleMaxLines,
                         overflow = TextOverflow.Ellipsis,
                     )
                     if (subtitle != null) {
-                        Text(
+                        AppText(
                             text = subtitle,
                             style = AppComponentDefaults.metadataStyle(),
                             color = subtitleColor,
-                            maxLines = 2,
+                            maxLines = subtitleMaxLines,
                             overflow = TextOverflow.Ellipsis,
                         )
                     }
@@ -237,5 +270,96 @@ private fun RowScope.ChoiceTrailingSlots(
         ) {
             trailingAction()
         }
+    }
+}
+
+
+/**
+ * The Holo single-choice row: a full-width list-selector row with the era
+ * radio indicator on the leading edge (the radio is the state decoration;
+ * the whole row stays the single selectable target), caller-supplied badge
+ * and text, and an independent trailing action slot. No modern rounded
+ * selected container, no trailing check glyph — selection is the radio.
+ */
+@Composable
+private fun HoloChoiceRow(
+    title: String,
+    subtitle: String?,
+    selected: Boolean,
+    onSelect: () -> Unit,
+    modifier: Modifier = Modifier,
+    leading: (@Composable () -> Unit)? = null,
+    trailingAction: (@Composable () -> Unit)? = null,
+    contentPadding: PaddingValues,
+    titleMaxLines: Int,
+    subtitleMaxLines: Int,
+) {
+    val metrics = ing.fuyaoskyrocket.applocale.ui.designsystem.AppUiTheme.metrics
+    val textColors = LocalHoloTextColors.current
+    val drawable = rememberHoloDrawable(HoloAsset.ItemBackground)
+    val interaction = androidx.compose.runtime.remember {
+        androidx.compose.foundation.interaction.MutableInteractionSource()
+    }
+    val controlState = holoControlState(interaction, selected = selected)
+
+    androidx.compose.foundation.layout.Row(
+        modifier = modifier
+            .fillMaxWidth()
+            .heightIn(min = metrics.listPreferredItemHeight)
+            .holoBackground(drawable, controlState)
+            .holoListDivider()
+            .selectable(
+                selected = selected,
+                interactionSource = interaction,
+                indication = null,
+                role = Role.RadioButton,
+                onClick = onSelect,
+            )
+            .padding(contentPadding),
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        if (leading != null) {
+            Box(
+                modifier = Modifier.size(AppLayout.localeBadgeSize),
+                contentAlignment = Alignment.Center,
+            ) {
+                leading()
+            }
+            Spacer(Modifier.width(AppSpacing.sm))
+        }
+        Column(
+            modifier = Modifier.weight(1f),
+            verticalArrangement = Arrangement.spacedBy(AppSpacing.xs),
+        ) {
+            HoloText(
+                text = title,
+                style = ing.fuyaoskyrocket.applocale.ui.designsystem.AppUiTheme.textStyles.itemTitle,
+                color = textColors.primary,
+                maxLines = titleMaxLines,
+                overflow = TextOverflow.Ellipsis,
+            )
+            if (subtitle != null) {
+                HoloText(
+                    text = subtitle,
+                    style = ing.fuyaoskyrocket.applocale.ui.designsystem.AppUiTheme.textStyles.metadata,
+                    color = if (selected) textColors.primary else textColors.secondary,
+                    maxLines = subtitleMaxLines,
+                    overflow = TextOverflow.Ellipsis,
+                )
+            }
+        }
+        if (trailingAction != null) {
+            Box(
+                modifier = Modifier.size(AppLayout.appListSelectionSlotWidth),
+                contentAlignment = Alignment.Center,
+            ) {
+                trailingAction()
+            }
+        }
+        ing.fuyaoskyrocket.applocale.ui.designsystem.holo.HoloRadioButton(
+            selected = selected,
+            onClick = null,
+            modifier = Modifier.size(48.dp),
+        )
     }
 }

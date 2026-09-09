@@ -13,6 +13,7 @@ import androidx.compose.ui.input.pointer.changedToUpIgnoreConsumed
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalViewConfiguration
 import kotlin.math.hypot
+import ing.fuyaoskyrocket.applocale.ui.designsystem.LocalUserPreferences
 
 /**
  * Pure double-tap pairing for navigation tabs (round-8 035).
@@ -27,6 +28,7 @@ class TabDoubleTapDetector(
     private val minIntervalMillis: Long,
     private val timeoutMillis: Long,
     private val uptimeMillis: () -> Long,
+    private val enabled: Boolean = true,
 ) {
     private var pendingTarget: Any? = null
     private var pendingUptimeMillis = 0L
@@ -36,6 +38,7 @@ class TabDoubleTapDetector(
 
     /** Records one completed touch tap; true when it closes a double tap. */
     fun recordTap(target: Any): Boolean {
+        if (!enabled) return false
         val now = uptimeMillis()
         val interval = now - pendingUptimeMillis
         return if (target === pendingTarget &&
@@ -62,11 +65,13 @@ fun rememberTabDoubleTapDetector(): TabDoubleTapDetector {
     // The compose ViewConfiguration carries the platform's real double-tap
     // window (min interval and timeout), so no hardcoded timing constants.
     val viewConfiguration = LocalViewConfiguration.current
-    return remember(viewConfiguration) {
+    val enabled = LocalUserPreferences.current.doubleTapToTop
+    return remember(viewConfiguration, enabled) {
         TabDoubleTapDetector(
             minIntervalMillis = viewConfiguration.doubleTapMinTimeMillis,
             timeoutMillis = viewConfiguration.doubleTapTimeoutMillis,
             uptimeMillis = SystemClock::uptimeMillis,
+            enabled = enabled,
         )
     }
 }

@@ -59,6 +59,20 @@ sealed interface LocalePickerAction {
     /** Tri-state sort cycling from the single-row chips (round-5 019-A2). */
     data class CycleGroupSort(val option: LanguageGroupSortOption) : LocalePickerAction
     data class CycleVariantSort(val option: LocaleVariantSortOption) : LocalePickerAction
+
+    /**
+     * One-shot explicit sort target (round-9 044): the Holo spinner menu sets
+     * the option AND direction in a single update — never by replaying cycles.
+     */
+    data class SetGroupSort(
+        val option: LanguageGroupSortOption,
+        val ascending: Boolean,
+    ) : LocalePickerAction
+
+    data class SetVariantSort(
+        val option: LocaleVariantSortOption,
+        val ascending: Boolean,
+    ) : LocalePickerAction
     data class LocaleSelected(val option: LocaleOption) : LocalePickerAction
     data class PinClicked(val option: LocaleOption) : LocalePickerAction
     data class UnpinClicked(val option: LocaleOption) : LocalePickerAction

@@ -1,5 +1,8 @@
 package ing.fuyaoskyrocket.applocale.ui.designsystem.component
 
+import ing.fuyaoskyrocket.applocale.ui.designsystem.lollipop.*
+import ing.fuyaoskyrocket.applocale.ui.designsystem.eclair.*
+import ing.fuyaoskyrocket.applocale.ui.designsystem.AppControlFamily
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
@@ -51,15 +54,15 @@ import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
 import ing.fuyaoskyrocket.applocale.R
 import ing.fuyaoskyrocket.applocale.ui.designsystem.AppSpacing
-import ing.fuyaoskyrocket.applocale.ui.designsystem.AppThemePreferences
-import ing.fuyaoskyrocket.applocale.ui.designsystem.AppThemeStyle
+import ing.fuyaoskyrocket.applocale.ui.designsystem.AppUiTheme
+import ing.fuyaoskyrocket.applocale.ui.designsystem.holo.HoloActionBar
+import ing.fuyaoskyrocket.applocale.ui.designsystem.holo.HoloActionBarTitle
 
 /** Compact top bar content height, following the FuyaoColorPicker app bar design. */
 private val CompactAppBarHeight = 48.dp
@@ -107,10 +110,39 @@ fun AppTopAppBar(
     title: String,
     modifier: Modifier = Modifier,
     navigationIcon: @Composable () -> Unit = {},
-    actions: @Composable RowScope.() -> Unit = {},
+    actions: (@Composable RowScope.() -> Unit)? = null,
     titleAlpha: Float = 1f,
 ) {
-    if (AppThemePreferences.style == AppThemeStyle.MIUIX) {
+    if (AppUiTheme.policy.controls == AppControlFamily.Material2) {
+        androidx.compose.material.TopAppBar(
+            title = { androidx.compose.material.Text(title, style = AppUiTheme.textStyles.pageTitle,
+                maxLines = 1, overflow = TextOverflow.Ellipsis,
+                modifier = Modifier.graphicsLayer { alpha = titleAlpha.coerceIn(0f, 1f) }) },
+            windowInsets = CompactAppBarInsets, modifier = modifier,
+            navigationIcon = navigationIcon, actions = actions ?: {},
+            backgroundColor = AppUiTheme.palette.surface, contentColor = AppUiTheme.palette.foreground,
+            elevation = AppUiTheme.elevation.toolbar,
+        )
+        return
+    }
+    if (AppUiTheme.policy.controls == AppControlFamily.Lollipop) {
+        LollipopToolbar(modifier, title = { LollipopToolbarTitle(title) }, navigation = navigationIcon, actions = actions ?: {})
+        return
+    }
+    if (AppUiTheme.policy.controls == AppControlFamily.Eclair) {
+        EclairTitleBar(title, modifier, navigationIcon, actions)
+        return
+    }
+    if (AppUiTheme.policy.controls == AppControlFamily.Holo) {
+        ing.fuyaoskyrocket.applocale.ui.designsystem.holo.HoloActionBar(
+            modifier = modifier,
+            title = { HoloActionBarTitle(text = title) },
+            navigation = navigationIcon,
+            actions = actions ?: {},
+        )
+        return
+    }
+    if (AppUiTheme.policy.controls == AppControlFamily.Miuix) {
         top.yukonga.miuix.kmp.basic.SmallTopAppBar(
             title = title,
             modifier = modifier,
@@ -123,15 +155,14 @@ fun AppTopAppBar(
                 alpha = titleAlpha.coerceIn(0f, 1f),
             ),
             navigationIcon = navigationIcon,
-            actions = actions,
+            actions = actions ?: {},
         )
     } else {
         androidx.compose.material3.TopAppBar(
             title = {
                 Text(
                     text = title,
-                    style = MaterialTheme.typography.titleLarge,
-                    fontWeight = FontWeight.SemiBold,
+                    style = AppUiTheme.textStyles.pageTitle,
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis,
                     modifier = Modifier.graphicsLayer {
@@ -141,8 +172,8 @@ fun AppTopAppBar(
             },
             modifier = modifier,
             navigationIcon = navigationIcon,
-            actions = actions,
-            expandedHeight = CompactAppBarHeight,
+            actions = actions ?: {},
+            expandedHeight = if (AppUiTheme.style == ing.fuyaoskyrocket.applocale.ui.designsystem.AppThemeStyle.MATERIAL3_EXPRESSIVE) 64.dp else CompactAppBarHeight,
             windowInsets = CompactAppBarInsets,
             colors = TopAppBarDefaults.topAppBarColors(
                 containerColor = chromeContainerColor(MaterialTheme.colorScheme.surface),
@@ -226,7 +257,77 @@ fun AppSearchableTopAppBar(
         focusManager.clearFocus()
     }
 
-    if (AppThemePreferences.style == AppThemeStyle.MIUIX) {
+    if (AppUiTheme.policy.controls == AppControlFamily.Material2) {
+        if (searchActive) androidx.compose.material.TopAppBar(
+            title = { ing.fuyaoskyrocket.applocale.ui.designsystem.material2.RoundedSearchField(
+                query, onQueryChange, searchLabel, Modifier.fillMaxWidth().focusRequester(focusRequester)) },
+            windowInsets = CompactAppBarInsets, modifier = modifier,
+            navigationIcon = { AppToolbarIconButton(AppSymbol.Back, stringResource(R.string.close_search), onCloseSearch) },
+            backgroundColor = AppUiTheme.palette.surface, contentColor = AppUiTheme.palette.foreground,
+            elevation = AppUiTheme.elevation.toolbar,
+        ) else normalBar()
+        return
+    }
+    if (AppUiTheme.policy.controls == AppControlFamily.Lollipop) {
+        if (searchActive) LollipopToolbar(modifier,
+            navigation = { AppToolbarIconButton(AppSymbol.Back, stringResource(R.string.close_search), onCloseSearch) },
+            title = { LollipopSearchField(query, onQueryChange, searchLabel, Modifier.fillMaxWidth().focusRequester(focusRequester), submitSearch) },
+            actions = { if (query.isNotEmpty()) AppToolbarIconButton(AppSymbol.Close, stringResource(R.string.clear_search), { onQueryChange("") }) })
+        else normalBar()
+        return
+    }
+    if (AppUiTheme.policy.controls == AppControlFamily.Eclair) {
+        if (searchActive) {
+            androidx.compose.foundation.layout.Column(modifier.fillMaxWidth()) {
+                EclairTitleBar(searchLabel, navigation = {
+                    EclairButton(stringResource(R.string.close_search), onCloseSearch)
+                })
+                Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+                    EclairSearchField(query, onQueryChange, searchLabel, Modifier.weight(1f).focusRequester(focusRequester))
+                    if (query.isNotEmpty()) EclairButton(stringResource(R.string.clear_search), { onQueryChange("") })
+                }
+            }
+        } else normalBar()
+        return
+    }
+    if (AppUiTheme.policy.controls == AppControlFamily.Holo) {
+        if (searchActive) {
+            // SearchBar (ICS SearchView collapsed into the action bar): Up
+            // affordance closes, the underline field filters live, clear only
+            // empties the query — closing and clearing stay distinct actions.
+            ing.fuyaoskyrocket.applocale.ui.designsystem.holo.HoloActionBar(
+                navigation = {
+                    AppToolbarIconButton(
+                        symbol = AppSymbol.Back,
+                        contentDescription = stringResource(R.string.close_search),
+                        onClick = onCloseSearch,
+                    )
+                },
+                title = {
+                    ing.fuyaoskyrocket.applocale.ui.designsystem.holo.HoloSearchTextField(
+                        value = query,
+                        onValueChange = onQueryChange,
+                        hint = searchLabel,
+                        fieldDescription = searchFieldName,
+                        modifier = Modifier.fillMaxWidth(),
+                    )
+                },
+                actions = {
+                    if (query.isNotEmpty()) {
+                        AppToolbarIconButton(
+                            symbol = AppSymbol.Close,
+                            contentDescription = stringResource(R.string.clear_search),
+                            onClick = { onQueryChange("") },
+                        )
+                    }
+                },
+            )
+        } else {
+            normalBar()
+        }
+        return
+    }
+    if (AppUiTheme.policy.controls == AppControlFamily.Miuix) {
         if (searchActive) {
             Row(
                 modifier = modifier
@@ -238,7 +339,7 @@ fun AppSearchableTopAppBar(
                 verticalAlignment = Alignment.CenterVertically,
             ) {
                 AppToolbarIconButton(
-                    icon = AppSymbolVector(AppSymbol.Close),
+                    symbol = AppSymbol.Close,
                     contentDescription = stringResource(R.string.close_search),
                     onClick = onCloseSearch,
                 )
@@ -266,7 +367,7 @@ fun AppSearchableTopAppBar(
                 ) {}
                 if (query.isNotEmpty()) {
                     AppToolbarIconButton(
-                        icon = AppSymbolVector(AppSymbol.Close),
+                        symbol = AppSymbol.Close,
                         contentDescription = stringResource(R.string.clear_search),
                         onClick = { onQueryChange("") },
                     )
@@ -282,7 +383,7 @@ fun AppSearchableTopAppBar(
             var capsuleHeightPx by remember { mutableIntStateOf(0) }
             val density = LocalDensity.current
             val searchBarHeight = maxOf(
-                CompactAppBarHeight,
+                if (AppUiTheme.style == ing.fuyaoskyrocket.applocale.ui.designsystem.AppThemeStyle.MATERIAL3_EXPRESSIVE) 64.dp else CompactAppBarHeight,
                 with(density) { capsuleHeightPx.toDp() } + 4.dp,
             )
             androidx.compose.material3.TopAppBar(
@@ -391,37 +492,54 @@ private fun HomeToolbarActions(
     onToggleSystemApps: () -> Unit,
 ) {
     AppToolbarIconButton(
-        icon = AppSymbolVector(AppSymbol.Search),
+        symbol = AppSymbol.Search,
         contentDescription = stringResource(R.string.search),
         onClick = onOpenSearch,
     )
+    if (AppUiTheme.policy.controls == AppControlFamily.Holo
+    ) {
+        // Holo keeps refresh as a visible action bar action (round-9 C16);
+        // the system-apps toggle lives behind the overflow.
+        AppToolbarIconButton(
+            symbol = AppSymbol.Refresh,
+            contentDescription = stringResource(R.string.refresh),
+            onClick = onRefresh,
+        )
+    }
     Box {
         var menuExpanded by remember { mutableStateOf(false) }
         AppToolbarIconButton(
-            icon = AppSymbolVector(AppSymbol.Menu),
+            symbol = AppSymbol.Menu,
             contentDescription = stringResource(R.string.more_actions),
             onClick = { menuExpanded = true },
         )
+        val isHolo = AppUiTheme.policy.controls == AppControlFamily.Holo
         AppDropdownMenu(
             expanded = menuExpanded,
             onDismiss = { menuExpanded = false },
-            items = listOf(
-                AppDropdownItem(
-                    text = stringResource(R.string.refresh),
-                    onClick = {
-                        menuExpanded = false
-                        onRefresh()
-                    },
-                ),
-                AppDropdownItem(
-                    text = stringResource(R.string.show_system_apps),
-                    selected = showSystemApps,
-                    onClick = {
-                        menuExpanded = false
-                        onToggleSystemApps()
-                    },
-                ),
-            ),
+            items = buildList {
+                if (!isHolo) {
+                    add(
+                        AppDropdownItem(
+                            text = stringResource(R.string.refresh),
+                            onClick = {
+                                menuExpanded = false
+                                onRefresh()
+                            },
+                        ),
+                    )
+                }
+                add(
+                    AppDropdownItem(
+                        text = stringResource(R.string.show_system_apps),
+                        selected = showSystemApps,
+                        onClick = {
+                            menuExpanded = false
+                            onToggleSystemApps()
+                        },
+                    ),
+                )
+            },
         )
     }
 }

@@ -48,12 +48,18 @@ class SystemLanguagesViewModel @Inject constructor(
     val events = _events.receiveAsFlow()
 
     fun load() {
-        if (_uiState.value.isLoading) return
+        // Pager previews and returning tabs must not reload over an existing draft.
+        // Explicit re-reading remains the responsibility of refresh().
+        val current = _uiState.value
+        if (current.isLoading || current.hasUnsavedChanges || current.locales.isNotEmpty()) return
         viewModelScope.launch {
             _uiState.update { it.copy(isLoading = true) }
             runCatching { localeRepository.getSystemLocaleOptions() }
                 .onSuccess { locales ->
-                    _uiState.value = SystemLanguagesUiState(locales = locales)
+                    _uiState.update { state ->
+                        if (state.hasUnsavedChanges) state.copy(isLoading = false)
+                        else state.copy(locales = locales, isLoading = false)
+                    }
                 }
                 .onFailure {
                     _uiState.update { it.copy(isLoading = false) }

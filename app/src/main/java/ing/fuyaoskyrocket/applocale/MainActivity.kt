@@ -7,20 +7,16 @@ import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
-import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.movableContentOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import android.graphics.Color as AndroidColor
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.topjohnwu.superuser.Shell
@@ -165,24 +161,6 @@ class MainActivity : ComponentActivity(), Shizuku.OnRequestPermissionResultListe
         Shizuku.addRequestPermissionResultListener(requestPermissionResultListener)
         refreshShizukuPermissionState()
         setContent {
-            val darkTheme = isSystemInDarkTheme()
-            // The system-bar icon appearance follows dark mode only; re-apply on
-            // change instead of on every frame.
-            LaunchedEffect(darkTheme) {
-                val transparentSystemBarStyle = if (darkTheme) {
-                    SystemBarStyle.dark(AndroidColor.TRANSPARENT)
-                } else {
-                    SystemBarStyle.light(
-                        scrim = AndroidColor.TRANSPARENT,
-                        darkScrim = AndroidColor.TRANSPARENT,
-                    )
-                }
-                enableEdgeToEdge(
-                    statusBarStyle = transparentSystemBarStyle,
-                    navigationBarStyle = transparentSystemBarStyle,
-                )
-                window.isNavigationBarContrastEnforced = false
-            }
             // Single movable runtime tree: its composition identity survives the
             // theme-provider switch inside the appearance host.
             val runtimeContent = remember {

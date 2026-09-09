@@ -5,12 +5,12 @@
 <h1 align="center">Fuyao Locale</h1>
 
 <p align="center">
-  A Material 3 companion for viewing, managing, and preserving Android per-app locales
+  A companion for viewing, managing, and preserving Android per-app locales
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Android-13%2B-3DDC84?logo=android&amp;logoColor=white" alt="Android 13 or later">
-  <img src="https://img.shields.io/badge/version-27.0-4F6B00" alt="Version 27.0">
+  <img src="https://img.shields.io/badge/version-27.2-4F6B00" alt="Version 27.2">
   <img src="https://img.shields.io/badge/Kotlin-2.4.10-7F52FF?logo=kotlin&amp;logoColor=white" alt="Kotlin 2.4.10">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-AGPL--3.0--only-blue" alt="AGPL-3.0-only license"></a>
 </p>
@@ -46,7 +46,7 @@ The original project remains credited in the app and this repository. Fuyao Loca
 
 - Search directly inside the primary application list by application name or package name.
 - Filter the list to applications with a non-default locale.
-- Show or hide system applications; system applications are shown by default.
+- Show or hide system applications; the selection is saved and kept in sync with Settings. System applications are shown by default.
 - Sort by application name, package name, locale, modification state, or application type, in ascending or descending order.
 - Pull to refresh the installed-application and locale snapshot.
 
@@ -57,7 +57,7 @@ The original project remains credited in the app and this repository. Fuyao Loca
 - Display names in both the current Fuyao Locale interface language and each language's autonym.
 - In the default order, keep the target app's effective language first and sort the remaining language groups by their names in the current Fuyao Locale interface language. System-default apps use the device's effective system locale.
 - Sort language groups by recommended order, interface-language name, autonym, language tag, or variant count. Sort locale variants and search results by recommended order, interface-language name, autonym, language tag, or tag specificity; both levels support ascending and descending order.
-- Show regional flags through the system emoji renderer, with complete two- or three-letter language/script markers as the fallback.
+- Optionally show regional flags through the system emoji renderer. Turn flags off to show region or script codes; language/script markers remain the fallback when a flag is unavailable.
 - Search the locale directory, pin frequently used locales, and cycle pinned locales from the Quick Settings tile.
 - Keep the directory, search results, and opened variant group on independent scroll states; changing a sort order returns only the active list to its start.
 
@@ -72,16 +72,23 @@ The available locale catalog follows the Android runtime on the device. A future
 - Long-press a saved configuration to export it with the standard `CreateDocument` flow.
 - Use a dedicated detail route on compact screens and a list-detail layout on expanded screens.
 
-### Material 3 and adaptive behavior
+### Interface themes and adaptive behavior
 
-- Native Material 3 screens, components, color roles, typography, and dynamic light/dark presentation.
-- Home, Configurations, and About destinations using bottom navigation on compact screens and a navigation rail on wider windows.
+- Eight theme families: Classic Android (Android 2.0–2.3), Honeycomb (Android 3.0–3.2), Holo (Android 4.0–4.4), Material Design (Android 5.0–8.1), Material Design 2 Rounded (Android 9–11), Material You / Material Design 3 (Android 12–15), Material Design 3 Expressive (Android 16+), and the miuix extension (this app runs on Android 13+). Classic Android defaults to Gingerbread and retains Eclair/Froyo; Holo retains ICS blue and KitKat neutral variants, for 11 stable variants in total.
+- Material uses fixed primary colors, paper shadows, and first-generation ripples. Material Rounded uses native Material 2 with neutral surfaces and a fixed blue accent; Material You uses wallpaper colors and standard Material 3. Expressive adds spring motion, emphasized type, morphing buttons, loading indicators, and short navigation. See [Material generations](docs/android-themes/MATERIAL_GENERATIONS.md).
+- Independent light, dark, and system display modes. Theme families and detail variants have separate, chronologically ordered pickers with full names and Android versions. Existing selections are preserved, and each family remembers its last variant. Retro themes use versioned framework resources. System fonts are used by default for Chinese glyphs and font weights, with an option to restore the original era fonts.
+- Settings groups appearance, app lists, language display, and navigation, with saved options for system apps, package names, app types, regional flags, page swipes, double-tap-to-top, and the last visited page. Retro themes retain saved modern effect preferences while disabling those effects.
+- Five destinations: Apps, System languages, Configurations, Settings, and About. Modern themes use bottom navigation on compact screens and a navigation rail on wider windows; retro themes use their era-specific top tabs.
+- Drag page bodies horizontally with HorizontalPager while headers, tabs, and bottom or side navigation remain fixed. Each page retains its own search, filters, scroll positions, and drafts; detail routes keep back navigation. Single taps switch pages immediately, and double taps scroll to the top, with keyboard and accessibility equivalents.
+- KitKat uses white selection indicators and neutral highlights. Classic 2.x tabs use the original amber focus artwork; Froyo retains its 2.2 dropdown states and progress resources.
 - List-detail layouts for expanded windows, with width constraints for readable content.
-- Text-only page titles with navigation and contextual actions kept in their semantic top-app-bar slots.
-- A single keyed lazy list for application details and locale rows, with shared alignment tokens and automatic marquee behavior for overflowing labels.
+- Era-specific title bars, search, menus, and selection controls retain the same application operations.
+- A single keyed lazy list for application details and locale rows, with theme-specific spacing and support for long labels.
 - Edge-to-edge drawing for gesture navigation, including HyperOS devices.
 - Predictive back handling for navigation, search, multi-selection, sheets, nested language groups, and wide-screen detail state.
 - Interface language selection for English, Simplified Chinese, Japanese, and Brazilian Portuguese.
+
+Source provenance, per-theme implementation coverage, and remaining device/reference checks are recorded in [Android theme validation](docs/android-themes/ACCEPTANCE.md). Build results do not establish pixel-level equivalence with historical Android systems.
 
 ## Requirements
 
@@ -132,17 +139,25 @@ Use JDK 21 and an Android SDK containing Platform 37.
 ./gradlew :app:assembleRelease
 ~~~
 
-The Release APK is written to:
+Release APKs are written to `app/build/outputs/apk/release/`. All four build types use this filename format:
 
 ~~~text
-app/build/outputs/apk/release/app-release.apk
+FuyaoLocale-<applicationId>-<marketingVersion>(<buildNumber>)-<abi>-<variant>.apk
 ~~~
 
-Install it on a connected device with:
+The version segment combines the marketing version and build identifier, for example `27.2(1C82)`. Android versionName and versionCode remain in the APK and build metadata instead of being repeated in its filename. Each build type produces five APKs: one `universal` containing all four ABIs, plus separate `arm64-v8a`, `armeabi-v7a`, `x86`, and `x86_64` packages. Field separators are hyphens; ABI names retain their official spelling, including `x86_64`. The variant is `release`, `debug`, `releaseUnsigned`, or `debugUnsigned`, and the application ID includes that variant's suffix. Building all four types produces 20 APKs.
+
+
+The 27.2 build train is `1C`. Its sequence counts build invocations after the 27.1 submission, whose cumulative counter was 36: cumulative build 118 becomes `1C82`, with Android versionCode `272082`. The ignored root `.build-counter` remains cumulative; changing the train does not erase it. All variants in one invocation share a sequence, and failed builds still consume their reserved number.
+
+Use the generated metadata to install the current universal Release APK on a connected device:
 
 ~~~bash
-adb install -r app/build/outputs/apk/release/app-release.apk
+FUYAO_LOCALE_APK="$(python3 -c 'import json,pathlib; p=pathlib.Path("app/build/outputs/apk/release"); m=json.loads((p/"output-metadata.json").read_text()); print(p/next(e["outputFile"] for e in m["elements"] if not e.get("filters")))')"
+adb install -r "$FUYAO_LOCALE_APK"
 ~~~
+
+Run these commands from the repository root after a successful build. Metadata selects the current output even if older APKs remain in the directory. If metadata is missing, complete the Release build first; a successful install prints `Success`. The `-r` option preserves existing app data. No cleanup is required for this shell variable.
 
 ### Signing and build variants
 

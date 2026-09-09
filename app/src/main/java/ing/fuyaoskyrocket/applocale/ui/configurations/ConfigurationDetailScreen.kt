@@ -1,5 +1,6 @@
 package ing.fuyaoskyrocket.applocale.ui.configurations
 
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.*
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -23,32 +24,29 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import ing.fuyaoskyrocket.applocale.ui.screen.pageHiltViewModel as hiltViewModel
+import ing.fuyaoskyrocket.applocale.ui.screen.collectPageUiState
 import ing.fuyaoskyrocket.applocale.R
 import ing.fuyaoskyrocket.applocale.data.system.AppIconLoader
 import ing.fuyaoskyrocket.applocale.model.ConfigurationAppProjection
 import ing.fuyaoskyrocket.applocale.model.ConfigurationAppSection
 import ing.fuyaoskyrocket.applocale.model.SavedLocaleConfiguration
 import ing.fuyaoskyrocket.applocale.ui.components.rememberSystemLocaleTag
-import ing.fuyaoskyrocket.applocale.ui.designsystem.AppLayout
 import ing.fuyaoskyrocket.applocale.ui.designsystem.AppSpacing
 import ing.fuyaoskyrocket.applocale.ui.designsystem.AppUiTheme
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppCircularProgressIndicator
-import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppFilterChip
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppDropdownItem
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppFilledTonalButton
-import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppIcon
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppIconButton
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppScaffold
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppSearchField
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppSettingsRow
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppSnackbarHost
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppSymbol
-import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppSymbolVector
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppSymbolIcon
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppText
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppTextButton
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppTopAppBar
@@ -68,7 +66,7 @@ fun ConfigurationDetailScreen(
     onAnchorConsumed: () -> Unit,
     viewModel: ConfigurationsViewModel = hiltViewModel(),
 ) {
-    val uiState by viewModel.uiState.collectAsStateWithLifecycle()
+    val uiState by viewModel.uiState.collectPageUiState()
     val context = LocalContext.current
     val snackbarHostState = rememberAppSnackbarHostState()
     // The single-app chooser session (round-8 038); the sheet stays in
@@ -100,8 +98,8 @@ fun ConfigurationDetailScreen(
                 title = stringResource(R.string.configuration_details),
                 navigationIcon = {
                     AppIconButton(onClick = navigateBack) {
-                        AppIcon(
-                            imageVector = AppSymbolVector(AppSymbol.Back),
+                        AppSymbolIcon(
+                            symbol = AppSymbol.Back,
                             contentDescription = stringResource(R.string.back),
                         )
                     }
@@ -113,8 +111,8 @@ fun ConfigurationDetailScreen(
                         onClick = viewModel::refreshSelectedComparison,
                         enabled = !uiState.isComparing && uiState.applyingConfigurationId == null,
                     ) {
-                        AppIcon(
-                            imageVector = AppSymbolVector(AppSymbol.Refresh),
+                        AppSymbolIcon(
+                            symbol = AppSymbol.Refresh,
                             contentDescription = stringResource(R.string.refresh),
                         )
                     }
@@ -287,7 +285,7 @@ internal fun SavedConfigurationDetailContent(
                 showRefreshAction = showRefreshAction,
                 modifier = Modifier
                     .readableContentWidth()
-                    .padding(horizontal = AppLayout.contentFrameMargin),
+                    .padding(horizontal = AppUiTheme.spacing.contentInset),
             )
         }
 
@@ -298,7 +296,7 @@ internal fun SavedConfigurationDetailContent(
                     onSelect = { detailFilter = it },
                     modifier = Modifier
                         .readableContentWidth()
-                        .padding(horizontal = AppLayout.contentFrameMargin),
+                        .padding(horizontal = AppUiTheme.spacing.contentInset),
                 )
             }
         }
@@ -320,7 +318,7 @@ internal fun SavedConfigurationDetailContent(
                 Column(
                     modifier = Modifier
                         .readableContentWidth()
-                        .padding(horizontal = AppLayout.contentFrameMargin),
+                        .padding(horizontal = AppUiTheme.spacing.contentInset),
                     verticalArrangement = Arrangement.spacedBy(AppSpacing.sm),
                 ) {
                     AppText(
@@ -342,7 +340,7 @@ internal fun SavedConfigurationDetailContent(
                     color = AppUiTheme.palette.muted,
                     modifier = Modifier
                         .readableContentWidth()
-                        .padding(horizontal = AppLayout.contentFrameMargin),
+                        .padding(horizontal = AppUiTheme.spacing.contentInset),
                 )
             }
 
@@ -359,7 +357,7 @@ internal fun SavedConfigurationDetailContent(
                     isProcessing = editingPackageName == row.packageName,
                     modifier = Modifier
                         .readableContentWidth()
-                        .padding(horizontal = AppLayout.localeRowOuterMargin),
+                        .padding(horizontal = AppUiTheme.spacing.rowOuterInset),
                 )
             }
         }
@@ -371,8 +369,7 @@ internal fun SavedConfigurationDetailContent(
                     expanded = othersExpanded,
                     onToggle = { othersExpanded = !othersExpanded },
                     modifier = Modifier
-                        .readableContentWidth()
-                        .padding(horizontal = AppLayout.contentFrameMargin),
+                        .readableContentWidth(),
                 )
             }
             if (othersExpanded) {
@@ -383,7 +380,7 @@ internal fun SavedConfigurationDetailContent(
                         placeholder = stringResource(R.string.configuration_other_apps_search_hint),
                         modifier = Modifier
                             .readableContentWidth()
-                            .padding(horizontal = AppLayout.contentFrameMargin),
+                            .padding(horizontal = AppUiTheme.spacing.contentInset),
                     )
                 }
                 if (otherRows.isEmpty()) {
@@ -394,7 +391,7 @@ internal fun SavedConfigurationDetailContent(
                             color = AppUiTheme.palette.muted,
                             modifier = Modifier
                                 .readableContentWidth()
-                                .padding(horizontal = AppLayout.contentFrameMargin),
+                                .padding(horizontal = AppUiTheme.spacing.contentInset),
                         )
                     }
                 } else {
@@ -411,7 +408,7 @@ internal fun SavedConfigurationDetailContent(
                             isProcessing = editingPackageName == row.packageName,
                             modifier = Modifier
                                 .readableContentWidth()
-                                .padding(horizontal = AppLayout.localeRowOuterMargin),
+                                .padding(horizontal = AppUiTheme.spacing.rowOuterInset),
                         )
                     }
                 }
@@ -471,8 +468,8 @@ private fun ConfigurationSummaryHeader(
                     enabled = !isComparing && !isApplying,
                     modifier = Modifier.size(48.dp),
                 ) {
-                    AppIcon(
-                        imageVector = AppSymbolVector(AppSymbol.Refresh),
+                    AppSymbolIcon(
+                        symbol = AppSymbol.Refresh,
                         contentDescription = stringResource(R.string.refresh),
                     )
                 }
@@ -487,22 +484,16 @@ private fun ConfigurationFilterChipRow(
     onSelect: (ConfigurationDetailFilter) -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    Row(
+    val labels = listOf(
+        ConfigurationDetailFilter.All to stringResource(R.string.configuration_filter_all),
+        ConfigurationDetailFilter.Differences to stringResource(R.string.configuration_filter_differences),
+    )
+    AppFilterControls(
+        currentLabel = labels.first { it.first == selected }.second,
+        options = labels.map { (filter, label) -> AppFilterOption(filter.name, label, selected == filter, { onSelect(filter) }) },
+        menuItems = labels.map { (filter, label) -> AppDropdownItem(label, selected == filter, onClick = { onSelect(filter) }) },
         modifier = modifier,
-        horizontalArrangement = Arrangement.spacedBy(AppSpacing.sm),
-        verticalAlignment = Alignment.CenterVertically,
-    ) {
-        AppFilterChip(
-            selected = selected == ConfigurationDetailFilter.All,
-            onClick = { onSelect(ConfigurationDetailFilter.All) },
-            label = stringResource(R.string.configuration_filter_all),
-        )
-        AppFilterChip(
-            selected = selected == ConfigurationDetailFilter.Differences,
-            onClick = { onSelect(ConfigurationDetailFilter.Differences) },
-            label = stringResource(R.string.configuration_filter_differences),
-        )
-    }
+    )
 }
 
 @Composable
@@ -518,16 +509,7 @@ private fun OtherAppsHeader(
         title = otherAppsSectionTitle(count),
         onClick = onToggle,
         modifier = modifier,
-        trailing = {
-            AppIcon(
-                imageVector = AppSymbolVector(AppSymbol.Forward),
-                contentDescription = null,
-                tint = AppUiTheme.palette.muted,
-                modifier = Modifier.graphicsLayer {
-                    rotationZ = if (expanded) 90f else 0f
-                },
-            )
-        },
+        trailing = { AppRowAffordance(expanded = expanded) },
     )
 }
 

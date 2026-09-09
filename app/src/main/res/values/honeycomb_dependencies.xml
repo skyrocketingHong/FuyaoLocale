@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- AOSP, Apache-2.0. See docs/android-themes/honeycomb/asset-manifest.json. -->
+<resources>
+<color name="honeycomb_background_holo_dark">#ff000000</color>
+<color name="honeycomb_background_holo_light">#fff3f3f3</color>
+<color name="honeycomb_bright_foreground_disabled_holo_dark">#ff4c4c4c</color>
+<color name="honeycomb_bright_foreground_disabled_holo_light">#ffb2b2b2</color>
+<color name="honeycomb_bright_foreground_holo_dark">@color/honeycomb_background_holo_light</color>
+<color name="honeycomb_bright_foreground_holo_light">@color/honeycomb_background_holo_dark</color>
+<color name="honeycomb_dim_foreground_disabled_holo_dark">#80bebebe</color>
+<color name="honeycomb_dim_foreground_disabled_holo_light">#80323232</color>
+<color name="honeycomb_dim_foreground_holo_dark">#bebebe</color>
+<color name="honeycomb_dim_foreground_holo_light">#323232</color>
+<color name="honeycomb_highlighted_text_holo_dark">#9983CC39</color>
+<color name="honeycomb_highlighted_text_holo_light">#9983CC39</color>
+<color name="honeycomb_hint_foreground_holo_dark">#808080</color>
+<color name="honeycomb_hint_foreground_holo_light">#808080</color>
+<color name="honeycomb_link_text_holo_dark">#5c5cff</color>
+<color name="honeycomb_link_text_holo_light">#0000ee</color>
+<color name="honeycomb_transparent">#00000000</color>
+<integer name="honeycomb_config_activityDefaultDur">220</integer>
+<integer name="honeycomb_config_activityShortDur">150</integer>
+<integer name="honeycomb_config_mediumAnimTime">400</integer>
+</resources>

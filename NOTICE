@@ -18,3 +18,73 @@ Fuyao Locale changes include the new product identity and package namespace,
 Kotlin and Jetpack Compose architecture, Material 3 interface, application
 and locale list pipelines, batch locale workflows, saved configurations,
 adaptive layouts, localization, and build and signing setup.
+
+Holo ICS theme assets
+---------------------
+The "Holo ICS" interface style embeds Android framework resources and fonts
+taken verbatim from Android Open Source Project tag android-4.0.4_r2.1
+(frameworks/base commit df331873c8576e0ae34ae1ee3cc258beed373535),
+Copyright (C) The Android Open Source Project, licensed under the Apache
+License, Version 2.0 (LICENSES/Apache-2.0.txt). The complete per-file source
+mapping, densities, and SHA-256 checksums are recorded in
+docs/holo-ics/asset-manifest.json. Files were renamed with the holo_ics_
+prefix; no pixel content was modified.
+
+Android 4.4 KitKat framework resources and Roboto fonts
+Copyright The Android Open Source Project
+Licensed under the Apache License, Version 2.0.
+Fixed source: frameworks/base android-4.4_r1, commit
+1aed5ea2dcf7cb0bf35635f378b2326461ba0df0.
+Source paths, checksums and namespace changes:
+docs/android-themes/kitkat/asset-manifest.json.
+
+Android 2.0 Eclair framework resources and Droid Sans fonts
+Copyright The Android Open Source Project
+Licensed under the Apache License, Version 2.0.
+Fixed source: frameworks/base android-2.0_r1, commit
+92d82787e911d24b8b0ee24bb87c2922a595d9c4.
+Source paths, hashes, resource transformations and font notice:
+docs/android-themes/eclair/asset-manifest.json and FONT_NOTICE.txt.
+
+Android 3.0 Honeycomb framework resources and Droid Sans fonts
+Copyright The Android Open Source Project
+Licensed under the Apache License, Version 2.0.
+Source: official Android SDK Platform 3.0 revision 2 (API 11),
+HONEYCOMB build 104254, data/res and data/fonts.
+Package identity, resource notice and checksums:
+docs/android-themes/honeycomb/SOURCE.md, RESOURCE_NOTICE.txt and asset-manifest.json.
+
+Android 5.0 Lollipop framework resources, Roboto fonts and adapted drawing logic
+Copyright (C) 2014 The Android Open Source Project
+Licensed under the Apache License, Version 2.0.
+Fixed source: frameworks/base android-5.0.0_r1, commit
+ba35a77c7c4494c9eb74e87d8eaa9a7205c426d2.
+Source resources, font notice, namespace adaptations, and Ripple/Switch sources:
+docs/android-themes/lollipop/asset-manifest.json, FONT_NOTICE.txt,
+framework-sources.json and SOURCE_DIFFERENCES.md.
+
+Android 2.2 Froyo framework resource differences
+----------------------------------------------
+The Froyo dropdown-state and progress resources come from the Android Open
+Source Project, frameworks/base android-2.2_r1, commit
+71beeab14a891297b6658c4aeb47557083091aa1, under Apache License 2.0.
+Resources confirmed identical to Eclair, including Droid Sans, are shared.
+See docs/android-themes/froyo/import-spec.json, asset-manifest.json, and
+SOURCE_DIFFERENCES.md for provenance and adaptation details.
+
+Android 2.3 Gingerbread framework resources and Droid Sans fonts
+--------------------------------------------------------------
+Copyright The Android Open Source Project
+Licensed under the Apache License, Version 2.0 (LICENSES/Apache-2.0.txt).
+Fixed source: frameworks/base android-2.3.7_r1, commit
+3f2821425f1ab6eddb76a8725e3f2c3edb5d8b07.
+Source paths, hashes, resource transformations, and font notice:
+docs/android-themes/gingerbread/asset-manifest.json and FONT_NOTICE.txt.
+
+Material 3 switch geometry and color-role adaptation
+--------------------------------------------------
+Based on AndroidX Compose Material 3 1.5.0-alpha27 Switch.kt,
+Copyright The Android Open Source Project, Apache License 2.0.
+Fuyao Locale retains the source dimensions, state colors and motion scheme,
+and adds continuous pointer dragging with a single release-time callback.
+Source artifact: androidx.compose.material3:material3-android:1.5.0-alpha27.

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- App-owned Material 2014 palette. Imported AOSP evidence remains unchanged. -->
+<resources>
+    <color name="material_classic_primary">#3F51B5</color>
+    <color name="material_classic_primary_dark">#303F9F</color>
+    <style name="LollipopAppDrawablesLight" parent="LollipopDrawablesLight">
+        <item name="android:colorPrimary">@color/material_classic_primary</item>
+        <item name="android:colorPrimaryDark">@color/material_classic_primary_dark</item>
+    </style>
+    <style name="LollipopAppDrawablesDark" parent="LollipopDrawablesDark">
+        <item name="android:colorPrimary">@color/material_classic_primary</item>
+        <item name="android:colorPrimaryDark">@color/material_classic_primary_dark</item>
+    </style>
+</resources>

@@ -1,0 +1,40 @@
+{
+  "commit": "ba35a77c7c4494c9eb74e87d8eaa9a7205c426d2",
+  "files": [
+    {
+      "source": "graphics/java/android/graphics/drawable/RippleDrawable.java",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/ba35a77c7c4494c9eb74e87d8eaa9a7205c426d2/graphics/java/android/graphics/drawable/RippleDrawable.java",
+      "sha256": "a8ddc000e9ea1b1105e689fce82afbfcbd57890783a40309714321c329885882",
+      "target": "docs/android-themes/lollipop/reference/framework/RippleDrawable.java",
+      "license": "Apache-2.0"
+    },
+    {
+      "source": "graphics/java/android/graphics/drawable/RippleBackground.java",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/ba35a77c7c4494c9eb74e87d8eaa9a7205c426d2/graphics/java/android/graphics/drawable/RippleBackground.java",
+      "sha256": "7a6a6076646a2aee578504c308dd1a7921faed576bfcf7605b3225d8332b1c7e",
+      "target": "docs/android-themes/lollipop/reference/framework/RippleBackground.java",
+      "license": "Apache-2.0"
+    },
+    {
+      "source": "graphics/java/android/graphics/drawable/Ripple.java",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/ba35a77c7c4494c9eb74e87d8eaa9a7205c426d2/graphics/java/android/graphics/drawable/Ripple.java",
+      "sha256": "200a4868818c920cb4202e15ae0645bf433f258fb9a0a4492f595d43d3cd9a9e",
+      "target": "docs/android-themes/lollipop/reference/framework/Ripple.java",
+      "license": "Apache-2.0"
+    },
+    {
+      "source": "core/java/android/view/ViewConfiguration.java",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/ba35a77c7c4494c9eb74e87d8eaa9a7205c426d2/core/java/android/view/ViewConfiguration.java",
+      "sha256": "88a9ea20ccd853b6ed4389f616b99fe27e8c397a2f4e4fbd7bb96217f15450ce",
+      "target": "docs/android-themes/lollipop/reference/framework/ViewConfiguration.java",
+      "license": "Apache-2.0"
+    },
+    {
+      "source": "core/java/android/widget/Switch.java",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/ba35a77c7c4494c9eb74e87d8eaa9a7205c426d2/core/java/android/widget/Switch.java",
+      "sha256": "5961264aa9b79ec588cd8be228e1e73e695e3b435b565b49ca50c37b5f77de11",
+      "target": "docs/android-themes/lollipop/reference/framework/Switch.java",
+      "license": "Apache-2.0"
+    }
+  ]
+}

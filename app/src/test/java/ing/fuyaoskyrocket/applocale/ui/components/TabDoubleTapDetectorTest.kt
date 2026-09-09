@@ -7,6 +7,16 @@ import org.junit.Test
 
 /** Pure double-tap pairing checks for the tab bar (round-8 035-F). */
 class TabDoubleTapDetectorTest {
+    @Test
+    fun disabledGestureDoesNotPairOrRetainATap() {
+        var now = 0L
+        val detector = TabDoubleTapDetector(40L, 300L, { now }, enabled = false)
+        assertFalse(detector.recordTap(Home))
+        now = 100L
+        assertFalse(detector.recordTap(Home))
+        assertFalse(detector.hasPendingTap)
+    }
+
     private object Home
     private object About
 

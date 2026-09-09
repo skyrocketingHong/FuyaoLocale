@@ -1,13 +1,18 @@
 package ing.fuyaoskyrocket.applocale.ui.designsystem.miuix
 
+import androidx.compose.ui.unit.dp
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.remember
 import androidx.compose.ui.text.font.FontWeight
 import ing.fuyaoskyrocket.applocale.ui.designsystem.AppPalette
 import ing.fuyaoskyrocket.applocale.ui.designsystem.AppTextStyles
+import ing.fuyaoskyrocket.applocale.ui.designsystem.AppControlFamily
+import ing.fuyaoskyrocket.applocale.ui.designsystem.AppThemeStyle
+import ing.fuyaoskyrocket.applocale.ui.designsystem.AppUiMetrics
 import ing.fuyaoskyrocket.applocale.ui.designsystem.AppUiThemeValues
 import ing.fuyaoskyrocket.applocale.ui.designsystem.LocalAppUiTheme
+import ing.fuyaoskyrocket.applocale.ui.designsystem.material.ModernPresentationPolicy
 import top.yukonga.miuix.kmp.theme.ColorSchemeMode
 import top.yukonga.miuix.kmp.theme.Colors as MiuixColors
 import top.yukonga.miuix.kmp.theme.MiuixTheme
@@ -27,7 +32,8 @@ internal fun MiuixAppTheme(
 ) {
     val controller = remember(darkTheme) {
         ThemeController(
-            colorSchemeMode = ColorSchemeMode.System,
+            // The host already resolved Light/Dark/System; do not override it.
+            colorSchemeMode = if (darkTheme) ColorSchemeMode.Dark else ColorSchemeMode.Light,
             isDark = darkTheme,
         )
     }
@@ -36,6 +42,9 @@ internal fun MiuixAppTheme(
             LocalAppUiTheme provides AppUiThemeValues(
                 palette = MiuixTheme.colorScheme.toAppPalette(),
                 textStyles = miuixAppTextStyles(),
+                style = AppThemeStyle.MIUIX,
+                metrics = AppUiMetrics.Modern.copy(toolbarHeight = 50.dp, iconButtonSize = 40.dp),
+                policy = ModernPresentationPolicy.copy(controls = AppControlFamily.Miuix),
             ),
         ) {
             content()

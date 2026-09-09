@@ -9,12 +9,14 @@ data class AppAppearanceState(
     val style: AppThemeStyle,
     val moreBlur: Boolean,
     val liquidGlassNavigationBar: Boolean,
+    val colorMode: AppColorMode = AppColorMode.SYSTEM,
 ) {
     companion object {
         fun fromPreferences(): AppAppearanceState = AppAppearanceState(
             style = AppThemePreferences.style,
             moreBlur = AppThemePreferences.moreBlur,
             liquidGlassNavigationBar = AppThemePreferences.liquidGlassNavigationBar,
+            colorMode = AppThemePreferences.colorMode,
         )
     }
 }

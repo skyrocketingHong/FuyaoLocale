@@ -1,5 +1,8 @@
 package ing.fuyaoskyrocket.applocale.ui.designsystem.component
 
+import ing.fuyaoskyrocket.applocale.ui.designsystem.lollipop.*
+import ing.fuyaoskyrocket.applocale.ui.designsystem.eclair.*
+import ing.fuyaoskyrocket.applocale.ui.designsystem.AppControlFamily
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
@@ -11,13 +14,14 @@ import androidx.compose.material3.SearchBarDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import ing.fuyaoskyrocket.applocale.ui.designsystem.AppThemePreferences
-import ing.fuyaoskyrocket.applocale.ui.designsystem.AppThemeStyle
+import ing.fuyaoskyrocket.applocale.ui.designsystem.AppUiTheme
+import ing.fuyaoskyrocket.applocale.ui.designsystem.holo.HoloSearchTextField
 
 /**
- * Theme-aware compact search field. The Miuix style renders the native miuix search bar
- * (a capsule with the HyperOS search and clear affordances), and Material You keeps the
- * Material 3 always-collapsed search bar. Both stay permanently collapsed: filtering is
+ * Theme-aware compact search field. The Miuix style renders the native miuix
+ * search bar, Material You keeps the Material 3 always-collapsed search bar,
+ * and Holo renders the SearchView-style underline field from the imported
+ * search textfield 9-patches. All stay permanently collapsed: filtering is
  * live, so the expanded suggestion surface is never used.
  */
 @OptIn(ExperimentalMaterial3Api::class)
@@ -28,8 +32,9 @@ fun AppSearchField(
     placeholder: String,
     modifier: Modifier = Modifier,
 ) {
-    if (AppThemePreferences.style == AppThemeStyle.MIUIX) {
-        top.yukonga.miuix.kmp.basic.SearchBar(
+    when (AppUiTheme.policy.controls) {
+        AppControlFamily.Material2 -> ing.fuyaoskyrocket.applocale.ui.designsystem.material2.RoundedSearchField(query, onQueryChange, placeholder, modifier)
+        AppControlFamily.Miuix -> top.yukonga.miuix.kmp.basic.SearchBar(
             inputField = {
                 top.yukonga.miuix.kmp.basic.InputField(
                     query = query,
@@ -44,8 +49,19 @@ fun AppSearchField(
             onExpandedChange = {},
             modifier = modifier,
         ) {}
-    } else {
-        SearchBar(
+
+        AppControlFamily.Lollipop -> LollipopSearchField(query, onQueryChange, placeholder, modifier)
+
+        AppControlFamily.Eclair -> EclairSearchField(query, onQueryChange, placeholder, modifier)
+
+        AppControlFamily.Holo -> HoloSearchTextField(
+            value = query,
+            onValueChange = onQueryChange,
+            hint = placeholder,
+            modifier = modifier,
+        )
+
+        AppControlFamily.Material3 -> SearchBar(
             inputField = {
                 SearchBarDefaults.InputField(
                     query = query,
@@ -85,8 +101,10 @@ fun AppSearchField(
 }
 
 /**
- * Theme-aware pull-to-refresh container: the miuix implementation for the Miuix
- * style and the Material 3 box for the other styles.
+ * Theme-aware pull-to-refresh container: the miuix implementation for the
+ * Miuix style, the Material 3 box for Material You. Holo shows NO pull-to-
+ * refresh affordance (round-9 C16) — refresh lives in the Action Bar there,
+ * so the container passes the content straight through.
  */
 @Composable
 fun AppPullToRefresh(
@@ -95,15 +113,20 @@ fun AppPullToRefresh(
     modifier: Modifier = Modifier,
     content: @Composable () -> Unit,
 ) {
-    if (AppThemePreferences.style == AppThemeStyle.MIUIX) {
-        top.yukonga.miuix.kmp.basic.PullToRefresh(
+    when (AppUiTheme.policy.controls) {
+        AppControlFamily.Material2 -> ing.fuyaoskyrocket.applocale.ui.designsystem.material2.RoundedPullToRefresh(isRefreshing, onRefresh, modifier, content)
+        AppControlFamily.Miuix -> top.yukonga.miuix.kmp.basic.PullToRefresh(
             isRefreshing = isRefreshing,
             onRefresh = onRefresh,
             modifier = modifier,
             content = content,
         )
-    } else {
-        androidx.compose.material3.pulltorefresh.PullToRefreshBox(
+
+        AppControlFamily.Lollipop, AppControlFamily.Eclair, AppControlFamily.Holo -> androidx.compose.foundation.layout.Box(modifier = modifier) {
+            content()
+        }
+
+        AppControlFamily.Material3 -> androidx.compose.material3.pulltorefresh.PullToRefreshBox(
             isRefreshing = isRefreshing,
             onRefresh = onRefresh,
             modifier = modifier,

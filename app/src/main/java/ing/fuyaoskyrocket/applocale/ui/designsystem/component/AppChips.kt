@@ -1,5 +1,8 @@
 package ing.fuyaoskyrocket.applocale.ui.designsystem.component
 
+import ing.fuyaoskyrocket.applocale.ui.designsystem.lollipop.*
+import ing.fuyaoskyrocket.applocale.ui.designsystem.eclair.*
+import ing.fuyaoskyrocket.applocale.ui.designsystem.AppControlFamily
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.layout.PaddingValues
@@ -15,8 +18,7 @@ import androidx.compose.ui.semantics.selected
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import ing.fuyaoskyrocket.applocale.ui.designsystem.AppMotion
-import ing.fuyaoskyrocket.applocale.ui.designsystem.AppThemePreferences
-import ing.fuyaoskyrocket.applocale.ui.designsystem.AppThemeStyle
+import ing.fuyaoskyrocket.applocale.ui.designsystem.AppUiTheme
 import top.yukonga.miuix.kmp.theme.MiuixTheme
 
 /**
@@ -25,6 +27,7 @@ import top.yukonga.miuix.kmp.theme.MiuixTheme
  * Material You keeps the Material 3 chips.
  */
 
+@OptIn(androidx.compose.material.ExperimentalMaterialApi::class)
 @Composable
 fun AppFilterChip(
     selected: Boolean,
@@ -33,7 +36,38 @@ fun AppFilterChip(
     modifier: Modifier = Modifier,
     leadingIcon: ImageVector? = null,
 ) {
-    if (AppThemePreferences.style == AppThemeStyle.MIUIX) {
+    if (AppUiTheme.policy.controls == AppControlFamily.Material2) {
+        androidx.compose.material.FilterChip(selected, onClick, modifier,
+            leadingIcon = leadingIcon?.let { icon -> { androidx.compose.material.Icon(icon, null, Modifier.size(18.dp)) } },
+            selectedIcon = null,
+        ) { androidx.compose.material.Text(label) }
+        return
+    }
+    if (AppUiTheme.policy.controls == AppControlFamily.Lollipop) {
+        LollipopDropdownButton(label, onClick, modifier)
+        return
+    }
+    if (AppUiTheme.policy.controls == AppControlFamily.Eclair) {
+        EclairButton(label, onClick, modifier.semantics { this.selected = selected })
+        return
+    }
+    if (AppUiTheme.policy.controls == AppControlFamily.Holo) {
+        // Holo has no chip control (round-9 C10): the label renders as a
+        // borderless ICS text action with the selection state on semantics
+        // only; real filter surfaces use the Holo spinner menu (042/044), whose
+        // checked marks come from the era radio/checkbox assets.
+        androidx.compose.foundation.layout.Box(
+            modifier = modifier.semantics { this.selected = selected },
+        ) {
+            ing.fuyaoskyrocket.applocale.ui.designsystem.holo.HoloBorderlessButton(
+                text = label,
+                onClick = onClick,
+                small = true,
+            )
+        }
+        return
+    }
+    if (AppUiTheme.policy.controls == AppControlFamily.Miuix) {
         MiuixChip(
             onClick = onClick,
             label = label,
@@ -62,6 +96,7 @@ fun AppFilterChip(
     }
 }
 
+@OptIn(androidx.compose.material.ExperimentalMaterialApi::class)
 @Composable
 fun AppAssistChip(
     onClick: () -> Unit,
@@ -69,7 +104,30 @@ fun AppAssistChip(
     modifier: Modifier = Modifier,
     leadingIcon: ImageVector? = null,
 ) {
-    if (AppThemePreferences.style == AppThemeStyle.MIUIX) {
+    if (AppUiTheme.policy.controls == AppControlFamily.Material2) {
+        androidx.compose.material.Chip(onClick, modifier,
+            leadingIcon = leadingIcon?.let { icon -> { androidx.compose.material.Icon(icon, null, Modifier.size(18.dp)) } },
+        ) { androidx.compose.material.Text(label) }
+        return
+    }
+    if (AppUiTheme.policy.controls == AppControlFamily.Lollipop) {
+        LollipopDropdownButton(label, onClick, modifier)
+        return
+    }
+    if (AppUiTheme.policy.controls == AppControlFamily.Eclair) {
+        EclairButton(label, onClick, modifier)
+        return
+    }
+    if (AppUiTheme.policy.controls == AppControlFamily.Holo) {
+        ing.fuyaoskyrocket.applocale.ui.designsystem.holo.HoloBorderlessButton(
+            text = label,
+            onClick = onClick,
+            small = true,
+            modifier = modifier,
+        )
+        return
+    }
+    if (AppUiTheme.policy.controls == AppControlFamily.Miuix) {
         MiuixChip(
             onClick = onClick,
             label = label,

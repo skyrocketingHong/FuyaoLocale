@@ -1,5 +1,6 @@
 package ing.fuyaoskyrocket.applocale.ui.designsystem
 
+import androidx.compose.runtime.Composable
 import top.yukonga.miuix.kmp.blur.isRuntimeShaderSupported
 import top.yukonga.miuix.kmp.shader.isRenderEffectSupported
 
@@ -13,3 +14,15 @@ import top.yukonga.miuix.kmp.shader.isRenderEffectSupported
  */
 fun isEffectRenderingSupported(): Boolean =
     isRenderEffectSupported() && isRuntimeShaderSupported()
+
+/**
+ * The ONE answer to "is this backdrop effect actually rendering": the active
+ * style must allow it (Holo never does — round-9 045), the user must have it
+ * on, and the device must support it. Every consumer asks here instead of
+ * re-deriving the conjunction.
+ */
+@Composable
+fun isBackdropEffectActive(requested: Boolean): Boolean =
+    LocalAppUiTheme.current.policy.supportsBackdropEffects &&
+        requested &&
+        isEffectRenderingSupported()

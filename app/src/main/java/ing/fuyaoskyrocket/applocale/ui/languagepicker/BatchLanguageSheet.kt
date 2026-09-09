@@ -16,12 +16,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.stringResource
-import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import ing.fuyaoskyrocket.applocale.ui.screen.pageHiltViewModel as hiltViewModel
+import ing.fuyaoskyrocket.applocale.ui.screen.collectPageUiState
 import ing.fuyaoskyrocket.applocale.R
 import ing.fuyaoskyrocket.applocale.model.LocaleOption
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppCircularProgressIndicator
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppModalBottomSheet
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.holoSheetHeightModifier
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.holoSheetListFillModifier
 
 /**
  * Modal bottom sheet for batch language setting.
@@ -36,7 +38,7 @@ fun BatchLanguageSheet(
     onLocaleSelected: (String?) -> Unit,
     viewModel: LocalePickerViewModel = hiltViewModel(),
 ) {
-    val pickerState by viewModel.uiState.collectAsStateWithLifecycle()
+    val pickerState by viewModel.uiState.collectPageUiState()
     val displayLocaleTag = LocalConfiguration.current.locales[0].toLanguageTag()
 
     LaunchedEffect(visible, displayLocaleTag) {
@@ -62,7 +64,7 @@ fun BatchLanguageSheet(
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .fillMaxHeight(0.9f),
+                .then(holoSheetHeightModifier()),
         ) {
             if (pickerState.isLoading) {
                 Box(
@@ -83,7 +85,7 @@ fun BatchLanguageSheet(
                     },
                     canPin = false,
                     backEnabled = visible && pickerState.query.isBlank(),
-                    modifier = Modifier.fillMaxHeight(),
+                    modifier = holoSheetListFillModifier(),
                 )
             }
         }

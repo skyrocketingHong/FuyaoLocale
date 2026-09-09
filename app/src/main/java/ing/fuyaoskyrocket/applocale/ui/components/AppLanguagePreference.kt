@@ -1,5 +1,6 @@
 package ing.fuyaoskyrocket.applocale.ui.components
 
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppRowAffordance
 import android.app.LocaleManager
 import android.content.Context
 import android.os.LocaleList
@@ -27,16 +28,12 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import ing.fuyaoskyrocket.applocale.R
-import ing.fuyaoskyrocket.applocale.ui.designsystem.AppLayout
 import ing.fuyaoskyrocket.applocale.ui.designsystem.AppSpacing
 import ing.fuyaoskyrocket.applocale.ui.designsystem.AppUiTheme
 import ing.fuyaoskyrocket.applocale.ui.designsystem.LocalAppearanceRequester
-import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppIcon
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppLocaleChoiceRow
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppModalBottomSheet
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppSettingsRow
-import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppSymbol
-import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppSymbolVector
 import ing.fuyaoskyrocket.applocale.ui.designsystem.readableContentWidth
 import java.util.Locale
 
@@ -100,13 +97,7 @@ fun AppLanguagePreference(
             currentTag = readApplicationLocaleTag(context)
             showPicker = true
         },
-        trailing = {
-            AppIcon(
-                imageVector = AppSymbolVector(AppSymbol.Forward),
-                contentDescription = null,
-                tint = AppUiTheme.palette.muted,
-            )
-        },
+        trailing = { AppRowAffordance() },
     )
 
     AppModalBottomSheet(
@@ -174,7 +165,7 @@ private fun AppLanguageSheetContent(
                 },
                 modifier = Modifier
                     .readableContentWidth()
-                    .padding(horizontal = AppLayout.localeRowOuterMargin),
+                    .padding(horizontal = AppUiTheme.spacing.rowOuterInset),
             )
             if (index == 0 && options.size > 1) {
                 Spacer(Modifier.height(AppSpacing.sm))

@@ -1,55 +1,43 @@
 package ing.fuyaoskyrocket.applocale.ui.languagepicker
 
-import androidx.compose.foundation.clickable
+import ing.fuyaoskyrocket.applocale.ui.designsystem.component.*
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.ui.unit.dp
 import androidx.compose.runtime.Stable
 import androidx.compose.runtime.remember
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.foundation.lazy.LazyListState
-import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.ArrowDownward
 import androidx.compose.material.icons.outlined.ArrowUpward
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.semantics.semantics
-import androidx.compose.ui.semantics.stateDescription
 import ing.fuyaoskyrocket.applocale.R
 import ing.fuyaoskyrocket.applocale.model.LocaleGroup
 import ing.fuyaoskyrocket.applocale.model.LocaleOption
-import ing.fuyaoskyrocket.applocale.ui.designsystem.AppComponentDefaults
 import ing.fuyaoskyrocket.applocale.ui.designsystem.AppLayout
 import ing.fuyaoskyrocket.applocale.ui.designsystem.AppSpacing
 import ing.fuyaoskyrocket.applocale.ui.designsystem.AppUiTheme
 import ing.fuyaoskyrocket.applocale.ui.designsystem.readableContentWidth
 import ing.fuyaoskyrocket.applocale.ui.components.rememberSystemLocaleTag
 import ing.fuyaoskyrocket.applocale.ui.components.LocaleBadge
-import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppFilterChip
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppIcon
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppIconButton
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppLocaleChoiceRow
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppSearchField
-import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppSettingsRow
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppSymbol
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppSymbolVector
 import ing.fuyaoskyrocket.applocale.ui.designsystem.component.AppText
@@ -123,6 +111,8 @@ fun LanguagePickerContent(
         firstVisibleItemIndex = 0,
     )
     val systemLocaleTag = rememberSystemLocaleTag()
+    val rowInset = AppUiTheme.spacing.rowOuterInset
+    val contentInset = ing.fuyaoskyrocket.applocale.ui.designsystem.component.appListContentInset()
 
     LanguageGroupTransition(
         groupId = state.selectedGroupId,
@@ -159,10 +149,10 @@ fun LanguagePickerContent(
                 systemLocaleTag = systemLocaleTag,
                 contentModifier = Modifier
                     .readableContentWidth()
-                    .padding(horizontal = AppLayout.contentFrameMargin),
+                    .padding(horizontal = contentInset),
                 rowModifier = Modifier
                     .readableContentWidth()
-                    .padding(horizontal = AppLayout.localeRowOuterMargin),
+                    .padding(horizontal = rowInset),
             )
         }
     }
@@ -542,75 +532,53 @@ internal fun LanguageSortFilterBar(
     useVariantOptions: Boolean,
     modifier: Modifier = Modifier,
 ) {
-    val nameLabel = stringResource(R.string.language_sort_name)
-    val autonymLabel = stringResource(R.string.language_sort_autonym)
-    val tagLabel = stringResource(R.string.language_sort_tag)
-    val directionNone = stringResource(R.string.sort_direction_none)
-    val directionAscending = stringResource(R.string.sort_direction_ascending)
-    val directionDescending = stringResource(R.string.sort_direction_descending)
-    LazyRow(
-        modifier = modifier,
-        horizontalArrangement = Arrangement.spacedBy(AppSpacing.sm),
-        verticalAlignment = Alignment.CenterVertically,
-    ) {
-        item(key = "sort_name") {
-            LanguageSortChip(
-                label = nameLabel,
-                selected = currentSortOption(state, useVariantOptions) ==
-                    SortChipOption.LocalizedName,
-                ascending = currentSortAscending(state, useVariantOptions),
-                directionNone = directionNone,
-                directionAscending = directionAscending,
-                directionDescending = directionDescending,
-                onClick = {
-                    onAction(
-                        cycleSortAction(
-                            SortChipOption.LocalizedName,
-                            useVariantOptions,
-                        ),
-                    )
-                },
-            )
-        }
-        item(key = "sort_autonym") {
-            LanguageSortChip(
-                label = autonymLabel,
-                selected = currentSortOption(state, useVariantOptions) ==
-                    SortChipOption.NativeName,
-                ascending = currentSortAscending(state, useVariantOptions),
-                directionNone = directionNone,
-                directionAscending = directionAscending,
-                directionDescending = directionDescending,
-                onClick = {
-                    onAction(
-                        cycleSortAction(
-                            SortChipOption.NativeName,
-                            useVariantOptions,
-                        ),
-                    )
-                },
-            )
-        }
-        item(key = "sort_tag") {
-            LanguageSortChip(
-                label = tagLabel,
-                selected = currentSortOption(state, useVariantOptions) ==
-                    SortChipOption.LanguageTag,
-                ascending = currentSortAscending(state, useVariantOptions),
-                directionNone = directionNone,
-                directionAscending = directionAscending,
-                directionDescending = directionDescending,
-                onClick = {
-                    onAction(
-                        cycleSortAction(
-                            SortChipOption.LanguageTag,
-                            useVariantOptions,
-                        ),
-                    )
-                },
-            )
+    val currentOption = currentSortOption(state, useVariantOptions)
+    val currentAscending = currentSortAscending(state, useVariantOptions)
+    val none = stringResource(R.string.sort_direction_none)
+    val ascending = stringResource(R.string.sort_direction_ascending)
+    val descending = stringResource(R.string.sort_direction_descending)
+    val labels = listOf(
+        stringResource(R.string.language_sort_name) to SortChipOption.LocalizedName,
+        stringResource(R.string.language_sort_autonym) to SortChipOption.NativeName,
+        stringResource(R.string.language_sort_tag) to SortChipOption.LanguageTag,
+    )
+    fun apply(chip: SortChipOption, ascending: Boolean) {
+        if (useVariantOptions) {
+            val option = when (chip) {
+                SortChipOption.LocalizedName -> LocaleVariantSortOption.LocalizedName
+                SortChipOption.NativeName -> LocaleVariantSortOption.NativeName
+                SortChipOption.LanguageTag -> LocaleVariantSortOption.LanguageTag
+            }
+            onAction(LocalePickerAction.SetVariantSort(option, ascending))
+        } else {
+            val option = when (chip) {
+                SortChipOption.LocalizedName -> LanguageGroupSortOption.LocalizedName
+                SortChipOption.NativeName -> LanguageGroupSortOption.NativeName
+                SortChipOption.LanguageTag -> LanguageGroupSortOption.LanguageTag
+            }
+            onAction(LocalePickerAction.SetGroupSort(option, ascending))
         }
     }
+
+    AppFilterControls(
+        currentLabel = labels.firstOrNull { it.second == currentOption }?.first?.let {
+            it + " · " + if (currentAscending) ascending else descending
+        } ?: none,
+        modifier = modifier,
+        options = labels.map { (label, option) ->
+            val selected = currentOption == option
+            AppFilterOption(option.name, label, selected, { onAction(cycleSortAction(option, useVariantOptions)) },
+                icon = if (!selected) null else if (currentAscending) Icons.Outlined.ArrowUpward else Icons.Outlined.ArrowDownward,
+                state = if (!selected) none else if (currentAscending) ascending else descending)
+        },
+        menuItems = buildList {
+            labels.forEach { (label, option) ->
+                val selected = currentOption == option
+                add(AppDropdownItem(label, selected && currentAscending, onClick = { apply(option, true) }))
+                if (selected) add(AppDropdownItem(descending, !currentAscending, onClick = { apply(option, false) }))
+            }
+        },
+    )
 }
 
 /** The three chip-exposed sort facets shared by both sort levels. */
@@ -667,103 +635,13 @@ private fun cycleSortAction(
 }
 
 @Composable
-private fun LanguageSortChip(
-    label: String,
-    selected: Boolean,
-    ascending: Boolean,
-    directionNone: String,
-    directionAscending: String,
-    directionDescending: String,
-    onClick: () -> Unit,
-) {
-    AppFilterChip(
-        selected = selected,
-        onClick = onClick,
-        label = label,
-        // miuix has no single-direction arrow glyphs; the sort direction
-        // vectors stay project assets drawn by the chip's backend icon
-        // control (asset exception, see the 012 execution record).
-        leadingIcon = if (selected) {
-            if (ascending) {
-                Icons.Outlined.ArrowUpward
-            } else {
-                Icons.Outlined.ArrowDownward
-            }
-        } else {
-            null
-        },
-        modifier = Modifier.semantics {
-            stateDescription = when {
-                !selected -> directionNone
-                ascending -> directionAscending
-                else -> directionDescending
-            }
-        },
-    )
-}
+private fun SectionHeader(text: String, modifier: Modifier = Modifier) = AppSectionHeading(text, modifier)
 
 @Composable
-private fun SectionHeader(
-    text: String,
-    modifier: Modifier = Modifier,
-) {
-    AppText(
-        text = text,
-        style = AppComponentDefaults.titleStyle(),
-        color = AppUiTheme.palette.accent,
-        modifier = modifier.padding(
-            horizontal = 0.dp,
-            vertical = AppSpacing.sm,
-        ),
-    )
-}
-
-/**
- * A language group entry. Same frame and anatomy as the locale choice row
- * (round-7 028): the host's 4dp outer margin, start 12 / end 0 internal padding,
- * 72dp minimum height and the shared 48dp terminal slot with an explicit 24dp
- * glyph — only the terminal action is a forward chevron instead of a check.
- */
-@Composable
-private fun LanguageGroupRow(
-    group: LocaleGroup,
-    onClick: () -> Unit,
-    modifier: Modifier = Modifier,
-) {
-    Row(
-        modifier = modifier
-            .fillMaxWidth()
-            .heightIn(min = AppLayout.localeChoiceRowMinHeight)
-            .clip(RoundedCornerShape(AppComponentDefaults.rowCornerRadius))
-            .clickable(onClick = onClick)
-            .padding(
-                start = AppSpacing.md,
-                top = AppSpacing.md,
-                end = 0.dp,
-                bottom = AppSpacing.md,
-            ),
-        verticalAlignment = Alignment.CenterVertically,
-    ) {
-        LocaleBadge(languageTag = group.id, preferRegion = false)
-        Spacer(Modifier.width(AppSpacing.md))
-        Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(AppSpacing.xs)) {
-            AppText(text = group.localizedLanguage, style = AppComponentDefaults.titleStyle(), maxLines = 2)
-            AppText(
-                text = group.supportingLabel(),
-                style = AppComponentDefaults.metadataStyle(),
-                color = AppUiTheme.palette.muted,
-                maxLines = 2,
-            )
-        }
-        Box(Modifier.size(AppLayout.appListSelectionSlotWidth), contentAlignment = Alignment.Center) {
-            AppIcon(
-                imageVector = AppSymbolVector(AppSymbol.Forward),
-                contentDescription = null,
-                tint = AppUiTheme.palette.muted,
-                modifier = Modifier.size(24.dp),
-            )
-        }
-    }
+private fun LanguageGroupRow(group: LocaleGroup, onClick: () -> Unit, modifier: Modifier = Modifier) {
+    AppListRow(title = group.localizedLanguage, subtitle = group.supportingLabel(), onClick = onClick, modifier = modifier,
+        leading = { LocaleBadge(group.id, preferRegion = false, modifier = it) }, leadingSize = AppLayout.localeBadgeSize,
+        trailing = { AppRowAffordance() })
 }
 
 @Composable

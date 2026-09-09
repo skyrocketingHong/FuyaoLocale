@@ -96,7 +96,7 @@ fun AppDetailTopBar(
             navigationIcon = {
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     AppToolbarIconButton(
-                        icon = AppSymbolVector(AppSymbol.Back),
+                        symbol = AppSymbol.Back,
                         contentDescription = stringResource(R.string.back),
                         onClick = onBack,
                     )
@@ -117,14 +117,14 @@ fun AppDetailTopBar(
             },
             actions = {
                 AppToolbarIconButton(
-                    icon = AppSymbolVector(AppSymbol.Search),
+                    symbol = AppSymbol.Search,
                     contentDescription = stringResource(R.string.search_languages),
                     onClick = onOpenSearch,
                     enabled = !state.isLoading,
                 )
                 Box {
                     AppToolbarIconButton(
-                        icon = AppSymbolVector(AppSymbol.Menu),
+                        symbol = AppSymbol.Menu,
                         contentDescription = stringResource(R.string.more_actions),
                         onClick = { menuExpanded = true },
                         enabled = !state.isLoading,

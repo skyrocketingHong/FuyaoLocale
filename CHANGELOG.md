@@ -4,6 +4,38 @@ English | [简体中文](./CHANGELOG_ZH.md)
 
 Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 27.2 (2026-09-09)
+
+### Added
+
+Expanded interface themes to 8 families and 11 variants. Alongside the existing Material You / Material Design 3 (Android 12–15) and miuix extension, this release adds:
+
+| Theme family | Android versions and variants |
+|---|---|
+| Classic Android | Android 2.0 Eclair, Android 2.2 Froyo, and Android 2.3 Gingerbread |
+| Honeycomb | Android 3.0–3.2 Honeycomb, based on Android 3.0 |
+| Holo | Android 4.0 Ice Cream Sandwich with classic blue accents, and Android 4.4 KitKat with neutral accents |
+| Material Design | Android 5.0–8.1, based on Android 5.0 Lollipop |
+| Material Design 2 Rounded | Rounded Material Design 2 styling from the Android 9–11 era |
+| Material Design 3 Expressive | Expressive styling associated with Android 16 and later |
+
+- Added a dedicated Settings page for appearance, app lists, language display, and navigation.
+- Added light, dark, and system display modes independent of the theme. Theme families and detail variants are listed chronologically with full names and descriptions, and each family remembers its last selection.
+- Added persistent options for system font compatibility, system apps, package names, app types, regional flags, page swipes, double-tap-to-top, and the last visited page.
+- Added horizontal body swiping across all five main pages with fixed headers and navigation, plus double-tap-to-top on the wide-screen navigation rail.
+- Added universal, arm64-v8a, armeabi-v7a, x86, and x86_64 downloads for the official release.
+
+### Improved
+
+- Applied each theme's controls, typography, navigation, menus, and windows to the shared app-language, system-language, batch, and configuration workflows.
+- Improved switch dragging, release, and cancellation feedback, and added slide transitions when switching between glass and standard bottom bars.
+- Unified page insets, continuous lists, and section headings within each theme, with support for long names, larger fonts, and wide layouts.
+- Shortened About while retaining requirements, the regional display statement, project links, and attribution; updated all four interface languages.
+
+### Fixed
+
+- Preserved unsaved system-language edits when initial loading completes or the page is revisited.
+
 ## 27.1 (2026-09-07)
 
 ### Added

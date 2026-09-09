@@ -1,0 +1,3618 @@
+{
+  "source": {
+    "version": "Android SDK Platform 3.0 / API 11 / revision 2 / HONEYCOMB 104254",
+    "archiveUrl": "https://dl.google.com/android/repository/android-3.0_r02-linux.zip",
+    "archiveSha256": "1cacae7b6e1b5a5d73c06f5d29d2ea92d16674df8fd5507681290e77d1647a1c",
+    "license": "Apache-2.0"
+  },
+  "files": [
+    {
+      "source": "data/res/color/primary_text_holo_dark.xml",
+      "target": "app/src/main/res/color/honeycomb_primary_text_holo_dark.xml",
+      "sourceSha256": "129df2a8c55f3df36ad7180ae03150ae67531ca954bac68ca3645b4eef00fe8b",
+      "sha256": "0fd7f9039b80b98fd536aebd541d82001f512b9e7b178f52399948145941ec7b",
+      "size": 1383,
+      "density": "color",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "data/res/color/primary_text_holo_light.xml",
+      "target": "app/src/main/res/color/honeycomb_primary_text_holo_light.xml",
+      "sourceSha256": "dc79a6a5bf1a37d6681ed32160501a813bb3eba20cbd53f49a06430f028266b2",
+      "sha256": "90744603f036f9c2b8b545f3bdc45861a11bdeddc5536fd40e916ce03186a2bc",
+      "size": 1395,
+      "density": "color",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "data/res/color/secondary_text_holo_dark.xml",
+      "target": "app/src/main/res/color/honeycomb_secondary_text_holo_dark.xml",
+      "sourceSha256": "aeb99c72d4549d0f48f56db72a0f844d84c7bb36f2a4ed5937c73ac4fd5d28b6",
+      "sha256": "fe0ef947b6c8682178fb6256578b4f18a2b76e84000a8341dfbd1d3f501beaef",
+      "size": 1791,
+      "density": "color",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "data/res/color/secondary_text_holo_light.xml",
+      "target": "app/src/main/res/color/honeycomb_secondary_text_holo_light.xml",
+      "sourceSha256": "7a4c6bcfe8878e83be0d0d572a0b983db2b62c2dfa0c6e37c9c6a64b3b302298",
+      "sha256": "ecaaa8b9d41ddc8065d8d428af7f20255696764187802f97684f06e9e16a1537",
+      "size": 1939,
+      "density": "color",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_check_off_disabled_focused_holo_dark.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_check_off_disabled_focused_holo_dark.png",
+      "sourceSha256": "0b452ad7c151905c5cc88a54c6b8bce1122d32ac940b98b85637f1a9c8fcd687",
+      "sha256": "0b452ad7c151905c5cc88a54c6b8bce1122d32ac940b98b85637f1a9c8fcd687",
+      "size": 469,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_check_off_disabled_focused_holo_light.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_check_off_disabled_focused_holo_light.png",
+      "sourceSha256": "5a6c4702691d8349407bfe6f98c397d324f72e42f7b51c55a4ef3a6af80dad85",
+      "sha256": "5a6c4702691d8349407bfe6f98c397d324f72e42f7b51c55a4ef3a6af80dad85",
+      "size": 463,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_check_off_disabled_holo_dark.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_check_off_disabled_holo_dark.png",
+      "sourceSha256": "7138c64dd6b2f0d660b13a83747edb654a4d2df84df8d4cff4bee490efea124e",
+      "sha256": "7138c64dd6b2f0d660b13a83747edb654a4d2df84df8d4cff4bee490efea124e",
+      "size": 355,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_check_off_disabled_holo_light.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_check_off_disabled_holo_light.png",
+      "sourceSha256": "42a56653d616ee575ff6f91ddc5a52a243a1330313683fb98b56ad0954f93c07",
+      "sha256": "42a56653d616ee575ff6f91ddc5a52a243a1330313683fb98b56ad0954f93c07",
+      "size": 352,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_check_off_focused_holo_dark.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_check_off_focused_holo_dark.png",
+      "sourceSha256": "d5f2c53dd4034ab8c56c4b537c0f3948b822898f81ac22e3dc3fd1c242393e05",
+      "sha256": "d5f2c53dd4034ab8c56c4b537c0f3948b822898f81ac22e3dc3fd1c242393e05",
+      "size": 467,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_check_off_focused_holo_light.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_check_off_focused_holo_light.png",
+      "sourceSha256": "b20648ff6c9192834a03a5ef6be9d2460f1ecf39431c52e5327dd03e66c43321",
+      "sha256": "b20648ff6c9192834a03a5ef6be9d2460f1ecf39431c52e5327dd03e66c43321",
+      "size": 461,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_check_off_holo_dark.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_check_off_holo_dark.png",
+      "sourceSha256": "646fc8bd93090be177e87de988130e828f5c6894d952bdf315f7c689be63f4ce",
+      "sha256": "646fc8bd93090be177e87de988130e828f5c6894d952bdf315f7c689be63f4ce",
+      "size": 354,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_check_off_holo_light.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_check_off_holo_light.png",
+      "sourceSha256": "f78868c4ebc9f87fc8027162917fcc7911fcb427d11bbe21275784350aeae19d",
+      "sha256": "f78868c4ebc9f87fc8027162917fcc7911fcb427d11bbe21275784350aeae19d",
+      "size": 352,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_check_off_pressed_holo_dark.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_check_off_pressed_holo_dark.png",
+      "sourceSha256": "730dbf9815660437b1b26efa8daec40161a768de5e537b36bfa35f443a9211f8",
+      "sha256": "730dbf9815660437b1b26efa8daec40161a768de5e537b36bfa35f443a9211f8",
+      "size": 1493,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_check_off_pressed_holo_light.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_check_off_pressed_holo_light.png",
+      "sourceSha256": "396185ad15b544b77252609e1c969c585dcca7ff7b000f61a9e014f5ce6cd833",
+      "sha256": "396185ad15b544b77252609e1c969c585dcca7ff7b000f61a9e014f5ce6cd833",
+      "size": 1439,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_check_on_disabled_focused_holo_dark.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_check_on_disabled_focused_holo_dark.png",
+      "sourceSha256": "eb4c2cfa05cb7135e3279e7d9d71d01dcab3fae6b7de61dc0501cdd11510d511",
+      "sha256": "eb4c2cfa05cb7135e3279e7d9d71d01dcab3fae6b7de61dc0501cdd11510d511",
+      "size": 1276,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_check_on_disabled_focused_holo_light.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_check_on_disabled_focused_holo_light.png",
+      "sourceSha256": "5cf920f9c64013d1ac8dd90fbb0b2bebc791c32007bf707c905d5c59330d1141",
+      "sha256": "5cf920f9c64013d1ac8dd90fbb0b2bebc791c32007bf707c905d5c59330d1141",
+      "size": 1253,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_check_on_disabled_holo_dark.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_check_on_disabled_holo_dark.png",
+      "sourceSha256": "5bd1b8cb141a2027caf3f00a10e13de15d96f95f2e002f3bfd71fad53f5e7ad3",
+      "sha256": "5bd1b8cb141a2027caf3f00a10e13de15d96f95f2e002f3bfd71fad53f5e7ad3",
+      "size": 959,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_check_on_disabled_holo_light.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_check_on_disabled_holo_light.png",
+      "sourceSha256": "4f4b66ccb5b4c66dee7416d76db8094b0d86fed550c67154322515d8646fb38e",
+      "sha256": "4f4b66ccb5b4c66dee7416d76db8094b0d86fed550c67154322515d8646fb38e",
+      "size": 943,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_check_on_focused_holo_dark.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_check_on_focused_holo_dark.png",
+      "sourceSha256": "1d0bb25a514e828ccc6d55bff27f340801324fedabe31562f40d442d5aab93f6",
+      "sha256": "1d0bb25a514e828ccc6d55bff27f340801324fedabe31562f40d442d5aab93f6",
+      "size": 1324,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_check_on_focused_holo_light.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_check_on_focused_holo_light.png",
+      "sourceSha256": "584719631911e359e10a02445020dd08df3835f0fd852a5ef2d025544fa30f24",
+      "sha256": "584719631911e359e10a02445020dd08df3835f0fd852a5ef2d025544fa30f24",
+      "size": 1352,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_check_on_holo_dark.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_check_on_holo_dark.png",
+      "sourceSha256": "fa03c18b0a60cca0005743cec8bc08205c49d0540e5311795baea6694c9b622b",
+      "sha256": "fa03c18b0a60cca0005743cec8bc08205c49d0540e5311795baea6694c9b622b",
+      "size": 1243,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_check_on_holo_light.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_check_on_holo_light.png",
+      "sourceSha256": "8c5c3d9edfc7d86a7b4bb750ec06b879b6a99dc75e1193128eb53b2172658a47",
+      "sha256": "8c5c3d9edfc7d86a7b4bb750ec06b879b6a99dc75e1193128eb53b2172658a47",
+      "size": 1247,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_check_on_pressed_holo_dark.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_check_on_pressed_holo_dark.png",
+      "sourceSha256": "a60067bb391604d7d1a34d66da152426a5fc06e35ec9432d7343823ced928721",
+      "sha256": "a60067bb391604d7d1a34d66da152426a5fc06e35ec9432d7343823ced928721",
+      "size": 2581,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_check_on_pressed_holo_light.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_check_on_pressed_holo_light.png",
+      "sourceSha256": "09c7ac633829502d89634566e3c20e82701c3af820ab63add23a031dbb5eb687",
+      "sha256": "09c7ac633829502d89634566e3c20e82701c3af820ab63add23a031dbb5eb687",
+      "size": 2692,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_default_disabled_focused_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_default_disabled_focused_holo_dark.9.png",
+      "sourceSha256": "4f6f9daf0e8dbb570ba4b2b8f860e7ac9ddd7561d02d3c5f9e8ac2524eda90db",
+      "sha256": "4f6f9daf0e8dbb570ba4b2b8f860e7ac9ddd7561d02d3c5f9e8ac2524eda90db",
+      "size": 525,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_default_disabled_focused_holo_light.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_default_disabled_focused_holo_light.9.png",
+      "sourceSha256": "4f6f9daf0e8dbb570ba4b2b8f860e7ac9ddd7561d02d3c5f9e8ac2524eda90db",
+      "sha256": "4f6f9daf0e8dbb570ba4b2b8f860e7ac9ddd7561d02d3c5f9e8ac2524eda90db",
+      "size": 525,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_default_disabled_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_default_disabled_holo_dark.9.png",
+      "sourceSha256": "0174727c774ad20207fac3f0016a1214b3d22a832566a8cfb48fefc2617f9fdf",
+      "sha256": "0174727c774ad20207fac3f0016a1214b3d22a832566a8cfb48fefc2617f9fdf",
+      "size": 356,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_default_disabled_holo_light.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_default_disabled_holo_light.9.png",
+      "sourceSha256": "0174727c774ad20207fac3f0016a1214b3d22a832566a8cfb48fefc2617f9fdf",
+      "sha256": "0174727c774ad20207fac3f0016a1214b3d22a832566a8cfb48fefc2617f9fdf",
+      "size": 356,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_default_focused_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_default_focused_holo_dark.9.png",
+      "sourceSha256": "afdad12e3d42cf180b39cae1416ac13d977655df7e19731660e1a6515128ed36",
+      "sha256": "afdad12e3d42cf180b39cae1416ac13d977655df7e19731660e1a6515128ed36",
+      "size": 504,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_default_focused_holo_light.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_default_focused_holo_light.9.png",
+      "sourceSha256": "afdad12e3d42cf180b39cae1416ac13d977655df7e19731660e1a6515128ed36",
+      "sha256": "afdad12e3d42cf180b39cae1416ac13d977655df7e19731660e1a6515128ed36",
+      "size": 504,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_default_normal_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_default_normal_holo_dark.9.png",
+      "sourceSha256": "43077f883b1dfb918cc16d6d9571cbfab876a4a52e1030a42128e91dc0c6d3f3",
+      "sha256": "43077f883b1dfb918cc16d6d9571cbfab876a4a52e1030a42128e91dc0c6d3f3",
+      "size": 345,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_default_normal_holo_light.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_default_normal_holo_light.9.png",
+      "sourceSha256": "43077f883b1dfb918cc16d6d9571cbfab876a4a52e1030a42128e91dc0c6d3f3",
+      "sha256": "43077f883b1dfb918cc16d6d9571cbfab876a4a52e1030a42128e91dc0c6d3f3",
+      "size": 345,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_default_pressed_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_default_pressed_holo_dark.9.png",
+      "sourceSha256": "6cc754a554576dcf02546ddc3979fd5d547f2ff40af18a03b26758eb27e7ac8f",
+      "sha256": "6cc754a554576dcf02546ddc3979fd5d547f2ff40af18a03b26758eb27e7ac8f",
+      "size": 494,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_default_pressed_holo_light.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_default_pressed_holo_light.9.png",
+      "sourceSha256": "6cc754a554576dcf02546ddc3979fd5d547f2ff40af18a03b26758eb27e7ac8f",
+      "sha256": "6cc754a554576dcf02546ddc3979fd5d547f2ff40af18a03b26758eb27e7ac8f",
+      "size": 494,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_radio_off_disabled_focused_holo_dark.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_radio_off_disabled_focused_holo_dark.png",
+      "sourceSha256": "5f68ea36ec8f325ebd3b4680667c826954f3ecc081767687ef5fe9cdb9046328",
+      "sha256": "5f68ea36ec8f325ebd3b4680667c826954f3ecc081767687ef5fe9cdb9046328",
+      "size": 1502,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_radio_off_disabled_focused_holo_light.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_radio_off_disabled_focused_holo_light.png",
+      "sourceSha256": "251046868a3f0faee8e9fab970a5d2f66f5c06fd9509bc59e33de60c968b937e",
+      "sha256": "251046868a3f0faee8e9fab970a5d2f66f5c06fd9509bc59e33de60c968b937e",
+      "size": 1533,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_radio_off_disabled_holo_dark.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_radio_off_disabled_holo_dark.png",
+      "sourceSha256": "12e81b91e2a0ff08aa5e1f77eaa112900b3200b35e56dff52550662f17cd65f0",
+      "sha256": "12e81b91e2a0ff08aa5e1f77eaa112900b3200b35e56dff52550662f17cd65f0",
+      "size": 651,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_radio_off_disabled_holo_light.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_radio_off_disabled_holo_light.png",
+      "sourceSha256": "0952f4d65567d982a5b28869b00115deaab5e68d83ddb0ed3d0270fb56c55ad0",
+      "sha256": "0952f4d65567d982a5b28869b00115deaab5e68d83ddb0ed3d0270fb56c55ad0",
+      "size": 672,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_radio_off_focused_holo_dark.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_radio_off_focused_holo_dark.png",
+      "sourceSha256": "2762115ecac135bd525050d46874e3febf28b5026dc1993c22857543d8137826",
+      "sha256": "2762115ecac135bd525050d46874e3febf28b5026dc1993c22857543d8137826",
+      "size": 1539,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_radio_off_focused_holo_light.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_radio_off_focused_holo_light.png",
+      "sourceSha256": "cf1f426bccee3a5d3e6394d146d3128ed3d62958d3c8ad9ba09772fc56dde317",
+      "sha256": "cf1f426bccee3a5d3e6394d146d3128ed3d62958d3c8ad9ba09772fc56dde317",
+      "size": 1562,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_radio_off_holo_dark.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_radio_off_holo_dark.png",
+      "sourceSha256": "ed51c4188a2e4b309e9942cf9b311f38dc495840e97a084bd343650f0dde0932",
+      "sha256": "ed51c4188a2e4b309e9942cf9b311f38dc495840e97a084bd343650f0dde0932",
+      "size": 685,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_radio_off_holo_light.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_radio_off_holo_light.png",
+      "sourceSha256": "2522c603f583b71e3629ae24512f8a80fc07065879189a2370b000d57da34fad",
+      "sha256": "2522c603f583b71e3629ae24512f8a80fc07065879189a2370b000d57da34fad",
+      "size": 716,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_radio_off_pressed_holo_dark.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_radio_off_pressed_holo_dark.png",
+      "sourceSha256": "06022831a2835fa8a04fc92e9101a7e518f72f6fbfd02827252232da1eae1d09",
+      "sha256": "06022831a2835fa8a04fc92e9101a7e518f72f6fbfd02827252232da1eae1d09",
+      "size": 2215,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_radio_off_pressed_holo_light.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_radio_off_pressed_holo_light.png",
+      "sourceSha256": "af062a097bee3ecbc87c1ef9da40afd5d76cda00f0ae149e3e6112370ae9bece",
+      "sha256": "af062a097bee3ecbc87c1ef9da40afd5d76cda00f0ae149e3e6112370ae9bece",
+      "size": 2307,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_radio_on_disabled_focused_holo_dark.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_radio_on_disabled_focused_holo_dark.png",
+      "sourceSha256": "c0588eb9a51a5b9e06bc7189d3e9776416c02d7fd10d844fdae555019d40ae0d",
+      "sha256": "c0588eb9a51a5b9e06bc7189d3e9776416c02d7fd10d844fdae555019d40ae0d",
+      "size": 2103,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_radio_on_disabled_focused_holo_light.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_radio_on_disabled_focused_holo_light.png",
+      "sourceSha256": "0e5fc7c7e139b542b37ad2ba64de88c45849f15b2ed7c76663c4e79aa8cbde43",
+      "sha256": "0e5fc7c7e139b542b37ad2ba64de88c45849f15b2ed7c76663c4e79aa8cbde43",
+      "size": 2067,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_radio_on_disabled_holo_dark.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_radio_on_disabled_holo_dark.png",
+      "sourceSha256": "f0cb60ea451c3dbbfb22eb1e8ad5233e1f5f2e914b559b591fd9ed5db8c9d142",
+      "sha256": "f0cb60ea451c3dbbfb22eb1e8ad5233e1f5f2e914b559b591fd9ed5db8c9d142",
+      "size": 1034,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_radio_on_disabled_holo_light.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_radio_on_disabled_holo_light.png",
+      "sourceSha256": "cb02c5f16af97562ef82126d71b165156e1cdce77cf20a7de1f4a92c4dff6ed1",
+      "sha256": "cb02c5f16af97562ef82126d71b165156e1cdce77cf20a7de1f4a92c4dff6ed1",
+      "size": 1024,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_radio_on_focused_holo_dark.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_radio_on_focused_holo_dark.png",
+      "sourceSha256": "2c9f09ebbbe37b8d7ad9439b44f9220fd3d7175b5957afafa9d9cfd2f15dc8be",
+      "sha256": "2c9f09ebbbe37b8d7ad9439b44f9220fd3d7175b5957afafa9d9cfd2f15dc8be",
+      "size": 2050,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_radio_on_focused_holo_light.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_radio_on_focused_holo_light.png",
+      "sourceSha256": "8f9c841e99838e8a347fdc499d16e4cf73f9dd03e12e31136f942c24291398e7",
+      "sha256": "8f9c841e99838e8a347fdc499d16e4cf73f9dd03e12e31136f942c24291398e7",
+      "size": 2162,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_radio_on_holo_dark.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_radio_on_holo_dark.png",
+      "sourceSha256": "a20af443af2a8505a04f0bc7bfb9c7d84074e768f43df9f8976ce8d52654ee4e",
+      "sha256": "a20af443af2a8505a04f0bc7bfb9c7d84074e768f43df9f8976ce8d52654ee4e",
+      "size": 1371,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_radio_on_holo_light.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_radio_on_holo_light.png",
+      "sourceSha256": "877a2f6f47d7b82a930fd62be01074ed70f018bc94388314f1fd19bd11ad34f2",
+      "sha256": "877a2f6f47d7b82a930fd62be01074ed70f018bc94388314f1fd19bd11ad34f2",
+      "size": 1481,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_radio_on_pressed_holo_dark.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_radio_on_pressed_holo_dark.png",
+      "sourceSha256": "ae69841a769ece4a354526eb7e48754f1800da605c234a9185a6e51ee234ea9b",
+      "sha256": "ae69841a769ece4a354526eb7e48754f1800da605c234a9185a6e51ee234ea9b",
+      "size": 2759,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/btn_radio_on_pressed_holo_light.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_btn_radio_on_pressed_holo_light.png",
+      "sourceSha256": "47021c2649bfbdb74d52b13d998525f5cd3900ee30193a918df25bab47cfc964",
+      "sha256": "47021c2649bfbdb74d52b13d998525f5cd3900ee30193a918df25bab47cfc964",
+      "size": 2991,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/cab_background_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_cab_background_holo_dark.9.png",
+      "sourceSha256": "0d28496b0c04d8cb8dca83ff35792ce5b2d6382de85dff7ad50f0728e92329fb",
+      "sha256": "0d28496b0c04d8cb8dca83ff35792ce5b2d6382de85dff7ad50f0728e92329fb",
+      "size": 3307,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/cab_background_holo_light.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_cab_background_holo_light.9.png",
+      "sourceSha256": "06489c31480235026a0291b80627d1382e5bb4cd601d5b49f6560a55db97678c",
+      "sha256": "06489c31480235026a0291b80627d1382e5bb4cd601d5b49f6560a55db97678c",
+      "size": 3494,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/cab_ic_close_focused_holo.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_cab_ic_close_focused_holo.png",
+      "sourceSha256": "89261b6f3f5c7ec2bf3d201e4ea40070342b9ffc33e853fde70a65cbed5f65e0",
+      "sha256": "89261b6f3f5c7ec2bf3d201e4ea40070342b9ffc33e853fde70a65cbed5f65e0",
+      "size": 1292,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/cab_ic_close_normal_holo.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_cab_ic_close_normal_holo.png",
+      "sourceSha256": "ccbe7d99a1d6a68364936258e5dec9239832ba6605bc2ebddc45e45fa01b2ad2",
+      "sha256": "ccbe7d99a1d6a68364936258e5dec9239832ba6605bc2ebddc45e45fa01b2ad2",
+      "size": 957,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/cab_ic_close_pressed_holo.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_cab_ic_close_pressed_holo.png",
+      "sourceSha256": "cf76fc5ed1f9e8314d59c4792ef64859b3b73c773010bd692ff10547049e44c8",
+      "sha256": "cf76fc5ed1f9e8314d59c4792ef64859b3b73c773010bd692ff10547049e44c8",
+      "size": 1749,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/dialog_full_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_dialog_full_holo_dark.9.png",
+      "sourceSha256": "dfbd06278d90b329c2255891be7d3a275dc7f4fce7b7b80dfa6d9d91ae9fef93",
+      "sha256": "dfbd06278d90b329c2255891be7d3a275dc7f4fce7b7b80dfa6d9d91ae9fef93",
+      "size": 9343,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/dialog_full_holo_light.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_dialog_full_holo_light.9.png",
+      "sourceSha256": "428c5ff7040a33327e477de1775d346738d3b664b75bc42d5072577465b9c154",
+      "sha256": "428c5ff7040a33327e477de1775d346738d3b664b75bc42d5072577465b9c154",
+      "size": 7111,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/divider_strong_holo.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_divider_strong_holo.9.png",
+      "sourceSha256": "db611ee0bb0340b341765b51905774adbb54b3aea75b7d32e442bdf54e64aac9",
+      "sha256": "db611ee0bb0340b341765b51905774adbb54b3aea75b7d32e442bdf54e64aac9",
+      "size": 122,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/divider_vertical_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_divider_vertical_holo_dark.9.png",
+      "sourceSha256": "f3cc26a67b900f2d3034a1782136e411a50442182f4ce403bdc95f3b51d1cfd1",
+      "sha256": "f3cc26a67b900f2d3034a1782136e411a50442182f4ce403bdc95f3b51d1cfd1",
+      "size": 157,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/divider_vertical_holo_light.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_divider_vertical_holo_light.9.png",
+      "sourceSha256": "a6f64c2ab0c290dcc304c606a993816cd07aeda7fa32b91cd3db3b52855f807b",
+      "sha256": "a6f64c2ab0c290dcc304c606a993816cd07aeda7fa32b91cd3db3b52855f807b",
+      "size": 158,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/ic_ab_back_holo_dark.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_ic_ab_back_holo_dark.png",
+      "sourceSha256": "93fba07406115ae8bab74feb1243d40694c6974c9f22d251e1c0bcb0138cea7a",
+      "sha256": "93fba07406115ae8bab74feb1243d40694c6974c9f22d251e1c0bcb0138cea7a",
+      "size": 518,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/ic_ab_back_holo_light.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_ic_ab_back_holo_light.png",
+      "sourceSha256": "8a183a796b6da1beadc397f0755924036d3a30b32e94b1a66026838f965ec851",
+      "sha256": "8a183a796b6da1beadc397f0755924036d3a30b32e94b1a66026838f965ec851",
+      "size": 524,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/ic_clear_disabled.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_ic_clear_disabled.png",
+      "sourceSha256": "29671f97e645a8c232a4486391f7fc5728f496a0546adcd0469df0b3e7494e3d",
+      "sha256": "29671f97e645a8c232a4486391f7fc5728f496a0546adcd0469df0b3e7494e3d",
+      "size": 1774,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/ic_clear_normal.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_ic_clear_normal.png",
+      "sourceSha256": "ea17020e23e34bc37833e7ad07896ea932f0b2282526017b4ce28d687300cdef",
+      "sha256": "ea17020e23e34bc37833e7ad07896ea932f0b2282526017b4ce28d687300cdef",
+      "size": 1945,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/ic_input_add.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_ic_input_add.png",
+      "sourceSha256": "d4bc354cb3c27de829ba564372c2f766754e02031d73b5fa72e24853b6820a8b",
+      "sha256": "d4bc354cb3c27de829ba564372c2f766754e02031d73b5fa72e24853b6820a8b",
+      "size": 686,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/ic_menu_close_clear_cancel.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_ic_menu_close_clear_cancel.png",
+      "sourceSha256": "6efd0107558ab5923bd1e825b0f006e30428147eb40bcdea4500cf401cf7d4e0",
+      "sha256": "6efd0107558ab5923bd1e825b0f006e30428147eb40bcdea4500cf401cf7d4e0",
+      "size": 1391,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/ic_menu_delete.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_ic_menu_delete.png",
+      "sourceSha256": "91e7cb399554e7b208e4f4e6763d2afb0f477ad6109a3854b0eaab1e99f4b8f1",
+      "sha256": "91e7cb399554e7b208e4f4e6763d2afb0f477ad6109a3854b0eaab1e99f4b8f1",
+      "size": 1413,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/ic_menu_moreoverflow_normal_holo_dark.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_ic_menu_moreoverflow_normal_holo_dark.png",
+      "sourceSha256": "c6c30e3cf66c6cc83f7c5de501214206a38bad3176dae09bbf406763194da2f6",
+      "sha256": "c6c30e3cf66c6cc83f7c5de501214206a38bad3176dae09bbf406763194da2f6",
+      "size": 547,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/ic_menu_moreoverflow_normal_holo_light.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_ic_menu_moreoverflow_normal_holo_light.png",
+      "sourceSha256": "d71ec344b2422d6b9f7a8773d191e7981a87693add0457ee6564a5ff87662a75",
+      "sha256": "d71ec344b2422d6b9f7a8773d191e7981a87693add0457ee6564a5ff87662a75",
+      "size": 588,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/ic_menu_refresh.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_ic_menu_refresh.png",
+      "sourceSha256": "5cce61b07314ea8c3b0adad1a76bba81b9e4199af2a60ae72dd8fc83484ad685",
+      "sha256": "5cce61b07314ea8c3b0adad1a76bba81b9e4199af2a60ae72dd8fc83484ad685",
+      "size": 2025,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/ic_menu_search.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_ic_menu_search.png",
+      "sourceSha256": "2dae99845e888e3096d72d2f0a01e1215dc2f047636a1e88a925c5e5ecc3874d",
+      "sha256": "2dae99845e888e3096d72d2f0a01e1215dc2f047636a1e88a925c5e5ecc3874d",
+      "size": 1800,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/ic_menu_search_holo_light.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_ic_menu_search_holo_light.png",
+      "sourceSha256": "3a4e8e1a526ec1e93ecd1fb8887081f26f8fe975eb558cd7b3d6a3fd0e1e8288",
+      "sha256": "3a4e8e1a526ec1e93ecd1fb8887081f26f8fe975eb558cd7b3d6a3fd0e1e8288",
+      "size": 1218,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/list_activated_holo.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_list_activated_holo.9.png",
+      "sourceSha256": "9b8d4c02b7e57fe5bfda2fac83c989b63d2b6c2ed53de370a0ccbf92f72aae43",
+      "sha256": "9b8d4c02b7e57fe5bfda2fac83c989b63d2b6c2ed53de370a0ccbf92f72aae43",
+      "size": 1058,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/list_divider_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_list_divider_holo_dark.9.png",
+      "sourceSha256": "d277d937ca19819d9b65c7140d2a1b96000ae423329424517a1e514e7668df2e",
+      "sha256": "d277d937ca19819d9b65c7140d2a1b96000ae423329424517a1e514e7668df2e",
+      "size": 1006,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/list_divider_holo_light.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_list_divider_holo_light.9.png",
+      "sourceSha256": "78eb824b7aabf795d637e249619d87a4847beb4fb58007fbb4106ceafd9bc3cc",
+      "sha256": "78eb824b7aabf795d637e249619d87a4847beb4fb58007fbb4106ceafd9bc3cc",
+      "size": 1007,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/list_focused_holo.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_list_focused_holo.9.png",
+      "sourceSha256": "acdcc93fd8cf7882ad1ba0ebc52c527591584e2bc099cc87de567e3155bd2474",
+      "sha256": "acdcc93fd8cf7882ad1ba0ebc52c527591584e2bc099cc87de567e3155bd2474",
+      "size": 1098,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/list_longpressed_holo.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_list_longpressed_holo.9.png",
+      "sourceSha256": "f98738559bcead2d278f7432d6aee840a5c4fdbcd28432aedade5bf7938f04c2",
+      "sha256": "f98738559bcead2d278f7432d6aee840a5c4fdbcd28432aedade5bf7938f04c2",
+      "size": 1060,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/list_pressed_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_list_pressed_holo_dark.9.png",
+      "sourceSha256": "c7b9ea94c855b1f2d64967ae10eb36e831c95cb5578c4d892b1c61e79aa182bf",
+      "sha256": "c7b9ea94c855b1f2d64967ae10eb36e831c95cb5578c4d892b1c61e79aa182bf",
+      "size": 1061,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/list_pressed_holo_light.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_list_pressed_holo_light.9.png",
+      "sourceSha256": "e75b8e980d24117c60a39d7502bb04858942fd2b9e89964264dc6616ca40d0d7",
+      "sha256": "e75b8e980d24117c60a39d7502bb04858942fd2b9e89964264dc6616ca40d0d7",
+      "size": 1060,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/list_section_divider_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_list_section_divider_holo_dark.9.png",
+      "sourceSha256": "5e69c86ece41fcb313c435bc78d98401608915a6bb24f4023c7ed5ad025d4148",
+      "sha256": "5e69c86ece41fcb313c435bc78d98401608915a6bb24f4023c7ed5ad025d4148",
+      "size": 217,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/list_section_divider_holo_light.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_list_section_divider_holo_light.9.png",
+      "sourceSha256": "3e8d3e0efa2fc9277661613fd7c80baabd76654733cabaecf821f48ba40902b8",
+      "sha256": "3e8d3e0efa2fc9277661613fd7c80baabd76654733cabaecf821f48ba40902b8",
+      "size": 1097,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/list_selector_disabled_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_list_selector_disabled_holo_dark.9.png",
+      "sourceSha256": "3c8978ed3ec062ac5c43f91df05d1189a36b7139e942d66197e1926aeb2b7f4b",
+      "sha256": "3c8978ed3ec062ac5c43f91df05d1189a36b7139e942d66197e1926aeb2b7f4b",
+      "size": 189,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/list_selector_disabled_holo_light.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_list_selector_disabled_holo_light.9.png",
+      "sourceSha256": "6769deba7292c0b56f590ff2440fd4e6fb790135669c442173f4b1f5488be32c",
+      "sha256": "6769deba7292c0b56f590ff2440fd4e6fb790135669c442173f4b1f5488be32c",
+      "size": 189,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/menu_dropdown_panel_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_menu_dropdown_panel_holo_dark.9.png",
+      "sourceSha256": "366368ddfa1cd2a8f85114fb4c685717a275897923ff7f68cc2254d227a0508e",
+      "sha256": "366368ddfa1cd2a8f85114fb4c685717a275897923ff7f68cc2254d227a0508e",
+      "size": 809,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/menu_dropdown_panel_holo_light.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_menu_dropdown_panel_holo_light.9.png",
+      "sourceSha256": "c20cc12d1eb73d745bdaa148e145dfdbe7191260804ec0a0470adb2e463223ee",
+      "sha256": "c20cc12d1eb73d745bdaa148e145dfdbe7191260804ec0a0470adb2e463223ee",
+      "size": 815,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/progress_bg_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_progress_bg_holo_dark.9.png",
+      "sourceSha256": "ae2eb99f9bbe7f7e9b203506cc528ba1050d9d3e30adcb4b8454f7db9ccf57e1",
+      "sha256": "ae2eb99f9bbe7f7e9b203506cc528ba1050d9d3e30adcb4b8454f7db9ccf57e1",
+      "size": 178,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/progress_bg_holo_light.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_progress_bg_holo_light.9.png",
+      "sourceSha256": "cfe81d4b20fea8ad0b27909bf02d3b64e7a833e472b9090fa2277ec4b15d0cff",
+      "sha256": "cfe81d4b20fea8ad0b27909bf02d3b64e7a833e472b9090fa2277ec4b15d0cff",
+      "size": 175,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/progress_primary_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_progress_primary_holo_dark.9.png",
+      "sourceSha256": "6cd6e587f086bde862e5db4cdb50f402c7f6c54516e34dbe03bb17bd756b6a88",
+      "sha256": "6cd6e587f086bde862e5db4cdb50f402c7f6c54516e34dbe03bb17bd756b6a88",
+      "size": 597,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/progress_primary_holo_light.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_progress_primary_holo_light.9.png",
+      "sourceSha256": "6cd6e587f086bde862e5db4cdb50f402c7f6c54516e34dbe03bb17bd756b6a88",
+      "sha256": "6cd6e587f086bde862e5db4cdb50f402c7f6c54516e34dbe03bb17bd756b6a88",
+      "size": 597,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/progress_secondary_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_progress_secondary_holo_dark.9.png",
+      "sourceSha256": "7503db8742560767d865b3573acb47e7a423fccc1ca1a29197d1bb79d081e7c7",
+      "sha256": "7503db8742560767d865b3573acb47e7a423fccc1ca1a29197d1bb79d081e7c7",
+      "size": 188,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/progress_secondary_holo_light.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_progress_secondary_holo_light.9.png",
+      "sourceSha256": "7503db8742560767d865b3573acb47e7a423fccc1ca1a29197d1bb79d081e7c7",
+      "sha256": "7503db8742560767d865b3573acb47e7a423fccc1ca1a29197d1bb79d081e7c7",
+      "size": 188,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/progressbar_indeterminate_holo1.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_progressbar_indeterminate_holo1.png",
+      "sourceSha256": "7583ae724ef3d662caf7935360073ed41ae8d4d9f061afc6f72266ca606d0cf5",
+      "sha256": "7583ae724ef3d662caf7935360073ed41ae8d4d9f061afc6f72266ca606d0cf5",
+      "size": 2759,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/progressbar_indeterminate_holo2.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_progressbar_indeterminate_holo2.png",
+      "sourceSha256": "e792e60755ebac5dcfee561e6660af04c94f84d8c2d76e8d7311dce75e51c171",
+      "sha256": "e792e60755ebac5dcfee561e6660af04c94f84d8c2d76e8d7311dce75e51c171",
+      "size": 2854,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/progressbar_indeterminate_holo3.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_progressbar_indeterminate_holo3.png",
+      "sourceSha256": "3d984a55ec496fc7f7eb533c1d095ba4b378b1c473e777e970074866a067b9fe",
+      "sha256": "3d984a55ec496fc7f7eb533c1d095ba4b378b1c473e777e970074866a067b9fe",
+      "size": 2844,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/progressbar_indeterminate_holo4.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_progressbar_indeterminate_holo4.png",
+      "sourceSha256": "413833115f33d000f886501b891ca722e0a4be2507eab549e139e2cff10c7419",
+      "sha256": "413833115f33d000f886501b891ca722e0a4be2507eab549e139e2cff10c7419",
+      "size": 2777,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/progressbar_indeterminate_holo5.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_progressbar_indeterminate_holo5.png",
+      "sourceSha256": "2d0d1215d5ff37c1ac25e3c8cabb325e25b28c09ca6d22c3e0b993d0c2deb009",
+      "sha256": "2d0d1215d5ff37c1ac25e3c8cabb325e25b28c09ca6d22c3e0b993d0c2deb009",
+      "size": 2797,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/progressbar_indeterminate_holo6.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_progressbar_indeterminate_holo6.png",
+      "sourceSha256": "a6a57a40bb7bc5d8f93fe558d264ba767ea8a5fb3afc1ad4aed8497f8ed9c486",
+      "sha256": "a6a57a40bb7bc5d8f93fe558d264ba767ea8a5fb3afc1ad4aed8497f8ed9c486",
+      "size": 2836,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/progressbar_indeterminate_holo7.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_progressbar_indeterminate_holo7.png",
+      "sourceSha256": "197e2a4f705e5430f5eef166fbc35f0d994da8b52db473fd2479e5606df4609a",
+      "sha256": "197e2a4f705e5430f5eef166fbc35f0d994da8b52db473fd2479e5606df4609a",
+      "size": 2819,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/progressbar_indeterminate_holo8.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_progressbar_indeterminate_holo8.png",
+      "sourceSha256": "e6847445217b8ecf3796d0b42aa11404ac7d0e85eb6b935e7c4618d4257cffaa",
+      "sha256": "e6847445217b8ecf3796d0b42aa11404ac7d0e85eb6b935e7c4618d4257cffaa",
+      "size": 2811,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/scrollbar_handle_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_scrollbar_handle_holo_dark.9.png",
+      "sourceSha256": "8b0d803c9bb360d4aa11e13489eaed166a9acd888b12e65cd9c3a31cd57073fc",
+      "sha256": "8b0d803c9bb360d4aa11e13489eaed166a9acd888b12e65cd9c3a31cd57073fc",
+      "size": 267,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/scrollbar_handle_holo_light.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_scrollbar_handle_holo_light.9.png",
+      "sourceSha256": "8b0d803c9bb360d4aa11e13489eaed166a9acd888b12e65cd9c3a31cd57073fc",
+      "sha256": "8b0d803c9bb360d4aa11e13489eaed166a9acd888b12e65cd9c3a31cd57073fc",
+      "size": 267,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/spinner_48_inner_holo.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_spinner_48_inner_holo.png",
+      "sourceSha256": "2c5b0a52a7284e0bfb521fc3aba0481357431f50041d992d7e187bb787332354",
+      "sha256": "2c5b0a52a7284e0bfb521fc3aba0481357431f50041d992d7e187bb787332354",
+      "size": 2816,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/spinner_48_outer_holo.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_spinner_48_outer_holo.png",
+      "sourceSha256": "2ed1229fef54d02263f1cbe3c46c438b05d4a2e49a14e0cac795eaadcbd4ebd6",
+      "sha256": "2ed1229fef54d02263f1cbe3c46c438b05d4a2e49a14e0cac795eaadcbd4ebd6",
+      "size": 3439,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/spinner_default_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_spinner_default_holo_dark.9.png",
+      "sourceSha256": "f39933d84a15a07d4758e437bea8654a1faf48c34829f9cd0997a17479db87ef",
+      "sha256": "f39933d84a15a07d4758e437bea8654a1faf48c34829f9cd0997a17479db87ef",
+      "size": 378,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/spinner_default_holo_light.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_spinner_default_holo_light.9.png",
+      "sourceSha256": "6c8f2de99446b5fdd31a3599c8310ad46cb544aad8b1d33899e2d9f1e9221e81",
+      "sha256": "6c8f2de99446b5fdd31a3599c8310ad46cb544aad8b1d33899e2d9f1e9221e81",
+      "size": 378,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/spinner_disabled_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_spinner_disabled_holo_dark.9.png",
+      "sourceSha256": "a00a58fa6a0d58f7f7c2ee2d5b115782f4f4bb57f3e1fb8a263b937ceb260eeb",
+      "sha256": "a00a58fa6a0d58f7f7c2ee2d5b115782f4f4bb57f3e1fb8a263b937ceb260eeb",
+      "size": 382,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/spinner_disabled_holo_light.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_spinner_disabled_holo_light.9.png",
+      "sourceSha256": "61a220c0dcdce6cd1d0e86c434fb9146f2fc07371a6b69a1ca4cebbd7ba3fd9b",
+      "sha256": "61a220c0dcdce6cd1d0e86c434fb9146f2fc07371a6b69a1ca4cebbd7ba3fd9b",
+      "size": 382,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/spinner_focused_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_spinner_focused_holo_dark.9.png",
+      "sourceSha256": "eac9fc30e993c7aca99bee844157fcbff2da1fde4ddd10a741f0fb9728e6387c",
+      "sha256": "eac9fc30e993c7aca99bee844157fcbff2da1fde4ddd10a741f0fb9728e6387c",
+      "size": 396,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/spinner_focused_holo_light.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_spinner_focused_holo_light.9.png",
+      "sourceSha256": "7ebe71c40c760a82f0be1e1cfcab2edbf97a098d65e03cf7369dfa73fc7956a3",
+      "sha256": "7ebe71c40c760a82f0be1e1cfcab2edbf97a098d65e03cf7369dfa73fc7956a3",
+      "size": 532,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/spinner_pressed_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_spinner_pressed_holo_dark.9.png",
+      "sourceSha256": "4fe0af85fafd6bd9d2907a3e679622210d7064dc0078f383a8a4f5cf9492883f",
+      "sha256": "4fe0af85fafd6bd9d2907a3e679622210d7064dc0078f383a8a4f5cf9492883f",
+      "size": 530,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/spinner_pressed_holo_light.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_spinner_pressed_holo_light.9.png",
+      "sourceSha256": "d567babd149ea9b949e870399762d043d191e7b20024b48de1e4af6ec74e459a",
+      "sha256": "d567babd149ea9b949e870399762d043d191e7b20024b48de1e4af6ec74e459a",
+      "size": 536,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/switch_bg_disabled_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_switch_bg_disabled_holo_dark.9.png",
+      "sourceSha256": "83a17edf5ef455e3e269302503dc88df2505691c5cfec62210cc30b762a82a94",
+      "sha256": "83a17edf5ef455e3e269302503dc88df2505691c5cfec62210cc30b762a82a94",
+      "size": 235,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/switch_bg_disabled_holo_light.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_switch_bg_disabled_holo_light.9.png",
+      "sourceSha256": "003ff613181842383246fac05216e8c695235e41399fb9a7ed55fa5c0ac7b11b",
+      "sha256": "003ff613181842383246fac05216e8c695235e41399fb9a7ed55fa5c0ac7b11b",
+      "size": 235,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/switch_bg_focused_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_switch_bg_focused_holo_dark.9.png",
+      "sourceSha256": "1edc64a0770db1fd844ba5e288b570f10467ba85e39f4f48e1f39696dad3a330",
+      "sha256": "1edc64a0770db1fd844ba5e288b570f10467ba85e39f4f48e1f39696dad3a330",
+      "size": 273,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/switch_bg_focused_holo_light.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_switch_bg_focused_holo_light.9.png",
+      "sourceSha256": "1f32071e726044fc8e886b25e3140ac199fd2948cec29a6a28e25fcd797c83eb",
+      "sha256": "1f32071e726044fc8e886b25e3140ac199fd2948cec29a6a28e25fcd797c83eb",
+      "size": 275,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/switch_bg_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_switch_bg_holo_dark.9.png",
+      "sourceSha256": "c107250147a82a834f1224ba7d73b9fbd4934ef9830148895637939ea0cee692",
+      "sha256": "c107250147a82a834f1224ba7d73b9fbd4934ef9830148895637939ea0cee692",
+      "size": 211,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/switch_bg_holo_light.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_switch_bg_holo_light.9.png",
+      "sourceSha256": "d8b6d4525791bcc0202494341e8620a044b04e0e046ddb30633c260c97e73327",
+      "sha256": "d8b6d4525791bcc0202494341e8620a044b04e0e046ddb30633c260c97e73327",
+      "size": 211,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/switch_thumb_disabled_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_switch_thumb_disabled_holo_dark.9.png",
+      "sourceSha256": "506d1366552a557851c4d64f1f3cd3780d6441f52308e8535f0b89d420746e44",
+      "sha256": "506d1366552a557851c4d64f1f3cd3780d6441f52308e8535f0b89d420746e44",
+      "size": 387,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/switch_thumb_disabled_holo_light.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_switch_thumb_disabled_holo_light.9.png",
+      "sourceSha256": "38d008d23981b7aaf1f7d4222ffb822f72b69ecb00a51e7fe556de2ef1489ac0",
+      "sha256": "38d008d23981b7aaf1f7d4222ffb822f72b69ecb00a51e7fe556de2ef1489ac0",
+      "size": 408,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/switch_thumb_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_switch_thumb_holo_dark.9.png",
+      "sourceSha256": "c312cf83aa7ec675b9acf9ac8ddeeb94befb70311f9159a2f4d63d795a61225d",
+      "sha256": "c312cf83aa7ec675b9acf9ac8ddeeb94befb70311f9159a2f4d63d795a61225d",
+      "size": 416,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/switch_thumb_holo_light.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_switch_thumb_holo_light.9.png",
+      "sourceSha256": "a7c1c2afbd22262c107e89f2a045a4977bfd151626073c99bc3990cbebcf4548",
+      "sha256": "a7c1c2afbd22262c107e89f2a045a4977bfd151626073c99bc3990cbebcf4548",
+      "size": 415,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/switch_thumb_pressed_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_switch_thumb_pressed_holo_dark.9.png",
+      "sourceSha256": "d2823e2e54267b13fa047148d0237566aba3aa479e48c008ea4864df620adea3",
+      "sha256": "d2823e2e54267b13fa047148d0237566aba3aa479e48c008ea4864df620adea3",
+      "size": 652,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/switch_thumb_pressed_holo_light.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_switch_thumb_pressed_holo_light.9.png",
+      "sourceSha256": "1e2ad470fb3adac9d92b515136212ff35ff43176c9b483ae0aafb8dd812ab154",
+      "sha256": "1e2ad470fb3adac9d92b515136212ff35ff43176c9b483ae0aafb8dd812ab154",
+      "size": 664,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/tab_selected_focused_holo.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_tab_selected_focused_holo.9.png",
+      "sourceSha256": "6bb6562e84acbda44824b0da9bdcdb1422b84743f104547e9c98bc35caa01abe",
+      "sha256": "6bb6562e84acbda44824b0da9bdcdb1422b84743f104547e9c98bc35caa01abe",
+      "size": 218,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/tab_selected_holo.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_tab_selected_holo.9.png",
+      "sourceSha256": "410f64862273f2abb5eb5c87561868b34a2d038a3ea4332671e17351c1d9563b",
+      "sha256": "410f64862273f2abb5eb5c87561868b34a2d038a3ea4332671e17351c1d9563b",
+      "size": 159,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/tab_selected_pressed_focused_holo.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_tab_selected_pressed_focused_holo.9.png",
+      "sourceSha256": "009e922b71060bef1b85a3236deb20a7af3b3f8dd50f42abd002f1a580ff46c1",
+      "sha256": "009e922b71060bef1b85a3236deb20a7af3b3f8dd50f42abd002f1a580ff46c1",
+      "size": 522,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/tab_selected_pressed_holo.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_tab_selected_pressed_holo.9.png",
+      "sourceSha256": "d5fc26758da7797620a5732b39a691575daa0a020517dbc9d4f509a7d444da18",
+      "sha256": "d5fc26758da7797620a5732b39a691575daa0a020517dbc9d4f509a7d444da18",
+      "size": 271,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/tab_unselected_focused_holo.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_tab_unselected_focused_holo.9.png",
+      "sourceSha256": "9400ffa0edf5560d0764fe8f7a8aa5651356db51d618468d8d449503cdd7e5dd",
+      "sha256": "9400ffa0edf5560d0764fe8f7a8aa5651356db51d618468d8d449503cdd7e5dd",
+      "size": 216,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/tab_unselected_holo.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_tab_unselected_holo.9.png",
+      "sourceSha256": "017d790598198647600400de77358b6d59650d7c33f3640cb83b3810bd70dc02",
+      "sha256": "017d790598198647600400de77358b6d59650d7c33f3640cb83b3810bd70dc02",
+      "size": 147,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/tab_unselected_pressed_focused_holo.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_tab_unselected_pressed_focused_holo.9.png",
+      "sourceSha256": "06d13dd5068f6247bcc3876cacb0b73a1e65abe62e5c1ae3d6cdd6d2a027ae38",
+      "sha256": "06d13dd5068f6247bcc3876cacb0b73a1e65abe62e5c1ae3d6cdd6d2a027ae38",
+      "size": 536,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/tab_unselected_pressed_holo.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_tab_unselected_pressed_holo.9.png",
+      "sourceSha256": "5229eee5508af95bd331054101dd94bf820433ae5c706f3e6d3d2a9f061be97c",
+      "sha256": "5229eee5508af95bd331054101dd94bf820433ae5c706f3e6d3d2a9f061be97c",
+      "size": 265,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/textfield_activated_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_textfield_activated_holo_dark.9.png",
+      "sourceSha256": "b3c4de8b2fe3cb389da2b8fae5625075018adcdfc21898b2f2315d5d32135d50",
+      "sha256": "b3c4de8b2fe3cb389da2b8fae5625075018adcdfc21898b2f2315d5d32135d50",
+      "size": 281,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/textfield_activated_holo_light.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_textfield_activated_holo_light.9.png",
+      "sourceSha256": "609caf526bdc859d137a5480e182ec44fa1ba8eb56c93a59e0a8866fca5c6152",
+      "sha256": "609caf526bdc859d137a5480e182ec44fa1ba8eb56c93a59e0a8866fca5c6152",
+      "size": 279,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/textfield_default_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_textfield_default_holo_dark.9.png",
+      "sourceSha256": "9b818fc4679a66aeb16b7cdf118bd88c0704f47c8a2b0b518795e8eee167d703",
+      "sha256": "9b818fc4679a66aeb16b7cdf118bd88c0704f47c8a2b0b518795e8eee167d703",
+      "size": 281,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/textfield_default_holo_light.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_textfield_default_holo_light.9.png",
+      "sourceSha256": "cfe1508ddf0ba09ee88c0185be5fbac92a9e59958c09158f960fdb33cbc5726f",
+      "sha256": "cfe1508ddf0ba09ee88c0185be5fbac92a9e59958c09158f960fdb33cbc5726f",
+      "size": 279,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/textfield_disabled_focused_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_textfield_disabled_focused_holo_dark.9.png",
+      "sourceSha256": "470c29c60411f3e8bae9ead4f2c214ea138983163da4eb9fb2a409e448cc1826",
+      "sha256": "470c29c60411f3e8bae9ead4f2c214ea138983163da4eb9fb2a409e448cc1826",
+      "size": 285,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/textfield_disabled_focused_holo_light.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_textfield_disabled_focused_holo_light.9.png",
+      "sourceSha256": "564659fd57949c70b384eed010cbcec770d9f5a8422ce6cc3d80cc06d87f9fc0",
+      "sha256": "564659fd57949c70b384eed010cbcec770d9f5a8422ce6cc3d80cc06d87f9fc0",
+      "size": 285,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/textfield_disabled_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_textfield_disabled_holo_dark.9.png",
+      "sourceSha256": "d81141bb50afc1f370643f463c88f4656e3ebede3f17d798849a21c2e3f1a7c4",
+      "sha256": "d81141bb50afc1f370643f463c88f4656e3ebede3f17d798849a21c2e3f1a7c4",
+      "size": 282,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/textfield_disabled_holo_light.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_textfield_disabled_holo_light.9.png",
+      "sourceSha256": "5ff8aff654e832e9a0e56b0da171966efb1fdeca4263dcec7d3e198d3857e27d",
+      "sha256": "5ff8aff654e832e9a0e56b0da171966efb1fdeca4263dcec7d3e198d3857e27d",
+      "size": 280,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/textfield_focused_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_textfield_focused_holo_dark.9.png",
+      "sourceSha256": "4d0f7d467d6b19723f7fd310abd8eb4e417e8122af7da8c26d4768e09551873c",
+      "sha256": "4d0f7d467d6b19723f7fd310abd8eb4e417e8122af7da8c26d4768e09551873c",
+      "size": 284,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/textfield_focused_holo_light.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_textfield_focused_holo_light.9.png",
+      "sourceSha256": "60ad696d8efed9378f972089531988a55312428256cdd23efe1e65da639dd51c",
+      "sha256": "60ad696d8efed9378f972089531988a55312428256cdd23efe1e65da639dd51c",
+      "size": 285,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/textfield_multiline_activated_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_textfield_multiline_activated_holo_dark.9.png",
+      "sourceSha256": "45bc348e3db01efa8886776fa99e542a0f0b2060de4b87ea8aa74412cf3603b7",
+      "sha256": "45bc348e3db01efa8886776fa99e542a0f0b2060de4b87ea8aa74412cf3603b7",
+      "size": 320,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/textfield_multiline_activated_holo_light.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_textfield_multiline_activated_holo_light.9.png",
+      "sourceSha256": "2fb1057b6229b0b2e7d464247ea6defd6cdfff83cb3534a956d59f15cf221e6a",
+      "sha256": "2fb1057b6229b0b2e7d464247ea6defd6cdfff83cb3534a956d59f15cf221e6a",
+      "size": 314,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/textfield_multiline_default_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_textfield_multiline_default_holo_dark.9.png",
+      "sourceSha256": "288941df87ec0d352c367f7679ef163d2b266dbafa5adbbe380b880b621a5073",
+      "sha256": "288941df87ec0d352c367f7679ef163d2b266dbafa5adbbe380b880b621a5073",
+      "size": 320,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/textfield_multiline_default_holo_light.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_textfield_multiline_default_holo_light.9.png",
+      "sourceSha256": "54d983589bab0254d896bbf8b02965a8bc737d309c99bc343881b2fb45e44add",
+      "sha256": "54d983589bab0254d896bbf8b02965a8bc737d309c99bc343881b2fb45e44add",
+      "size": 313,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/textfield_multiline_disabled_focused_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_textfield_multiline_disabled_focused_holo_dark.9.png",
+      "sourceSha256": "05bf5d5fd9be5b4f7213b0af35fc954df0451347c2ea5f63e1f338a8d6dd3e0b",
+      "sha256": "05bf5d5fd9be5b4f7213b0af35fc954df0451347c2ea5f63e1f338a8d6dd3e0b",
+      "size": 325,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/textfield_multiline_disabled_focused_holo_light.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_textfield_multiline_disabled_focused_holo_light.9.png",
+      "sourceSha256": "1fc576e3433b1bf9425123cc9b4952da6830d636da5dbf3416f57731cef51566",
+      "sha256": "1fc576e3433b1bf9425123cc9b4952da6830d636da5dbf3416f57731cef51566",
+      "size": 324,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/textfield_multiline_disabled_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_textfield_multiline_disabled_holo_dark.9.png",
+      "sourceSha256": "1aa7a1b15541ab6d075c6d797512b7b44b3b3c127176123b5544557914be9857",
+      "sha256": "1aa7a1b15541ab6d075c6d797512b7b44b3b3c127176123b5544557914be9857",
+      "size": 320,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/textfield_multiline_disabled_holo_light.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_textfield_multiline_disabled_holo_light.9.png",
+      "sourceSha256": "4d3dd011c20d207f418d0f8eb083e9672970fc3529675662fc317c41815f1f27",
+      "sha256": "4d3dd011c20d207f418d0f8eb083e9672970fc3529675662fc317c41815f1f27",
+      "size": 313,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/textfield_multiline_focused_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_textfield_multiline_focused_holo_dark.9.png",
+      "sourceSha256": "ce254cdd41f79f200ab9edd8e7b96fb22f4ba584857dc540d10634d137e9e4f8",
+      "sha256": "ce254cdd41f79f200ab9edd8e7b96fb22f4ba584857dc540d10634d137e9e4f8",
+      "size": 325,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/textfield_multiline_focused_holo_light.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_textfield_multiline_focused_holo_light.9.png",
+      "sourceSha256": "8fbda5f0d775f285409d749d6910d8c739eef8d5e7c5729b9c4479984f8e524f",
+      "sha256": "8fbda5f0d775f285409d749d6910d8c739eef8d5e7c5729b9c4479984f8e524f",
+      "size": 325,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-hdpi/toast_frame_holo.9.png",
+      "target": "app/src/main/res/drawable-hdpi/honeycomb_toast_frame_holo.9.png",
+      "sourceSha256": "e66b016c11696a059c7b00fb742df8740c768283a588870482f48229430a8c84",
+      "sha256": "e66b016c11696a059c7b00fb742df8740c768283a588870482f48229430a8c84",
+      "size": 6428,
+      "density": "hdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-ldpi/ic_input_add.png",
+      "target": "app/src/main/res/drawable-ldpi/honeycomb_ic_input_add.png",
+      "sourceSha256": "859ac048d1f5a13418ddee195ac8b24dafbf95895aa6566cf17957315151c7b4",
+      "sha256": "859ac048d1f5a13418ddee195ac8b24dafbf95895aa6566cf17957315151c7b4",
+      "size": 1159,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-ldpi/ic_menu_close_clear_cancel.png",
+      "target": "app/src/main/res/drawable-ldpi/honeycomb_ic_menu_close_clear_cancel.png",
+      "sourceSha256": "266ffd508110570406d1c0c82392f455aa80dd70f2ada7d88a5fb1d3f2637dad",
+      "sha256": "266ffd508110570406d1c0c82392f455aa80dd70f2ada7d88a5fb1d3f2637dad",
+      "size": 1851,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-ldpi/ic_menu_delete.png",
+      "target": "app/src/main/res/drawable-ldpi/honeycomb_ic_menu_delete.png",
+      "sourceSha256": "94218a6105c4ef432a5a3dc9d67d2d7822c23a3c14918e3bfb9e6c2a78f890fa",
+      "sha256": "94218a6105c4ef432a5a3dc9d67d2d7822c23a3c14918e3bfb9e6c2a78f890fa",
+      "size": 1247,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-ldpi/ic_menu_refresh.png",
+      "target": "app/src/main/res/drawable-ldpi/honeycomb_ic_menu_refresh.png",
+      "sourceSha256": "ac81e7bd2ecb7ec212b5cc00a100f98b6432b9b81d72ad379560fb4674676ab1",
+      "sha256": "ac81e7bd2ecb7ec212b5cc00a100f98b6432b9b81d72ad379560fb4674676ab1",
+      "size": 1695,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-ldpi/ic_menu_search.png",
+      "target": "app/src/main/res/drawable-ldpi/honeycomb_ic_menu_search.png",
+      "sourceSha256": "5250aa7de41e996f38f9927eb47f3b7c47b185dd6c9e2fdd54a69616b49f7bff",
+      "sha256": "5250aa7de41e996f38f9927eb47f3b7c47b185dd6c9e2fdd54a69616b49f7bff",
+      "size": 1480,
+      "density": "ldpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_check_off_disabled_focused_holo_dark.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_check_off_disabled_focused_holo_dark.png",
+      "sourceSha256": "a66d08bbc3fc95af0796da74b1db96087a4307b7901adb53f6a7bd4c5ef78064",
+      "sha256": "a66d08bbc3fc95af0796da74b1db96087a4307b7901adb53f6a7bd4c5ef78064",
+      "size": 441,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_check_off_disabled_focused_holo_light.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_check_off_disabled_focused_holo_light.png",
+      "sourceSha256": "35d90a8ccf3f81897845481089ceebb30349c47fe56089cfe6fbb861bdcf0c5a",
+      "sha256": "35d90a8ccf3f81897845481089ceebb30349c47fe56089cfe6fbb861bdcf0c5a",
+      "size": 447,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_check_off_disabled_holo_dark.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_check_off_disabled_holo_dark.png",
+      "sourceSha256": "95ffd4a4a3567347d25ea0c37c5868afb5a94ede2faa047d139db9cde50188d2",
+      "sha256": "95ffd4a4a3567347d25ea0c37c5868afb5a94ede2faa047d139db9cde50188d2",
+      "size": 344,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_check_off_disabled_holo_light.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_check_off_disabled_holo_light.png",
+      "sourceSha256": "07006561318a6607e275d49ceef14b58de73d5eeff335e0e86b622920f0170c2",
+      "sha256": "07006561318a6607e275d49ceef14b58de73d5eeff335e0e86b622920f0170c2",
+      "size": 344,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_check_off_focused_holo_dark.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_check_off_focused_holo_dark.png",
+      "sourceSha256": "0dc882747913bc1bb877ccab89f4ec7283dac57bcb26625d3b86d1f0b06307aa",
+      "sha256": "0dc882747913bc1bb877ccab89f4ec7283dac57bcb26625d3b86d1f0b06307aa",
+      "size": 442,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_check_off_focused_holo_light.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_check_off_focused_holo_light.png",
+      "sourceSha256": "55099d96f7e6aeb1110cfb1a33ccca99f5daebf22b5aa022549a33212860dc2a",
+      "sha256": "55099d96f7e6aeb1110cfb1a33ccca99f5daebf22b5aa022549a33212860dc2a",
+      "size": 451,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_check_off_holo_dark.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_check_off_holo_dark.png",
+      "sourceSha256": "d8a22d7c58d2bc652b91c72f8f9b55e016c430b8178d8133253b012711ce3970",
+      "sha256": "d8a22d7c58d2bc652b91c72f8f9b55e016c430b8178d8133253b012711ce3970",
+      "size": 344,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_check_off_holo_light.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_check_off_holo_light.png",
+      "sourceSha256": "b176e8d823761d038897d883eebfc35a562747025fd16c9d0a65f376283bd2c1",
+      "sha256": "b176e8d823761d038897d883eebfc35a562747025fd16c9d0a65f376283bd2c1",
+      "size": 344,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_check_off_pressed_holo_dark.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_check_off_pressed_holo_dark.png",
+      "sourceSha256": "b86c871c3ab87b71b0213933e73dcadb39622615e02bbc876823174948784538",
+      "sha256": "b86c871c3ab87b71b0213933e73dcadb39622615e02bbc876823174948784538",
+      "size": 977,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_check_off_pressed_holo_light.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_check_off_pressed_holo_light.png",
+      "sourceSha256": "18918f2c2ca8cfe3a90fd3bb8f28ce21a0eba902b1cc6f806ae64cd312df93c0",
+      "sha256": "18918f2c2ca8cfe3a90fd3bb8f28ce21a0eba902b1cc6f806ae64cd312df93c0",
+      "size": 1023,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_check_on_disabled_focused_holo_dark.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_check_on_disabled_focused_holo_dark.png",
+      "sourceSha256": "372beddd5f327d9adb2d6f0bf1eec524e4f0ff2f7fa43a42dac78905e5e02490",
+      "sha256": "372beddd5f327d9adb2d6f0bf1eec524e4f0ff2f7fa43a42dac78905e5e02490",
+      "size": 966,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_check_on_disabled_focused_holo_light.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_check_on_disabled_focused_holo_light.png",
+      "sourceSha256": "1ff0cec45ed1fed88186b2d0be45a8a8c367bb3f14032f6c29fdfdbebd66d01e",
+      "sha256": "1ff0cec45ed1fed88186b2d0be45a8a8c367bb3f14032f6c29fdfdbebd66d01e",
+      "size": 960,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_check_on_disabled_holo_dark.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_check_on_disabled_holo_dark.png",
+      "sourceSha256": "35daf74fca413f88fe5d2d15a486ac34ce718ef97a1ee8bda9b7d5beb4bbf51a",
+      "sha256": "35daf74fca413f88fe5d2d15a486ac34ce718ef97a1ee8bda9b7d5beb4bbf51a",
+      "size": 722,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_check_on_disabled_holo_light.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_check_on_disabled_holo_light.png",
+      "sourceSha256": "ce878b04e81625872edd64825c74dd30028f3fa50e5c118de1614cd229f69672",
+      "sha256": "ce878b04e81625872edd64825c74dd30028f3fa50e5c118de1614cd229f69672",
+      "size": 708,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_check_on_focused_holo_dark.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_check_on_focused_holo_dark.png",
+      "sourceSha256": "4dc7c444f92da70f17d119cc137932a8c5fac8867ffe9fa49a2cb6d708aed92b",
+      "sha256": "4dc7c444f92da70f17d119cc137932a8c5fac8867ffe9fa49a2cb6d708aed92b",
+      "size": 963,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_check_on_focused_holo_light.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_check_on_focused_holo_light.png",
+      "sourceSha256": "4c90d031c0edee6936295d449a7a39947aab5278da518cea65c8ce6c770f8c62",
+      "sha256": "4c90d031c0edee6936295d449a7a39947aab5278da518cea65c8ce6c770f8c62",
+      "size": 988,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_check_on_holo_dark.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_check_on_holo_dark.png",
+      "sourceSha256": "593e32b01d2efc15c3e4e4bf7263fe5e5fd67180dc591613ffe6617c282f364f",
+      "sha256": "593e32b01d2efc15c3e4e4bf7263fe5e5fd67180dc591613ffe6617c282f364f",
+      "size": 925,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_check_on_holo_light.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_check_on_holo_light.png",
+      "sourceSha256": "135c65898eb0e46229ca39281a266b18771323d97a9ef91b4673945c05c4c667",
+      "sha256": "135c65898eb0e46229ca39281a266b18771323d97a9ef91b4673945c05c4c667",
+      "size": 927,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_check_on_pressed_holo_dark.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_check_on_pressed_holo_dark.png",
+      "sourceSha256": "b8b3991f3428621f68d6d0d7bb9026485f3d8d38368e5dca38135d413085d97e",
+      "sha256": "b8b3991f3428621f68d6d0d7bb9026485f3d8d38368e5dca38135d413085d97e",
+      "size": 1591,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_check_on_pressed_holo_light.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_check_on_pressed_holo_light.png",
+      "sourceSha256": "0fbd29852ff537ad99baed599d056bfa4cb9a182261f4ce640aca96105aa2ba7",
+      "sha256": "0fbd29852ff537ad99baed599d056bfa4cb9a182261f4ce640aca96105aa2ba7",
+      "size": 1720,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_default_disabled_focused_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_default_disabled_focused_holo_dark.9.png",
+      "sourceSha256": "0ae6e486a1f9085804c104b303017c04957e5f785aede1145d450bf9c4de910a",
+      "sha256": "0ae6e486a1f9085804c104b303017c04957e5f785aede1145d450bf9c4de910a",
+      "size": 375,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_default_disabled_focused_holo_light.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_default_disabled_focused_holo_light.9.png",
+      "sourceSha256": "0ae6e486a1f9085804c104b303017c04957e5f785aede1145d450bf9c4de910a",
+      "sha256": "0ae6e486a1f9085804c104b303017c04957e5f785aede1145d450bf9c4de910a",
+      "size": 375,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_default_disabled_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_default_disabled_holo_dark.9.png",
+      "sourceSha256": "2a1bc6eec18cdc0fbb89ab398fda6a3c65710a5f10dce1cc1173246aa2f7f9f4",
+      "sha256": "2a1bc6eec18cdc0fbb89ab398fda6a3c65710a5f10dce1cc1173246aa2f7f9f4",
+      "size": 265,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_default_disabled_holo_light.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_default_disabled_holo_light.9.png",
+      "sourceSha256": "2a1bc6eec18cdc0fbb89ab398fda6a3c65710a5f10dce1cc1173246aa2f7f9f4",
+      "sha256": "2a1bc6eec18cdc0fbb89ab398fda6a3c65710a5f10dce1cc1173246aa2f7f9f4",
+      "size": 265,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_default_focused_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_default_focused_holo_dark.9.png",
+      "sourceSha256": "c7145c5b0371aaa0a1ab3b44c8178e7a28197c54e95fd8d0e81b8930a0f8ce10",
+      "sha256": "c7145c5b0371aaa0a1ab3b44c8178e7a28197c54e95fd8d0e81b8930a0f8ce10",
+      "size": 376,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_default_focused_holo_light.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_default_focused_holo_light.9.png",
+      "sourceSha256": "c7145c5b0371aaa0a1ab3b44c8178e7a28197c54e95fd8d0e81b8930a0f8ce10",
+      "sha256": "c7145c5b0371aaa0a1ab3b44c8178e7a28197c54e95fd8d0e81b8930a0f8ce10",
+      "size": 376,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_default_normal_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_default_normal_holo_dark.9.png",
+      "sourceSha256": "84a700077bda8d3ec790d83b69279d8ea201ec61bd8114cdb3d694e99358cf6b",
+      "sha256": "84a700077bda8d3ec790d83b69279d8ea201ec61bd8114cdb3d694e99358cf6b",
+      "size": 274,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_default_normal_holo_light.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_default_normal_holo_light.9.png",
+      "sourceSha256": "84a700077bda8d3ec790d83b69279d8ea201ec61bd8114cdb3d694e99358cf6b",
+      "sha256": "84a700077bda8d3ec790d83b69279d8ea201ec61bd8114cdb3d694e99358cf6b",
+      "size": 274,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_default_pressed_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_default_pressed_holo_dark.9.png",
+      "sourceSha256": "6ff4116d0ed8a40801b2c14afe06fbe64c940b03833ee52c846d63fc551abbd1",
+      "sha256": "6ff4116d0ed8a40801b2c14afe06fbe64c940b03833ee52c846d63fc551abbd1",
+      "size": 388,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_default_pressed_holo_light.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_default_pressed_holo_light.9.png",
+      "sourceSha256": "6ff4116d0ed8a40801b2c14afe06fbe64c940b03833ee52c846d63fc551abbd1",
+      "sha256": "6ff4116d0ed8a40801b2c14afe06fbe64c940b03833ee52c846d63fc551abbd1",
+      "size": 388,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_radio_off_disabled_focused_holo_dark.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_radio_off_disabled_focused_holo_dark.png",
+      "sourceSha256": "8f96dbd74a6360a861e5fe5b1534df31c95c88ef24aab4fb751b8924372fe878",
+      "sha256": "8f96dbd74a6360a861e5fe5b1534df31c95c88ef24aab4fb751b8924372fe878",
+      "size": 1002,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_radio_off_disabled_focused_holo_light.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_radio_off_disabled_focused_holo_light.png",
+      "sourceSha256": "6958f0443e05b22ccebe7be8137653c56cdd92306998e00838fcf9d576e84bae",
+      "sha256": "6958f0443e05b22ccebe7be8137653c56cdd92306998e00838fcf9d576e84bae",
+      "size": 1001,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_radio_off_disabled_holo_dark.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_radio_off_disabled_holo_dark.png",
+      "sourceSha256": "77de103eed5d87aa85cf6f7ece2ce9465ef52985cd130ee4646974f7d816a122",
+      "sha256": "77de103eed5d87aa85cf6f7ece2ce9465ef52985cd130ee4646974f7d816a122",
+      "size": 516,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_radio_off_disabled_holo_light.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_radio_off_disabled_holo_light.png",
+      "sourceSha256": "187a3a80b7e6a4e171cdc9b4b7f4e466f3ca4234ca0b6abf678d0504bd69a795",
+      "sha256": "187a3a80b7e6a4e171cdc9b4b7f4e466f3ca4234ca0b6abf678d0504bd69a795",
+      "size": 533,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_radio_off_focused_holo_dark.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_radio_off_focused_holo_dark.png",
+      "sourceSha256": "10d9d82e4de977f361aaad453e31b5875255c7ab7976e049d0621caabf6ebb3c",
+      "sha256": "10d9d82e4de977f361aaad453e31b5875255c7ab7976e049d0621caabf6ebb3c",
+      "size": 1000,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_radio_off_focused_holo_light.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_radio_off_focused_holo_light.png",
+      "sourceSha256": "2c32e9a1fc222878fe0bbfe6a4c39c032b704504a7b59330c38ada3ca9ad3bc1",
+      "sha256": "2c32e9a1fc222878fe0bbfe6a4c39c032b704504a7b59330c38ada3ca9ad3bc1",
+      "size": 1019,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_radio_off_holo_dark.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_radio_off_holo_dark.png",
+      "sourceSha256": "d792dfbaed32ec0278c1ce346922e4f209512f50b1b8d1964b065ee468bcf86e",
+      "sha256": "d792dfbaed32ec0278c1ce346922e4f209512f50b1b8d1964b065ee468bcf86e",
+      "size": 530,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_radio_off_holo_light.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_radio_off_holo_light.png",
+      "sourceSha256": "039e41ecc9feafdf241f3fdec14b30ec090435a7530c21903c3a5acc0bad77f4",
+      "sha256": "039e41ecc9feafdf241f3fdec14b30ec090435a7530c21903c3a5acc0bad77f4",
+      "size": 556,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_radio_off_pressed_holo_dark.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_radio_off_pressed_holo_dark.png",
+      "sourceSha256": "dfb7c11685cb0bb75bcc6a2e76770e3851890452ff9a125112c485182ac09cb8",
+      "sha256": "dfb7c11685cb0bb75bcc6a2e76770e3851890452ff9a125112c485182ac09cb8",
+      "size": 1458,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_radio_off_pressed_holo_light.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_radio_off_pressed_holo_light.png",
+      "sourceSha256": "94c6dd63902b012d8ad6e67166da9409b1a983ae0071248c11de9671dd79a01a",
+      "sha256": "94c6dd63902b012d8ad6e67166da9409b1a983ae0071248c11de9671dd79a01a",
+      "size": 1524,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_radio_on_disabled_focused_holo_dark.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_radio_on_disabled_focused_holo_dark.png",
+      "sourceSha256": "3881ef38e50455a07188004fffc7db6034c3bfb0c40730d91a181adb1fdc2db6",
+      "sha256": "3881ef38e50455a07188004fffc7db6034c3bfb0c40730d91a181adb1fdc2db6",
+      "size": 1326,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_radio_on_disabled_focused_holo_light.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_radio_on_disabled_focused_holo_light.png",
+      "sourceSha256": "c20e96b5efe197c4c0007141f9a14ca720b5c4075f536ca2387d4d230ea476ee",
+      "sha256": "c20e96b5efe197c4c0007141f9a14ca720b5c4075f536ca2387d4d230ea476ee",
+      "size": 1309,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_radio_on_disabled_holo_dark.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_radio_on_disabled_holo_dark.png",
+      "sourceSha256": "7fda005c8b5b28132b146cb71d4e9a925288b1d3904a1b076f177944cf4220f5",
+      "sha256": "7fda005c8b5b28132b146cb71d4e9a925288b1d3904a1b076f177944cf4220f5",
+      "size": 733,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_radio_on_disabled_holo_light.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_radio_on_disabled_holo_light.png",
+      "sourceSha256": "509e9351b70fd4bc6ba96da49dead35d6f54e4432ebe05a1241d672ff26f03ed",
+      "sha256": "509e9351b70fd4bc6ba96da49dead35d6f54e4432ebe05a1241d672ff26f03ed",
+      "size": 727,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_radio_on_focused_holo_dark.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_radio_on_focused_holo_dark.png",
+      "sourceSha256": "bcc762593b902dffa79165fed563c825d0e72f4a11c0681239974384c2a71006",
+      "sha256": "bcc762593b902dffa79165fed563c825d0e72f4a11c0681239974384c2a71006",
+      "size": 1305,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_radio_on_focused_holo_light.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_radio_on_focused_holo_light.png",
+      "sourceSha256": "448efbf2688cbf12e86a20172718e5177a1b8bcb118fdf5e408c300a35a63e87",
+      "sha256": "448efbf2688cbf12e86a20172718e5177a1b8bcb118fdf5e408c300a35a63e87",
+      "size": 1337,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_radio_on_holo_dark.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_radio_on_holo_dark.png",
+      "sourceSha256": "a156a99fd5e32c283d983ea4df1be182da86d0a837b38ae8a1cf7c853c450fea",
+      "sha256": "a156a99fd5e32c283d983ea4df1be182da86d0a837b38ae8a1cf7c853c450fea",
+      "size": 911,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_radio_on_holo_light.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_radio_on_holo_light.png",
+      "sourceSha256": "ec56f74f27a015a82d1c4ea9da806abac485e1cbd854ee4559f9ba33533b2234",
+      "sha256": "ec56f74f27a015a82d1c4ea9da806abac485e1cbd854ee4559f9ba33533b2234",
+      "size": 998,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_radio_on_pressed_holo_dark.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_radio_on_pressed_holo_dark.png",
+      "sourceSha256": "37ed085112f9683771290a87e98951080047e0649bef9d3f5ff25e96192ed316",
+      "sha256": "37ed085112f9683771290a87e98951080047e0649bef9d3f5ff25e96192ed316",
+      "size": 1702,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/btn_radio_on_pressed_holo_light.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_btn_radio_on_pressed_holo_light.png",
+      "sourceSha256": "198f98b4dbf8dc4dc3c6b5a39aa52703d094e1b1d0c8f09effb13e8375ea41e6",
+      "sha256": "198f98b4dbf8dc4dc3c6b5a39aa52703d094e1b1d0c8f09effb13e8375ea41e6",
+      "size": 1828,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/cab_background_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_cab_background_holo_dark.9.png",
+      "sourceSha256": "5aa38dabe7361a2f5a3d5b9ce9bf3f1e6f059c386fe89f892ad63ce6b40d7f36",
+      "sha256": "5aa38dabe7361a2f5a3d5b9ce9bf3f1e6f059c386fe89f892ad63ce6b40d7f36",
+      "size": 1993,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/cab_background_holo_light.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_cab_background_holo_light.9.png",
+      "sourceSha256": "67869b305fe8d085d8ba949934e5e4783aaddb3fb0b3cc648107730a63449168",
+      "sha256": "67869b305fe8d085d8ba949934e5e4783aaddb3fb0b3cc648107730a63449168",
+      "size": 2062,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/cab_ic_close_focused_holo.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_cab_ic_close_focused_holo.png",
+      "sourceSha256": "93d53cb0ab190484fad5a48e5512f0b7e117f8d540c8b4ca53f30de7f939fca1",
+      "sha256": "93d53cb0ab190484fad5a48e5512f0b7e117f8d540c8b4ca53f30de7f939fca1",
+      "size": 906,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/cab_ic_close_normal_holo.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_cab_ic_close_normal_holo.png",
+      "sourceSha256": "41790bcb82a85acd4af66830a120dd6d60f8011831c4ed06b24336e3ffe293f0",
+      "sha256": "41790bcb82a85acd4af66830a120dd6d60f8011831c4ed06b24336e3ffe293f0",
+      "size": 705,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/cab_ic_close_pressed_holo.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_cab_ic_close_pressed_holo.png",
+      "sourceSha256": "a90cf527e2e6f335e73b6d370f2d633aa08e8c6b9f03ffbc12e1ada7afde414e",
+      "sha256": "a90cf527e2e6f335e73b6d370f2d633aa08e8c6b9f03ffbc12e1ada7afde414e",
+      "size": 1226,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/dialog_full_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_dialog_full_holo_dark.9.png",
+      "sourceSha256": "3509a59c13022f585ed550ae39fb9c4f99c8e3ded140b72c86069e5e240147ca",
+      "sha256": "3509a59c13022f585ed550ae39fb9c4f99c8e3ded140b72c86069e5e240147ca",
+      "size": 4862,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/dialog_full_holo_light.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_dialog_full_holo_light.9.png",
+      "sourceSha256": "1f1fe1fdf13524922df4cd695a0571e524487e2de82a8e54d3935a6f37c24e53",
+      "sha256": "1f1fe1fdf13524922df4cd695a0571e524487e2de82a8e54d3935a6f37c24e53",
+      "size": 3984,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/divider_strong_holo.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_divider_strong_holo.9.png",
+      "sourceSha256": "db611ee0bb0340b341765b51905774adbb54b3aea75b7d32e442bdf54e64aac9",
+      "sha256": "db611ee0bb0340b341765b51905774adbb54b3aea75b7d32e442bdf54e64aac9",
+      "size": 122,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/divider_vertical_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_divider_vertical_holo_dark.9.png",
+      "sourceSha256": "f3cc26a67b900f2d3034a1782136e411a50442182f4ce403bdc95f3b51d1cfd1",
+      "sha256": "f3cc26a67b900f2d3034a1782136e411a50442182f4ce403bdc95f3b51d1cfd1",
+      "size": 157,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/divider_vertical_holo_light.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_divider_vertical_holo_light.9.png",
+      "sourceSha256": "a6f64c2ab0c290dcc304c606a993816cd07aeda7fa32b91cd3db3b52855f807b",
+      "sha256": "a6f64c2ab0c290dcc304c606a993816cd07aeda7fa32b91cd3db3b52855f807b",
+      "size": 158,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/ic_ab_back_holo_dark.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_ic_ab_back_holo_dark.png",
+      "sourceSha256": "0493291244bd0e569e7e0ed791a517cec08c285454a97f33c4543f67d24f8942",
+      "sha256": "0493291244bd0e569e7e0ed791a517cec08c285454a97f33c4543f67d24f8942",
+      "size": 483,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/ic_ab_back_holo_light.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_ic_ab_back_holo_light.png",
+      "sourceSha256": "c6d4c06c5ac7f3bb21bf46a8acffb29ac02ed394fc459167a586a465b33554de",
+      "sha256": "c6d4c06c5ac7f3bb21bf46a8acffb29ac02ed394fc459167a586a465b33554de",
+      "size": 488,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/ic_clear_disabled.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_ic_clear_disabled.png",
+      "sourceSha256": "5a33a8d995785ccdfdc9accb920699c083e03da732780129479f333113ce5365",
+      "sha256": "5a33a8d995785ccdfdc9accb920699c083e03da732780129479f333113ce5365",
+      "size": 1623,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/ic_clear_normal.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_ic_clear_normal.png",
+      "sourceSha256": "58bb16c7ed6695b33b132686a81e1fd7c39d807219db0c73d52e5aceeb923233",
+      "sha256": "58bb16c7ed6695b33b132686a81e1fd7c39d807219db0c73d52e5aceeb923233",
+      "size": 1869,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/ic_input_add.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_ic_input_add.png",
+      "sourceSha256": "e5e04963b1d28e0ad7179f5c26f5cacafdabe37d1c9a7e031a349c24d17326b7",
+      "sha256": "e5e04963b1d28e0ad7179f5c26f5cacafdabe37d1c9a7e031a349c24d17326b7",
+      "size": 3180,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/ic_menu_close_clear_cancel.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_ic_menu_close_clear_cancel.png",
+      "sourceSha256": "177ce2cedef045d435bd8ec8c1ba1cc378d96da840075af1d8961b649c39e505",
+      "sha256": "177ce2cedef045d435bd8ec8c1ba1cc378d96da840075af1d8961b649c39e505",
+      "size": 932,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/ic_menu_delete.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_ic_menu_delete.png",
+      "sourceSha256": "e151fc60f21a1d93ea9b747fe19c5d831e5f8df3108409e88a14d4d82c0e1027",
+      "sha256": "e151fc60f21a1d93ea9b747fe19c5d831e5f8df3108409e88a14d4d82c0e1027",
+      "size": 967,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/ic_menu_moreoverflow_normal_holo_dark.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_ic_menu_moreoverflow_normal_holo_dark.png",
+      "sourceSha256": "5febf1f1fd0a9cab64a195eb42db8c4d7793f3ee4225198944bef93721c04ec0",
+      "sha256": "5febf1f1fd0a9cab64a195eb42db8c4d7793f3ee4225198944bef93721c04ec0",
+      "size": 660,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/ic_menu_moreoverflow_normal_holo_light.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_ic_menu_moreoverflow_normal_holo_light.png",
+      "sourceSha256": "03f7e53742918646009a631f5cc4153c7fc4af0929d13943f080735b860412bf",
+      "sha256": "03f7e53742918646009a631f5cc4153c7fc4af0929d13943f080735b860412bf",
+      "size": 697,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/ic_menu_refresh.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_ic_menu_refresh.png",
+      "sourceSha256": "2e65a0d26b9690ac6a603de42ac99b8c3c6ca66207e33aa1ba2a4ab578119942",
+      "sha256": "2e65a0d26b9690ac6a603de42ac99b8c3c6ca66207e33aa1ba2a4ab578119942",
+      "size": 1278,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/ic_menu_search.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_ic_menu_search.png",
+      "sourceSha256": "73704783800ee67f25a5d597c6074f4718feb8c7be2945f529210d4bcff0e9be",
+      "sha256": "73704783800ee67f25a5d597c6074f4718feb8c7be2945f529210d4bcff0e9be",
+      "size": 1133,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/ic_menu_search_holo_light.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_ic_menu_search_holo_light.png",
+      "sourceSha256": "893ee04afd0a725e80ddc230c84e0e57ba190d5ed729300a106d84a495f8223e",
+      "sha256": "893ee04afd0a725e80ddc230c84e0e57ba190d5ed729300a106d84a495f8223e",
+      "size": 858,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/list_activated_holo.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_list_activated_holo.9.png",
+      "sourceSha256": "d4c4ec9ff22487ff8053b4914f37803431bd0873b292a37463b776c5fbf21a09",
+      "sha256": "d4c4ec9ff22487ff8053b4914f37803431bd0873b292a37463b776c5fbf21a09",
+      "size": 1049,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/list_divider_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_list_divider_holo_dark.9.png",
+      "sourceSha256": "9fdcc248a7ade52a9e661e86737f26800e0679d1fbe74c80ae326b3ac923dd26",
+      "sha256": "9fdcc248a7ade52a9e661e86737f26800e0679d1fbe74c80ae326b3ac923dd26",
+      "size": 1006,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/list_divider_holo_light.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_list_divider_holo_light.9.png",
+      "sourceSha256": "a1583811f1649f95947ccacff9e1fb877350c9284b8fd9b01fbc5d3cb0714642",
+      "sha256": "a1583811f1649f95947ccacff9e1fb877350c9284b8fd9b01fbc5d3cb0714642",
+      "size": 1007,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/list_focused_holo.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_list_focused_holo.9.png",
+      "sourceSha256": "1c5a9193f25175f5278c78e3e2b23c3648b83dfeb385a1d5613ef959c528afa4",
+      "sha256": "1c5a9193f25175f5278c78e3e2b23c3648b83dfeb385a1d5613ef959c528afa4",
+      "size": 1092,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/list_longpressed_holo.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_list_longpressed_holo.9.png",
+      "sourceSha256": "eec2be08eb4ba9d955faf70aaaa9e8e848b5dab5ecd765fcc2991ebd8ca6c8d6",
+      "sha256": "eec2be08eb4ba9d955faf70aaaa9e8e848b5dab5ecd765fcc2991ebd8ca6c8d6",
+      "size": 1049,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/list_pressed_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_list_pressed_holo_dark.9.png",
+      "sourceSha256": "b34cc80f3834f390cc5b05628fcc53df973633a40bf4dc36727bdbffcdb66624",
+      "sha256": "b34cc80f3834f390cc5b05628fcc53df973633a40bf4dc36727bdbffcdb66624",
+      "size": 1057,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/list_pressed_holo_light.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_list_pressed_holo_light.9.png",
+      "sourceSha256": "59cba9a1a0a3980015c97e17f2a5d89267735051e2448cd0b49da4cc9424d42f",
+      "sha256": "59cba9a1a0a3980015c97e17f2a5d89267735051e2448cd0b49da4cc9424d42f",
+      "size": 1053,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/list_section_divider_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_list_section_divider_holo_dark.9.png",
+      "sourceSha256": "a8551bf2583c1683f9513d049d8ab749206b0378396debf6d495741f83603cc6",
+      "sha256": "a8551bf2583c1683f9513d049d8ab749206b0378396debf6d495741f83603cc6",
+      "size": 1086,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/list_section_divider_holo_light.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_list_section_divider_holo_light.9.png",
+      "sourceSha256": "28a70f0306a34c6e19998d9299768c2bada96e57eb5203b6b147dc2a688ac837",
+      "sha256": "28a70f0306a34c6e19998d9299768c2bada96e57eb5203b6b147dc2a688ac837",
+      "size": 1087,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/list_selector_disabled_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_list_selector_disabled_holo_dark.9.png",
+      "sourceSha256": "a099e7c1a81c474817d81ccd8e137d19ec5c09c85e9681503ad61e631cd68731",
+      "sha256": "a099e7c1a81c474817d81ccd8e137d19ec5c09c85e9681503ad61e631cd68731",
+      "size": 172,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/list_selector_disabled_holo_light.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_list_selector_disabled_holo_light.9.png",
+      "sourceSha256": "edd727412cb2fa3381dd50cd207073eca66fbe6f96035b9d4855b901b355a015",
+      "sha256": "edd727412cb2fa3381dd50cd207073eca66fbe6f96035b9d4855b901b355a015",
+      "size": 171,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/menu_dropdown_panel_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_menu_dropdown_panel_holo_dark.9.png",
+      "sourceSha256": "be08ec4e2ed41af6886cb5edbd9bae171cd1625d79a01da31c49a3d0555425ff",
+      "sha256": "be08ec4e2ed41af6886cb5edbd9bae171cd1625d79a01da31c49a3d0555425ff",
+      "size": 576,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/menu_dropdown_panel_holo_light.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_menu_dropdown_panel_holo_light.9.png",
+      "sourceSha256": "a267aa1ecabe15c566cad0b5787b80f1eb4cfd360d8e75e15bfed09af6d4eb58",
+      "sha256": "a267aa1ecabe15c566cad0b5787b80f1eb4cfd360d8e75e15bfed09af6d4eb58",
+      "size": 555,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/progress_bg_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_progress_bg_holo_dark.9.png",
+      "sourceSha256": "1f12d3b14cd409c2e52c9e82076b1f8948306992c85e48b09ac19929c4f22d62",
+      "sha256": "1f12d3b14cd409c2e52c9e82076b1f8948306992c85e48b09ac19929c4f22d62",
+      "size": 165,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/progress_bg_holo_light.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_progress_bg_holo_light.9.png",
+      "sourceSha256": "01a4f6ddba57d62167696856f4a9af7369beae3b96174d87b792a3d3b3d2b5e4",
+      "sha256": "01a4f6ddba57d62167696856f4a9af7369beae3b96174d87b792a3d3b3d2b5e4",
+      "size": 159,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/progress_primary_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_progress_primary_holo_dark.9.png",
+      "sourceSha256": "25396bed76c06fe82231558ffa8b21e7beef0fbdcc18d31bfc078bbe8358f491",
+      "sha256": "25396bed76c06fe82231558ffa8b21e7beef0fbdcc18d31bfc078bbe8358f491",
+      "size": 425,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/progress_primary_holo_light.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_progress_primary_holo_light.9.png",
+      "sourceSha256": "25396bed76c06fe82231558ffa8b21e7beef0fbdcc18d31bfc078bbe8358f491",
+      "sha256": "25396bed76c06fe82231558ffa8b21e7beef0fbdcc18d31bfc078bbe8358f491",
+      "size": 425,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/progress_secondary_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_progress_secondary_holo_dark.9.png",
+      "sourceSha256": "e1b8c9ef4759db4073d8b895ca2737c094693a454cf5e2458919341e0ce6e5c4",
+      "sha256": "e1b8c9ef4759db4073d8b895ca2737c094693a454cf5e2458919341e0ce6e5c4",
+      "size": 174,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/progress_secondary_holo_light.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_progress_secondary_holo_light.9.png",
+      "sourceSha256": "e1b8c9ef4759db4073d8b895ca2737c094693a454cf5e2458919341e0ce6e5c4",
+      "sha256": "e1b8c9ef4759db4073d8b895ca2737c094693a454cf5e2458919341e0ce6e5c4",
+      "size": 174,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/progressbar_indeterminate_holo1.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_progressbar_indeterminate_holo1.png",
+      "sourceSha256": "8a4a124551485c33f9465e1ef50b470f8b87a05dcc30e3ee852541bcc8c19707",
+      "sha256": "8a4a124551485c33f9465e1ef50b470f8b87a05dcc30e3ee852541bcc8c19707",
+      "size": 1012,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/progressbar_indeterminate_holo2.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_progressbar_indeterminate_holo2.png",
+      "sourceSha256": "27d9edc680636f1f0806420e629642281b94435cacfdf59748073031e3bd76e9",
+      "sha256": "27d9edc680636f1f0806420e629642281b94435cacfdf59748073031e3bd76e9",
+      "size": 1002,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/progressbar_indeterminate_holo3.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_progressbar_indeterminate_holo3.png",
+      "sourceSha256": "c2929eb0d0f9cc127b28211a7f9e17398a7291546cc4e5ee91e2da7385f0e79f",
+      "sha256": "c2929eb0d0f9cc127b28211a7f9e17398a7291546cc4e5ee91e2da7385f0e79f",
+      "size": 1001,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/progressbar_indeterminate_holo4.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_progressbar_indeterminate_holo4.png",
+      "sourceSha256": "80cfd3a841f1815b190e0128eb285a440ced7a0f3957331e4f87ddbaddc2b1aa",
+      "sha256": "80cfd3a841f1815b190e0128eb285a440ced7a0f3957331e4f87ddbaddc2b1aa",
+      "size": 960,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/progressbar_indeterminate_holo5.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_progressbar_indeterminate_holo5.png",
+      "sourceSha256": "3ac3e86e7226c18baff8f40ad1dca4cb166cd5e12290a8d36b87633b3e8b0c0f",
+      "sha256": "3ac3e86e7226c18baff8f40ad1dca4cb166cd5e12290a8d36b87633b3e8b0c0f",
+      "size": 969,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/progressbar_indeterminate_holo6.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_progressbar_indeterminate_holo6.png",
+      "sourceSha256": "ec431ecb1fd13f1b32f139bee9a9725557b5e4e496861dc6daa53f6aefa1b90a",
+      "sha256": "ec431ecb1fd13f1b32f139bee9a9725557b5e4e496861dc6daa53f6aefa1b90a",
+      "size": 956,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/progressbar_indeterminate_holo7.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_progressbar_indeterminate_holo7.png",
+      "sourceSha256": "eea766efc40d38c719b4dd333093117503415630e0e115b3126632977aeecf14",
+      "sha256": "eea766efc40d38c719b4dd333093117503415630e0e115b3126632977aeecf14",
+      "size": 963,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/progressbar_indeterminate_holo8.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_progressbar_indeterminate_holo8.png",
+      "sourceSha256": "ef5ba0c135cb2645239c744c3456e08ef11fecae861f1ea2ff0237a5182bb410",
+      "sha256": "ef5ba0c135cb2645239c744c3456e08ef11fecae861f1ea2ff0237a5182bb410",
+      "size": 958,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/scrollbar_handle_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_scrollbar_handle_holo_dark.9.png",
+      "sourceSha256": "90b85768f86b2ba3443de2b66b09866c35d0dfec29eb6aa0ef6d53f2d6c574a6",
+      "sha256": "90b85768f86b2ba3443de2b66b09866c35d0dfec29eb6aa0ef6d53f2d6c574a6",
+      "size": 205,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/scrollbar_handle_holo_light.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_scrollbar_handle_holo_light.9.png",
+      "sourceSha256": "90b85768f86b2ba3443de2b66b09866c35d0dfec29eb6aa0ef6d53f2d6c574a6",
+      "sha256": "90b85768f86b2ba3443de2b66b09866c35d0dfec29eb6aa0ef6d53f2d6c574a6",
+      "size": 205,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/spinner_48_inner_holo.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_spinner_48_inner_holo.png",
+      "sourceSha256": "ebe5c89b10ecba4a549440686a2874b59ca5af83c6143df956a61fb917e727d2",
+      "sha256": "ebe5c89b10ecba4a549440686a2874b59ca5af83c6143df956a61fb917e727d2",
+      "size": 3457,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/spinner_48_outer_holo.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_spinner_48_outer_holo.png",
+      "sourceSha256": "438ffa786d3943d913d93bb0d00e1cf9a7866f58dd067fa69008d355321917d7",
+      "sha256": "438ffa786d3943d913d93bb0d00e1cf9a7866f58dd067fa69008d355321917d7",
+      "size": 3715,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/spinner_default_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_spinner_default_holo_dark.9.png",
+      "sourceSha256": "8bd6d0de69826ad77a53fa332ce39422ffdf2d1f1f179125daa31218ccccb44b",
+      "sha256": "8bd6d0de69826ad77a53fa332ce39422ffdf2d1f1f179125daa31218ccccb44b",
+      "size": 302,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/spinner_default_holo_light.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_spinner_default_holo_light.9.png",
+      "sourceSha256": "9fc45391c89c2a04d9397784a9eb6a86d92de9a6faebac06f49cc77e1539ec3f",
+      "sha256": "9fc45391c89c2a04d9397784a9eb6a86d92de9a6faebac06f49cc77e1539ec3f",
+      "size": 301,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/spinner_disabled_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_spinner_disabled_holo_dark.9.png",
+      "sourceSha256": "3e4a64136425e2844c9fa50ce6596f6e8f78fbc7e893a42f59b29945f95b7089",
+      "sha256": "3e4a64136425e2844c9fa50ce6596f6e8f78fbc7e893a42f59b29945f95b7089",
+      "size": 331,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/spinner_disabled_holo_light.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_spinner_disabled_holo_light.9.png",
+      "sourceSha256": "cf0bd3389adec18d161e069a8aa0c3723f5c1ab38e1ab9983d1d1d5e86e81b7e",
+      "sha256": "cf0bd3389adec18d161e069a8aa0c3723f5c1ab38e1ab9983d1d1d5e86e81b7e",
+      "size": 331,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/spinner_focused_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_spinner_focused_holo_dark.9.png",
+      "sourceSha256": "6547cd69d1d603b99c7ea27c54f21ec756de6320e9aac6e6b50b73b05326bf5f",
+      "sha256": "6547cd69d1d603b99c7ea27c54f21ec756de6320e9aac6e6b50b73b05326bf5f",
+      "size": 352,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/spinner_focused_holo_light.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_spinner_focused_holo_light.9.png",
+      "sourceSha256": "2022234dc4b8146d6114e424ef2e7909651916b0194e1c6f93a7c12daca995aa",
+      "sha256": "2022234dc4b8146d6114e424ef2e7909651916b0194e1c6f93a7c12daca995aa",
+      "size": 499,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/spinner_pressed_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_spinner_pressed_holo_dark.9.png",
+      "sourceSha256": "5cd79266b60607062fb6f4b89e3cb943fb1bd4754ba1d819b02fa4e329228d9a",
+      "sha256": "5cd79266b60607062fb6f4b89e3cb943fb1bd4754ba1d819b02fa4e329228d9a",
+      "size": 420,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/spinner_pressed_holo_light.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_spinner_pressed_holo_light.9.png",
+      "sourceSha256": "8345f039c3ccfd984cbaf41a5be2dfafc9d3efe79dca0d95d282dba0e0337eb7",
+      "sha256": "8345f039c3ccfd984cbaf41a5be2dfafc9d3efe79dca0d95d282dba0e0337eb7",
+      "size": 457,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/switch_bg_disabled_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_switch_bg_disabled_holo_dark.9.png",
+      "sourceSha256": "f9f25b13dab2025c5bcdf8f2ca39e494b9c46433d1444a5a674b6b798c10ffe7",
+      "sha256": "f9f25b13dab2025c5bcdf8f2ca39e494b9c46433d1444a5a674b6b798c10ffe7",
+      "size": 210,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/switch_bg_disabled_holo_light.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_switch_bg_disabled_holo_light.9.png",
+      "sourceSha256": "27cd5a30a5e2cfd59ac92f6677709266a6be6b954c6795151e25811dd5f239bb",
+      "sha256": "27cd5a30a5e2cfd59ac92f6677709266a6be6b954c6795151e25811dd5f239bb",
+      "size": 211,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/switch_bg_focused_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_switch_bg_focused_holo_dark.9.png",
+      "sourceSha256": "80366d24e205fdb3ec5e9b81b8ddf0fd5c0c3025cc3db5c1969bd8b65e26e0d8",
+      "sha256": "80366d24e205fdb3ec5e9b81b8ddf0fd5c0c3025cc3db5c1969bd8b65e26e0d8",
+      "size": 215,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/switch_bg_focused_holo_light.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_switch_bg_focused_holo_light.9.png",
+      "sourceSha256": "5b4247e48bdea012904bb4e75e114acbec99e78ead4d61171bac039d8184f7f2",
+      "sha256": "5b4247e48bdea012904bb4e75e114acbec99e78ead4d61171bac039d8184f7f2",
+      "size": 217,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/switch_bg_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_switch_bg_holo_dark.9.png",
+      "sourceSha256": "ef0bf6bbf8a73c169c94cb96f0e4dfea708a56ffad5dbfe0bcfd40d760c28159",
+      "sha256": "ef0bf6bbf8a73c169c94cb96f0e4dfea708a56ffad5dbfe0bcfd40d760c28159",
+      "size": 186,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/switch_bg_holo_light.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_switch_bg_holo_light.9.png",
+      "sourceSha256": "7e507dcd4b5dbc0c4cfedc72c63950233e19c1ea9a5d86c93fac5217b6c3e7db",
+      "sha256": "7e507dcd4b5dbc0c4cfedc72c63950233e19c1ea9a5d86c93fac5217b6c3e7db",
+      "size": 186,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/switch_thumb_disabled_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_switch_thumb_disabled_holo_dark.9.png",
+      "sourceSha256": "9ffebc1d2cf4acb75e5183496f419b4d86dabccd2da57cc075939dd7800ee397",
+      "sha256": "9ffebc1d2cf4acb75e5183496f419b4d86dabccd2da57cc075939dd7800ee397",
+      "size": 303,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/switch_thumb_disabled_holo_light.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_switch_thumb_disabled_holo_light.9.png",
+      "sourceSha256": "f36a7fe294e4cc3f88dfe0c75c60bd479d7205e97ee334bf48e8fd98f043c16e",
+      "sha256": "f36a7fe294e4cc3f88dfe0c75c60bd479d7205e97ee334bf48e8fd98f043c16e",
+      "size": 318,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/switch_thumb_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_switch_thumb_holo_dark.9.png",
+      "sourceSha256": "0531bd558c0df9cd5623de604c40e1e1b4a0343555c7e8be5807f7a08273b2cf",
+      "sha256": "0531bd558c0df9cd5623de604c40e1e1b4a0343555c7e8be5807f7a08273b2cf",
+      "size": 322,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/switch_thumb_holo_light.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_switch_thumb_holo_light.9.png",
+      "sourceSha256": "c3da384f5f002c1e56c7c3f0b95e6ef27c3ac33385a2eac782b6ff6d0f122ec1",
+      "sha256": "c3da384f5f002c1e56c7c3f0b95e6ef27c3ac33385a2eac782b6ff6d0f122ec1",
+      "size": 317,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/switch_thumb_pressed_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_switch_thumb_pressed_holo_dark.9.png",
+      "sourceSha256": "e0b3932bb92d1e91aef82a8f789d4f8133515eeaf74858da3ca2189c262d72e6",
+      "sha256": "e0b3932bb92d1e91aef82a8f789d4f8133515eeaf74858da3ca2189c262d72e6",
+      "size": 453,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/switch_thumb_pressed_holo_light.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_switch_thumb_pressed_holo_light.9.png",
+      "sourceSha256": "1c60f8b876c7e80bc05419f949263a9a2f5dcd3f945e2c9e75f699bdf98f2e18",
+      "sha256": "1c60f8b876c7e80bc05419f949263a9a2f5dcd3f945e2c9e75f699bdf98f2e18",
+      "size": 517,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/tab_selected_focused_holo.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_tab_selected_focused_holo.9.png",
+      "sourceSha256": "5e15b2a2a43af9d3f70b34a5ff24005b39071f07794072eb0590fbc6a3bddaae",
+      "sha256": "5e15b2a2a43af9d3f70b34a5ff24005b39071f07794072eb0590fbc6a3bddaae",
+      "size": 203,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/tab_selected_holo.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_tab_selected_holo.9.png",
+      "sourceSha256": "5996db4b733239889ae6f260edc900d51f0cee04b31f21dceb85600759266113",
+      "sha256": "5996db4b733239889ae6f260edc900d51f0cee04b31f21dceb85600759266113",
+      "size": 144,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/tab_selected_pressed_focused_holo.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_tab_selected_pressed_focused_holo.9.png",
+      "sourceSha256": "15939f43d8acb60c0378e5332b7166a5cc594791858cb908e484555c063db408",
+      "sha256": "15939f43d8acb60c0378e5332b7166a5cc594791858cb908e484555c063db408",
+      "size": 454,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/tab_selected_pressed_holo.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_tab_selected_pressed_holo.9.png",
+      "sourceSha256": "b0403b0f82e9bcb92d86dfff165b91714a7c3e00254a5c2f839ec097952aa544",
+      "sha256": "b0403b0f82e9bcb92d86dfff165b91714a7c3e00254a5c2f839ec097952aa544",
+      "size": 231,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/tab_unselected_focused_holo.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_tab_unselected_focused_holo.9.png",
+      "sourceSha256": "eaf450cc748d33d6f82f546a31886289964e7a61a2a90218bef7836cf35b10c8",
+      "sha256": "eaf450cc748d33d6f82f546a31886289964e7a61a2a90218bef7836cf35b10c8",
+      "size": 196,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/tab_unselected_holo.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_tab_unselected_holo.9.png",
+      "sourceSha256": "449e77ead6eceaf5983c052c5d9d81e2fc9591a59447db8def2f9fb0947a7ff1",
+      "sha256": "449e77ead6eceaf5983c052c5d9d81e2fc9591a59447db8def2f9fb0947a7ff1",
+      "size": 128,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/tab_unselected_pressed_focused_holo.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_tab_unselected_pressed_focused_holo.9.png",
+      "sourceSha256": "7bb512e84785241dc886f9339cc94c64c1e92ed50df51011355821834ae1dfd4",
+      "sha256": "7bb512e84785241dc886f9339cc94c64c1e92ed50df51011355821834ae1dfd4",
+      "size": 459,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/tab_unselected_pressed_holo.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_tab_unselected_pressed_holo.9.png",
+      "sourceSha256": "f38cfe424a0c7c486f2bd86e8bca3607cc9a99b1df5d5919a01e982bd0bd3ef0",
+      "sha256": "f38cfe424a0c7c486f2bd86e8bca3607cc9a99b1df5d5919a01e982bd0bd3ef0",
+      "size": 223,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/textfield_activated_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_textfield_activated_holo_dark.9.png",
+      "sourceSha256": "b3c4de8b2fe3cb389da2b8fae5625075018adcdfc21898b2f2315d5d32135d50",
+      "sha256": "b3c4de8b2fe3cb389da2b8fae5625075018adcdfc21898b2f2315d5d32135d50",
+      "size": 281,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/textfield_activated_holo_light.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_textfield_activated_holo_light.9.png",
+      "sourceSha256": "609caf526bdc859d137a5480e182ec44fa1ba8eb56c93a59e0a8866fca5c6152",
+      "sha256": "609caf526bdc859d137a5480e182ec44fa1ba8eb56c93a59e0a8866fca5c6152",
+      "size": 279,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/textfield_default_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_textfield_default_holo_dark.9.png",
+      "sourceSha256": "9b818fc4679a66aeb16b7cdf118bd88c0704f47c8a2b0b518795e8eee167d703",
+      "sha256": "9b818fc4679a66aeb16b7cdf118bd88c0704f47c8a2b0b518795e8eee167d703",
+      "size": 281,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/textfield_default_holo_light.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_textfield_default_holo_light.9.png",
+      "sourceSha256": "cfe1508ddf0ba09ee88c0185be5fbac92a9e59958c09158f960fdb33cbc5726f",
+      "sha256": "cfe1508ddf0ba09ee88c0185be5fbac92a9e59958c09158f960fdb33cbc5726f",
+      "size": 279,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/textfield_disabled_focused_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_textfield_disabled_focused_holo_dark.9.png",
+      "sourceSha256": "4d3804afe09910b86419acd76bd7441be6e2aff210894041b982d6abeefc4236",
+      "sha256": "4d3804afe09910b86419acd76bd7441be6e2aff210894041b982d6abeefc4236",
+      "size": 1075,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/textfield_disabled_focused_holo_light.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_textfield_disabled_focused_holo_light.9.png",
+      "sourceSha256": "1e53654cb28cf8c6d40f3cbd3c8d0b4569630a76ace6edfdab9674b34d242ea0",
+      "sha256": "1e53654cb28cf8c6d40f3cbd3c8d0b4569630a76ace6edfdab9674b34d242ea0",
+      "size": 1075,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/textfield_disabled_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_textfield_disabled_holo_dark.9.png",
+      "sourceSha256": "d81141bb50afc1f370643f463c88f4656e3ebede3f17d798849a21c2e3f1a7c4",
+      "sha256": "d81141bb50afc1f370643f463c88f4656e3ebede3f17d798849a21c2e3f1a7c4",
+      "size": 282,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/textfield_disabled_holo_light.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_textfield_disabled_holo_light.9.png",
+      "sourceSha256": "5ff8aff654e832e9a0e56b0da171966efb1fdeca4263dcec7d3e198d3857e27d",
+      "sha256": "5ff8aff654e832e9a0e56b0da171966efb1fdeca4263dcec7d3e198d3857e27d",
+      "size": 280,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/textfield_focused_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_textfield_focused_holo_dark.9.png",
+      "sourceSha256": "4d0f7d467d6b19723f7fd310abd8eb4e417e8122af7da8c26d4768e09551873c",
+      "sha256": "4d0f7d467d6b19723f7fd310abd8eb4e417e8122af7da8c26d4768e09551873c",
+      "size": 284,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/textfield_focused_holo_light.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_textfield_focused_holo_light.9.png",
+      "sourceSha256": "60ad696d8efed9378f972089531988a55312428256cdd23efe1e65da639dd51c",
+      "sha256": "60ad696d8efed9378f972089531988a55312428256cdd23efe1e65da639dd51c",
+      "size": 285,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/textfield_multiline_activated_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_textfield_multiline_activated_holo_dark.9.png",
+      "sourceSha256": "45bc348e3db01efa8886776fa99e542a0f0b2060de4b87ea8aa74412cf3603b7",
+      "sha256": "45bc348e3db01efa8886776fa99e542a0f0b2060de4b87ea8aa74412cf3603b7",
+      "size": 320,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/textfield_multiline_activated_holo_light.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_textfield_multiline_activated_holo_light.9.png",
+      "sourceSha256": "2fb1057b6229b0b2e7d464247ea6defd6cdfff83cb3534a956d59f15cf221e6a",
+      "sha256": "2fb1057b6229b0b2e7d464247ea6defd6cdfff83cb3534a956d59f15cf221e6a",
+      "size": 314,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/textfield_multiline_default_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_textfield_multiline_default_holo_dark.9.png",
+      "sourceSha256": "288941df87ec0d352c367f7679ef163d2b266dbafa5adbbe380b880b621a5073",
+      "sha256": "288941df87ec0d352c367f7679ef163d2b266dbafa5adbbe380b880b621a5073",
+      "size": 320,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/textfield_multiline_default_holo_light.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_textfield_multiline_default_holo_light.9.png",
+      "sourceSha256": "54d983589bab0254d896bbf8b02965a8bc737d309c99bc343881b2fb45e44add",
+      "sha256": "54d983589bab0254d896bbf8b02965a8bc737d309c99bc343881b2fb45e44add",
+      "size": 313,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/textfield_multiline_disabled_focused_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_textfield_multiline_disabled_focused_holo_dark.9.png",
+      "sourceSha256": "b6431a3855e88d86af0b9369d84d86974e571d0a174e502f3fbb2197ce314ef0",
+      "sha256": "b6431a3855e88d86af0b9369d84d86974e571d0a174e502f3fbb2197ce314ef0",
+      "size": 1110,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/textfield_multiline_disabled_focused_holo_light.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_textfield_multiline_disabled_focused_holo_light.9.png",
+      "sourceSha256": "65949f4a4b651df7bd3b4587d2751c88f56739a7348ea5e8b062a2071507303f",
+      "sha256": "65949f4a4b651df7bd3b4587d2751c88f56739a7348ea5e8b062a2071507303f",
+      "size": 1110,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/textfield_multiline_disabled_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_textfield_multiline_disabled_holo_dark.9.png",
+      "sourceSha256": "1aa7a1b15541ab6d075c6d797512b7b44b3b3c127176123b5544557914be9857",
+      "sha256": "1aa7a1b15541ab6d075c6d797512b7b44b3b3c127176123b5544557914be9857",
+      "size": 320,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/textfield_multiline_disabled_holo_light.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_textfield_multiline_disabled_holo_light.9.png",
+      "sourceSha256": "4d3dd011c20d207f418d0f8eb083e9672970fc3529675662fc317c41815f1f27",
+      "sha256": "4d3dd011c20d207f418d0f8eb083e9672970fc3529675662fc317c41815f1f27",
+      "size": 313,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/textfield_multiline_focused_holo_dark.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_textfield_multiline_focused_holo_dark.9.png",
+      "sourceSha256": "ce254cdd41f79f200ab9edd8e7b96fb22f4ba584857dc540d10634d137e9e4f8",
+      "sha256": "ce254cdd41f79f200ab9edd8e7b96fb22f4ba584857dc540d10634d137e9e4f8",
+      "size": 325,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/textfield_multiline_focused_holo_light.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_textfield_multiline_focused_holo_light.9.png",
+      "sourceSha256": "8fbda5f0d775f285409d749d6910d8c739eef8d5e7c5729b9c4479984f8e524f",
+      "sha256": "8fbda5f0d775f285409d749d6910d8c739eef8d5e7c5729b9c4479984f8e524f",
+      "size": 325,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-mdpi/toast_frame_holo.9.png",
+      "target": "app/src/main/res/drawable-mdpi/honeycomb_toast_frame_holo.9.png",
+      "sourceSha256": "b370a2e3e548f4525550cdb359e961251605ea7167f8f62f7650a5aafe349208",
+      "sha256": "b370a2e3e548f4525550cdb359e961251605ea7167f8f62f7650a5aafe349208",
+      "size": 3568,
+      "density": "mdpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-nodpi/background_holo_dark.png",
+      "target": "app/src/main/res/drawable-nodpi/honeycomb_background_holo_dark.png",
+      "sourceSha256": "3d5f3f8d97b3fad853098e7f54c7ec831741991de74e416cf68565e0bc6da908",
+      "sha256": "3d5f3f8d97b3fad853098e7f54c7ec831741991de74e416cf68565e0bc6da908",
+      "size": 160758,
+      "density": "nodpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable-nodpi/background_holo_light.png",
+      "target": "app/src/main/res/drawable-nodpi/honeycomb_background_holo_light.png",
+      "sourceSha256": "64f6683cb892ee5286004dbc32195da55479d91ac586283aae7de5f84fadd60e",
+      "sha256": "64f6683cb892ee5286004dbc32195da55479d91ac586283aae7de5f84fadd60e",
+      "size": 5637,
+      "density": "nodpi",
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged"
+    },
+    {
+      "source": "data/res/drawable/activated_background_holo_dark.xml",
+      "target": "app/src/main/res/drawable/honeycomb_activated_background_holo_dark.xml",
+      "sourceSha256": "34aa41a551175a107b2f1dfbd0e4827095d6e1b39c5fbf03297c0aa37b484991",
+      "sha256": "e72cd29b444f9ec3411cc78b07554f69eafa2f6dfcb20a7a0e8a90f9badafdd4",
+      "size": 993,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "data/res/drawable/activated_background_holo_light.xml",
+      "target": "app/src/main/res/drawable/honeycomb_activated_background_holo_light.xml",
+      "sourceSha256": "34aa41a551175a107b2f1dfbd0e4827095d6e1b39c5fbf03297c0aa37b484991",
+      "sha256": "e72cd29b444f9ec3411cc78b07554f69eafa2f6dfcb20a7a0e8a90f9badafdd4",
+      "size": 993,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "data/res/drawable/btn_check_holo_dark.xml",
+      "target": "app/src/main/res/drawable/honeycomb_btn_check_holo_dark.xml",
+      "sourceSha256": "1822f228b765824b383f5d73491032863b52dd0ec3c0637b921fd33a8051b253",
+      "sha256": "e5c87e78483cd1459806739f31b5c9d530799732506e3d9987b82a641a1b4c49",
+      "size": 3155,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "data/res/drawable/btn_check_holo_light.xml",
+      "target": "app/src/main/res/drawable/honeycomb_btn_check_holo_light.xml",
+      "sourceSha256": "6385c597164ff9abd28eb03c4872900a410ee33b12bb140b6f137cea6290dc2e",
+      "sha256": "deb0f845d1f49ff871ee3b279aab8d7cafa3dfa56e840ef59384064ac7820b41",
+      "size": 3169,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "data/res/drawable/btn_default_holo_dark.xml",
+      "target": "app/src/main/res/drawable/honeycomb_btn_default_holo_dark.xml",
+      "sourceSha256": "736191f491808fc2d202f7956a285ae666f5327626947be06a7f6b1e7055f3d3",
+      "sha256": "1e76bd8969c02d9f9397ed0a86de26ea3fb0ffc1dd7405117cce1a5d319456c6",
+      "size": 1672,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "data/res/drawable/btn_default_holo_light.xml",
+      "target": "app/src/main/res/drawable/honeycomb_btn_default_holo_light.xml",
+      "sourceSha256": "bd1a77e60d8d2bb13b3e04b1ceb888a52d7cf2c216ab0d3751b9cfb1ad65857d",
+      "sha256": "f7d95bfc86dfa1f83594d3712c19452bdbe38b78160edd1d8117f51d72e428ae",
+      "size": 1678,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "data/res/drawable/btn_radio_holo_dark.xml",
+      "target": "app/src/main/res/drawable/honeycomb_btn_radio_holo_dark.xml",
+      "sourceSha256": "ebba8cfdb75572f5adad7025f66eb7568623fee1578b2368a19c7dd0226bc707",
+      "sha256": "a5298ab9154b9f31ba7050e3404ecdbaa4fa59b8bd837ee540b12e07ab6d31e6",
+      "size": 3106,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "data/res/drawable/btn_radio_holo_light.xml",
+      "target": "app/src/main/res/drawable/honeycomb_btn_radio_holo_light.xml",
+      "sourceSha256": "c8abae0b617fe6e5f7747761a32876655a82cb50b950a20cb130055b438fc1bb",
+      "sha256": "b64b56d37265478dbc165ce150b5643ae099340e836682844fab620baccb8965",
+      "size": 3120,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "data/res/drawable/cab_ic_close_holo.xml",
+      "target": "app/src/main/res/drawable/honeycomb_cab_ic_close_holo.xml",
+      "sourceSha256": "0d900fb8080156e4b69124fe7bdcca42a3e5c6365fe17affd29e8df972f22273",
+      "sha256": "123524d223830ac386e5a216fa5718748f2b495432a1df13e6af9dc4000dd5f1",
+      "size": 1064,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "data/res/drawable/edit_text_holo_dark.xml",
+      "target": "app/src/main/res/drawable/honeycomb_edit_text_holo_dark.xml",
+      "sourceSha256": "833ebae9e86234522d3a8c50fd6d99208c8dc52e8c1ed22421622a36d82a812c",
+      "sha256": "224ee11bce9f9af431133797c446ad1ab5a7f1c541c5211bb10fc55cdd770101",
+      "size": 2812,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "data/res/drawable/edit_text_holo_light.xml",
+      "target": "app/src/main/res/drawable/honeycomb_edit_text_holo_light.xml",
+      "sourceSha256": "fda61787d84a442981c6859c7b8b7922aa0712744cd96c0010c9120e1bf0bb39",
+      "sha256": "ac49a689bb81695bcae5925f84f521f054473784e46e24c7f9bb1fd8dad493db",
+      "size": 2826,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "data/res/drawable/ic_clear.xml",
+      "target": "app/src/main/res/drawable/honeycomb_ic_clear.xml",
+      "sourceSha256": "ee4f06dbeebbdce410f979b907442edcc2dad02eca878c930fbe5b84322345d6",
+      "sha256": "4a1886478d16566157524af65cc419d7fdc472fc098cc7c4e2b5ee78ff7679cd",
+      "size": 938,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "data/res/drawable/item_background_holo_dark.xml",
+      "target": "app/src/main/res/drawable/honeycomb_item_background_holo_dark.xml",
+      "sourceSha256": "8ac2ea4ea14e786b492825dbabb1e34afc68ba4e695d647ccc54f4a089906c76",
+      "sha256": "81c93a28a67802da46f7d1be0ac832b1157fe9abec8ea43dc222a26a6cb0dfc6",
+      "size": 2114,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "data/res/drawable/item_background_holo_light.xml",
+      "target": "app/src/main/res/drawable/honeycomb_item_background_holo_light.xml",
+      "sourceSha256": "7ebb6e67afc8d9b3495ccbd78d14da64a4fc01915d8dde41a130298d013eca0d",
+      "sha256": "b4217cd0ebc78fd6f6263ab17b3a56ceac8793d4516a0e91373033676ef90973",
+      "size": 2118,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "data/res/drawable/list_selector_background_transition_holo_dark.xml",
+      "target": "app/src/main/res/drawable/honeycomb_list_selector_background_transition_holo_dark.xml",
+      "sourceSha256": "83198622209cb238cc4fc04e6efac58b5a978613387e11880e5720c2849724e9",
+      "sha256": "8b37bca50b6206d6a69d37563c9a83e961b73c3e59388f28623af94b6765fadc",
+      "size": 908,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "data/res/drawable/list_selector_background_transition_holo_light.xml",
+      "target": "app/src/main/res/drawable/honeycomb_list_selector_background_transition_holo_light.xml",
+      "sourceSha256": "59ee148ca12b9a5a8877aeb65c2b5467be07b91e098482ccfe96febce0e829f1",
+      "sha256": "01a365d17a3b62818c09e963e7d9cc7f51a9ac66371bb2b5be38e68beb754e6e",
+      "size": 909,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "data/res/drawable/list_selector_holo_dark.xml",
+      "target": "app/src/main/res/drawable/honeycomb_list_selector_holo_dark.xml",
+      "sourceSha256": "9e9178f7962b2364b970bee50f83b748d2618786f4b8980b62dfefbf606f5594",
+      "sha256": "e3ba825337de7fbe918593a49bb6fb89cfe2b6468e271457a8423564c87d55e4",
+      "size": 1962,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "data/res/drawable/list_selector_holo_light.xml",
+      "target": "app/src/main/res/drawable/honeycomb_list_selector_holo_light.xml",
+      "sourceSha256": "d876f782bab22a25e66b489c11e9116c1483532c7925ccc026766274de05b60b",
+      "sha256": "034da7fb25d4ae7c42efd241c120fc16559b0e09bc20860b13c739c6ba3dbc46",
+      "size": 1967,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "data/res/drawable/progress_horizontal_holo_dark.xml",
+      "target": "app/src/main/res/drawable/honeycomb_progress_horizontal_holo_dark.xml",
+      "sourceSha256": "8d8a4b3418b53583d10c608d4c5bc18a94940e61b93adcd7feef0f60ee53d8e4",
+      "sha256": "abac9b327d12244d023219a8d428ca74b01d37006adabf3f4ef1457d9e816cd9",
+      "size": 1256,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "data/res/drawable/progress_horizontal_holo_light.xml",
+      "target": "app/src/main/res/drawable/honeycomb_progress_horizontal_holo_light.xml",
+      "sourceSha256": "a2ec1ff895259fc5da0ac9315507adf966cf702ec8b67326d91465e1a1021a29",
+      "sha256": "75bd09a45dd919904554d5b5d786390087e63997cd1c787d1211c0ac7a339540",
+      "size": 1259,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "data/res/drawable/progress_indeterminate_horizontal_holo.xml",
+      "target": "app/src/main/res/drawable/honeycomb_progress_indeterminate_horizontal_holo.xml",
+      "sourceSha256": "740172ff157d31232d0e8535364b9c52f890ed108c4f6cb4bd8a5fd34868d856",
+      "sha256": "ad4043c7259313e85c0c25b5e0fdf2f92ba9b7ec971b8f6d932aeca57e6b96df",
+      "size": 1653,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "data/res/drawable/progress_medium_holo.xml",
+      "target": "app/src/main/res/drawable/honeycomb_progress_medium_holo.xml",
+      "sourceSha256": "1a90c54ba7aa142023d022b0a114f66b6786c9b8275677a475c866a8b5ac3dc8",
+      "sha256": "b819b99688a26503b5cebae9bc7f2f949ca844d54e7332786a0f8f6ac37c7f02",
+      "size": 1234,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "data/res/drawable/spinner_background_holo_dark.xml",
+      "target": "app/src/main/res/drawable/honeycomb_spinner_background_holo_dark.xml",
+      "sourceSha256": "eb3c956d16dd754ac8543d3d89f34dc791a98dfb6624180390dc72b2afc0a115",
+      "sha256": "74b498f40a0df884b44b4048a03c52bcf59ca098541092e425d20d2f2ab4a860",
+      "size": 1214,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "data/res/drawable/spinner_background_holo_light.xml",
+      "target": "app/src/main/res/drawable/honeycomb_spinner_background_holo_light.xml",
+      "sourceSha256": "173b03cdc123c2d58eb1339d56fcc59a96ef0339f84a0897eb353200156a7302",
+      "sha256": "892aad04f2918c41d1701975720281d8792188b41cc6a2915d6a6eda07737530",
+      "size": 1218,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "data/res/drawable/switch_inner_holo_dark.xml",
+      "target": "app/src/main/res/drawable/honeycomb_switch_inner_holo_dark.xml",
+      "sourceSha256": "89fb2b74b67bacd65c94a59d4a16f194158cc4875eaa58e0bceca42f77bc4049",
+      "sha256": "d2561a58b3aec8c87194be4ea12d20449686edb1b613bd858b5155beec8499bc",
+      "size": 1085,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "data/res/drawable/switch_inner_holo_light.xml",
+      "target": "app/src/main/res/drawable/honeycomb_switch_inner_holo_light.xml",
+      "sourceSha256": "e4ff361dbba91ef4df02968e2338606990264a0f0faadb3060bd084fe81bc348",
+      "sha256": "90c7c802ba9002cc4ca92a4b4c26dac22472f4b0160b3c8d8c8bf2aac13c30aa",
+      "size": 1088,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "data/res/drawable/switch_track_holo_dark.xml",
+      "target": "app/src/main/res/drawable/honeycomb_switch_track_holo_dark.xml",
+      "sourceSha256": "8eba0d6cf452e7b0b75db8088846190b5006723c3824492addb25ddc112c4f6f",
+      "sha256": "3679082b41741c372076b02e5fd80440aaca6680c2d92c0a0f59962c78cfcf60",
+      "size": 1076,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "data/res/drawable/switch_track_holo_light.xml",
+      "target": "app/src/main/res/drawable/honeycomb_switch_track_holo_light.xml",
+      "sourceSha256": "f492c5317b43797eb44bce370cf58802d1bacf9d81cdbfae1304e4d30e17c0c9",
+      "sha256": "1554f3b1a4e7a8a2e4622c0b5e6e22c5df753d817532230ed0719e724cf5b647",
+      "size": 1079,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "source": "data/res/drawable/tab_indicator_holo.xml",
+      "target": "app/src/main/res/drawable/honeycomb_tab_indicator_holo.xml",
+      "sourceSha256": "d8a25208d3886959ebd724221c72ca7fc9c061df4f7b58e0b2db41a7aaae8af2",
+      "sha256": "103ef4eb85658c3d3bd649936946db89522bf9df6e3668880b3e4b93924176ca",
+      "size": 2259,
+      "density": "drawable",
+      "license": "Apache-2.0",
+      "change": "resource references prefixed"
+    },
+    {
+      "sources": [
+        "data/res/values/colors.xml",
+        "data/res/values/config.xml"
+      ],
+      "target": "app/src/main/res/values/honeycomb_dependencies.xml",
+      "sha256": "3ac339f93a25fa1901f021c45b3b6a1ea479e8bec0f93439dd34295d559cb8b0",
+      "size": 1553,
+      "license": "Apache-2.0",
+      "change": "selected dependency values; names and references prefixed"
+    },
+    {
+      "source": "data/fonts/DroidSans.ttf",
+      "archivePath": "android-3.0_r02-linux/data/fonts/DroidSans.ttf",
+      "target": "app/src/main/res/font/honeycomb_droid_sans.ttf",
+      "sha256": "4e2371bc0e4cf6983342e150412f140da79d674c9be0b56458401f581072ecd3",
+      "size": 190044,
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged",
+      "sourceSha256": "4e2371bc0e4cf6983342e150412f140da79d674c9be0b56458401f581072ecd3"
+    },
+    {
+      "source": "data/fonts/DroidSans-Bold.ttf",
+      "archivePath": "android-3.0_r02-linux/data/fonts/DroidSans-Bold.ttf",
+      "target": "app/src/main/res/font/honeycomb_droid_sans_bold.ttf",
+      "sha256": "b631b677af5aa7316297a8b56a1fe3bb1da706737f8c9785d5a5fc94faae1ea9",
+      "size": 191032,
+      "license": "Apache-2.0",
+      "change": "prefix rename only; bytes unchanged",
+      "sourceSha256": "b631b677af5aa7316297a8b56a1fe3bb1da706737f8c9785d5a5fc94faae1ea9"
+    }
+  ],
+  "references": [
+    {
+      "source": "data/res/anim/dialog_enter.xml",
+      "target": "docs/android-themes/honeycomb/reference/anim/dialog_enter.xml",
+      "sha256": "4bb47022dc9cad654dddbc0649c3a22fa8e8d8b1ffbd494fa4261cf75303c796"
+    },
+    {
+      "source": "data/res/anim/dialog_exit.xml",
+      "target": "docs/android-themes/honeycomb/reference/anim/dialog_exit.xml",
+      "sha256": "220416b81d3e3d458886908ef8abff4347d3b38819da78bf1176bc86069e56a6"
+    },
+    {
+      "source": "data/res/layout/action_bar_home.xml",
+      "target": "docs/android-themes/honeycomb/reference/layout/action_bar_home.xml",
+      "sha256": "ceb56b9e4e52c00be9e4a8836e57cd56afecee715d4dbecdabae784c9a91c9ed"
+    },
+    {
+      "source": "data/res/layout/action_mode_close_item.xml",
+      "target": "docs/android-themes/honeycomb/reference/layout/action_mode_close_item.xml",
+      "sha256": "51fd4407ead27aa55f489ca74f55fbc05524f0b6fc1af00521e5c0004353de85"
+    },
+    {
+      "source": "data/res/layout/alert_dialog_holo.xml",
+      "target": "docs/android-themes/honeycomb/reference/layout/alert_dialog_holo.xml",
+      "sha256": "049f6e806c297917da6c24f159deb142d8bcdf473563541fac78f92ac13aad0c"
+    },
+    {
+      "source": "data/res/layout/popup_menu_item_layout.xml",
+      "target": "docs/android-themes/honeycomb/reference/layout/popup_menu_item_layout.xml",
+      "sha256": "865e8cf849127d45388453a2ef51941bdda000990b9a8e7a0104f0eb1af6df45"
+    },
+    {
+      "source": "data/res/layout/preference.xml",
+      "target": "docs/android-themes/honeycomb/reference/layout/preference.xml",
+      "sha256": "ac29746fe52ee96c21d8750e9d72905ea85b47447999e2c91264803a4bdefe0c"
+    },
+    {
+      "source": "data/res/layout/search_view.xml",
+      "target": "docs/android-themes/honeycomb/reference/layout/search_view.xml",
+      "sha256": "a4a6d395bf446d9cbaef1dc4e3e6d8396e04aa97e92a7b07161bd27e5955d1f0"
+    },
+    {
+      "source": "data/res/layout/select_dialog_holo.xml",
+      "target": "docs/android-themes/honeycomb/reference/layout/select_dialog_holo.xml",
+      "sha256": "89f4a1cc6dc1fff9e87d82d2cdf6c8d0af7b5979f68bcf1b15d773b1c1028a2c"
+    },
+    {
+      "source": "data/res/layout/select_dialog_item_holo.xml",
+      "target": "docs/android-themes/honeycomb/reference/layout/select_dialog_item_holo.xml",
+      "sha256": "eafdac420fa0e8c7f3da725bb97b0815c42628d579c0a24bb77fe1f7e72849b6"
+    },
+    {
+      "source": "data/res/layout/select_dialog_multichoice_holo.xml",
+      "target": "docs/android-themes/honeycomb/reference/layout/select_dialog_multichoice_holo.xml",
+      "sha256": "cc192cfdac46f1180f2657dcf30a59de33185d5f03694c8272e7de233707b438"
+    },
+    {
+      "source": "data/res/layout/select_dialog_singlechoice_holo.xml",
+      "target": "docs/android-themes/honeycomb/reference/layout/select_dialog_singlechoice_holo.xml",
+      "sha256": "e51fb49124c1f590f0079098c18643591189254ace38a7bb8d7b6487d53986be"
+    },
+    {
+      "source": "data/res/layout/simple_list_item_2.xml",
+      "target": "docs/android-themes/honeycomb/reference/layout/simple_list_item_2.xml",
+      "sha256": "9cdb4ab4f8237d6ef47112307c63cd47a0a9b2d59053d22178ded4d5f5bdefe3"
+    },
+    {
+      "source": "data/res/values-land/dimens.xml",
+      "target": "docs/android-themes/honeycomb/reference/values-land/dimens.xml",
+      "sha256": "265491b10f96e478af4ac61c306a07a9d0c02feb7290f258f0de1f78badf2e3c"
+    },
+    {
+      "source": "data/res/values-large/config.xml",
+      "target": "docs/android-themes/honeycomb/reference/values-large/config.xml",
+      "sha256": "fd4963931cd8c01e6e7215096399f4f67055f0c4270ba1187fff3753937028fe"
+    },
+    {
+      "source": "data/res/values-large/dimens.xml",
+      "target": "docs/android-themes/honeycomb/reference/values-large/dimens.xml",
+      "sha256": "51eb2c995751a3047ec56c814dc57073d76a1650e2a2e8f42bd5d500e5bc1acd"
+    },
+    {
+      "source": "data/res/values-large/themes.xml",
+      "target": "docs/android-themes/honeycomb/reference/values-large/themes.xml",
+      "sha256": "542a0326b7efbfbdc122ee463109ad3246e4dd726d3e6e13839d6231b662b94e"
+    },
+    {
+      "source": "data/res/values-mcc450-ko/config.xml",
+      "target": "docs/android-themes/honeycomb/reference/values-mcc450-ko/config.xml",
+      "sha256": "f1fd295d56957804a407360590350dd09b65c0ebcbfcea932e8e7c685bf0b553"
+    },
+    {
+      "source": "data/res/values-xlarge-land/dimens.xml",
+      "target": "docs/android-themes/honeycomb/reference/values-xlarge-land/dimens.xml",
+      "sha256": "4d925f229fec2f85eee66105b383ec885daf4b05934579e5fd42c7369f10a969"
+    },
+    {
+      "source": "data/res/values-xlarge/config.xml",
+      "target": "docs/android-themes/honeycomb/reference/values-xlarge/config.xml",
+      "sha256": "b96c24297dbd6ecdbcf5522de1ccdc737173db8e4480f047d31fc81629114a4a"
+    },
+    {
+      "source": "data/res/values-xlarge/dimens.xml",
+      "target": "docs/android-themes/honeycomb/reference/values-xlarge/dimens.xml",
+      "sha256": "da97f093706b4179f8e8b6a3c30b92dbe37962394e77980f9586118c0cb5669f"
+    },
+    {
+      "source": "data/res/values-xlarge/styles.xml",
+      "target": "docs/android-themes/honeycomb/reference/values-xlarge/styles.xml",
+      "sha256": "1e128670396212d70b0209c33bf57fa2bbf153d4f8afb8eb0a591df1c491ab3e"
+    },
+    {
+      "source": "data/res/values/colors.xml",
+      "target": "docs/android-themes/honeycomb/reference/values/colors.xml",
+      "sha256": "0a4105a32f15db9ee9c4f65391ae1984ac25aa41695ec525ab32bc93ae933845"
+    },
+    {
+      "source": "data/res/values/config.xml",
+      "target": "docs/android-themes/honeycomb/reference/values/config.xml",
+      "sha256": "bdd38912ce347845c93ab59e8ad649b8895cbb40dd39ccce0beecacc628a13fd"
+    },
+    {
+      "source": "data/res/values/dimens.xml",
+      "target": "docs/android-themes/honeycomb/reference/values/dimens.xml",
+      "sha256": "088d93656fafee1a5bcd6c3456d915eb713c6fe28966e0eb460f692e2efc4494"
+    },
+    {
+      "source": "data/res/values/styles.xml",
+      "target": "docs/android-themes/honeycomb/reference/values/styles.xml",
+      "sha256": "66c6b5deb0a5dee67d4e1c6ac6b5e5f4e0fba8666c57a5ed3e8fa4cf0cbfbeb0"
+    },
+    {
+      "source": "data/res/values/themes.xml",
+      "target": "docs/android-themes/honeycomb/reference/values/themes.xml",
+      "sha256": "3b1d2c784c28320b1a1f3eb476dbaac1fcb07043b321d440ee20b36f258c851e"
+    }
+  ]
+}
