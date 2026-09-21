@@ -233,3 +233,9 @@ NOTICE                       项目来源与修改说明
 ## 许可证
 
 Fuyao Locale 采用 [GNU Affero General Public License v3 only](LICENSE)（`AGPL-3.0-only`）。源自 Language Selector 的代码仍须保留其 Apache-2.0 许可证与署名，详见 [LICENSES/Apache-2.0.txt](LICENSES/Apache-2.0.txt) 和 [NOTICE](NOTICE)。
+
+## AI 辅助开发
+
+本项目在开发过程中使用生成式 AI 协助编码。
+
+[![Vibe PR](https://raw.githubusercontent.com/fenxer/llm-things/main/stickers/vibe-pr.svg)](https://github.com/fenxer/llm-things/blob/main/stickers/vibe-pr.svg)

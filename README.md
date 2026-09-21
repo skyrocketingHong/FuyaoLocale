@@ -233,3 +233,9 @@ See [CHANGELOG.md](CHANGELOG.md) for the release-level differences from the orig
 ## License
 
 Fuyao Locale is licensed under the [GNU Affero General Public License v3 only](LICENSE) (`AGPL-3.0-only`). Code derived from Language Selector remains subject to its retained Apache-2.0 notices; see [LICENSES/Apache-2.0.txt](LICENSES/Apache-2.0.txt) and [NOTICE](NOTICE).
+
+## AI-Assisted Development
+
+Generative AI was used to assist with coding during the development of this project.
+
+[![Vibe PR](https://raw.githubusercontent.com/fenxer/llm-things/main/stickers/vibe-pr.svg)](https://github.com/fenxer/llm-things/blob/main/stickers/vibe-pr.svg)
